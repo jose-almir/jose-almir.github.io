@@ -1,0 +1,163 @@
+.mt {
+  &-xs {
+    margin-top: $spacer-xs;
+  }
+  &-sm {
+    margin-top: $spacer-sm;
+  }
+  &-md {
+    margin-top: $spacer-md;
+  }
+  &-lg {
+    margin-top: $spacer-lg;
+  }
+  &-xl {
+    margin-top: $spacer-xl;
+  }
+}
+
+.mb {
+  &-xs {
+    margin-bottom: $spacer-xs;
+  }
+  &-sm {
+    margin-bottom: $spacer-sm;
+  }
+  &-md {
+    margin-bottom: $spacer-md;
+  }
+  &-lg {
+    margin-bottom: $spacer-lg;
+  }
+  &-xl {
+    margin-bottom: $spacer-xl;
+  }
+}
+
+.ml {
+  &-xs {
+    margin-left: $spacer-xs;
+  }
+  &-sm {
+    margin-left: $spacer-sm;
+  }
+  &-md {
+    margin-left: $spacer-md;
+  }
+  &-lg {
+    margin-left: $spacer-lg;
+  }
+  &-xl {
+    margin-left: $spacer-xl;
+  }
+}
+
+.mr {
+  &-xs {
+    margin-right: $spacer-xs;
+  }
+  &-sm {
+    margin-right: $spacer-sm;
+  }
+  &-md {
+    margin-right: $spacer-md;
+  }
+  &-lg {
+    margin-right: $spacer-lg;
+  }
+  &-xl {
+    margin-right: $spacer-xl;
+  }
+}
+
+.pt {
+  &-xs {
+    padding-top: $spacer-xs;
+  }
+  &-sm {
+    padding-top: $spacer-sm;
+  }
+  &-md {
+    padding-top: $spacer-md;
+  }
+  &-lg {
+    padding-top: $spacer-lg;
+  }
+  &-xl {
+    padding-top: $spacer-xl;
+  }
+}
+
+.pb {
+  &-xs {
+    padding-bottom: $spacer-xs;
+  }
+  &-sm {
+    padding-bottom: $spacer-sm;
+  }
+  &-md {
+    padding-bottom: $spacer-md;
+  }
+  &-lg {
+    padding-bottom: $spacer-lg;
+  }
+  &-xl {
+    padding-bottom: $spacer-xl;
+  }
+}
+
+.pl {
+  &-xs {
+    padding-left: $spacer-xs;
+  }
+  &-sm {
+    padding-left: $spacer-sm;
+  }
+  &-md {
+    padding-left: $spacer-md;
+  }
+  &-lg {
+    padding-left: $spacer-lg;
+  }
+  &-xl {
+    padding-left: $spacer-xl;
+  }
+}
+
+.pr {
+  &-xs {
+    padding-right: $spacer-xs;
+  }
+  &-sm {
+    padding-right: $spacer-sm;
+  }
+  &-md {
+    padding-right: $spacer-md;
+  }
+  &-lg {
+    padding-right: $spacer-lg;
+  }
+  &-xl {
+    padding-right: $spacer-xl;
+  }
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 32px;
+  box-sizing: border-box;
+}
+
+@media screen and (min-width: 768px) {
+  .container {
+    padding: 0 96px;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .container {
+    max-width: 1400px;
+    padding: 0 192px;
+  }
+}

@@ -1,0 +1,15 @@
+.navbar {
+  height: 64px;
+  background-color: $background-dark;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  .brand {
+    padding: 8px;
+  }
+
+  .githubicon {
+    font-size: 24px;
+    margin-right: 8px;
+  }
+}

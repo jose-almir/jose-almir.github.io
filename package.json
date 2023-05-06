@@ -4,13 +4,21 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build": "next build && next export -o docs/",
     "start": "next start",
     "lint": "next lint"
   },
   "dependencies": {
+    "bootstrap-icons": "^1.10.5",
+    "gray-matter": "^4.0.3",
     "next": "13.2.4",
     "react": "18.2.0",
-    "react-dom": "18.2.0"
+    "react-dom": "18.2.0",
+    "react-markdown": "^8.0.6",
+    "react-syntax-highlighter": "^15.5.0",
+    "rehype-raw": "^6.1.1"
+  },
+  "devDependencies": {
+    "sass": "^1.60.0"
   }
 }

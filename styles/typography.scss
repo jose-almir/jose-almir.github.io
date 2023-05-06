@@ -1,0 +1,44 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap");
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 16px 0;
+  font-family: $font-family;
+  line-height: $line-height;
+  font-weight: $font-weight;
+  color: rgba($color: $primary, $alpha: 0.87);
+}
+
+h1 {
+  font-size: $font-size-h1;
+}
+
+h2 {
+  font-size: $font-size-h2;
+}
+
+h3 {
+  font-size: $font-size-h3;
+}
+
+h4 {
+  font-size: $font-size-h4;
+}
+
+h5 {
+  font-size: $font-size-h5;
+}
+
+h6 {
+  font-size: $font-size-h6;
+}
+
+p {
+  line-height: $line-height;
+  text-align: justify;
+  font-size: 1.125rem;
+}

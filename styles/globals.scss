@@ -1,0 +1,64 @@
+@import "./reset.scss";
+@import "./typography.scss";
+@import "./spacing.scss";
+@import "./grid.scss";
+
+@import "~bootstrap-icons/font/bootstrap-icons.css";
+
+body {
+  font-family: $font-family;
+  background-color: $background-dark;
+  color: rgba($color: #ffffff, $alpha: 0.87);
+}
+
+a {
+  color: $accent;
+  text-decoration: underline;
+  font-weight: bold;
+}
+
+a.back-btn {
+  background-color: #ffffff;
+  padding: 8px;
+  text-decoration: none;
+  border-radius: 6px;
+  display: block;
+  width: 90px;
+  text-align: center;
+}
+
+strong {
+  font-weight: bold;
+}
+
+img[alt=me] {
+  width: 200px;
+}
+
+.blog-post {
+  section.intro {
+    margin: 24px 0;
+    color: rgba($color: #ffffff, $alpha: 0.75);
+  }
+
+  img.headline {
+    margin: 8px 0;
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 8px;
+    filter: brightness(0.65);
+  }
+
+  blockquote {
+    border-left: 4px solid $accent;
+    padding-left: 16px;
+    margin-left: 0;
+    font-style: italic;
+    font-size: 1.1rem;
+  }
+
+  ul {
+    list-style-type: disc;
+  }
+}
