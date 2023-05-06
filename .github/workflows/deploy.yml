@@ -19,7 +19,7 @@ jobs:
           node-version: 14
 
       - name: Install Dependencies
-        run: npm install
+        run: npm ci
 
       - name: Build Next.js Application
         run: npm run build
