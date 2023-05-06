@@ -61,4 +61,9 @@ img[alt=me] {
   ul {
     list-style-type: disc;
   }
+
+  span.closed {
+    text-decoration: line-through;
+    color: rgba($color: #ffffff, $alpha: 0.55);
+  }
 }

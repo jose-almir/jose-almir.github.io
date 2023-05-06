@@ -4,8 +4,8 @@ date: "2023-05-06T00:00:00"
 thumbnail: "/aaron-burden-xG8IQMqMITM-unsplash.jpg"
 desc: "Quando a paixão por escrever e a vontade de compartilhar ideias se encontram em um desenvolvedor, nasce um blog."
 tags: "ideias, introdução"
+categoria: "ideias"
 ---
-
 
 <section className="intro">
 <h1>Sobre mim</h1>
@@ -36,10 +36,11 @@ Para montar este blog, utilizei o [Next.js](https://nextjs.org/), um framework p
 Um ponto fundamental sobre este blog é que ele é puramente baseado em arquivos markdown que são lidos dinamicamente pelo Next.js e em seguida são transformados em HTML estático e hospedados gratuitamente no Github Pages. Você pode conferir o código fonte deste blog no meu [Github](https://github.com/jose-almir/jose-almir.github.io).
 
 Este blog também possui syntax highlight para os exemplos em código que aqui forem apresentados.
+
 ```js
 const helloWorld = () => {
-    console.log('Hello World!');
-}
+  console.log("Hello World!");
+};
 ```
 
 ## Feedbacks
@@ -49,8 +50,8 @@ Caso queira dar sugestões de melhoria do blog, ou queira sugerir algum tema par
 ## Roadmap do blog
 
 <ul>
-    <li>Suporte a tags;</li>
-    <li>Suporte a categorias;</li>
+    <li><span className="closed">Suporte a tags</span> [Implementado visualmente];</li>
+    <li><span className="closed">Suporte a categorias</span> [Implementado visualmente];</li>
     <li>Suporte a dark/light mode;</li>
     <li>Suporte ao idioma inglês;</li>
     <li>Suporte a busca;</li>
