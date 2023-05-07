@@ -5,6 +5,7 @@ import { ReactMarkdown } from "react-markdown/lib/react-markdown";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { oneDark } from "react-syntax-highlighter/dist/cjs/styles/prism";
 import rehypeRaw from "rehype-raw";
+import { useRouter } from "next/router";
 
 export function getStaticPaths() {
   const posts = getPosts();
@@ -24,6 +25,7 @@ export function getStaticProps({ params: { id } }) {
 }
 
 export default function Post({ post }) {
+  const router = useRouter();
   return (
     <>
       <Head>
@@ -36,9 +38,9 @@ export default function Post({ post }) {
         <meta property="og:image" content={post.thumbnail} />
       </Head>
       <div className="container">
-        <Link className="back-btn" href="/blog">
+        <a className="back-btn" onClick={() => router.back()}>
           {"<<< Voltar"}
-        </Link>
+        </a>
         <ReactMarkdown
           className="blog-post"
           children={post.content}

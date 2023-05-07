@@ -12,7 +12,14 @@ export function Card({ post }) {
             <i className="bi bi-calendar mr-xs"></i>
             {new Date(post.date).toLocaleDateString()}
           </span>
-          <span>#{post.categoria}</span>
+          <span>
+            <Link
+              className={styles.cardCategoria}
+              href={`/blog/categoria/${post.categoria}`}
+            >
+              #{post.categoria}
+            </Link>
+          </span>
         </span>
         <p className={styles.cardText}>
           {post.desc.trim().split(" ").slice(0, 14).join(" ") + "..."}
