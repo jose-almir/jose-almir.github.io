@@ -38,9 +38,9 @@ export default function Post({ post }) {
         <meta property="og:image" content={post.thumbnail} />
       </Head>
       <div className="container">
-        <a className="back-btn" onClick={() => router.back()}>
+        <Link className="back-btn" href="/blog">
           {"<<< Voltar"}
-        </a>
+        </Link>
         <ReactMarkdown
           className="blog-post"
           children={post.content}
