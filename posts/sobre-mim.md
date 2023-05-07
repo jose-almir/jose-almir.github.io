@@ -9,7 +9,7 @@ categoria: "ideias"
 
 <section className="intro">
 <h1>Sobre mim</h1>
-<i className="bi bi-clock-fill mr-xs"></i> 2 min · <i className="bi bi-calendar mr-xs"></i> 06 Mai, 2023
+<i className="bi bi-clock-fill mr-xs"></i><span> 2 min · </span><i className="bi bi-calendar mr-xs"></i><span> 06 Mai, 2023</span>
 
 <img src="/aaron-burden-xG8IQMqMITM-unsplash.jpg" className="headline" alt="blog headline by aaron burden on unsplash" title="By Aaron Burden on Unsplash">
 

@@ -10,7 +10,7 @@ categoria: "css"
 
 <section className="intro">
 <h1>Como aprender CSS</h1>
-<i className="bi bi-clock-fill mr-xs"></i> 5 min · <i className="bi bi-calendar mr-xs"></i> 07 Mai, 2023
+<i className="bi bi-clock-fill mr-xs"></i><span> 5 min · </span><i className="bi bi-calendar mr-xs"></i><span> 07 Mai, 2023</span>
 
 <img src="/desola-lanre-ologun-USp4Gzr-Hdw-unsplash.jpg" className="headline" alt="blog headline by desola lanre on unsplash" title="By Aaron Burden on Unsplash">
 

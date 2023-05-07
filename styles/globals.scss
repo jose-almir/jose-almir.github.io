@@ -4,11 +4,18 @@
 @import "./grid.scss";
 
 @import "~bootstrap-icons/font/bootstrap-icons.css";
-
+* {
+  box-sizing: border-box;
+}
 body {
   font-family: $font-family;
   background-color: $background-dark;
   color: rgba($color: #ffffff, $alpha: 0.87);
+}
+
+[data-theme="light"] body {
+  background-color: $background-light;
+  color: rgba($color: #000000, $alpha: 0.87);
 }
 
 a {
@@ -24,15 +31,20 @@ a.back-btn {
   text-decoration: none;
   border-radius: 6px;
   display: block;
-  width: 90px;
+  width: 100px;
   text-align: center;
+}
+
+[data-theme="light"] a.back-btn {
+  color: $background-light;
+  background-color: $background-dark;
 }
 
 strong {
   font-weight: bold;
 }
 
-img[alt=me] {
+img[alt="me"] {
   width: 200px;
 }
 
@@ -79,3 +91,6 @@ img[alt=me] {
   }
 }
 
+[data-theme='light'] span.closed {
+  color: rgba($color: $background-dark, $alpha: 0.55);
+}

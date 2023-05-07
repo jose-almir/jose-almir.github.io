@@ -13,6 +13,25 @@ h6 {
   color: rgba($color: $primary, $alpha: 0.87);
 }
 
+[data-theme="light"] {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    color: rgba($color: $background-dark, $alpha: 0.87);
+  }
+
+  blockquote {
+    color: rgba($color: $background-dark, $alpha: 0.87);
+  }
+
+  .intro span, .intro i {
+    color: rgba($color: $background-dark, $alpha: 0.87);
+  }
+}
+
 h1 {
   font-size: $font-size-h1;
 }
