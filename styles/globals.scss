@@ -66,4 +66,15 @@ img[alt=me] {
     text-decoration: line-through;
     color: rgba($color: #ffffff, $alpha: 0.55);
   }
+
+  code {
+    background-color: rgba($color: #ffffff, $alpha: 0.05);
+    padding: 2px 4px;
+    border-radius: 4px;
+  }
+
+  .image {
+    width: 100%;
+  }
 }
+
