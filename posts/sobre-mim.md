@@ -52,7 +52,7 @@ Caso queira dar sugestões de melhoria do blog, ou queira sugerir algum tema par
 <ul>
     <li><span className="closed">Suporte a tags</span> [Implementado visualmente];</li>
     <li><span className="closed">Suporte a categorias</span> [Com páginas categorizadas];</li>
-    <li>Suporte a dark/light mode;</li>
+    <li><span className="closed">Suporte a dark/light mode</span>;</li>
     <li>Suporte ao idioma inglês;</li>
     <li>Suporte a busca;</li>
     <li>Suporte a comentários;</li>
