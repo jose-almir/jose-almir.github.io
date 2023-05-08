@@ -3,7 +3,7 @@ import styles from "../styles/Footer.module.scss";
 export function Footer() {
   return (
     <>
-      <hr />
+      <hr className="hr" />
       <footer className={styles.footer}>
         <div className="container">
           <div className={styles["social-icons"]}>
