@@ -15,7 +15,7 @@ export function Footer() {
             </a>
           </div>
           <p className={styles.copyright}>
-            &copy; 2023 Your Website. All rights reserved.
+            &copy; {new Date().getFullYear()} jose-almir. Todos os direitos reservados.
           </p>
         </div>
       </footer>
