@@ -155,9 +155,15 @@
   }
 }
 
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 992px) {
+  .container {
+    padding: 0 156px;
+  }
+}
+
+@media screen and (min-width: 1200px) {
   .container {
     max-width: 1400px;
-    padding: 0 192px;
+    padding: 0 256px;
   }
 }

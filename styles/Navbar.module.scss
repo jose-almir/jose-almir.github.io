@@ -4,6 +4,11 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+  position: fixed;
+  width: 100%;
+  z-index: 999;
+  top: 0;
+
   .brand {
     padding: 8px;
   }

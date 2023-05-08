@@ -7,10 +7,12 @@
 * {
   box-sizing: border-box;
 }
+
 body {
   font-family: $font-family;
   background-color: $background-dark;
   color: rgba($color: #ffffff, $alpha: 0.87);
+  margin-top: 64px;
 }
 
 [data-theme="light"] body {
@@ -26,7 +28,8 @@ a {
 
 a.back-btn {
   cursor: pointer;
-  background-color: #ffffff;
+  background-color: rgba($color: $background-light, $alpha: 0.1);
+  color: $primary;
   padding: 8px;
   text-decoration: none;
   border-radius: 6px;
