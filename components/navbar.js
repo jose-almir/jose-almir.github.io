@@ -5,7 +5,6 @@ import { useEffect, useState } from "react";
 
 export function Navbar() {
   const { theme, setTheme } = useTheme();
-  console.log(theme);
 
   const [mounted, setMounted] = useState(false);
   useEffect(() => setMounted(true), []);

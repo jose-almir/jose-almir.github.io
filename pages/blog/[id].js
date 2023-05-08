@@ -37,7 +37,7 @@ export default function Post({ post }) {
       </Head>
       <div className="container">
         <Link className="back-btn" href="/blog">
-          {"<<< Voltar"}
+          <i className="bi bi-arrow-left"></i> Voltar
         </Link>
         <ReactMarkdown
           className="blog-post"

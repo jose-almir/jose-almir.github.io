@@ -1,3 +1,4 @@
+import { Footer } from "@/components/footer";
 import { Layout } from "@/components/layout";
 import "@/styles/globals.scss";
 import { ThemeProvider } from "next-themes";
@@ -17,6 +18,7 @@ export default function App({ Component, pageProps }) {
             <base target="_blank" />
           </Head>
           <Component {...pageProps} />
+          <Footer />
         </Layout>
       </ThemeProvider>
     </>

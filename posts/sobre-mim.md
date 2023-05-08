@@ -53,10 +53,10 @@ Caso queira dar sugestões de melhoria do blog, ou queira sugerir algum tema par
     <li><span className="closed">Suporte a tags</span> [Implementado visualmente];</li>
     <li><span className="closed">Suporte a categorias</span> [Com páginas categorizadas];</li>
     <li><span className="closed">Suporte a dark/light mode</span>;</li>
+    <li><span className="closed">Suporte a RSS</span>;</li>
     <li>Suporte ao idioma inglês;</li>
     <li>Suporte a busca;</li>
     <li>Suporte a comentários;</li>
-    <li>Suporte a RSS;</li>
 </ul>
 
 **Observação:** Estes tópicos não estão ordenados por prioridade.

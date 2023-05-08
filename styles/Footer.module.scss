@@ -1,0 +1,33 @@
+.footer {
+  padding: 20px;
+  text-align: center;
+}
+
+.social-icons {
+  margin-bottom: 10px;
+  font-size: 24px;
+}
+
+[data-theme="light"] {
+  .footer {
+    background-color: $background-light;
+    color: rgba($color: $background-dark, $alpha: 0.87);
+  }
+
+  .social-icons a {
+    color: rgba($color: $background-dark, $alpha: 0.87);
+  }
+}
+
+.social-icons a {
+  margin-right: 10px;
+}
+
+.social-icons a:hover {
+  color: $accent;
+}
+
+.copyright {
+  margin: 0;
+  text-align: center;
+}

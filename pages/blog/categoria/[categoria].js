@@ -45,7 +45,7 @@ export default function Categoria({ posts, categoria }) {
       </Head>
       <div className="container ">
         <Link href="/blog" className="back-btn">
-          {"<<< Voltar"}
+          <i className="bi bi-arrow-left"></i> Voltar
         </Link>
         <h2>Categoria: {categoria}</h2>
         <div className="grid">

@@ -91,6 +91,23 @@ img[alt="me"] {
   }
 }
 
-[data-theme='light'] span.closed {
-  color: rgba($color: $background-dark, $alpha: 0.55);
+[data-theme="light"] {
+  span.closed {
+    color: rgba($color: $background-dark, $alpha: 0.55);
+  }
+
+  hr {
+    border: 0;
+    border-top: 1px solid rgba($color: $background-dark, $alpha: 0.15);
+  }
+}
+
+hr {
+  border: 0;
+  border-top: 1px solid rgba($color: #ffffff, $alpha: 0.15);
+}
+
+[data-theme="dark"] body,
+[data-theme="light"] body{
+  transition: background-color 0.1s, color 0.1s, border-color 0.1s, box-shadow 0.1s;
 }
