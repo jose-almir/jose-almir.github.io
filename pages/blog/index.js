@@ -35,11 +35,13 @@ export default function Blog({ posts }) {
         <meta property="og:image" content="/potato.png" />
       </Head>
       <div className="container ">
-        <h2>Confira meu conteúdo!</h2>
-        <div className="grid">
-          {posts.map((post) => (
-            <Card key={post.id} post={post} />
-          ))}
+        <div className="pt-xs">
+          <h2>Confira meu conteúdo!</h2>
+          <div className="grid">
+            {posts.map((post) => (
+              <Card key={post.id} post={post} />
+            ))}
+          </div>
         </div>
       </div>
     </>

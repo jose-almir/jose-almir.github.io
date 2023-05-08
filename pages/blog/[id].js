@@ -36,6 +36,7 @@ export default function Post({ post }) {
         <meta property="og:image" content={post.thumbnail} />
       </Head>
       <div className="container">
+        <div className="pt-md">
         <Link className="back-btn" href="/blog">
           <i className="bi bi-arrow-left"></i> Voltar
         </Link>
@@ -63,6 +64,7 @@ export default function Post({ post }) {
           }}
           rehypePlugins={[rehypeRaw]}
         />
+        </div>
       </div>
     </>
   );

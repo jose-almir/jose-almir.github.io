@@ -22,13 +22,13 @@ body {
 
 a {
   color: $accent;
-  text-decoration: underline;
+  text-decoration: none;
   font-weight: bold;
 }
 
 a.back-btn {
   cursor: pointer;
-  background-color: rgba($color: $background-light, $alpha: 0.1);
+  background-color: $background-lighter;
   color: $primary;
   padding: 8px;
   text-decoration: none;
@@ -40,18 +40,18 @@ a.back-btn {
 
 [data-theme="light"] a.back-btn {
   color: $background-light;
-  background-color: $background-dark;
-}
-
-strong {
-  font-weight: bold;
-}
-
-img[alt="me"] {
-  width: 200px;
+  background-color: $background-lighter;
 }
 
 .blog-post {
+  strong {
+    font-weight: bold;
+  }
+
+  img[alt="me"] {
+    width: 200px;
+  }
+  
   section.intro {
     margin: 24px 0;
     color: rgba($color: #ffffff, $alpha: 0.75);
@@ -80,7 +80,7 @@ img[alt="me"] {
 
   span.closed {
     text-decoration: line-through;
-    color: rgba($color: #ffffff, $alpha: 0.55);
+    color: rgba($color: #ffffff, $alpha: 0.75);
   }
 
   code {
@@ -96,12 +96,12 @@ img[alt="me"] {
 
 [data-theme="light"] {
   span.closed {
-    color: rgba($color: $background-dark, $alpha: 0.55);
+    color: rgba($color: $background-dark, $alpha: 0.6);
   }
 
   .hr {
     border: 0;
-    border-top: 1px solid rgba($color: $background-dark, $alpha: 0.15);
+    border-top: 1px solid rgba($color: $background-dark, $alpha: 0.38);
   }
 }
 
@@ -111,6 +111,7 @@ img[alt="me"] {
 }
 
 [data-theme="dark"] body,
-[data-theme="light"] body{
-  transition: background-color 0.1s, color 0.1s, border-color 0.1s, box-shadow 0.1s;
+[data-theme="light"] body {
+  transition: background-color 0.1s, color 0.1s, border-color 0.1s,
+    box-shadow 0.1s;
 }

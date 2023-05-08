@@ -8,9 +8,27 @@
   width: 100%;
   z-index: 999;
   top: 0;
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
 
   .brand {
     padding: 8px;
+    a {
+      padding: 2px 6px;
+      border-radius: 4px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+
+      &:hover {
+        background-color: $background-lighter;
+
+        img {
+          transform: rotate(360deg);
+          transition: transform 0.5s ease-in-out;
+        }
+      }
+    }
   }
 
   .githubicon {
@@ -18,7 +36,15 @@
     margin-right: 8px;
     a {
       color: white;
+
+        padding: 2px 6px;
+      border-radius: 4px;
+
+      &:hover {
+        background-color: $background-lighter;
+      }
     }
+
   }
 
   .themeicon {
@@ -29,6 +55,12 @@
       border: none;
       color: white;
       cursor: pointer;
+      padding: 2px 6px;
+      border-radius: 4px;
+
+      &:hover {
+        background-color: $background-lighter;
+      }
     }
   }
 }

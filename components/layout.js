@@ -4,7 +4,7 @@ export function Layout({ children }) {
   return (
     <>
       <Navbar />
-      <main className="pt-md">{children}</main>
+      <main>{children}</main>
     </>
   );
 }

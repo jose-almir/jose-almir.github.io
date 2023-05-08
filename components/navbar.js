@@ -2,6 +2,7 @@ import Image from "next/image";
 import styles from "./../styles/Navbar.module.scss";
 import { useTheme } from "next-themes";
 import { useEffect, useState } from "react";
+import Link from "next/link";
 
 export function Navbar() {
   const { theme, setTheme } = useTheme();
@@ -14,7 +15,9 @@ export function Navbar() {
   return (
     <header className={styles.navbar}>
       <div className={styles.brand}>
-        <Image src="/brand.png" width={42} height={42} alt="Brand" />
+        <Link href="/" title="Navegar para tela principal">
+          <Image src="/brand.png" width={42} height={42} alt="Brand" />{" "}
+        </Link>
       </div>
       <div>
         <span className={styles.themeicon}>

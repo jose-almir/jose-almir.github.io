@@ -12,7 +12,7 @@ categoria: "css"
 <h1>Como aprender CSS</h1>
 <i className="bi bi-clock-fill mr-xs"></i><span> 5 min · </span><i className="bi bi-calendar mr-xs"></i><span> 07 Mai, 2023</span>
 
-<img src="/desola-lanre-ologun-USp4Gzr-Hdw-unsplash.jpg" className="headline" alt="blog headline by desola lanre on unsplash" title="By Aaron Burden on Unsplash">
+<img src="/desola-lanre-ologun-USp4Gzr-Hdw-unsplash.jpg" className="headline" alt="blog headline by desola lanre on unsplash" title="By Desola Lanre on Unsplash">
 
 <blockquote>O CSS é uma linguagem de estilização crucial para um desenvolvedor front-end, sem ela o site não possui vida e nem personalidade.</blockquote>
 
