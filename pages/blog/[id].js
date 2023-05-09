@@ -130,7 +130,7 @@ export default function Post({ post }) {
             emitMetadata="0"
             theme={
               theme === "dark"
-                ? `${baseUrl}/comments-dark.css`
+                ? "dark_high_contrast"
                 : "light_high_contrast"
             }
             lang="pt"
