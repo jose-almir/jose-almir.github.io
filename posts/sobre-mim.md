@@ -56,7 +56,7 @@ Caso queira dar sugestões de melhoria do blog, ou queira sugerir algum tema par
     <li><span className="closed">Suporte a RSS</span>;</li>
     <li>Suporte ao idioma inglês;</li>
     <li>Suporte a busca;</li>
-    <li>Suporte a comentários;</li>
+    <li><span className="closed">Suporte a comentários</span>;</li>
 </ul>
 
 **Observação:** Estes tópicos não estão ordenados por prioridade.
