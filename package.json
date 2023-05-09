@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@giscus/react": "^2.2.8",
     "bootstrap-icons": "^1.10.5",
     "gray-matter": "^4.0.3",
     "next": "13.2.4",
