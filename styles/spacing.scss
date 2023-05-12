@@ -142,6 +142,13 @@
   }
 }
 
+.container.blog {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 32px;
+  box-sizing: border-box;
+}
+
 .container {
   max-width: 1200px;
   margin: 0 auto;
@@ -150,20 +157,33 @@
 }
 
 @media screen and (min-width: 768px) {
-  .container {
+  .container.blog {
     padding: 0 96px;
+  }
+
+  .container {
+    padding: 0 32px;
   }
 }
 
 @media screen and (min-width: 992px) {
-  .container {
+  .container.blog {
     padding: 0 156px;
+  }
+
+  .container {
+    padding: 0 64px;
   }
 }
 
 @media screen and (min-width: 1200px) {
-  .container {
+  .container.blog {
     max-width: 1400px;
     padding: 0 256px;
+  }
+
+  .container {
+    max-width: 1400px;
+    padding: 0 72px;
   }
 }

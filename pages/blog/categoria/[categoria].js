@@ -1,7 +1,6 @@
 import { getPosts } from "@/lib/posts";
 import Head from "next/head";
 import { Card } from "@/components/card";
-import { useRouter } from "next/router";
 import Link from "next/link";
 
 export async function getStaticPaths() {
@@ -24,7 +23,6 @@ export async function getStaticProps({ params: { categoria } }) {
 }
 
 export default function Categoria({ posts, categoria }) {
-  const router = useRouter();
   return (
     <>
       <Head>

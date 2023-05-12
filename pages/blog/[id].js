@@ -44,7 +44,7 @@ export default function Post({ post }) {
         <meta property="og:description" content={post.desc} />
         <meta property="og:image" content={`${baseUrl}${post.thumbnail}`} />
       </Head>
-      <div className="container">
+      <div className="container blog">
         <div className="pt-md">
           <Link className="back-btn" href="/blog">
             <i className="bi bi-arrow-left"></i> Voltar

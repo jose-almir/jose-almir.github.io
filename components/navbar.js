@@ -11,7 +11,6 @@ export function Navbar() {
   const [mounted, setMounted] = useState(false);
 
   const handleScroll = () => {
-    console.log("test");
     if (window.scrollY > lastScrollY) {
       setShow(false);
     } else {
