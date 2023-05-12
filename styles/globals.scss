@@ -115,3 +115,10 @@ a.back-btn {
   transition: background-color 0.1s, color 0.1s, border-color 0.1s,
     box-shadow 0.1s;
 }
+
+@media screen and (max-width: 576px) {
+  body {
+    margin-top: 0;
+    margin-bottom: 64px;
+  }
+}
