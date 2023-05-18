@@ -12,7 +12,7 @@ body {
   font-family: $font-family;
   background-color: $background-dark;
   color: rgba($color: #ffffff, $alpha: 0.87);
-  margin-top: 64px;
+  margin-top: 72px;
 }
 
 [data-theme="light"] body {
@@ -124,6 +124,10 @@ a.back-btn {
   body {
     margin-top: 0;
     margin-bottom: 64px;
+  }
+
+  .hr {
+    display: none;
   }
 }
 

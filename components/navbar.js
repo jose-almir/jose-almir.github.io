@@ -37,7 +37,8 @@ export function Navbar() {
     <header className={styles.navbar + hiddenStyle}>
       <div className={styles.brand}>
         <Link href="/" title="Navegar para tela principal">
-          <Image src="/brand.png" width={42} height={42} alt="Brand" />{" "}
+          <div className={styles.avatar}></div>
+          {/* <Image src="/avatar-line.png" width={42} height={42} alt="Brand" />{" "} */}
         </Link>
       </div>
       <nav className={styles.navlinks}>

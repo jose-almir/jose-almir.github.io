@@ -1,5 +1,5 @@
 .navbar {
-  height: 64px;
+  height: 72px;
   background-color: rgba($color: $background-dark, $alpha: 0.25);
   backdrop-filter: blur(10px);
   display: flex;
@@ -13,6 +13,16 @@
   border-bottom-right-radius: 8px;
   transition: transform 0.5s ease-in-out;
 
+  .avatar {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    background-image: url("/avatar-color.png");
+    background-position: center;
+    background-size: cover;
+    filter: contrast(1.2);
+  }
+
   .brand {
     padding: 8px;
     a {
@@ -21,13 +31,6 @@
       display: flex;
       align-items: center;
       gap: 8px;
-
-      &:hover {
-        img {
-          transform: rotate(360deg);
-          transition: transform 0.5s ease-in-out;
-        }
-      }
     }
   }
 
@@ -83,8 +86,8 @@
   }
 
   &.hidden {
-    transform: translateY(-64px);
-    transition: transform 0.5s ease-in-out;
+    transform: translateY(-72px);
+    transition: transform 0.3s ease-in-out;
   }
 }
 
@@ -142,8 +145,8 @@
     border-top-right-radius: 8px;
 
     &.hidden {
-      transform: translateY(64px);
-      transition: transform 0.5s ease-in-out;
+      transform: translateY(72px);
+      transition: transform 0.3s ease-in-out;
     }
   }
 }
