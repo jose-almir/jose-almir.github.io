@@ -1,5 +1,5 @@
-import { Footer } from "@/components/footer";
-import { Layout } from "@/components/layout";
+import { Footer } from "@/components/Footer";
+import { Layout } from "@/components/Layout";
 import "@/styles/globals.scss";
 import { ThemeProvider } from "next-themes";
 import Head from "next/head";

@@ -1,7 +1,7 @@
+import { Seo } from "@/components/Seo";
 import { getPost, getPosts } from "@/lib/posts";
 import Giscus from "@giscus/react";
 import { useTheme } from "next-themes";
-import Head from "next/head";
 import Link from "next/link";
 import { ReactMarkdown } from "react-markdown/lib/react-markdown";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
@@ -35,15 +35,12 @@ export default function Post({ post }) {
 
   return (
     <>
-      <Head>
-        <title>{`${post.title} | jose-almir`}</title>
-        <meta name="description" content={post.desc} />
-        <meta name="keywords" content={post.tags} />
-        <meta name="author" content="José Almir" />
-        <meta property="og:title" content={post.title} />
-        <meta property="og:description" content={post.desc} />
-        <meta property="og:image" content={`${baseUrl}${post.thumbnail}`} />
-      </Head>
+      <Seo
+        title={`${post.title} | jose-almir`}
+        description={post.desc}
+        keywords={post.tags}
+        image={`${baseUrl}${post.thumbnail}`}
+      />
       <div className="container blog">
         <div className="pt-md">
           <Link className="back-btn" href="/blog">
@@ -86,11 +83,7 @@ export default function Post({ post }) {
             strict="0"
             reactionsEnabled="0"
             emitMetadata="0"
-            theme={
-              theme === "dark"
-                ? "dark"
-                : "light"
-            }
+            theme={theme === "dark" ? "dark" : "light"}
             lang="pt"
             inputPosition="top"
           />

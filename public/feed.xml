@@ -2,36 +2,36 @@
     <channel>
         <title><![CDATA[blog | jose-almir]]></title>
         <description><![CDATA[blog | jose-almir]]></description>
-        <link>https://jose-almir.github.io/</link>
+        <link>https://jose-almir.github.io</link>
         <image>
-            <url>https://jose-almir.github.io//brand.png</url>
+            <url>https://jose-almir.github.io/brand.png</url>
             <title>blog | jose-almir</title>
-            <link>https://jose-almir.github.io/</link>
+            <link>https://jose-almir.github.io</link>
         </image>
         <generator>RSS for Node</generator>
-        <lastBuildDate>Thu, 18 May 2023 02:35:56 GMT</lastBuildDate>
-        <atom:link href="https://jose-almir.github.io//feed.xml" rel="self" type="application/rss+xml"/>
-        <pubDate>Thu, 18 May 2023 02:35:56 GMT</pubDate>
+        <lastBuildDate>Sat, 20 May 2023 00:59:23 GMT</lastBuildDate>
+        <atom:link href="https://jose-almir.github.io/feed.xml" rel="self" type="application/rss+xml"/>
+        <pubDate>Sat, 20 May 2023 00:59:23 GMT</pubDate>
         <copyright><![CDATA[Todos os direitos reservados 2023, jose-almir]]></copyright>
         <item>
             <title><![CDATA[Como criar um File Picker com React?]]></title>
             <description><![CDATA[Todos nós conhecemos o clássico input file, sua customização pode ser complicada caso queiramos uma estilização mais moderna. O componente que irei mostrar aqui pode ser facilmente aplicado ao seu projeto React, uma vez que só utiliza recursos da biblioteca padrão.]]></description>
-            <link>https://jose-almir.github.io//blog/file-picker-react</link>
-            <guid isPermaLink="true">https://jose-almir.github.io//blog/file-picker-react</guid>
+            <link>https://jose-almir.github.io/blog/file-picker-react</link>
+            <guid isPermaLink="true">https://jose-almir.github.io/blog/file-picker-react</guid>
             <pubDate>Fri, 12 May 2023 03:00:00 GMT</pubDate>
         </item>
         <item>
             <title><![CDATA[Como aprender CSS]]></title>
             <description><![CDATA[O CSS é uma linguagem de estilização crucial para um desenvolvedor front-end, sem ela o site não possui vida e nem personalidade.]]></description>
-            <link>https://jose-almir.github.io//blog/como-aprender-css</link>
-            <guid isPermaLink="true">https://jose-almir.github.io//blog/como-aprender-css</guid>
+            <link>https://jose-almir.github.io/blog/como-aprender-css</link>
+            <guid isPermaLink="true">https://jose-almir.github.io/blog/como-aprender-css</guid>
             <pubDate>Sun, 07 May 2023 03:00:00 GMT</pubDate>
         </item>
         <item>
             <title><![CDATA[Sobre mim]]></title>
             <description><![CDATA[Quando a paixão por escrever e a vontade de compartilhar ideias se encontram em um desenvolvedor, nasce um blog.]]></description>
-            <link>https://jose-almir.github.io//blog/sobre-mim</link>
-            <guid isPermaLink="true">https://jose-almir.github.io//blog/sobre-mim</guid>
+            <link>https://jose-almir.github.io/blog/sobre-mim</link>
+            <guid isPermaLink="true">https://jose-almir.github.io/blog/sobre-mim</guid>
             <pubDate>Sat, 06 May 2023 03:00:00 GMT</pubDate>
         </item>
     </channel>

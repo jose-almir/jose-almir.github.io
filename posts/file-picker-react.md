@@ -1,7 +1,7 @@
 ---
 title: "Como criar um File Picker com React?"
 date: "2023-05-12T00:00:00"
-thumbnail: "/file-picker.png"
+thumbnail: "/blog/file-picker.png"
 desc: "Todos nós conhecemos o clássico input file, sua customização pode ser complicada caso queiramos uma estilização mais moderna. O componente que irei mostrar aqui pode ser facilmente aplicado ao seu projeto React, uma vez que só utiliza recursos da biblioteca padrão."
 tags: "react, frontend"
 categoria: "react"
@@ -18,7 +18,7 @@ Todos nós conhecemos o clássico `<input type="file" />`, ele é um dos element
 
 A implementação completa está disponível no <a href="https://stackblitz.com/edit/react-wuolto" target="_blank">Stackblitz</a>.
 
-<img src="/screenshot-file-picker.png" className="image" alt="File Picker"/>
+<img src="/blog/screenshot-file-picker.png" className="image" alt="File Picker"/>
 
 ## Estilização base
 
@@ -221,4 +221,4 @@ export function FilePicker({ multiple, accept, onSelect }) {
 
 As melhorias foram realizadas na **linha 5**, com um state para saber quando os arquivos foram selecionados ou não. Nas **linhas 23-32** mostramos um ícone e texto diferentes de acordo com o state. E na **linha 33** adicionamos um elemento básico para mostrar quantos arquivos foram selecionados, bem como a possibilidade de "limpar". Para isso, na **linha 37**, o onClick reseta todos os valores, inclusive da callback `onSelect`.
 
-<img src="/screenshot-file-picker-2.png" className="image" alt="File Picker"/>
+<img src="/blog/screenshot-file-picker-2.png" className="image" alt="File Picker"/>

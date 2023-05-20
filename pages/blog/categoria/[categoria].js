@@ -1,7 +1,7 @@
 import { getPosts } from "@/lib/posts";
-import Head from "next/head";
-import { Card } from "@/components/card";
+import { Card } from "@/components/Card";
 import Link from "next/link";
+import { Seo } from "@/components/Seo";
 
 export async function getStaticPaths() {
   const categorias = getPosts().map((p) => p.categoria);
@@ -25,22 +25,7 @@ export async function getStaticProps({ params: { categoria } }) {
 export default function Categoria({ posts, categoria }) {
   return (
     <>
-      <Head>
-        <title>{`categoria: ${categoria} | jose-almir`}</title>
-        <meta
-          name="description"
-          content="Meu blog pessoal destinado a compartilhar ideias, experiências e conhecimentos."
-        />
-        <meta
-          property="og:title"
-          content={`categoria: ${categoria} | jose-almir`}
-        />
-        <meta
-          property="og:description"
-          content="Meu blog pessoal destinado a compartilhar ideias, experiências e conhecimentos."
-        />
-        <meta property="og:image" content="/potato.png" />
-      </Head>
+      <Seo title={`categoria: ${categoria} | jose-almir`} />
       <div className="container ">
         <Link href="/blog" className="back-btn">
           <i className="bi bi-arrow-left"></i> Voltar

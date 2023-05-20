@@ -1,0 +1,5 @@
+User-agent: *
+Disallow:
+
+Host: https://jose-almir.github.io
+Sitemap: https://jose-almir.github.io/sitemap.xml

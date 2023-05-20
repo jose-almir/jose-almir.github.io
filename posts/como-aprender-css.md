@@ -1,7 +1,7 @@
 ---
 title: "Como aprender CSS"
 date: "2023-05-07T00:00:00"
-thumbnail: "/desola-lanre-ologun-USp4Gzr-Hdw-unsplash.jpg"
+thumbnail: "/blog/desola-lanre-ologun-USp4Gzr-Hdw-unsplash.jpg"
 desc: "O CSS é uma linguagem de estilização crucial para um desenvolvedor front-end, sem ela o site não possui vida e nem personalidade."
 tags: "css, design"
 categoria: "css"
@@ -11,7 +11,7 @@ categoria: "css"
 <h1>Como aprender CSS</h1>
 <i className="bi bi-clock-fill mr-xs"></i><span> 5 min · </span><i className="bi bi-calendar mr-xs"></i><span> 07 Mai, 2023</span>
 
-<img src="/desola-lanre-ologun-USp4Gzr-Hdw-unsplash.jpg" className="headline" alt="blog headline by desola lanre on unsplash" title="By Desola Lanre on Unsplash">
+<img src="/blog/desola-lanre-ologun-USp4Gzr-Hdw-unsplash.jpg" className="headline" alt="blog headline by desola lanre on unsplash" title="By Desola Lanre on Unsplash">
 
 <blockquote>O CSS é uma linguagem de estilização crucial para um desenvolvedor front-end, sem ela o site não possui vida e nem personalidade.</blockquote>
 
@@ -51,7 +51,7 @@ Entender a hierarquia dos elementos de uma página pode te ajudar a simplificar 
 
 Existem diversas formas de selecionar elementos em uma página HTML desde usar seletores de elementos, a criar um seletor por id. Porém existem outras formas que podem ser úteis em situações específicas. Esta documentação do <a href="https://developer.mozilla.org/pt-BR/docs/Web/CSS/CSS_Selectors" target="_blank">MDN</a> pode ser útil para você entender quais as possibilidades. Outra dica para praticar, é um jogo de navegador chamado <a href="https://flukeout.github.io/" target="_blank">CSS Diner</a>, ele me ajudou muito neste processo de pensar no melhor seletor e enxergar a hierarquia dos elementos de uma página.
 
-<img src="/screenshot-css-diner.png" className="image" alt="CSS Diner"/>
+<img src="/blog/screenshot-css-diner.png" className="image" alt="CSS Diner"/>
 
 ## Um relato pessoal
 

@@ -1,7 +1,7 @@
 ---
 title: "Sobre mim"
 date: "2023-05-06T00:00:00"
-thumbnail: "/aaron-burden-xG8IQMqMITM-unsplash.jpg"
+thumbnail: "/blog/aaron-burden-xG8IQMqMITM-unsplash.jpg"
 desc: "Quando a paixão por escrever e a vontade de compartilhar ideias se encontram em um desenvolvedor, nasce um blog."
 tags: "ideias, introdução"
 categoria: "ideias"
@@ -11,7 +11,7 @@ categoria: "ideias"
 <h1>Sobre mim</h1>
 <i className="bi bi-clock-fill mr-xs"></i><span> 2 min · </span><i className="bi bi-calendar mr-xs"></i><span> 06 Mai, 2023</span>
 
-<img src="/aaron-burden-xG8IQMqMITM-unsplash.jpg" className="headline" alt="blog headline by aaron burden on unsplash" title="By Aaron Burden on Unsplash">
+<img src="/blog/aaron-burden-xG8IQMqMITM-unsplash.jpg" className="headline" alt="blog headline by aaron burden on unsplash" title="By Aaron Burden on Unsplash">
 
 <blockquote>Quando a paixão por escrever e a vontade de compartilhar ideias se encontram em um desenvolvedor, nasce um blog.</blockquote>
 
