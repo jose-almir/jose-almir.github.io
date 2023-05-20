@@ -1,11 +1,3 @@
-.full-height {
-  height: calc(100vh - 72px - 200px);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
-
 .presentation {
   display: flex;
   justify-content: center;
@@ -17,12 +9,8 @@
   }
 
   .avatar-presentation {
-    background-image: url("/profile/me.png"), 
-      linear-gradient(
-        -45deg,
-        $accent,
-        $primary,
-      );
+    background-image: url("/profile/me.png"),
+      linear-gradient(-45deg, $accent, $primary);
     background-size: cover;
     background-position: center;
     background-color: $primary;
@@ -67,43 +55,6 @@
   }
 }
 
-@keyframes typing {
-  from {
-    width: 0;
-  }
-  to {
-    width: 100%;
-  }
-}
-
-@keyframes blink {
-  0% {
-    opacity: 1;
-  }
-  50% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-}
-
-.typing-animation {
-  position: relative;
-  overflow: hidden;
-  animation: typing 2s steps(40, end);
-}
-
-.cursor {
-  position: absolute;
-  bottom: 0;
-  right: -5px;
-  width: 2px;
-  height: 1.1em;
-  background-color: $primary;
-  animation: blink 0.8s infinite;
-}
-
 .social {
   display: flex;
   justify-content: center;
@@ -146,11 +97,5 @@
         color: $background-lighter;
       }
     }
-  }
-}
-
-@media screen and (max-width: 576px) {
-  .full-height {
-    height: calc(100vh - 72px - 100px);
   }
 }

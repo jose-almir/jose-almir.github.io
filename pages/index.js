@@ -1,6 +1,6 @@
-import { useState, useEffect } from "react";
 import { Seo } from "@/components/Seo";
 import Link from "next/link";
+import { TypingAnimation } from "@/components/TypingAnimation";
 
 export default function Home() {
   return (
@@ -46,31 +46,3 @@ export default function Home() {
     </>
   );
 }
-
-const TypingAnimation = ({ text }) => {
-  const [displayText, setDisplayText] = useState("");
-
-  useEffect(() => {
-    let animationTimeout;
-    let textIndex = 0;
-
-    const animateText = () => {
-      if (textIndex <= text.length) {
-        setDisplayText(text.substring(0, textIndex));
-        textIndex++;
-        animationTimeout = setTimeout(animateText, 175);
-      }
-    };
-
-    animateText();
-
-    return () => clearTimeout(animationTimeout);
-  }, [text]);
-
-  return (
-    <span className="typing-animation">
-      {displayText}
-      <span className="cursor"></span>
-    </span>
-  );
-};

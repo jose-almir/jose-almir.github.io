@@ -1,0 +1,36 @@
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+@keyframes blink {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.typing-animation {
+  position: relative;
+  overflow: hidden;
+  animation: typing 2s steps(40, end);
+}
+
+.cursor {
+  position: absolute;
+  bottom: 0;
+  right: -5px;
+  width: 2px;
+  height: 1.1em;
+  background-color: $primary;
+  animation: blink 0.8s infinite;
+}
