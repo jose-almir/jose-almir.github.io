@@ -37,13 +37,12 @@ export function Navbar() {
       <div className={styles.brand}>
         <Link href="/" title="Navegar para tela principal">
           <div className={styles.avatar}></div>
-          {/* <Image src="/avatar-line.png" width={42} height={42} alt="Brand" />{" "} */}
         </Link>
       </div>
       <nav className={styles.navlinks}>
-        <Link href="/portfolio" title="Navegar para tela sobre">
+        {/* <Link href="/portfolio" title="Navegar para tela sobre">
           Portfólio
-        </Link>
+        </Link> */}
         <Link href="/blog" title="Navegar para tela sobre">
           Blog
         </Link>

@@ -1,0 +1,156 @@
+.full-height {
+  height: calc(100vh - 72px - 200px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.presentation {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .title {
+    color: $background-light;
+    text-align: center;
+  }
+
+  .avatar-presentation {
+    background-image: url("/profile/me.png"), 
+      linear-gradient(
+        -45deg,
+        $accent,
+        $primary,
+      );
+    background-size: cover;
+    background-position: center;
+    background-color: $primary;
+    min-width: 200px;
+    max-width: 300px;
+    aspect-ratio: 1 / 1;
+    border-radius: 50%;
+  }
+
+  .separator-presentation {
+    width: 12px;
+    height: 120px;
+    background-color: $primary;
+    margin: 0 12px;
+  }
+
+  .text-presentation {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    .name {
+      color: $primary;
+    }
+
+    .desc {
+      color: $background-light;
+      font-size: 1.5rem;
+      text-align: center;
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .presentation {
+    flex-direction: column;
+
+    .separator-presentation {
+      display: none;
+    }
+  }
+}
+
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+@keyframes blink {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.typing-animation {
+  position: relative;
+  overflow: hidden;
+  animation: typing 2s steps(40, end);
+}
+
+.cursor {
+  position: absolute;
+  bottom: 0;
+  right: -5px;
+  width: 2px;
+  height: 1.1em;
+  background-color: $primary;
+  animation: blink 0.8s infinite;
+}
+
+.social {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 24px;
+
+  .social-item {
+    font-size: 32px;
+    color: $accent;
+    margin: 0 12px;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+
+    &:hover {
+      transform: scale(1.2);
+    }
+  }
+}
+
+[data-theme="light"] {
+  .presentation {
+    .separator-presentation {
+      background-color: $background-lighter;
+    }
+
+    .text-presentation {
+      .title {
+        color: $background-lighter;
+      }
+
+      .desc {
+        color: $background-lighter;
+      }
+    }
+  }
+
+  .social {
+    .social-item {
+      a {
+        color: $background-lighter;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .full-height {
+    height: calc(100vh - 72px - 100px);
+  }
+}
