@@ -145,6 +145,10 @@ a.back-btn {
   justify-content: center;
 }
 
+.full-height.nofooter {
+  height: calc(100vh - 72px);
+}
+
 @media screen and (max-width: 576px) {
   .full-height {
     height: calc(100vh - 72px - 100px);
