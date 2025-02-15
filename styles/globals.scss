@@ -69,10 +69,10 @@ a.back-btn {
 
   blockquote {
     border-left: 4px solid $accent;
-    padding-left: 16px;
+    padding: 16px;
     margin-left: 0;
-    font-style: italic;
-    font-size: 1.1rem;
+    line-height: 1.25;
+    font-size: 1.2rem;
     background-color: rgba($color: $background-light, $alpha: 0.05);
   }
 

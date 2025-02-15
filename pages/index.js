@@ -31,7 +31,7 @@ export default function Home() {
               </a>
             </span>
             <span className="social-item">
-              <a href="https://www.instagram.com/jose.almir23/" target="_blank">
+              <a href="https://www.instagram.com/almir_dev/" target="_blank">
                 <i className="bi bi-instagram"></i>
               </a>
             </span>

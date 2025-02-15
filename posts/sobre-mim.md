@@ -55,7 +55,7 @@ Caso queira dar sugestões de melhoria do blog, ou queira sugerir algum tema par
     <li><span className="closed">Suporte a dark/light mode</span>;</li>
     <li><span className="closed">Suporte a RSS</span>;</li>
     <li>Suporte ao idioma inglês;</li>
-    <li>Suporte a busca;</li>
+    <li><span className="closed">Suporte a busca</span> [Por ser estático não é possível];</li>
     <li><span className="closed">Suporte a comentários</span>;</li>
 </ul>
 
