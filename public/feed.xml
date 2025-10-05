@@ -9,30 +9,23 @@
             <link>https://jose-almir.github.io</link>
         </image>
         <generator>RSS for Node</generator>
-        <lastBuildDate>Sat, 15 Feb 2025 13:11:23 GMT</lastBuildDate>
+        <lastBuildDate>Sun, 05 Oct 2025 01:21:54 GMT</lastBuildDate>
         <atom:link href="https://jose-almir.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-        <pubDate>Sat, 15 Feb 2025 13:11:23 GMT</pubDate>
+        <pubDate>Sun, 05 Oct 2025 01:21:54 GMT</pubDate>
         <copyright><![CDATA[Todos os direitos reservados 2025, jose-almir]]></copyright>
         <item>
-            <title><![CDATA[Como criar um File Picker com React?]]></title>
-            <description><![CDATA[Todos nós conhecemos o clássico input file, sua customização pode ser complicada caso queiramos uma estilização mais moderna. O componente que irei mostrar aqui pode ser facilmente aplicado ao seu projeto React, uma vez que só utiliza recursos da biblioteca padrão.]]></description>
-            <link>https://jose-almir.github.io/blog/file-picker-react</link>
-            <guid isPermaLink="true">https://jose-almir.github.io/blog/file-picker-react</guid>
-            <pubDate>Fri, 12 May 2023 03:00:00 GMT</pubDate>
+            <title><![CDATA[Um novo ciclo no blog]]></title>
+            <description><![CDATA[Depois de alguns anos observando, aprendendo e refinando minhas ideias, decidi começar de novo. As postagens antigas ficam para trás, eram parte de um caminho, mas não definem o próximo passo.]]></description>
+            <link>https://jose-almir.github.io/blog/novo-ciclo-blog</link>
+            <guid isPermaLink="true">https://jose-almir.github.io/blog/novo-ciclo-blog</guid>
+            <pubDate>Sat, 04 Oct 2025 03:00:00 GMT</pubDate>
         </item>
         <item>
-            <title><![CDATA[Como aprender CSS]]></title>
-            <description><![CDATA[O CSS é uma linguagem de estilização crucial para um desenvolvedor front-end, sem ela o site não possui vida e nem personalidade.]]></description>
-            <link>https://jose-almir.github.io/blog/como-aprender-css</link>
-            <guid isPermaLink="true">https://jose-almir.github.io/blog/como-aprender-css</guid>
-            <pubDate>Sun, 07 May 2023 03:00:00 GMT</pubDate>
-        </item>
-        <item>
-            <title><![CDATA[Sobre mim]]></title>
-            <description><![CDATA[Quando a paixão por escrever e a vontade de compartilhar ideias se encontram em um desenvolvedor, nasce um blog.]]></description>
-            <link>https://jose-almir.github.io/blog/sobre-mim</link>
-            <guid isPermaLink="true">https://jose-almir.github.io/blog/sobre-mim</guid>
-            <pubDate>Sat, 06 May 2023 03:00:00 GMT</pubDate>
+            <title><![CDATA[Purismo vs. Pragmatismo]]></title>
+            <description><![CDATA[Todo código carrega uma escolha: seguir regras à risca ou resolver o problema com o que funciona. Nesta reflexão, exploro como essas duas abordagens moldam nossa maneira de programar, decidir e até aprender.]]></description>
+            <link>https://jose-almir.github.io/blog/purismo-vs-pragmatismo</link>
+            <guid isPermaLink="true">https://jose-almir.github.io/blog/purismo-vs-pragmatismo</guid>
+            <pubDate>Mon, 29 Sep 2025 03:00:00 GMT</pubDate>
         </item>
     </channel>
 </rss>

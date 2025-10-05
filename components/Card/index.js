@@ -10,7 +10,7 @@ export function Card({ post }) {
         <span className={styles.postedAt}>
           <span>
             <i className="bi bi-calendar mr-xs"></i>
-            {new Date(post.date).toLocaleDateString()}
+            {new Date(post.date).toLocaleDateString('pt-BR')}
           </span>
           <span>
             <Link
@@ -22,7 +22,7 @@ export function Card({ post }) {
           </span>
         </span>
         <p className={styles.cardText}>
-          {post.desc.trim().split(" ").slice(0, 14).join(" ") + "..."}
+          {post.desc.trim().split(" ").slice(0, 20).join(" ") + "..."}
         </p>
         <div className={styles.cardTags}>
           {post.tags.split(", ").map((tag, i) => (
