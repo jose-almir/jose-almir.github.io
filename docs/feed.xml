@@ -9,23 +9,23 @@
             <link>https://jose-almir.github.io</link>
         </image>
         <generator>RSS for Node</generator>
-        <lastBuildDate>Sun, 05 Oct 2025 01:53:00 GMT</lastBuildDate>
+        <lastBuildDate>Sun, 05 Oct 2025 03:04:01 GMT</lastBuildDate>
         <atom:link href="https://jose-almir.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-        <pubDate>Sun, 05 Oct 2025 01:53:00 GMT</pubDate>
+        <pubDate>Sun, 05 Oct 2025 03:04:01 GMT</pubDate>
         <copyright><![CDATA[Todos os direitos reservados 2025, jose-almir]]></copyright>
+        <item>
+            <title><![CDATA[Purismo e Pragmatismo]]></title>
+            <description><![CDATA[Encantado por conceitos como SOLID, DDD, Design Patterns caímos facilmente na tentação de encaixar o problema dentro da solução, quando na verdade deve ser o contrário: a solução precisa se dobrar ao problema.]]></description>
+            <link>https://jose-almir.github.io/blog/purismo-pragmatismo</link>
+            <guid isPermaLink="true">https://jose-almir.github.io/blog/purismo-pragmatismo</guid>
+            <pubDate>Sun, 05 Oct 2025 03:00:00 GMT</pubDate>
+        </item>
         <item>
             <title><![CDATA[Um novo ciclo no blog]]></title>
             <description><![CDATA[Depois de alguns anos observando, aprendendo e refinando minhas ideias, decidi começar de novo. As postagens antigas ficam para trás, eram parte de um caminho, mas não definem o próximo passo.]]></description>
             <link>https://jose-almir.github.io/blog/novo-ciclo-blog</link>
             <guid isPermaLink="true">https://jose-almir.github.io/blog/novo-ciclo-blog</guid>
             <pubDate>Sat, 04 Oct 2025 03:00:00 GMT</pubDate>
-        </item>
-        <item>
-            <title><![CDATA[Purismo vs. Pragmatismo]]></title>
-            <description><![CDATA[Todo código carrega uma escolha: seguir regras à risca ou resolver o problema com o que funciona. Nesta reflexão, exploro como essas duas abordagens moldam nossa maneira de programar, decidir e até aprender.]]></description>
-            <link>https://jose-almir.github.io/blog/purismo-vs-pragmatismo</link>
-            <guid isPermaLink="true">https://jose-almir.github.io/blog/purismo-vs-pragmatismo</guid>
-            <pubDate>Mon, 29 Sep 2025 03:00:00 GMT</pubDate>
         </item>
     </channel>
 </rss>

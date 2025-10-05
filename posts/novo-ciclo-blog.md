@@ -5,11 +5,12 @@ thumbnail: "/blog/novo-ciclo-blog-thumb.png"
 desc: "Depois de alguns anos observando, aprendendo e refinando minhas ideias, decidi começar de novo. As postagens antigas ficam para trás, eram parte de um caminho, mas não definem o próximo passo."
 tags: "ideias, introdução"
 categoria: "ideias"
+hidden: "yes"
 ---
 
 <section className="intro">
 <h1>Um novo ciclo no Blog</h1>
-<i className="bi bi-clock-fill mr-xs"></i><span> 1 min · </span><i className="bi bi-calendar mr-xs"></i><span> 25 Set, 2025</span>
+<i className="bi bi-clock-fill mr-xs"></i><span> 1 min · </span><i className="bi bi-calendar mr-xs"></i><span> 04 Out, 2025</span>
 <img src="/blog/novo-ciclo-blog-thumb.png" className="headline" alt="blog headline" title="Powered by Lovart AI">
 </section>
 
