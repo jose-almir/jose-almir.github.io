@@ -9,10 +9,17 @@
             <link>https://jose-almir.github.io</link>
         </image>
         <generator>RSS for Node</generator>
-        <lastBuildDate>Sun, 05 Oct 2025 03:04:01 GMT</lastBuildDate>
+        <lastBuildDate>Mon, 09 Mar 2026 15:42:13 GMT</lastBuildDate>
         <atom:link href="https://jose-almir.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-        <pubDate>Sun, 05 Oct 2025 03:04:01 GMT</pubDate>
-        <copyright><![CDATA[Todos os direitos reservados 2025, jose-almir]]></copyright>
+        <pubDate>Mon, 09 Mar 2026 15:42:13 GMT</pubDate>
+        <copyright><![CDATA[Todos os direitos reservados 2026, jose-almir]]></copyright>
+        <item>
+            <title><![CDATA[Um CMS que usa o GitHub como banco de dados]]></title>
+            <description><![CDATA[A ideia de conteúdo gerenciado por arquivos não era nova pra mim, mas este portfólio foi a oportunidade de levar o conceito a outro nível: construir um CMS simples, usando o próprio repositório GitHub como banco de dados]]></description>
+            <link>https://jose-almir.github.io/blog/cms-portfolio</link>
+            <guid isPermaLink="true">https://jose-almir.github.io/blog/cms-portfolio</guid>
+            <pubDate>Tue, 10 Mar 2026 03:00:00 GMT</pubDate>
+        </item>
         <item>
             <title><![CDATA[Purismo e Pragmatismo]]></title>
             <description><![CDATA[Encantado por conceitos como SOLID, DDD, Design Patterns caímos facilmente na tentação de encaixar o problema dentro da solução, quando na verdade deve ser o contrário: a solução precisa se dobrar ao problema.]]></description>
