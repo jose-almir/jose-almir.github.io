@@ -7,6 +7,7 @@ import { ReactMarkdown } from "react-markdown/lib/react-markdown";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { coldarkDark as codeDark, coldarkCold as codeLight } from "react-syntax-highlighter/dist/cjs/styles/prism";
 import rehypeRaw from "rehype-raw";
+import { useState, useEffect, useCallback } from "react";
 
 const baseUrl =
   process.env.NODE_ENV === "production"
@@ -30,8 +31,61 @@ export function getStaticProps({ params: { id } }) {
   }
 }
 
+function CopyButton({ code }) {
+  const [copied, setCopied] = useState(false);
+
+  const handleCopy = useCallback(() => {
+    navigator.clipboard.writeText(code).then(() => {
+      setCopied(true);
+      setTimeout(() => setCopied(false), 2000);
+    });
+  }, [code]);
+
+  return (
+    <button
+      onClick={handleCopy}
+      title="Copiar código"
+      style={{
+        position: "absolute",
+        top: "10px",
+        right: "10px",
+        background: copied ? "rgba(100,200,100,0.2)" : "rgba(255,255,255,0.1)",
+        border: "1px solid rgba(255,255,255,0.15)",
+        borderRadius: "6px",
+        color: copied ? "#7ee787" : "rgba(255,255,255,0.6)",
+        cursor: "pointer",
+        padding: "4px 10px",
+        fontSize: "0.75rem",
+        fontFamily: "inherit",
+        transition: "all 0.2s ease",
+        zIndex: 1,
+      }}
+    >
+      {copied ? (
+        <><i className="bi bi-check2" style={{ marginRight: "4px" }}></i>Copiado</>
+      ) : (
+        <><i className="bi bi-clipboard" style={{ marginRight: "4px" }}></i>Copiar</>
+      )}
+    </button>
+  );
+}
+
 export default function Post({ post }) {
   const { theme } = useTheme();
+  const [scrollProgress, setScrollProgress] = useState(0);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const el = document.documentElement;
+      const scrollTop = el.scrollTop || document.body.scrollTop;
+      const scrollHeight = el.scrollHeight - el.clientHeight;
+      const progress = scrollHeight > 0 ? (scrollTop / scrollHeight) * 100 : 0;
+      setScrollProgress(progress);
+    };
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   return (
     <>
@@ -41,26 +95,44 @@ export default function Post({ post }) {
         keywords={post.tags}
         image={`${baseUrl}${post.thumbnail}`}
       />
+      {/* Scroll progress bar */}
+      <div
+        className="scroll-progress-bar"
+        style={{ width: `${scrollProgress}%` }}
+        aria-hidden="true"
+      />
       <div className="container blog">
         <div className="pt-md">
-          <Link className="back-btn" href="/blog">
-            <i className="bi bi-arrow-left"></i> Voltar
-          </Link>
+          <span style={{ display: "flex", alignItems: "center", gap: "16px", marginBottom: "16px" }}>
+            <Link className="back-btn" href="/blog">
+              <i className="bi bi-arrow-left"></i> Voltar
+            </Link>
+            {post.readingTime && (
+              <span style={{ fontSize: "0.85rem", opacity: 0.55 }}>
+                <i className="bi bi-clock" style={{ marginRight: "5px" }}></i>
+                {post.readingTime} min de leitura
+              </span>
+            )}
+          </span>
           <ReactMarkdown
             className="blog-post"
             children={post.content}
             components={{
               code({ node, inline, className, children, ...props }) {
                 const match = /language-(\w+)/.exec(className || "");
+                const codeStr = String(children).replace(/\n$/, "");
                 return !inline && match ? (
-                  <SyntaxHighlighter
-                    children={String(children).replace(/\n$/, "")}
-                    style={theme === "dark" ? codeDark : codeLight}
-                    language={match[1]}
-                    showLineNumbers
-                    PreTag="div"
-                    {...props}
-                  />
+                  <div style={{ position: "relative" }}>
+                    <CopyButton code={codeStr} />
+                    <SyntaxHighlighter
+                      children={codeStr}
+                      style={theme === "dark" ? codeDark : codeLight}
+                      language={match[1]}
+                      showLineNumbers
+                      PreTag="div"
+                      {...props}
+                    />
+                  </div>
                 ) : (
                   <code className={className} {...props}>
                     {children}

@@ -10,7 +10,7 @@ categoria: "ideias"
 
 <section className="intro">
 <h1>Purismo e Pragmatismo</h1>
-<i className="bi bi-clock-fill mr-xs"></i><span> 5 min · </span><i className="bi bi-calendar mr-xs"></i><span> 05 Out, 2025</span>
+<i className="bi bi-calendar mr-xs"></i><span> 05 Out, 2025</span>
 <img src="/blog/purismo-pragmatismo-thumb.png" className="headline" alt="blog headline" title="Powered by Lovart AI">
 </section>
 

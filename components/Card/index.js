@@ -6,7 +6,7 @@ export function Card({ post }) {
     <div className={styles.card + " mt-md mb-md"}>
       <img className={styles.cardImage} src={post.thumbnail} alt="Imagem" />
       <div className={styles.cardContent}>
-        <h4 className="mt-xs mb-xs">{post.title}</h4>
+        <h4 className={styles.cardTitle}>{post.title}</h4>
         <span className={styles.postedAt}>
           <span>
             <i className="bi bi-calendar mr-xs"></i>
@@ -21,6 +21,12 @@ export function Card({ post }) {
             </Link>
           </span>
         </span>
+        {post.readingTime && (
+          <span className={styles.readingTime}>
+            <i className="bi bi-clock"></i>
+            {post.readingTime} min de leitura
+          </span>
+        )}
         <p className={styles.cardText}>
           {post.desc.trim().split(" ").slice(0, 20).join(" ") + "..."}
         </p>
@@ -29,10 +35,9 @@ export function Card({ post }) {
             <span key={i}>{tag}</span>
           ))}
         </div>
-        <hr />
         <Link href={`/blog/${post.id}`} className={styles.cardLink}>
           Ler mais
-          <i className={"bi " + styles.linkIcon}></i>
+          <i className="bi bi-arrow-right"></i>
         </Link>
       </div>
     </div>

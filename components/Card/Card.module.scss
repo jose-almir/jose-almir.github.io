@@ -3,96 +3,150 @@
   flex-direction: column;
   justify-content: space-between;
   width: 100%;
-  max-height: 500px;
-  max-width: 320px;
-  background-color: $background-lighter;
-  border-radius: 8px;
-  box-shadow: 0 2px 4px rgba($color: $background-dark, $alpha: 0.25);
+  max-height: 540px;
+  max-width: 340px;
+  background-color: transparent;
+  border-radius: 12px;
+  border: 1px solid rgba($color: #ffffff, $alpha: 0.08);
   overflow: hidden;
+  transition: border-color 0.25s ease, box-shadow 0.25s ease;
+
+  &:hover {
+    border-color: rgba($color: $accent, $alpha: 0.35);
+    box-shadow: 0 4px 24px rgba($color: $accent, $alpha: 0.1);
+  }
 }
 
 .cardImage {
   width: 100%;
-  height: 200px;
+  height: 180px;
   object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.card:hover .cardImage {
+  transform: scale(1.03);
 }
 
 .cardContent {
-  padding: 16px;
+  padding: 20px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
   color: $background-dark;
 }
 
+.cardTitle {
+  margin: 0;
+  font-size: 1.1rem;
+  font-weight: 700;
+  line-height: 1.4;
+  color: rgba($color: #ffffff, $alpha: 0.9);
+  transition: color 0.2s ease;
+
+  .card:hover & {
+    color: $accent;
+  }
+}
+
 .cardText {
-  font-size: 16px;
-  margin: 16px 0;
-  color: rgba($color: $background-light, $alpha: 0.87);
+  font-size: 0.9rem;
+  color: rgba($color: #ffffff, $alpha: 0.6);
   font-style: italic;
+  line-height: 1.6;
+  margin: 0;
 }
 
 .postedAt {
   display: flex;
   justify-content: space-between;
-  font-size: 14px;
-  color: rgba($color: $background-light, $alpha: 0.6);
+  align-items: center;
+  font-size: 0.78rem;
+  color: rgba($color: #ffffff, $alpha: 0.45);
   text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.readingTime {
+  font-size: 0.78rem;
+  color: rgba($color: #ffffff, $alpha: 0.45);
+  display: flex;
+  align-items: center;
+  gap: 4px;
 }
 
 a.cardLink {
   display: flex;
   justify-content: space-between;
-  color: rgba($color: $primary, $alpha: 1);
+  align-items: center;
+  color: $accent;
+  font-size: 0.85rem;
+  font-weight: 600;
   text-transform: uppercase;
+  letter-spacing: 0.06em;
   text-decoration: none;
-  transition: color 0.2s ease-in-out;
-
-  &:link {
-    ::before {
-      content: "\F136";
-    }
-  }
+  padding: 12px 20px;
+  border-top: 1px solid rgba($color: #ffffff, $alpha: 0.07);
+  transition: color 0.2s ease, gap 0.2s ease;
+  gap: 0;
 
   &:hover {
-    color: $accent;
+    color: lighten($accent, 12%);
+    gap: 6px;
   }
 }
 
 .cardTags {
   display: flex;
   flex-wrap: wrap;
-  margin-top: 16px;
+  gap: 6px;
 
   span {
-    margin-right: 8px;
-    margin-bottom: 8px;
-    padding: 4px 8px;
-    border-radius: 4px;
-    background-color: $primary;
-    color: $background-light;
-    font-size: 12px;
+    padding: 2px 8px;
+    border-radius: 99px;
+    background-color: rgba($color: $accent, $alpha: 0.12);
+    color: $accent;
+    font-size: 0.72rem;
     font-weight: 600;
     text-transform: uppercase;
+    letter-spacing: 0.05em;
   }
 }
 
 .cardCategoria {
-  color: rgba($color: $background-light, $alpha: 0.8);
+  color: rgba($color: $accent, $alpha: 0.8);
   font-weight: 600;
 }
 
 [data-theme="light"] {
   .card {
-    background-color: $background-light;
+    border-color: rgba($color: $background-dark, $alpha: 0.1);
+    background-color: rgba($color: white, $alpha: 0.5);
+
+    &:hover {
+      border-color: rgba($color: $accent, $alpha: 0.4);
+    }
+  }
+
+  .cardTitle {
+    color: rgba($color: $background-dark, $alpha: 0.9);
   }
 
   .cardText {
-    color: rgba($color: $background-dark, $alpha: 0.87);
-  }
-
-  .postedAt {
     color: rgba($color: $background-dark, $alpha: 0.6);
   }
 
+  .postedAt, .readingTime {
+    color: rgba($color: $background-dark, $alpha: 0.45);
+  }
+
+  a.cardLink {
+    border-top-color: rgba($color: $background-dark, $alpha: 0.08);
+  }
+
   .cardCategoria {
-    color: rgba($color: $background-dark, $alpha: 0.8);
+    color: rgba($color: $accent, $alpha: 0.8);
   }
 }
+

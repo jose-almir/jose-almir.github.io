@@ -8,7 +8,7 @@ categoria: "projetos"
 ---
 <section className="intro">
 <h1>Um CMS que usa o GitHub como banco de dados</h1>
-<i className="bi bi-clock-fill mr-xs"></i><span> 3 min · </span><i className="bi bi-calendar mr-xs"></i><span> 10 Mar, 2026</span>
+<i className="bi bi-calendar mr-xs"></i><span> 10 Mar, 2026</span>
 <img src="/blog/cms-portfolio-thumb.png" className="headline" alt="blog headline" title="Powered by Lovart AI">
 </section>
 
