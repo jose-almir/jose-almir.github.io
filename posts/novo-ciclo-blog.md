@@ -1,7 +1,7 @@
 ---
 title: "Um novo ciclo no blog"
 date: "2025-10-04T00:00:00"
-thumbnail: "/blog/novo-ciclo-blog-thumb.png"
+thumbnail: "/blog/novo-ciclo-blog/novo-ciclo-blog-thumb.png"
 desc: "Depois de alguns anos observando, aprendendo e refinando minhas ideias, decidi começar de novo. As postagens antigas ficam para trás, eram parte de um caminho, mas não definem o próximo passo."
 tags: "ideias, introdução"
 categoria: "ideias"
@@ -10,7 +10,7 @@ categoria: "ideias"
 <section className="intro">
 <h1>Um novo ciclo no Blog</h1>
 <i className="bi bi-calendar mr-xs"></i><span> 04 Out, 2025</span>
-<img src="/blog/novo-ciclo-blog-thumb.png" className="headline" alt="blog headline" title="Powered by Lovart AI">
+<img src="/blog/novo-ciclo-blog/novo-ciclo-blog-thumb.png" className="headline" alt="blog headline" title="Powered by Lovart AI">
 </section>
 
 

@@ -1,7 +1,7 @@
 ---
 title: "Purismo e Pragmatismo"
 date: "2025-10-05T00:00:00"
-thumbnail: "/blog/purismo-pragmatismo-thumb.png"
+thumbnail: "/blog/purismo-pragmatismo/purismo-pragmatismo-thumb.png"
 desc: "Encantado por conceitos como SOLID, DDD, Design Patterns caímos facilmente na tentação de encaixar o problema dentro da solução, quando na verdade deve ser o contrário: a solução precisa se dobrar ao problema."
 tags: "ideias, reflexão"
 categoria: "ideias"
@@ -11,7 +11,7 @@ categoria: "ideias"
 <section className="intro">
 <h1>Purismo e Pragmatismo</h1>
 <i className="bi bi-calendar mr-xs"></i><span> 05 Out, 2025</span>
-<img src="/blog/purismo-pragmatismo-thumb.png" className="headline" alt="blog headline" title="Powered by Lovart AI">
+<img src="/blog/purismo-pragmatismo/purismo-pragmatismo-thumb.png" className="headline" alt="blog headline" title="Powered by Lovart AI">
 </section>
 
 > Encantado por conceitos como SOLID, DDD, Design Patterns caímos facilmente na tentação de encaixar o problema dentro da solução, quando na verdade deve ser o contrário: a solução precisa se dobrar ao problema.

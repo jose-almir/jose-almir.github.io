@@ -1,7 +1,7 @@
 ---
 title: "Um CMS que usa o GitHub como banco de dados"
 date: "2026-03-10T00:00:00"
-thumbnail: "/blog/cms-portfolio-thumb.png"
+thumbnail: "/blog/cms-portfolio/cms-portfolio-thumb.png"
 desc: "A ideia de conteúdo gerenciado por arquivos não era nova pra mim, mas este portfólio foi a oportunidade de levar o conceito a outro nível: construir um CMS simples, usando o próprio repositório GitHub como banco de dados"
 tags: "projetos, arquitetura"
 categoria: "projetos"
@@ -9,7 +9,7 @@ categoria: "projetos"
 <section className="intro">
 <h1>Um CMS que usa o GitHub como banco de dados</h1>
 <i className="bi bi-calendar mr-xs"></i><span> 10 Mar, 2026</span>
-<img src="/blog/cms-portfolio-thumb.png" className="headline" alt="blog headline" title="Powered by Lovart AI">
+<img src="/blog/cms-portfolio/cms-portfolio-thumb.png" className="headline" alt="blog headline" title="Powered by Lovart AI">
 </section>
 
 > A ideia de conteúdo gerenciado por arquivos não era nova pra mim, mas este portfólio foi a oportunidade de levar o conceito a outro nível: construir um CMS simples, usando o próprio repositório GitHub como banco de dados.
@@ -31,7 +31,7 @@ Para um portfólio pessoal, isso é over-engineering. A solução foi usar o que
 ## Dois repositórios , um sistema
 
 <a href="https://arantia.art/pt" target="_blank">
-    <img src="/blog/portfolio-print.png" className="image" alt="Print do portfólio"/>
+    <img src="/blog/cms-portfolio/portfolio-print.png" className="image" alt="Print do portfólio"/>
 </a>
 
 O projeto é dividido em dois repositórios Next.js independentes:
@@ -47,10 +47,10 @@ Cada operação como adicionar, editar ou remover um item, gera um commit autom�
 <br />
 <br />
 Também podemos ver um pouco de como é o CMS privado:
-<img src="/blog/cms-print.png" className="image" alt="Print do CMS privado"/>
+<img src="/blog/cms-portfolio/cms-print.png" className="image" alt="Print do CMS privado"/>
 
 Assim fica o histórico de alterações:
-<img src="/blog/cms-commits.png" className="image" alt="Print do commits do CMS"/>
+<img src="/blog/cms-portfolio/cms-commits.png" className="image" alt="Print do commits do CMS"/>
 
 
 ## Por que isso funciona bem aqui
