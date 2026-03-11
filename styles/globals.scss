@@ -67,6 +67,11 @@ a.back-btn {
     filter: brightness(0.7);
   }
 
+  img.image {
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba($color: #000000, $alpha: 0.15);
+  }
+
   blockquote {
     border-left: 3px solid $accent;
     padding: 12px 20px;

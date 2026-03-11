@@ -5,9 +5,13 @@ import { useTheme } from "next-themes";
 import Link from "next/link";
 import { ReactMarkdown } from "react-markdown/lib/react-markdown";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
-import { coldarkDark as codeDark, coldarkCold as codeLight } from "react-syntax-highlighter/dist/cjs/styles/prism";
+import {
+  coldarkDark as codeDark,
+  coldarkCold as codeLight,
+} from "react-syntax-highlighter/dist/cjs/styles/prism";
 import rehypeRaw from "rehype-raw";
 import { useState, useEffect, useCallback } from "react";
+import mediumZoom from "medium-zoom";
 
 const baseUrl =
   process.env.NODE_ENV === "production"
@@ -62,9 +66,14 @@ function CopyButton({ code }) {
       }}
     >
       {copied ? (
-        <><i className="bi bi-check2" style={{ marginRight: "4px" }}></i>Copiado</>
+        <>
+          <i className="bi bi-check2" style={{ marginRight: "4px" }}></i>Copiado
+        </>
       ) : (
-        <><i className="bi bi-clipboard" style={{ marginRight: "4px" }}></i>Copiar</>
+        <>
+          <i className="bi bi-clipboard" style={{ marginRight: "4px" }}></i>
+          Copiar
+        </>
       )}
     </button>
   );
@@ -87,6 +96,15 @@ export default function Post({ post }) {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  useEffect(() => {
+    const zoom = mediumZoom(".blog-post img:not(.headline)", {
+      margin: 24,
+      background: "rgba(0,0,0,0.9)",
+    });
+
+    return () => zoom.detach();
+  }, [post]);
+
   return (
     <>
       <Seo
@@ -103,7 +121,14 @@ export default function Post({ post }) {
       />
       <div className="container blog">
         <div className="pt-md">
-          <span style={{ display: "flex", alignItems: "center", gap: "16px", marginBottom: "16px" }}>
+          <span
+            style={{
+              display: "flex",
+              alignItems: "center",
+              gap: "16px",
+              marginBottom: "16px",
+            }}
+          >
             <Link className="back-btn" href="/blog">
               <i className="bi bi-arrow-left"></i> Voltar
             </Link>

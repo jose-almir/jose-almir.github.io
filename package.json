@@ -13,6 +13,7 @@
     "bootstrap-icons": "^1.10.5",
     "globby": "^11.0.4",
     "gray-matter": "^4.0.3",
+    "medium-zoom": "^1.1.0",
     "next": "15.2.6",
     "next-themes": "^0.2.1",
     "react": "18.2.0",
