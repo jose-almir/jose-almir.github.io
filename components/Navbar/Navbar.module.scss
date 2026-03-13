@@ -1,7 +1,7 @@
 .navbar {
   height: 72px;
-  background-color: rgba($color: $background-dark, $alpha: 0.25);
-  backdrop-filter: blur(10px);
+  background: rgba($color: $background-dark, $alpha: 0.15);
+  backdrop-filter: blur(16px) saturate(180%);
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -9,18 +9,38 @@
   width: 100%;
   z-index: 999;
   top: 0;
-  border-bottom-left-radius: 8px;
-  border-bottom-right-radius: 8px;
-  transition: transform 0.5s ease-in-out;
+  border-bottom: 1px solid rgba($color: #ffffff, $alpha: 0.08);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  padding: 0 24px;
+
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.15), transparent);
+  }
 
   .avatar {
-    width: 56px;
-    height: 56px;
-    border-radius: 50%;
+    width: 48px;
+    height: 48px;
+    border-radius: 12px;
     background-image: url("/profile/avatar-color.png");
     background-position: center;
     background-size: cover;
-    filter: contrast(1.2);
+    background-repeat: no-repeat;
+    filter: contrast(1.05) brightness(1.02);
+    transition: all 0.3s ease;
+    border: 2px solid rgba($color: #ffffff, $alpha: 0.1);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+
+    &:hover {
+      transform: scale(1.05) rotate(1deg);
+      border-color: $accent;
+      filter: contrast(1.1) brightness(1.05);
+    }
   }
 
   .brand {
@@ -35,33 +55,45 @@
   }
 
   .githubicon {
-    font-size: 20px;
+    font-size: 18px;
     margin-right: 8px;
     a {
-      color: white;
-
-      padding: 2px 6px;
-      border-radius: 4px;
+      color: rgba($color: #ffffff, $alpha: 0.7);
+      padding: 8px;
+      border-radius: 10px;
+      transition: all 0.3s ease;
+      background: rgba($color: #ffffff, $alpha: 0.04);
+      border: 1px solid rgba($color: #ffffff, $alpha: 0.06);
 
       &:hover {
-        background-color: $background-lighter;
+        color: $accent;
+        background-color: rgba($color: $accent, $alpha: 0.1);
+        border-color: rgba($color: $accent, $alpha: 0.2);
+        transform: translateY(-2px);
       }
     }
   }
 
   .themeicon {
-    margin-right: 8px;
+    margin-right: 12px;
     .themebutton {
-      font-size: 20px;
-      background-color: transparent;
-      border: none;
-      color: white;
+      font-size: 18px;
+      background: rgba($color: #ffffff, $alpha: 0.04);
+      border: 1px solid rgba($color: #ffffff, $alpha: 0.06);
+      color: rgba($color: #ffffff, $alpha: 0.7);
       cursor: pointer;
-      padding: 2px 6px;
-      border-radius: 4px;
+      padding: 8px;
+      border-radius: 10px;
+      transition: all 0.3s ease;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
 
       &:hover {
-        background-color: $background-lighter;
+        color: $accent;
+        background-color: rgba($color: $accent, $alpha: 0.1);
+        border-color: rgba($color: $accent, $alpha: 0.2);
+        transform: translateY(-2px);
       }
     }
   }
@@ -69,18 +101,38 @@
   .navlinks {
     display: flex;
     align-items: center;
-    gap: 8px;
-    margin-left: 16px;
+    gap: 24px;
+    margin-left: 24px;
     a {
-      padding: 2px 6px;
-      border-radius: 4px;
+      padding: 4px 0;
       display: flex;
       align-items: center;
       gap: 8px;
-      color: $background-light;
+      color: rgba($color: #ffffff, $alpha: 0.6);
+      font-size: 0.85rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      transition: all 0.3s ease;
+      position: relative;
+
+      &::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 0;
+        height: 2px;
+        background-color: $accent;
+        transition: width 0.3s ease;
+      }
 
       &:hover {
-        color: rgba($color: $background-light, $alpha: 0.66);
+        color: white;
+        
+        &::after {
+          width: 100%;
+        }
       }
     }
   }
@@ -93,44 +145,34 @@
 
 [data-theme="light"] {
   .navbar {
-    background-color: rgba($color: white, $alpha: 0.25);
+    background: rgba($color: white, $alpha: 0.4);
+    border-bottom-color: rgba($color: black, $alpha: 0.05);
 
-    .brand {
-      a {
-        &:hover {
-          background-color: transparent;
-        }
+    &::after {
+      background: linear-gradient(90deg, transparent, rgba(0, 0, 0, 0.05), transparent);
+    }
+
+    .githubicon a, .themeicon .themebutton {
+      color: rgba($color: $background-dark, $alpha: 0.6);
+      background: rgba($color: black, $alpha: 0.03);
+      border-color: rgba($color: black, $alpha: 0.05);
+
+      &:hover {
+        color: $accent;
+        background: rgba($color: $accent, $alpha: 0.05);
       }
     }
 
-    .githubicon {
-      a {
-        color: $background-lighter;
+    .navlinks a {
+      color: rgba($color: $background-dark, $alpha: 0.5);
 
-        &:hover {
-          background-color: rgba($color: $background-dark, $alpha: 0.15);
-        }
+      &:hover {
+        color: $background-dark;
       }
     }
 
-    .themeicon {
-      .themebutton {
-        color: $background-lighter;
-
-        &:hover {
-          background-color: rgba($color: $background-dark, $alpha: 0.15);
-        }
-      }
-    }
-
-    .navlinks {
-      a {
-        color: $background-lighter;
-
-        &:hover {
-          color: rgba($color: $background-dark, $alpha: 0.66);
-        }
-      }
+    .avatar {
+      border-color: rgba(0, 0, 0, 0.05);
     }
   }
 }

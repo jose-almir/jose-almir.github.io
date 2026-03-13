@@ -1,11 +1,29 @@
 .footer {
-  padding: 20px;
+  padding: 40px 20px;
   text-align: center;
+  background: rgba($color: #ffffff, $alpha: 0.02);
+  backdrop-filter: blur(12px);
+  border-top: 1px solid rgba($color: #ffffff, $alpha: 0.08);
+  position: relative;
+  margin-top: 60px;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+  }
 }
 
 .social-icons {
-  margin-bottom: 10px;
-  font-size: 24px;
+  margin-bottom: 24px;
+  font-size: 20px;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
 }
 
 [data-theme="light"] {
@@ -20,16 +38,31 @@
 }
 
 .social-icons a {
-  margin-right: 10px;
-}
+  color: rgba($color: #ffffff, $alpha: 0.5);
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: rgba($color: #ffffff, $alpha: 0.03);
+  border: 1px solid rgba($color: #ffffff, $alpha: 0.05);
 
-.social-icons a:hover {
-  color: $accent;
+  &:hover {
+    color: $accent;
+    background: rgba($color: $accent, $alpha: 0.1);
+    border-color: rgba($color: $accent, $alpha: 0.2);
+    transform: translateY(-3px);
+  }
 }
 
 .copyright {
   margin: 0;
   text-align: center;
+  font-size: 0.88rem;
+  color: rgba($color: #ffffff, $alpha: 0.4);
+  letter-spacing: 0.02em;
 }
 
 
@@ -37,5 +70,31 @@
 @media screen and (max-width: 576px) {
   .footer {
     display: none;
+  }
+}
+
+[data-theme="light"] {
+  .footer {
+    background: rgba($color: black, $alpha: 0.01);
+    border-top-color: rgba($color: black, $alpha: 0.05);
+
+    &::before {
+      background: linear-gradient(90deg, transparent, rgba(0, 0, 0, 0.05), transparent);
+    }
+  }
+
+  .social-icons a {
+    color: rgba($color: $background-dark, $alpha: 0.5);
+    background: rgba($color: black, $alpha: 0.02);
+    border-color: rgba($color: black, $alpha: 0.04);
+
+    &:hover {
+      color: $accent;
+      background: rgba($color: $accent, $alpha: 0.05);
+    }
+  }
+
+  .copyright {
+    color: rgba($color: $background-dark, $alpha: 0.5);
   }
 }
