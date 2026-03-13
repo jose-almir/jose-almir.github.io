@@ -49,10 +49,6 @@ export function Card({ post }) {
               <span key={i}>{tag}</span>
             ))}
           </div>
-          <span className={styles.cardLink}>
-            Ler mais
-            <i className="bi bi-arrow-right"></i>
-          </span>
         </div>
       </div>
     );
