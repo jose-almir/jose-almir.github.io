@@ -47,7 +47,16 @@ export function Navbar() {
           Blog
         </Link>
       </nav>
-      <div>
+      <div className={styles.actions}>
+        <span className={styles.socialIcons}>
+          <a href="https://www.linkedin.com/in/jose-almir/" target="_blank" rel="noreferrer" title="LinkedIn">
+            <i className="bi bi-linkedin"></i>
+          </a>
+          <a href="https://github.com/jose-almir/jose-almir.github.io" target="_blank" rel="noreferrer" title="GitHub">
+            <i className="bi bi-github"></i>
+          </a>
+        </span>
+
         <span className={styles.themeicon}>
           <button
             className={styles.themebutton}
@@ -59,12 +68,6 @@ export function Navbar() {
               <i className="bi bi-moon"></i>
             )}
           </button>
-        </span>
-
-        <span className={styles.githubicon}>
-          <a href="https://github.com/jose-almir/jose-almir.github.io">
-            <i className="bi bi-github"></i>
-          </a>
         </span>
       </div>
     </header>
