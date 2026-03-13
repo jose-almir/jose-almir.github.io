@@ -9,9 +9,12 @@ export function Card({ post }) {
     router.push(`/blog/${post.id}`);
   };
 
+  const cardSizeClass = post.size ? styles[post.size] : styles.small;
+  const descLength = post.size === 'large' || post.size === 'wide' ? 40 : 20;
+
   return (
     <div
-      className={styles.card + " mt-md mb-md"}
+      className={`${styles.card} ${cardSizeClass}`}
       style={{ cursor: "pointer" }}
       onClick={handleCardClick}
     >
@@ -39,7 +42,7 @@ export function Card({ post }) {
             </span>
           )}
           <p className={styles.cardText}>
-            {post.desc.trim().split(" ").slice(0, 20).join(" ") + "..."}
+            {post.desc.trim().split(" ").slice(0, descLength).join(" ") + "..."}
           </p>
           <div className={styles.cardTags}>
             {post.tags.split(", ").map((tag, i) => (

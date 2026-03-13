@@ -5,6 +5,7 @@ thumbnail: "/blog/cms-portfolio/cms-portfolio-thumb.png"
 desc: "A ideia de conteúdo gerenciado por arquivos não era nova pra mim, mas este portfólio foi a oportunidade de levar o conceito a outro nível: construir um CMS simples, usando o próprio repositório GitHub como banco de dados"
 tags: "projetos, arquitetura"
 categoria: "projetos"
+size: "tall"
 ---
 <section className="intro">
 <h1>Um CMS que usa o GitHub como banco de dados</h1>

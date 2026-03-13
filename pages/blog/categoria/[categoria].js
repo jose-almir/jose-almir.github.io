@@ -31,7 +31,7 @@ export default function Categoria({ posts, categoria }) {
           <i className="bi bi-arrow-left"></i> Voltar
         </Link>
         <h2>Categoria: {categoria}</h2>
-        <div className="grid">
+        <div className="bento-grid">
           {posts.map((post) => (
             <Card key={post.id} post={post} />
           ))}

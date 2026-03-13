@@ -150,3 +150,70 @@ a.cardLink {
   }
 }
 
+// Bento Grid Sizes
+.large {
+  grid-column: span 2;
+  grid-row: span 2;
+  max-height: none;
+  max-width: none;
+
+  .cardImage {
+    height: 360px;
+  }
+
+  .cardTitle {
+    font-size: 1.8rem;
+  }
+}
+
+.wide {
+  grid-column: span 2;
+  max-height: none;
+  max-width: none;
+  flex-direction: row;
+
+  .cardImage {
+    width: 40%;
+    height: 100%;
+  }
+
+  .cardContent {
+    width: 60%;
+  }
+}
+
+.tall {
+  grid-row: span 2;
+  max-height: none;
+  max-width: none;
+
+  .cardImage {
+    height: 300px;
+  }
+}
+
+.small {
+  // Default styles already handle this
+}
+
+@media (max-width: 768px) {
+  .large, .wide, .tall {
+    grid-column: span 1;
+    grid-row: span 1;
+    flex-direction: column;
+
+    .cardImage {
+      width: 100%;
+      height: 180px;
+    }
+
+    .cardContent {
+      width: 100%;
+    }
+
+    .cardTitle {
+      font-size: 1.1rem;
+    }
+  }
+}
+

@@ -5,6 +5,7 @@ thumbnail: "/blog/novo-ciclo-blog/novo-ciclo-blog-thumb.png"
 desc: "Depois de alguns anos observando, aprendendo e refinando minhas ideias, decidi começar de novo. As postagens antigas ficam para trás, eram parte de um caminho, mas não definem o próximo passo."
 tags: "ideias, introdução"
 categoria: "ideias"
+size: "medium"
 ---
 
 <section className="intro">

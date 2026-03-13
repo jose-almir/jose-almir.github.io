@@ -20,7 +20,7 @@ export default function Blog({ posts }) {
       <div className="container ">
         <div className="pt-xs">
           <h2>Confira meu conteúdo!</h2>
-          <div className="grid">
+          <div className="bento-grid">
             {posts.map((post) => (
               <Card key={post.id} post={post} />
             ))}
