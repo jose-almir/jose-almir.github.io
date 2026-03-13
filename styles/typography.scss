@@ -6,11 +6,12 @@ h3,
 h4,
 h5,
 h6 {
-  margin: 16px 0;
+  margin: 1.5rem 0 1rem;
   font-family: $font-family;
-  line-height: $line-height;
-  font-weight: $font-weight;
+  line-height: 1.2;
+  font-weight: 800;
   color: rgba($color: $primary, $alpha: 0.87);
+  letter-spacing: -0.02em;
 }
 
 [data-theme="light"] {
@@ -20,7 +21,7 @@ h6 {
   h4,
   h5,
   h6 {
-    color: rgba($color: $background-dark, $alpha: 0.87);
+    color: rgba($color: $background-dark, $alpha: 0.9);
   }
 
   blockquote {
@@ -28,20 +29,24 @@ h6 {
   }
 
   .intro span, .intro i {
-    color: rgba($color: $background-dark, $alpha: 0.87);
+    color: rgba($color: $background-dark, $alpha: 0.6);
   }
 }
 
 h1 {
   font-size: $font-size-h1;
+  margin-top: 2rem;
 }
 
 h2 {
   font-size: $font-size-h2;
+  font-weight: 750;
+  margin-top: 1.8rem;
 }
 
 h3 {
   font-size: $font-size-h3;
+  font-weight: 700;
 }
 
 h4 {
@@ -57,6 +62,8 @@ h6 {
 }
 
 p {
-  line-height: $line-height;
+  line-height: 1.8;
   font-size: 1.125rem;
+  margin-bottom: 1.5rem;
+  opacity: 0.85;
 }

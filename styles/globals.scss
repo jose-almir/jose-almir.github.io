@@ -37,6 +37,9 @@ a.back-btn {
   display: block;
   width: 100px;
   text-align: center;
+  font-size: 0.9rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
 }
 
 [data-theme="light"] a.back-btn {
@@ -54,8 +57,19 @@ a.back-btn {
   }
 
   section.intro {
-    margin: 24px 0;
+    margin: 32px 0;
     color: rgba($color: #ffffff, $alpha: 0.75);
+
+    h1 {
+      font-weight: 900;
+      margin-bottom: 8px;
+    }
+
+    span, i {
+      font-size: 0.9rem;
+      opacity: 0.7;
+      letter-spacing: 0.02em;
+    }
   }
 
   img.headline {
@@ -73,16 +87,30 @@ a.back-btn {
   }
 
   blockquote {
-    border-left: 3px solid $accent;
-    padding: 12px 20px;
-    margin: 24px 0;
+    border-left: 4px solid $accent;
+    padding: 16px 24px;
+    margin: 32px 0;
     margin-left: 0;
-    line-height: 1.65;
-    font-size: 1.1rem;
-    background-color: rgba($color: $accent, $alpha: 0.05);
-    border-radius: 0 6px 6px 0;
+    line-height: 1.8;
+    font-size: 1.15rem;
+    background-color: rgba($color: $accent, $alpha: 0.08);
+    border-radius: 0 8px 8px 0;
     font-style: italic;
-    opacity: 0.9;
+    opacity: 1;
+    color: rgba($color: $primary, $alpha: 0.9);
+
+    [data-theme="dark"] & {
+      color: rgba($color: #ffffff, $alpha: 0.9);
+    }
+
+    p {
+      margin-top: 0;
+      margin-bottom: 0;
+    }
+
+    p + p {
+      margin-top: 1rem;
+    }
   }
 
   ul, ol {
@@ -117,6 +145,10 @@ a.back-btn {
 }
 
 [data-theme="light"] {
+  blockquote {
+    color: rgba($color: $background-dark, $alpha: 0.87);
+  }
+
   span.closed {
     color: rgba($color: $background-dark, $alpha: 0.6);
   }
