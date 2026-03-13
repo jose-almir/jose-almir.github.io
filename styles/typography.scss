@@ -66,4 +66,12 @@ p {
   font-size: 1.125rem;
   margin-bottom: 1.5rem;
   opacity: 0.85;
+  color: inherit;
+}
+
+[data-theme="light"] {
+  p {
+    color: rgba($color: $background-dark, $alpha: 0.9);
+    opacity: 1;
+  }
 }

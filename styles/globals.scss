@@ -44,6 +44,7 @@ body {
 [data-theme="light"] {
   body {
     background-color: $background-light;
+    color: $background-dark;
 
     &::before {
       background: radial-gradient(circle at 10% 10%, rgba(39, 174, 96, 0.04) 0%, transparent 50%),
