@@ -28,8 +28,20 @@ export function getStaticPaths() {
 
 export function getStaticProps({ params: { id } }) {
   const post = getPost(id);
+  const allPosts = getPosts();
+  const currentIndex = allPosts.findIndex((p) => p.id === id);
+  
+  const prevPost = currentIndex < allPosts.length - 1 ? allPosts[currentIndex + 1] : null;
+  const nextPost = currentIndex > 0 ? allPosts[currentIndex - 1] : null;
+
   if (post) {
-    return { props: { post } };
+    return { 
+      props: { 
+        post,
+        prevPost: prevPost ? { id: prevPost.id, title: prevPost.title, thumbnail: prevPost.thumbnail } : null,
+        nextPost: nextPost ? { id: nextPost.id, title: nextPost.title, thumbnail: nextPost.thumbnail } : null
+      } 
+    };
   } else {
     return { notFound: true };
   }
@@ -79,7 +91,7 @@ function CopyButton({ code }) {
   );
 }
 
-export default function Post({ post }) {
+export default function Post({ post, prevPost, nextPost }) {
   const { theme } = useTheme();
   const [scrollProgress, setScrollProgress] = useState(0);
 
@@ -168,6 +180,44 @@ export default function Post({ post }) {
             rehypePlugins={[rehypeRaw]}
           />
         </div>
+
+        <div className="post-navigation-container mt-lg mb-lg">
+          <div className="hr mb-lg"></div>
+          <div className="post-navigation">
+            {prevPost ? (
+              <Link href={`/blog/${prevPost.id}`} className="nav-link prev">
+                <div className="nav-image-container">
+                  <img src={prevPost.thumbnail} alt="" className="nav-image" />
+                </div>
+                <div className="nav-content">
+                  <span className="nav-label">
+                    <i className="bi bi-arrow-left"></i> Anterior
+                  </span>
+                  <p className="nav-title">{prevPost.title}</p>
+                </div>
+              </Link>
+            ) : (
+              <div className="nav-placeholder"></div>
+            )}
+            
+            {nextPost ? (
+              <Link href={`/blog/${nextPost.id}`} className="nav-link next">
+                <div className="nav-content">
+                  <span className="nav-label">
+                    Próximo <i className="bi bi-arrow-right"></i>
+                  </span>
+                  <p className="nav-title">{nextPost.title}</p>
+                </div>
+                <div className="nav-image-container">
+                  <img src={nextPost.thumbnail} alt="" className="nav-image" />
+                </div>
+              </Link>
+            ) : (
+              <div className="nav-placeholder"></div>
+            )}
+          </div>
+        </div>
+
         <div>
           <h4>Comentários</h4>
           <Giscus
