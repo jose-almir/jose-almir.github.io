@@ -12,6 +12,7 @@ import {
 import rehypeRaw from "rehype-raw";
 import { useState, useEffect, useCallback } from "react";
 import mediumZoom from "medium-zoom";
+import { ShareButtons } from "@/components/ShareButtons";
 
 const baseUrl =
   process.env.NODE_ENV === "production"
@@ -179,6 +180,7 @@ export default function Post({ post, prevPost, nextPost }) {
             }}
             rehypePlugins={[rehypeRaw]}
           />
+          <ShareButtons title={post.title} url={`${baseUrl}/blog/${post.id}`} />
         </div>
 
         <div className="post-navigation-container mt-lg mb-lg">

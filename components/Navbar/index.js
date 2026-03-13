@@ -43,9 +43,12 @@ export function Navbar() {
         {/* <Link href="/portfolio" title="Navegar para tela sobre">
           Portfólio
         </Link> */}
-        <Link href="/blog" title="Navegar para tela sobre">
+        <Link href="/blog" title="Navegar para tela de blog">
           Blog
         </Link>
+        <a href="/curriculo.pdf" target="_blank" rel="noreferrer" title="Ver meu currículo">
+          Currículo
+        </a>
       </nav>
       <div className={styles.actions}>
         <span className={styles.socialIcons}>

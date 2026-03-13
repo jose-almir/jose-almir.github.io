@@ -1,0 +1,107 @@
+@import "../../styles/variables.scss";
+
+.container {
+  margin: 48px 0;
+  padding: 32px;
+  background: rgba(255, 255, 255, 0.02);
+  backdrop-filter: blur(12px);
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+  transition: all 0.3s ease;
+
+  [data-theme="light"] & {
+    background: rgba(0, 0, 0, 0.02);
+    border-color: rgba(0, 0, 0, 0.04);
+  }
+
+  &:hover {
+    background: rgba(255, 255, 255, 0.04);
+    border-color: rgba(255, 255, 255, 0.1);
+    
+    [data-theme="light"] & {
+      background: rgba(0, 0, 0, 0.04);
+      border-color: rgba(0, 0, 0, 0.08);
+    }
+  }
+}
+
+.title {
+  font-size: 1rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: rgba(255, 255, 255, 0.6);
+  margin: 0;
+
+  [data-theme="light"] & {
+    color: rgba(0, 0, 0, 0.5);
+  }
+}
+
+.buttons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 16px;
+}
+
+.shareButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 1.25rem;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  text-decoration: none;
+  cursor: pointer;
+
+  [data-theme="light"] & {
+    background: rgba(0, 0, 0, 0.02);
+    border-color: rgba(0, 0, 0, 0.04);
+    color: rgba(0, 0, 0, 0.4);
+  }
+
+  &:hover {
+    color: var(--hover-color, #{$accent});
+    background: rgba(255, 255, 255, 0.08);
+    border-color: rgba(255, 255, 255, 0.15);
+    transform: translateY(-4px) scale(1.1);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+
+    [data-theme="light"] & {
+      background: rgba(0, 0, 0, 0.05);
+      border-color: rgba(0, 0, 0, 0.1);
+    }
+  }
+
+  &.copied {
+    color: #25d366 !important;
+    border-color: rgba(37, 211, 102, 0.3) !important;
+    background: rgba(37, 211, 102, 0.1) !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 24px 16px;
+  }
+  
+  .buttons {
+    gap: 12px;
+  }
+  
+  .shareButton {
+    width: 40px;
+    height: 40px;
+    font-size: 1.1rem;
+  }
+}
