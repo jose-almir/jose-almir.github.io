@@ -1,0 +1,226 @@
+@import "../../styles/variables.scss";
+
+.container {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  z-index: 1000;
+  pointer-events: none;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+
+  &.visible {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: all;
+  }
+}
+
+.avatarWrapper {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  border: 3px solid $primary;
+  background: $background-dark;
+  cursor: pointer;
+  position: relative;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease;
+  overflow: visible;
+
+  &:hover {
+    transform: scale(1.1);
+  }
+
+  .avatar {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+
+  [data-theme="light"] & {
+    background: white;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  }
+}
+
+.ping {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 12px;
+  height: 12px;
+  background: $primary;
+  border: 2px solid $background-dark;
+  border-radius: 50%;
+
+  [data-theme="light"] & {
+    border-color: white;
+  }
+}
+
+.speechBubble {
+  background: rgba($background-dark, 0.7);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 1.25rem;
+  border-radius: 1.5rem;
+  margin-bottom: 1rem;
+  width: 220px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  position: relative;
+  animation: popIn 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    right: 24px;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-top: 10px solid rgba($background-dark, 0.7);
+  }
+
+  [data-theme="light"] & {
+    background: rgba(255, 255, 255, 0.8);
+    border-color: rgba(0, 0, 0, 0.05);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+
+    &::after {
+      border-top-color: rgba(255, 255, 255, 0.8);
+    }
+  }
+}
+
+.closeBtn {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  background: transparent;
+  border: none;
+  color: rgba(255, 255, 255, 0.5);
+  cursor: pointer;
+  font-size: 1.2rem;
+  padding: 0;
+  line-height: 1;
+
+  &:hover {
+    color: white;
+  }
+
+  [data-theme="light"] & {
+    color: rgba(0, 0, 0, 0.4);
+    &:hover { color: black; }
+  }
+}
+
+.content {
+  p {
+    margin: 0 0 0.75rem 0;
+    font-weight: 600;
+    font-size: 0.95rem;
+    color: white;
+  }
+
+  [data-theme="light"] & p {
+    color: $background-dark;
+  }
+}
+
+.actions {
+  display: flex;
+  gap: 0.75rem;
+  margin-bottom: 0.75rem;
+
+  a, button {
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: white;
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 0.75rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    text-decoration: none;
+
+    &:hover {
+      background: $primary;
+      color: white;
+      transform: translateY(-2px);
+    }
+  }
+
+  [data-theme="light"] & {
+    a, button {
+      background: rgba(0, 0, 0, 0.05);
+      border-color: rgba(0, 0, 0, 0.08);
+      color: $background-dark;
+
+      &:hover {
+        background: $primary;
+        color: white;
+      }
+    }
+  }
+}
+
+.divider {
+  height: 1px;
+  background: rgba(255, 255, 255, 0.1);
+  margin: 0.75rem 0;
+
+  [data-theme="light"] & {
+    background: rgba(0, 0, 0, 0.08);
+  }
+}
+
+.rssLink {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: $primary;
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-decoration: none;
+  padding: 0.4rem 0.75rem;
+  background: rgba($primary, 0.1);
+  border-radius: 0.5rem;
+  transition: all 0.2s ease;
+
+  &:hover {
+    background: rgba($primary, 0.2);
+    transform: translateX(4px);
+  }
+}
+
+@keyframes popIn {
+  from {
+    opacity: 0;
+    transform: scale(0.8) translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    bottom: 1.5rem;
+    right: 1.5rem;
+  }
+  
+  .speechBubble {
+    width: 180px;
+    padding: 1rem;
+  }
+}

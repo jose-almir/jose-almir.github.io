@@ -13,6 +13,7 @@ import rehypeRaw from "rehype-raw";
 import { useState, useEffect, useCallback } from "react";
 import mediumZoom from "medium-zoom";
 import { ShareButtons } from "@/components/ShareButtons";
+import { FloatingAvatar } from "@/components/FloatingAvatar";
 
 const baseUrl =
   process.env.NODE_ENV === "production"
@@ -134,6 +135,7 @@ export default function Post({ post, prevPost, nextPost }) {
       />
       <div className="container blog">
         <div className="pt-md">
+          <FloatingAvatar title={post.title} url={`${baseUrl}/blog/${post.id}`} />
           <span
             style={{
               display: "flex",
