@@ -1,0 +1,36 @@
+{
+  "nav": {
+    "blog": "Blog",
+    "cv": "Resume",
+    "home": "Home"
+  },
+  "home": {
+    "title": "Hi, my name is ",
+    "description_1": "Check out my ",
+    "description_link": "blog",
+    "description_2": " and discover my development projects.",
+    "blog_highlights": "Blog Highlights",
+    "view_all": "View all posts"
+  },
+  "blog": {
+    "reading_time": "min read",
+    "back": "Back",
+    "share": "Share this article",
+    "like_share": "Liked it? Share it! 🚀",
+    "copy_link": "Copy link",
+    "copied": "Copied",
+    "subscribe_rss": "Subscribe to RSS",
+    "share_on": "Share on",
+    "comments": "Comments",
+    "previous": "Previous",
+    "next": "Next"
+  },
+  "pagination": {
+    "prev": "Previous",
+    "next": "Next",
+    "page": "Page"
+  },
+  "footer": {
+    "developed_by": "Developed by"
+  }
+}

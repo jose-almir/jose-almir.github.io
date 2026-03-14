@@ -1,0 +1,36 @@
+{
+  "nav": {
+    "blog": "Blog",
+    "cv": "Currículo",
+    "home": "Início"
+  },
+  "home": {
+    "title": "Olá, meu nome é ",
+    "description_1": "Aproveite o ",
+    "description_link": "blog",
+    "description_2": " e conheça meus projetos de desenvolvimento.",
+    "blog_highlights": "Destaques do Blog",
+    "view_all": "Ver todas as postagens"
+  },
+  "blog": {
+    "reading_time": "min de leitura",
+    "back": "Voltar",
+    "share": "Compartilhe este artigo",
+    "like_share": "Gostou? Compartilha! 🚀",
+    "copy_link": "Copiar link",
+    "copied": "Copiado",
+    "subscribe_rss": "Assine o RSS",
+    "share_on": "Compartilhar no",
+    "comments": "Comentários",
+    "previous": "Anterior",
+    "next": "Próximo"
+  },
+  "pagination": {
+    "prev": "Anterior",
+    "next": "Próximo",
+    "page": "Página"
+  },
+  "footer": {
+    "developed_by": "Desenvolvido por"
+  }
+}

@@ -1,12 +1,14 @@
 import styles from "./Card.module.scss";
 import Link from "next/link";
 import { useRouter } from "next/router";
+import { useTranslation } from "@/lib/LanguageContext";
 
 export function Card({ post }) {
   const router = useRouter();
+  const { t, language } = useTranslation();
 
   const handleCardClick = () => {
-    router.push(`/blog/${post.id}`);
+    router.push(`/${language}/blog/${post.id}`);
   };
 
   const cardSizeClass = post.size ? styles[post.size] : styles.small;
@@ -24,12 +26,12 @@ export function Card({ post }) {
           <span className={styles.postedAt}>
             <span>
               <i className="bi bi-calendar mr-xs"></i>
-              {new Date(post.date).toLocaleDateString('pt-BR')}
+              {new Date(post.date).toLocaleDateString(language === 'pt' ? 'pt-BR' : 'en-US')}
             </span>
             <span onClick={(e) => e.stopPropagation()}>
               <Link
                 className={styles.cardCategoria}
-                href={`/blog/categoria/${post.categoria}`}
+                href={`/${language}/blog/categoria/${post.categoria}`}
               >
                 #{post.categoria}
               </Link>
@@ -38,7 +40,7 @@ export function Card({ post }) {
           {post.readingTime && (
             <span className={styles.readingTime}>
               <i className="bi bi-clock"></i>
-              {post.readingTime} min de leitura
+              {post.readingTime} {t("blog.reading_time")}
             </span>
           )}
           <p className={styles.cardText}>

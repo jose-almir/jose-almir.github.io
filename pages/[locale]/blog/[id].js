@@ -1,5 +1,5 @@
 import { Seo } from "@/components/Seo";
-import { getPost, getPosts } from "@/lib/posts";
+import { getPost, getPosts, getAllPosts } from "@/lib/posts";
 import Giscus from "@giscus/react";
 import { useTheme } from "next-themes";
 import Link from "next/link";
@@ -16,22 +16,51 @@ import mediumZoom from "medium-zoom";
 import { ShareButtons } from "@/components/ShareButtons";
 import { FloatingAvatar } from "@/components/FloatingAvatar";
 
+import { useTranslation } from "@/lib/LanguageContext";
+
 const baseUrl =
   process.env.NODE_ENV === "production"
     ? "https://jose-almir.github.io"
     : "http://localhost:3000";
 
 export function getStaticPaths() {
-  const posts = getPosts();
+  const ptPosts = getPosts("pt");
+  const enPosts = getPosts("en");
+
+  const ptPaths = ptPosts.map((p) => ({
+    params: { locale: "pt", id: p.id },
+  }));
+  const enPaths = enPosts.map((p) => ({
+    params: { locale: "en", id: p.id },
+  }));
+
   return {
-    paths: posts.map((p) => `/blog/${p.id}`),
+    paths: [...ptPaths, ...enPaths],
     fallback: false,
   };
 }
 
-export function getStaticProps({ params: { id } }) {
-  const post = getPost(id);
-  const allPosts = getPosts();
+export function getStaticProps({ params: { id, locale } }) {
+  const post = getPost(id, locale);
+  const allPosts = getPosts(locale);
+  const totalPosts = getAllPosts();
+
+  // Find other versions of this post using 'ref'
+  const translations = {};
+  if (post && post.ref) {
+    totalPosts
+      .filter(p => p.ref === post.ref)
+      .forEach(p => {
+        translations[p.lang] = p.id;
+      });
+  } else if (post) {
+    // Fallback: if no ref, assume same id for other languages if file exists
+    ["pt", "en"].forEach(lang => {
+      const other = totalPosts.find(p => p.id === id && p.lang === lang);
+      if (other) translations[lang] = other.id;
+    });
+  }
+
   const currentIndex = allPosts.findIndex((p) => p.id === id);
   
   const prevPost = currentIndex < allPosts.length - 1 ? allPosts[currentIndex + 1] : null;
@@ -41,6 +70,8 @@ export function getStaticProps({ params: { id } }) {
     return { 
       props: { 
         post,
+        locale,
+        translations,
         prevPost: prevPost ? { id: prevPost.id, title: prevPost.title, thumbnail: prevPost.thumbnail } : null,
         nextPost: nextPost ? { id: nextPost.id, title: nextPost.title, thumbnail: nextPost.thumbnail } : null
       } 
@@ -50,7 +81,7 @@ export function getStaticProps({ params: { id } }) {
   }
 }
 
-function CopyButton({ code }) {
+function CopyButton({ code, t }) {
   const [copied, setCopied] = useState(false);
 
   const handleCopy = useCallback(() => {
@@ -63,7 +94,7 @@ function CopyButton({ code }) {
   return (
     <button
       onClick={handleCopy}
-      title="Copiar código"
+      title={t("blog.copy_link")}
       style={{
         position: "absolute",
         top: "10px",
@@ -82,22 +113,30 @@ function CopyButton({ code }) {
     >
       {copied ? (
         <>
-          <i className="bi bi-check2" style={{ marginRight: "4px" }}></i>Copiado
+          <i className="bi bi-check2" style={{ marginRight: "4px" }}></i>{t("blog.copied")}
         </>
       ) : (
         <>
           <i className="bi bi-clipboard" style={{ marginRight: "4px" }}></i>
-          Copiar
+          {t("blog.copy_link").split(" ")[0]}
         </>
       )}
     </button>
   );
 }
 
-export default function Post({ post, prevPost, nextPost }) {
+export default function Post({ post, prevPost, nextPost, locale, translations }) {
   const { theme } = useTheme();
   const router = useRouter();
+  const { t, language, isLoaded, setAvailableTranslations } = useTranslation();
   const [scrollProgress, setScrollProgress] = useState(0);
+
+  useEffect(() => {
+    if (translations) {
+      setAvailableTranslations(translations);
+    }
+    return () => setAvailableTranslations({});
+  }, [translations]);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -131,6 +170,8 @@ export default function Post({ post, prevPost, nextPost }) {
     }
   };
 
+  if (!isLoaded) return null;
+
   return (
     <>
       <Seo
@@ -159,7 +200,7 @@ export default function Post({ post, prevPost, nextPost }) {
             {post.readingTime && (
               <span style={{ fontSize: "0.85rem", opacity: 0.55 }}>
                 <i className="bi bi-clock" style={{ marginRight: "5px" }}></i>
-                {post.readingTime} min de leitura
+                {post.readingTime} {t("blog.reading_time")}
               </span>
             )}
           </div>
@@ -172,7 +213,7 @@ export default function Post({ post, prevPost, nextPost }) {
                 const codeStr = String(children).replace(/\n$/, "");
                 return !inline && match ? (
                   <div style={{ position: "relative" }}>
-                    <CopyButton code={codeStr} />
+                    <CopyButton code={codeStr} t={t} />
                     <SyntaxHighlighter
                       children={codeStr}
                       style={theme === "dark" ? codeDark : codeLight}
@@ -198,13 +239,13 @@ export default function Post({ post, prevPost, nextPost }) {
           <div className="hr mb-lg"></div>
           <div className="post-navigation">
             {prevPost ? (
-              <Link href={`/blog/${prevPost.id}`} className="nav-link prev">
+              <Link href={`/${locale}/blog/${prevPost.id}`} className="nav-link prev">
                 <div className="nav-image-container">
                   <img src={prevPost.thumbnail} alt="" className="nav-image" />
                 </div>
                 <div className="nav-content">
                   <span className="nav-label">
-                    <i className="bi bi-arrow-left"></i> Anterior
+                    <i className="bi bi-arrow-left"></i> {t("blog.previous")}
                   </span>
                   <p className="nav-title">{prevPost.title}</p>
                 </div>
@@ -214,10 +255,10 @@ export default function Post({ post, prevPost, nextPost }) {
             )}
             
             {nextPost ? (
-              <Link href={`/blog/${nextPost.id}`} className="nav-link next">
+              <Link href={`/${locale}/blog/${nextPost.id}`} className="nav-link next">
                 <div className="nav-content">
                   <span className="nav-label">
-                    Próximo <i className="bi bi-arrow-right"></i>
+                    {t("blog.next")} <i className="bi bi-arrow-right"></i>
                   </span>
                   <p className="nav-title">{nextPost.title}</p>
                 </div>
@@ -232,7 +273,7 @@ export default function Post({ post, prevPost, nextPost }) {
         </div>
 
         <div>
-          <h4>Comentários</h4>
+          <h4>{t("blog.comments")}</h4>
           <Giscus
             id="comments"
             repo="jose-almir/jose-almir.github.io"
@@ -244,7 +285,7 @@ export default function Post({ post, prevPost, nextPost }) {
             reactionsEnabled="0"
             emitMetadata="0"
             theme={theme === "dark" ? "dark" : "light"}
-            lang="pt"
+            lang={language === 'pt' ? 'pt' : 'en'}
             inputPosition="top"
           />
         </div>

@@ -2,9 +2,11 @@ import styles from "./Navbar.module.scss";
 import { useTheme } from "next-themes";
 import { useEffect, useState } from "react";
 import Link from "next/link";
+import { useTranslation } from "@/lib/LanguageContext";
 
 export function Navbar() {
   const { theme, setTheme } = useTheme();
+  const { language, toggleLanguage, t, isLoaded } = useTranslation();
   const [show, setShow] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
   const [mounted, setMounted] = useState(false);
@@ -28,26 +30,23 @@ export function Navbar() {
     };
   }, [lastScrollY]);
 
-  if (!mounted) return null;
+  if (!mounted || !isLoaded) return null;
 
   const hiddenStyle = show ? "" : ` ${styles.hidden}`;
 
   return (
     <header className={styles.navbar + hiddenStyle}>
       <div className={styles.brand}>
-        <Link href="/" title="Navegar para tela principal">
+        <Link href="/" title={t("nav.home")}>
           <div className={styles.avatar}></div>
         </Link>
       </div>
       <nav className={styles.navlinks}>
-        {/* <Link href="/portfolio" title="Navegar para tela sobre">
-          Portfólio
-        </Link> */}
-        <Link href="/blog" title="Navegar para tela de blog">
-          Blog
+        <Link href={`/${language}/blog`} title={t("nav.blog")}>
+          {t("nav.blog")}
         </Link>
-        <a href="/curriculo.pdf" target="_blank" rel="noreferrer" title="Ver meu currículo">
-          Currículo
+        <a href="/curriculo.pdf" target="_blank" rel="noreferrer" title={t("nav.cv")}>
+          {t("nav.cv")}
         </a>
       </nav>
       <div className={styles.actions}>
@@ -61,6 +60,14 @@ export function Navbar() {
         </span>
 
         <span className={styles.themeicon}>
+          <button
+            className={styles.themebutton}
+            onClick={() => toggleLanguage()}
+            title={language === "pt" ? "Switch to English" : "Mudar para Português"}
+            style={{ marginRight: '8px', fontSize: '0.8rem', fontWeight: 'bold' }}
+          >
+            {language.toUpperCase()}
+          </button>
           <button
             className={styles.themebutton}
             onClick={() => setTheme(theme === "dark" ? "light" : "dark")}

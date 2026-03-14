@@ -1,7 +1,9 @@
 import { useState, useEffect } from "react";
 import styles from "./FloatingAvatar.module.scss";
+import { useTranslation } from "@/lib/LanguageContext";
 
 export function FloatingAvatar({ title, url }) {
+  const { t } = useTranslation();
   const [isVisible, setIsVisible] = useState(false);
   const [showBubble, setShowBubble] = useState(false);
   const [copied, setCopied] = useState(false);
@@ -53,7 +55,7 @@ export function FloatingAvatar({ title, url }) {
           </button>
           
           <div className={styles.content}>
-            <p>Gostou? Compartilha! 🚀</p>
+            <p>{t("blog.like_share")}</p>
             <div className={styles.actions}>
               <a 
                 href={`https://www.linkedin.com/sharing/share-offsite/?url=${encodedUrl}`}
@@ -71,13 +73,13 @@ export function FloatingAvatar({ title, url }) {
               >
                 <i className="bi bi-twitter-x"></i>
               </a>
-              <button onClick={handleCopy} title="Copy Link">
+              <button onClick={handleCopy} title={t("blog.copy_link")}>
                 <i className={`bi ${copied ? "bi-check2" : "bi-link-45deg"}`}></i>
               </button>
             </div>
             <div className={styles.divider}></div>
             <a href="/feed.xml" className={styles.rssLink} target="_blank">
-              Assine o RSS <i className="bi bi-rss-fill"></i>
+              {t("blog.subscribe_rss")} <i className="bi bi-rss-fill"></i>
             </a>
           </div>
         </div>

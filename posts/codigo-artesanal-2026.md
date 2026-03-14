@@ -5,6 +5,7 @@ thumbnail: "/blog/codigo-artesanal-2026/codigo-artesanal-2026-thumb.png"
 desc: "Reflexões sobre a prática de escrever código de forma artesanal em 2026, em meio a tantas ferramentas que automatizam."
 tags: "ideias"
 categoria: "ideias"
+ref: "handcrafted-2026"
 size: "large"
 ---
 <section className="intro">

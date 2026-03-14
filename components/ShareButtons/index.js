@@ -1,7 +1,9 @@
 import styles from "./ShareButtons.module.scss";
 import { useState, useEffect } from "react";
+import { useTranslation } from "@/lib/LanguageContext";
 
 export function ShareButtons({ title, url }) {
+  const { t } = useTranslation();
   const [copied, setCopied] = useState(false);
   const [currentUrl, setCurrentUrl] = useState("");
 
@@ -43,7 +45,7 @@ export function ShareButtons({ title, url }) {
 
   return (
     <div className={styles.container}>
-      <h3 className={styles.title}>Compartilhe este artigo</h3>
+      <h3 className={styles.title}>{t("blog.share")}</h3>
       <div className={styles.buttons}>
         {shareLinks.map((link) => (
           <a
@@ -52,7 +54,7 @@ export function ShareButtons({ title, url }) {
             target="_blank"
             rel="noreferrer"
             className={styles.shareButton}
-            title={`Compartilhar no ${link.name}`}
+            title={`${t("blog.share_on")} ${link.name}`}
             style={{ "--hover-color": link.color }}
           >
             <i className={`bi ${link.icon}`}></i>
@@ -61,7 +63,7 @@ export function ShareButtons({ title, url }) {
         <button
           onClick={handleCopy}
           className={`${styles.shareButton} ${copied ? styles.copied : ""}`}
-          title="Copiar link"
+          title={t("blog.copy_link")}
         >
           {copied ? <i className="bi bi-check2"></i> : <i className="bi bi-link-45deg"></i>}
         </button>

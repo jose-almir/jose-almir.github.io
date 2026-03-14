@@ -1,7 +1,9 @@
 import Link from "next/link";
 import styles from "./Pagination.module.scss";
+import { useTranslation } from "@/lib/LanguageContext";
 
 export function Pagination({ currentPage, totalPages, baseUrl = "/blog" }) {
+  const { t } = useTranslation();
   const isFirstPage = currentPage === 1;
   const isLastPage = currentPage === totalPages;
 
@@ -14,7 +16,7 @@ export function Pagination({ currentPage, totalPages, baseUrl = "/blog" }) {
           href={currentPage === 2 ? baseUrl : `${baseUrl}/page/${currentPage - 1}`}
           className={styles.pageButton}
         >
-          <i className="bi bi-chevron-left"></i> Anterior
+          <i className="bi bi-chevron-left"></i> {t("pagination.prev")}
         </Link>
       )}
 
@@ -41,7 +43,7 @@ export function Pagination({ currentPage, totalPages, baseUrl = "/blog" }) {
           href={`${baseUrl}/page/${currentPage + 1}`}
           className={styles.pageButton}
         >
-          Próximo <i className="bi bi-chevron-right"></i>
+          {t("pagination.next")} <i className="bi bi-chevron-right"></i>
         </Link>
       )}
     </div>
