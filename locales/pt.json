@@ -1,8 +1,9 @@
 {
   "nav": {
+    "home": "Início",
     "blog": "Blog",
-    "cv": "Currículo",
-    "home": "Início"
+    "cv": "Baixar CV",
+    "rss_feed": "Inscrever no feed RSS"
   },
   "home": {
     "title": "Olá, meu nome é ",

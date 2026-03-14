@@ -11,7 +11,7 @@ export function Footer() {
           <a href="https://github.com/jose-almir/jose-almir.github.io" target="_blank" title="GitHub">
             <i className="bi bi-github"></i>
           </a>
-          <a href="/feed.xml" target="_blank" title="Inscrever no feed">
+          <a href={`/feed.${language}.xml`} target="_blank" title={t("nav.rss_feed")}>
             <i className="bi bi-rss-fill"></i>
           </a>
           <a href="/sitemap.xml" target="_blank" title="Mapa do site">

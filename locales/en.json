@@ -2,7 +2,8 @@
   "nav": {
     "blog": "Blog",
     "cv": "Resume",
-    "home": "Home"
+    "home": "Home",
+    "rss_feed": "RSS Feed"
   },
   "home": {
     "title": "Hi, my name is ",

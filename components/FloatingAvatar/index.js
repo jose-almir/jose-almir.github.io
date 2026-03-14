@@ -3,7 +3,7 @@ import styles from "./FloatingAvatar.module.scss";
 import { useTranslation } from "@/lib/LanguageContext";
 
 export function FloatingAvatar({ title, url }) {
-  const { t } = useTranslation();
+  const { t, language } = useTranslation();
   const [isVisible, setIsVisible] = useState(false);
   const [showBubble, setShowBubble] = useState(false);
   const [copied, setCopied] = useState(false);
@@ -78,7 +78,7 @@ export function FloatingAvatar({ title, url }) {
               </button>
             </div>
             <div className={styles.divider}></div>
-            <a href="/feed.xml" className={styles.rssLink} target="_blank">
+            <a href={`/feed.${language}.xml`} className={styles.rssLink} target="_blank">
               {t("blog.subscribe_rss")} <i className="bi bi-rss-fill"></i>
             </a>
           </div>
