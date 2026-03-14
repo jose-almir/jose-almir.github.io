@@ -1,19 +1,25 @@
 import { getPosts } from "@/lib/posts";
 import { Card } from "@/components/Card";
-import Head from "next/head";
 import { Seo } from "@/components/Seo";
+import { Pagination } from "@/components/Pagination";
+
+const POSTS_PER_PAGE = 4;
 
 export async function getStaticProps() {
-  const posts = getPosts();
+  const allPosts = getPosts();
+  const posts = allPosts.slice(0, POSTS_PER_PAGE);
+  const totalPages = Math.ceil(allPosts.length / POSTS_PER_PAGE);
 
   return {
     props: {
       posts,
+      currentPage: 1,
+      totalPages,
     },
   };
 }
 
-export default function Blog({ posts }) {
+export default function Blog({ posts, currentPage, totalPages }) {
   return (
     <>
       <Seo />
@@ -25,6 +31,7 @@ export default function Blog({ posts }) {
               <Card key={post.id} post={post} />
             ))}
           </div>
+          <Pagination currentPage={currentPage} totalPages={totalPages} />
         </div>
       </div>
     </>

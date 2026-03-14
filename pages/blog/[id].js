@@ -3,6 +3,7 @@ import { getPost, getPosts } from "@/lib/posts";
 import Giscus from "@giscus/react";
 import { useTheme } from "next-themes";
 import Link from "next/link";
+import { useRouter } from "next/router";
 import { ReactMarkdown } from "react-markdown/lib/react-markdown";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import {
@@ -95,6 +96,7 @@ function CopyButton({ code }) {
 
 export default function Post({ post, prevPost, nextPost }) {
   const { theme } = useTheme();
+  const router = useRouter();
   const [scrollProgress, setScrollProgress] = useState(0);
 
   useEffect(() => {
@@ -119,6 +121,16 @@ export default function Post({ post, prevPost, nextPost }) {
     return () => zoom.detach();
   }, [post]);
 
+  const handleBack = () => {
+    // Check if there's history within our app. 
+    // Simply using history.length > 1 isn't perfect but for SSG it works well
+    if (window.history.length > 2) {
+      router.back();
+    } else {
+      router.push("/blog");
+    }
+  };
+
   return (
     <>
       <Seo
@@ -136,7 +148,7 @@ export default function Post({ post, prevPost, nextPost }) {
       <div className="container blog">
         <div className="pt-md">
           <FloatingAvatar title={post.title} url={`${baseUrl}/blog/${post.id}`} />
-          <span
+          <div
             style={{
               display: "flex",
               alignItems: "center",
@@ -144,16 +156,13 @@ export default function Post({ post, prevPost, nextPost }) {
               marginBottom: "16px",
             }}
           >
-            <Link className="back-btn" href="/blog">
-              <i className="bi bi-arrow-left"></i> Voltar
-            </Link>
             {post.readingTime && (
               <span style={{ fontSize: "0.85rem", opacity: 0.55 }}>
                 <i className="bi bi-clock" style={{ marginRight: "5px" }}></i>
                 {post.readingTime} min de leitura
               </span>
             )}
-          </span>
+          </div>
           <ReactMarkdown
             className="blog-post"
             children={post.content}
