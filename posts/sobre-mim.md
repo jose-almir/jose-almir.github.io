@@ -4,7 +4,7 @@ date: "2023-05-06T00:00:00"
 thumbnail: "/blog/sobre-mim/sobre-mim-thumb.jpg"
 desc: "Quando a paixão por escrever e a vontade de compartilhar ideias se encontram em um desenvolvedor, nasce um blog."
 tags: "ideias, introdução"
-categoria: "ideias"
+category: "ideias"
 ---
 
 <section className="intro">

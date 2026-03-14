@@ -32,5 +32,10 @@
   },
   "footer": {
     "developed_by": "Developed by"
+  },
+  "error": {
+    "title": "404 - Page Not Found",
+    "message": "Oops! It seems you're lost or this content is not available in this language.",
+    "back_home": "Back to home"
   }
 }

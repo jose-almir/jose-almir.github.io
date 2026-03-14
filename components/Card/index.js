@@ -30,10 +30,10 @@ export function Card({ post }) {
             </span>
             <span onClick={(e) => e.stopPropagation()}>
               <Link
-                className={styles.cardCategoria}
-                href={`/${language}/blog/categoria/${post.categoria}`}
+                className={styles.cardCategory}
+                href={`/${language}/blog/category/${post.category}`}
               >
-                #{post.categoria}
+                #{post.category}
               </Link>
             </span>
           </span>
