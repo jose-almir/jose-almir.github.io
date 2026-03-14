@@ -247,12 +247,56 @@
     top: auto;
     border-bottom-left-radius: 0;
     border-bottom-right-radius: 0;
-    border-top-left-radius: 8px;
-    border-top-right-radius: 8px;
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+    padding: 0 10px;
+    height: 64px;
 
     &.hidden {
       transform: translateY(72px);
       transition: transform 0.3s ease-in-out;
+    }
+
+    .avatar {
+      width: 36px;
+      height: 36px;
+    }
+
+    .navlinks {
+      margin-left: 4px;
+      gap: 12px;
+      a {
+        font-size: 0.7rem;
+      }
+    }
+
+    .actions {
+      gap: 6px;
+    }
+
+    .socialIcons {
+      gap: 4px;
+      padding-right: 4px;
+
+      @media screen and (max-width: 400px) {
+        display: none;
+      }
+
+      a {
+        width: 28px;
+        height: 28px;
+        font-size: 0.8rem;
+        border-radius: 8px;
+      }
+    }
+
+    .themeicon {
+      margin-right: 0;
+      .themebutton {
+        padding: 5px;
+        font-size: 14px;
+        border-radius: 8px;
+      }
     }
   }
 }

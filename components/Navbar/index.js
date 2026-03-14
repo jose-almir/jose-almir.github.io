@@ -64,7 +64,7 @@ export function Navbar() {
             className={styles.themebutton}
             onClick={() => toggleLanguage()}
             title={language === "pt" ? "Switch to English" : "Mudar para Português"}
-            style={{ marginRight: '8px', fontSize: '0.8rem', fontWeight: 'bold' }}
+            style={{ fontSize: '0.8rem', fontWeight: 'bold' }}
           >
             {language.toUpperCase()}
           </button>
