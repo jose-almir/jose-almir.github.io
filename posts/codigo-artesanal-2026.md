@@ -42,7 +42,7 @@ Essa mudança não é necessariamente negativa.
 
 Durante muito tempo enfrentei dificuldades com produtividade na escrita propriamente dita do código. Em muitas situações eu já tinha a abstração muito clara na mente, mas levava um tempo considerável para transformá-la em implementação.
 
-Não raramente uma feature atrasava por um certo perfeccionismo: a tentativa de implementar exatamente aquilo que eu havia imaginado. Já comentei sobre isso no artigo [Purismo e Pragmatismo](/blog/purismo-pragmatismo).
+Não raramente uma feature atrasava por um certo perfeccionismo: a tentativa de implementar exatamente aquilo que eu havia imaginado. Já comentei sobre isso no artigo [Purismo e Pragmatismo](/pt/blog/purismo-pragmatismo).
 
 Com agentes assumindo boa parte da codificação, meu foco passa a ser alinhar bem a abstração e comunicar claramente a intenção, para que o modelo consiga implementar aquilo que é necessário.
 

@@ -43,7 +43,7 @@ This change isn’t necessarily negative.
 
 For a long time, I struggled with productivity when it came to actually writing the code. In many situations, I already had a very clear abstraction in mind, but it took me a considerable amount of time to turn it into an implementation.
 
-It wasn’t uncommon for a feature to be delayed due to a certain perfectionism: the attempt to implement exactly what I had imagined. I’ve already discussed this in the article [Purism and Pragmatism](/blog/purismo-pragmatismo).
+It wasn’t uncommon for a feature to be delayed due to a certain perfectionism: the attempt to implement exactly what I had imagined. I’ve already discussed this in the article [Purism and Pragmatism](/pt/blog/purismo-pragmatismo).
 
 With agents taking on a large part of the coding, my focus shifts to aligning the abstraction well and clearly communicating the intent, so that the model can implement what is necessary.
 
