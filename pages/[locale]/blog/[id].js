@@ -276,6 +276,7 @@ export default function Post({ post, prevPost, nextPost, locale, translations })
           <h4>{t("blog.comments")}</h4>
           <Giscus
             id="comments"
+            key={`giscus-${locale}-${post.id}`}
             repo="jose-almir/jose-almir.github.io"
             repoId="R_kgDOJcTwDQ"
             category="Announcements"
