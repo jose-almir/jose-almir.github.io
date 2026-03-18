@@ -196,7 +196,7 @@ export default function Post({ post, prevPost, nextPost, locale, translations })
             }}
             rehypePlugins={[rehypeRaw]}
           />
-          <ShareButtons title={post.title} url={`${baseUrl}/blog/${post.id}`} />
+          <ShareButtons title={post.title} url={`${baseUrl}/${locale}/blog/${post.id}`} />
         </div>
 
         <div className="post-navigation-container mt-lg mb-lg">
