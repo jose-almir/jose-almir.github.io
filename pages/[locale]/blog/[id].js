@@ -1,6 +1,6 @@
 import { Seo } from "@/components/Seo";
 import { getPost, getPosts, getAllPosts } from "@/lib/posts";
-import Giscus from "@giscus/react";
+import { Comments } from "@/components/Comments";
 import { useTheme } from "next-themes";
 import Link from "next/link";
 import { useRouter } from "next/router";
@@ -272,24 +272,7 @@ export default function Post({ post, prevPost, nextPost, locale, translations })
           </div>
         </div>
 
-        <div>
-          <h4>{t("blog.comments")}</h4>
-          <Giscus
-            id="comments"
-            key={`giscus-${locale}-${post.id}`}
-            repo="jose-almir/jose-almir.github.io"
-            repoId="R_kgDOJcTwDQ"
-            category="Announcements"
-            categoryId="DIC_kwDOJcTwDc4CWYcC"
-            mapping="pathname"
-            strict="0"
-            reactionsEnabled="0"
-            emitMetadata="0"
-            theme={theme === "dark" ? "dark" : "light"}
-            lang={language === 'pt' ? 'pt' : 'en'}
-            inputPosition="top"
-          />
-        </div>
+        <Comments id={post.id} locale={locale} title={t("blog.comments")} />
       </div>
     </>
   );

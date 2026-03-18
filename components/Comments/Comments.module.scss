@@ -1,0 +1,105 @@
+@import "../../styles/variables.scss";
+
+.container {
+  margin-top: $spacer-xl;
+  padding: $spacer-lg;
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 20px;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+
+  [data-theme="light"] & {
+    background: rgba(0, 0, 0, 0.02);
+    border-color: rgba(0, 0, 0, 0.05);
+  }
+
+  &:hover {
+    border-color: rgba($accent, 0.2);
+    background: rgba(255, 255, 255, 0.05);
+
+    [data-theme="light"] & {
+      background: rgba(0, 0, 0, 0.03);
+    }
+  }
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: $spacer-lg;
+
+  h4 {
+    margin: 0;
+    font-size: 1.25rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: rgba(255, 255, 255, 0.9);
+
+    [data-theme="light"] & {
+      color: $background-dark;
+    }
+  }
+
+  i {
+    color: $accent;
+    font-size: 1.4rem;
+  }
+}
+
+.skeleton {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 10px 0;
+
+  .skeletonItem {
+    background: linear-gradient(
+      90deg,
+      rgba(255, 255, 255, 0.05) 25%,
+      rgba(255, 255, 255, 0.1) 50%,
+      rgba(255, 255, 255, 0.05) 75%
+    );
+    background-size: 200% 100%;
+    animation: loading 1.5s infinite;
+    border-radius: 8px;
+
+    [data-theme="light"] & {
+      background: linear-gradient(
+        90deg,
+        rgba(0, 0, 0, 0.05) 25%,
+        rgba(0, 0, 0, 0.1) 50%,
+        rgba(0, 0, 0, 0.05) 75%
+      );
+    }
+  }
+
+  .avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+  }
+
+  .line {
+    height: 12px;
+    width: 100%;
+  }
+
+  .lineShort {
+    height: 12px;
+    width: 60%;
+  }
+}
+
+@keyframes loading {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}
