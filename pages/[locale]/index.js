@@ -53,7 +53,7 @@ export default function Home({ posts, locale }) {
 
   return (
     <>
-      <Seo />
+      <Seo path="/" />
       <div className="spotlight" />
       <div className="home-wrapper">
         <div className="container home-main-container">

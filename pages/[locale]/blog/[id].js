@@ -139,10 +139,11 @@ export default function Post({ post, prevPost, nextPost, locale, translations })
   return (
     <>
       <Seo
-        title={`${post.title} | jose-almir`}
+        title={`${post.title}`}
         description={post.desc}
         keywords={post.tags}
         image={`${baseUrl}${post.thumbnail}`}
+        path={`/blog/${post.id}`}
       />
       {/* Scroll progress bar */}
       <div
@@ -205,7 +206,7 @@ export default function Post({ post, prevPost, nextPost, locale, translations })
             {prevPost ? (
               <Link href={`/${locale}/blog/${prevPost.id}`} className="nav-link prev">
                 <div className="nav-image-container">
-                  <img src={prevPost.thumbnail} alt="" className="nav-image" />
+                  <img src={prevPost.thumbnail} alt={prevPost.title} className="nav-image" />
                 </div>
                 <div className="nav-content">
                   <span className="nav-label">
@@ -227,7 +228,7 @@ export default function Post({ post, prevPost, nextPost, locale, translations })
                   <p className="nav-title">{nextPost.title}</p>
                 </div>
                 <div className="nav-image-container">
-                  <img src={nextPost.thumbnail} alt="" className="nav-image" />
+                  <img src={nextPost.thumbnail} alt={nextPost.title} className="nav-image" />
                 </div>
               </Link>
             ) : (

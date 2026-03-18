@@ -19,7 +19,7 @@ export function Footer() {
           </a>
         </div>
         <p className={styles.copyright}>
-          &copy; {new Date().getFullYear()} jose-almir. {language === 'pt' ? 'Todos os direitos reservados.' : 'All rights reserved.'}
+          &copy; {new Date().getFullYear()} Almir Dev. {language === 'pt' ? 'Todos os direitos reservados.' : 'All rights reserved.'}
         </p>
       </div>
     </footer>
