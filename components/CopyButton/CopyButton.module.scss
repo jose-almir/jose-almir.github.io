@@ -1,0 +1,64 @@
+@import "../../styles/variables.scss";
+
+.copyButton {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background: $surface-glass;
+  backdrop-filter: blur(8px);
+  border: 1px solid $border-glass;
+  border-radius: 8px;
+  color: $text-muted;
+  cursor: pointer;
+  padding: 6px 12px;
+  font-size: 0.75rem;
+  font-family: inherit;
+  font-weight: $font-weight-bold;
+  transition: $transition-smooth;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  z-index: 10;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+
+  i {
+    font-size: 0.9rem;
+  }
+
+  &:hover {
+    background: rgba($primary, 0.1);
+    border-color: rgba($primary, 0.3);
+    color: $primary;
+    transform: translateY(-1px);
+    box-shadow: $shadow-glow;
+  }
+
+  &:active {
+    transform: translateY(0);
+  }
+
+  &.copied {
+    background: rgba($primary, 0.2);
+    border-color: $primary;
+    color: lighten($primary, 10%);
+  }
+
+  &:focus-visible {
+    outline: 2px solid $primary;
+    outline-offset: 2px;
+  }
+}
+
+[data-theme="light"] {
+  .copyButton {
+    background: $surface-glass-light;
+    border-color: $border-glass-light;
+    color: $text-muted-light;
+
+    &:hover {
+      background: rgba($primary, 0.05);
+      color: $primary;
+    }
+  }
+}

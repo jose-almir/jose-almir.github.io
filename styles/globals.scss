@@ -9,12 +9,16 @@
   box-sizing: border-box;
 }
 
+:root {
+  color-scheme: dark;
+}
+
 body {
   margin: 0;
   padding: 0;
   background-color: $background-dark;
-  color: white;
-  font-family: "Hanken Grotesk", sans-serif;
+  color: $text-main;
+  font-family: $font-family;
   overflow-x: hidden;
   position: relative;
   min-height: 100vh;
@@ -30,9 +34,9 @@ body {
     width: 100%;
     height: 100%;
     z-index: -1;
-    background: radial-gradient(circle at 15% 15%, rgba(39, 174, 96, 0.03) 0%, transparent 40%),
-                radial-gradient(circle at 85% 85%, rgba(22, 160, 133, 0.03) 0%, transparent 40%),
-                radial-gradient(circle at 50% 50%, rgba(39, 174, 96, 0.01) 0%, transparent 60%);
+    background: radial-gradient(circle at 15% 15%, rgba(39, 174, 96, 0.05) 0%, transparent 40%),
+                radial-gradient(circle at 85% 85%, rgba(22, 160, 133, 0.05) 0%, transparent 40%),
+                radial-gradient(circle at 50% 50%, rgba(39, 174, 96, 0.02) 0%, transparent 60%);
     animation: background-pulse 60s ease-in-out infinite alternate;
   }
 
@@ -46,10 +50,10 @@ body {
     height: 100%;
     z-index: 9999;
     pointer-events: none;
-    opacity: 0.025;
+    opacity: 0.035;
     background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
     [data-theme="light"] & {
-      opacity: 0.015;
+      opacity: 0.02;
     }
   }
 }
@@ -62,55 +66,78 @@ body {
   pointer-events: none;
   background: radial-gradient(
     600px circle at var(--mouse-x, 50%) var(--mouse-y, 50%),
-    rgba($accent, 0.04),
+    rgba($accent, 0.06),
     transparent 40%
   );
 }
 
 @keyframes background-pulse {
   0% { transform: scale(1) translate(0, 0); }
-  50% { transform: scale(1.1) translate(2% , 1%); }
-  100% { transform: scale(1) translate(-1%, 2%); }
+  50% { transform: scale(1.05) translate(1% , 0.5%); }
+  100% { transform: scale(1) translate(-0.5%, 1%); }
 }
 
 [data-theme="light"] {
+  color-scheme: light;
   body {
     background-color: $background-light;
-    color: $background-dark;
+    color: $text-main-light;
 
     &::before {
-      background: radial-gradient(circle at 10% 10%, rgba(39, 174, 96, 0.04) 0%, transparent 50%),
-                  radial-gradient(circle at 90% 90%, rgba(22, 160, 133, 0.04) 0%, transparent 50%);
-      opacity: 0.6;
+      background: radial-gradient(circle at 10% 10%, rgba(39, 174, 96, 0.06) 0%, transparent 50%),
+                  radial-gradient(circle at 90% 90%, rgba(22, 160, 133, 0.06) 0%, transparent 50%);
+      opacity: 0.8;
     }
   }
-color: rgba($color: #000000, $alpha: 0.87);
 }
 
 a {
   color: $accent;
   text-decoration: none;
-  font-weight: bold;
+  font-weight: $font-weight-bold;
+  transition: $transition-smooth;
+
+  &:hover {
+    color: $primary;
+    opacity: 0.8;
+  }
+  
+  &:focus-visible {
+    outline: 2px solid $primary;
+    outline-offset: 4px;
+    border-radius: 4px;
+  }
 }
 
 a.back-btn {
   cursor: pointer;
-  background-color: $background-lighter;
+  background-color: $surface-glass;
+  backdrop-filter: blur($blur-intensity);
+  border: 1px solid $border-glass;
   color: $primary;
-  padding: 8px;
+  padding: 8px 16px;
   text-decoration: none;
-  border-radius: 6px;
+  border-radius: 8px;
   display: block;
-  width: 100px;
+  width: fit-content;
   text-align: center;
-  font-size: 0.9rem;
+  font-size: 0.85rem;
+  font-weight: $font-weight-bold;
   letter-spacing: 0.04em;
   text-transform: uppercase;
+  transition: $transition-smooth;
+
+  &:hover {
+    background-color: rgba($primary, 0.1);
+    border-color: rgba($primary, 0.3);
+    transform: translateX(-4px);
+  }
 }
 
 [data-theme="light"] a.back-btn {
-  color: $background-light;
-  background-color: $background-lighter;
+  color: $primary;
+  background-color: $surface-glass-light;
+  border-color: $border-glass-light;
 }
 
 .blog-post {

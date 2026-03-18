@@ -1,26 +1,19 @@
 import styles from "./Card.module.scss";
 import Link from "next/link";
-import { useRouter } from "next/router";
 import { useTranslation } from "@/lib/LanguageContext";
 
 export function Card({ post }) {
-  const router = useRouter();
   const { t, language } = useTranslation();
-
-  const handleCardClick = () => {
-    router.push(`/${language}/blog/${post.id}`);
-  };
 
   const cardSizeClass = post.size ? styles[post.size] : styles.small;
   const descLength = post.size === 'large' || post.size === 'wide' ? 40 : 20;
 
   return (
-    <div
+    <Link 
+      href={`/${language}/blog/${post.id}`} 
       className={`${styles.card} ${cardSizeClass}`}
-      style={{ cursor: "pointer" }}
-      onClick={handleCardClick}
     >
-        <img className={styles.cardImage} src={post.thumbnail} alt="Imagem" />
+        <img className={styles.cardImage} src={post.thumbnail} alt="" />
         <div className={styles.cardContent}>
           <h4 className={styles.cardTitle}>{post.title}</h4>
           <span className={styles.postedAt}>
@@ -28,13 +21,12 @@ export function Card({ post }) {
               <i className="bi bi-calendar mr-xs"></i>
               {new Date(post.date).toLocaleDateString(language === 'pt' ? 'pt-BR' : 'en-US')}
             </span>
-            <span onClick={(e) => e.stopPropagation()}>
-              <Link
+            <span onClick={(e) => e.preventDefault()}>
+              <div
                 className={styles.cardCategory}
-                href={`/${language}/blog/category/${post.category}`}
               >
                 #{post.category}
-              </Link>
+              </div>
             </span>
           </span>
           {post.readingTime && (
@@ -44,7 +36,7 @@ export function Card({ post }) {
             </span>
           )}
           <p className={styles.cardText}>
-            {post.desc.trim().split(" ").slice(0, descLength).join(" ") + "..."}
+            {post.desc.trim().split(" ").slice(0, descLength).join(" ") + "…"}
           </p>
           <div className={styles.cardTags}>
             {post.tags.split(", ").map((tag, i) => (
@@ -52,6 +44,6 @@ export function Card({ post }) {
             ))}
           </div>
         </div>
-      </div>
+      </Link>
     );
   }

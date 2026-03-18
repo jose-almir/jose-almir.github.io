@@ -11,10 +11,11 @@ import {
   coldarkCold as codeLight,
 } from "react-syntax-highlighter/dist/cjs/styles/prism";
 import rehypeRaw from "rehype-raw";
-import { useState, useEffect, useCallback } from "react";
 import mediumZoom from "medium-zoom";
+import { useState, useEffect } from "react";
 import { ShareButtons } from "@/components/ShareButtons";
 import { FloatingAvatar } from "@/components/FloatingAvatar";
+import { CopyButton } from "@/components/CopyButton";
 
 import { useTranslation } from "@/lib/LanguageContext";
 
@@ -81,62 +82,25 @@ export function getStaticProps({ params: { id, locale } }) {
   }
 }
 
-function CopyButton({ code, t }) {
-  const [copied, setCopied] = useState(false);
-
-  const handleCopy = useCallback(() => {
-    navigator.clipboard.writeText(code).then(() => {
-      setCopied(true);
-      setTimeout(() => setCopied(false), 2000);
-    });
-  }, [code]);
-
-  return (
-    <button
-      onClick={handleCopy}
-      title={t("blog.copy_link")}
-      style={{
-        position: "absolute",
-        top: "10px",
-        right: "10px",
-        background: copied ? "rgba(100,200,100,0.2)" : "rgba(255,255,255,0.1)",
-        border: "1px solid rgba(255,255,255,0.15)",
-        borderRadius: "6px",
-        color: copied ? "#7ee787" : "rgba(255,255,255,0.6)",
-        cursor: "pointer",
-        padding: "4px 10px",
-        fontSize: "0.75rem",
-        fontFamily: "inherit",
-        transition: "all 0.2s ease",
-        zIndex: 1,
-      }}
-    >
-      {copied ? (
-        <>
-          <i className="bi bi-check2" style={{ marginRight: "4px" }}></i>{t("blog.copied")}
-        </>
-      ) : (
-        <>
-          <i className="bi bi-clipboard" style={{ marginRight: "4px" }}></i>
-          {t("blog.copy_link").split(" ")[0]}
-        </>
-      )}
-    </button>
-  );
-}
+// CopyButton is now a separate component
 
 export default function Post({ post, prevPost, nextPost, locale, translations }) {
   const { theme } = useTheme();
   const router = useRouter();
   const { t, language, isLoaded, setAvailableTranslations } = useTranslation();
   const [scrollProgress, setScrollProgress] = useState(0);
+  const [isClient, setIsClient] = useState(false);
 
   useEffect(() => {
-    if (translations) {
+    setIsClient(true);
+  }, []);
+
+  useEffect(() => {
+    if (translations && isClient) {
       setAvailableTranslations(translations);
     }
     return () => setAvailableTranslations({});
-  }, [translations]);
+  }, [translations, isClient]);
 
   useEffect(() => {
     const handleScroll = () => {

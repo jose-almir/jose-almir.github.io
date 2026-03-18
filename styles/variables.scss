@@ -1,20 +1,46 @@
+// Colors
 $primary: #27ae60;
 $accent: #16a085;
 $background-dark: #111827;
 $background-lighter: #2c3e50;
 $background-light: #f8f8ff;
+
+// Semantic Tokens
+$text-main: #ffffff;
+$text-muted: rgba(255, 255, 255, 0.6);
+$surface-glass: rgba(255, 255, 255, 0.03);
+$border-glass: rgba(255, 255, 255, 0.08);
+$blur-intensity: 24px;
+
+// Light Mode Overrides (used via mixins or data-theme)
+$text-main-light: #111827;
+$text-muted-light: rgba(17, 24, 39, 0.6);
+$surface-glass-light: rgba(0, 0, 0, 0.02);
+$border-glass-light: rgba(0, 0, 0, 0.05);
+
+// Spacing
 $spacer: 1rem;
 $spacer-xs: $spacer * 0.25;
 $spacer-sm: $spacer * 0.5;
 $spacer-md: $spacer * 1.5;
 $spacer-lg: $spacer * 2;
 $spacer-xl: $spacer * 3;
+
+// Typography
 $font-family: "Hanken Grotesk", sans-serif;
-$font-weight: bold;
+$font-weight-bold: 700;
+$font-weight-black: 900;
 $line-height: 1.75;
-$font-size-h1: 3.5rem;
-$font-size-h2: 2.8rem;
-$font-size-h3: 2.2rem;
+
+// Font Sizes
+$font-size-h1: clamp(2.5rem, 8vw, 3.5rem);
+$font-size-h2: clamp(2rem, 6vw, 2.8rem);
+$font-size-h3: clamp(1.5rem, 4vw, 2.2rem);
 $font-size-h4: 1.6rem;
 $font-size-h5: 1.25rem;
 $font-size-h6: 1rem;
+
+// Effects
+$transition-smooth: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+$shadow-glow: 0 0 20px rgba($primary, 0.15);
+$shadow-premium: 0 8px 32px rgba(0, 0, 0, 0.24);

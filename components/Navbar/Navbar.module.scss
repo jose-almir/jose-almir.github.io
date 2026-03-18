@@ -1,7 +1,7 @@
 .navbar {
   height: 72px;
-  background: rgba($color: $background-dark, $alpha: 0.15);
-  backdrop-filter: blur(16px) saturate(180%);
+  background: rgba($background-dark, 0.4);
+  backdrop-filter: blur($blur-intensity) saturate(180%);
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -9,9 +9,9 @@
   width: 100%;
   z-index: 999;
   top: 0;
-  border-bottom: 1px solid rgba($color: #ffffff, $alpha: 0.08);
-  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-  padding: 0 24px;
+  border-bottom: 1px solid $border-glass;
+  transition: $transition-smooth;
+  padding: 0 48px;
 
   &::after {
     content: '';
@@ -24,22 +24,21 @@
   }
 
   .avatar {
-    width: 48px;
-    height: 48px;
-    border-radius: 12px;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
     background-image: url("/profile/avatar-color.png");
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
-    filter: contrast(1.05) brightness(1.02);
-    transition: all 0.3s ease;
-    border: 2px solid rgba($color: #ffffff, $alpha: 0.1);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: $transition-smooth;
+    border: 2px solid $border-glass;
+    box-shadow: $shadow-premium;
 
     &:hover {
-      transform: scale(1.05) rotate(1deg);
-      border-color: $accent;
-      filter: contrast(1.1) brightness(1.05);
+      transform: scale(1.1) rotate(5deg);
+      border-color: $primary;
+      box-shadow: $shadow-glow;
     }
   }
 
@@ -140,24 +139,32 @@
 
   .themeicon {
     margin-right: 12px;
+    display: flex;
+    gap: 8px;
+
     .themebutton {
       font-size: 18px;
-      background: rgba($color: #ffffff, $alpha: 0.04);
-      border: 1px solid rgba($color: #ffffff, $alpha: 0.06);
-      color: rgba($color: #ffffff, $alpha: 0.7);
+      background: $surface-glass;
+      border: 1px solid $border-glass;
+      color: $text-muted;
       cursor: pointer;
       padding: 8px;
-      border-radius: 10px;
-      transition: all 0.3s ease;
+      border-radius: 12px;
+      transition: $transition-smooth;
       display: inline-flex;
       align-items: center;
       justify-content: center;
 
       &:hover {
-        color: $accent;
-        background-color: rgba($color: $accent, $alpha: 0.1);
-        border-color: rgba($color: $accent, $alpha: 0.2);
+        color: $primary;
+        background-color: rgba($primary, 0.1);
+        border-color: rgba($primary, 0.3);
         transform: translateY(-2px);
+      }
+      
+      &:focus-visible {
+        outline: 2px solid $primary;
+        outline-offset: 2px;
       }
     }
   }

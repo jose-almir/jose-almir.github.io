@@ -8,10 +8,11 @@ h5,
 h6 {
   margin: 1.5rem 0 1rem;
   font-family: $font-family;
-  line-height: 1.2;
-  font-weight: 800;
-  color: rgba($color: $primary, $alpha: 0.87);
-  letter-spacing: -0.02em;
+  line-height: 1.1;
+  font-weight: $font-weight-black;
+  color: $primary;
+  letter-spacing: -0.03em;
+  text-wrap: balance;
 }
 
 [data-theme="light"] {
@@ -21,15 +22,15 @@ h6 {
   h4,
   h5,
   h6 {
-    color: rgba($color: $background-dark, $alpha: 0.9);
+    color: $text-main-light;
   }
 
   blockquote {
-    color: rgba($color: $background-dark, $alpha: 0.87);
+    color: $text-muted-light;
   }
 
   .intro span, .intro i {
-    color: rgba($color: $background-dark, $alpha: 0.6);
+    color: $text-muted-light;
   }
 }
 
@@ -40,13 +41,13 @@ h1 {
 
 h2 {
   font-size: $font-size-h2;
-  font-weight: 750;
+  font-weight: 800;
   margin-top: 1.8rem;
 }
 
 h3 {
   font-size: $font-size-h3;
-  font-weight: 700;
+  font-weight: 800;
 }
 
 h4 {
@@ -62,16 +63,14 @@ h6 {
 }
 
 p {
-  line-height: 1.8;
+  line-height: $line-height;
   font-size: 1.125rem;
   margin-bottom: 1.5rem;
-  opacity: 0.85;
-  color: inherit;
+  color: $text-muted;
 }
 
 [data-theme="light"] {
   p {
-    color: rgba($color: $background-dark, $alpha: 0.9);
-    opacity: 1;
+    color: $text-muted-light;
   }
 }
