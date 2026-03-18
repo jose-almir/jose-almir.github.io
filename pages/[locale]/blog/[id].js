@@ -153,7 +153,7 @@ export default function Post({ post, prevPost, nextPost, locale, translations })
       />
       <div className="container blog">
         <div className="pt-md">
-          <FloatingAvatar title={post.title} url={`${baseUrl}/blog/${post.id}`} />
+          <FloatingAvatar title={post.title} url={`${baseUrl}/${locale}/blog/${post.id}`} />
           <div
             style={{
               display: "flex",
