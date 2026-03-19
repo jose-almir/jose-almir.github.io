@@ -21,7 +21,7 @@ import { useTranslation } from "@/lib/LanguageContext";
 
 const baseUrl =
   process.env.NODE_ENV === "production"
-    ? "https://jose-almir.github.io"
+    ? "https://almirdev.com"
     : "http://localhost:3000";
 
 export function getStaticPaths() {

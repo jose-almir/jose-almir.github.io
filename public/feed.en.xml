@@ -1,24 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
-        <title><![CDATA[blog | jose-almir (en)]]></title>
+        <title><![CDATA[Blog | Almir Dev]]></title>
         <description><![CDATA[Reflections on technology, software and design.]]></description>
-        <link>https://jose-almir.github.io/en</link>
+        <link>https://almirdev.com/en</link>
         <image>
-            <url>https://jose-almir.github.io/brand.png</url>
-            <title>blog | jose-almir (en)</title>
-            <link>https://jose-almir.github.io/en</link>
+            <url>https://almirdev.com/brand.png</url>
+            <title>Blog | Almir Dev</title>
+            <link>https://almirdev.com/en</link>
         </image>
         <generator>RSS for Node</generator>
-        <lastBuildDate>Sat, 14 Mar 2026 02:50:00 GMT</lastBuildDate>
-        <atom:link href="https://jose-almir.github.io/feed.en.xml" rel="self" type="application/rss+xml"/>
-        <pubDate>Sat, 14 Mar 2026 02:50:00 GMT</pubDate>
-        <copyright><![CDATA[All rights reserved 2026, jose-almir]]></copyright>
+        <lastBuildDate>Thu, 19 Mar 2026 00:11:26 GMT</lastBuildDate>
+        <atom:link href="https://almirdev.com/feed.en.xml" rel="self" type="application/rss+xml"/>
+        <pubDate>Thu, 19 Mar 2026 00:11:26 GMT</pubDate>
+        <copyright><![CDATA[All rights reserved 2026, Almir Dev]]></copyright>
         <language><![CDATA[en]]></language>
         <item>
             <title><![CDATA[Handcrafted Code in 2026?]]></title>
             <description><![CDATA[Reflections on the practice of writing code by hand in 2026, amidst so many tools that automate.]]></description>
-            <link>https://jose-almir.github.io/en/blog/codigo-artesanal-2026</link>
-            <guid isPermaLink="true">https://jose-almir.github.io/en/blog/codigo-artesanal-2026</guid>
+            <link>https://almirdev.com/en/blog/codigo-artesanal-2026</link>
+            <guid isPermaLink="true">https://almirdev.com/en/blog/codigo-artesanal-2026</guid>
             <category><![CDATA[ideas]]></category>
             <pubDate>Sat, 14 Mar 2026 03:00:00 GMT</pubDate>
         </item>

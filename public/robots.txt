@@ -1,5 +1,5 @@
 User-agent: *
 Disallow:
 
-Host: https://jose-almir.github.io
-Sitemap: https://jose-almir.github.io/sitemap.xml
+Host: https://almirdev.com
+Sitemap: https://almirdev.com/sitemap.xml

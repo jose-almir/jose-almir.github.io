@@ -1,38 +1,116 @@
 <?xml version="1.0" encoding="UTF-8"?>
       <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
       <url>
-      <loc>https://jose-almir.github.io/blog/cms-portfolio</loc>
-      <lastmod>2026-03-10T02:24:29.405Z</lastmod>
+      <loc>https://almirdev.com/pt/blog/cms-portfolio</loc>
+      <lastmod>2026-03-19T00:09:43.496Z</lastmod>
       <changefreq>monthly</changefreq>
       <priority>1.0</priority>
     </url>
   <url>
-      <loc>https://jose-almir.github.io/blog/novo-ciclo-blog</loc>
-      <lastmod>2026-03-10T02:24:29.405Z</lastmod>
+      <loc>https://almirdev.com/en/blog/cms-portfolio</loc>
+      <lastmod>2026-03-19T00:09:43.497Z</lastmod>
       <changefreq>monthly</changefreq>
       <priority>1.0</priority>
     </url>
   <url>
-      <loc>https://jose-almir.github.io/blog/purismo-pragmatismo</loc>
-      <lastmod>2026-03-10T02:24:29.405Z</lastmod>
+      <loc>https://almirdev.com/en/blog/codigo-artesanal-2026</loc>
+      <lastmod>2026-03-19T00:09:43.497Z</lastmod>
       <changefreq>monthly</changefreq>
       <priority>1.0</priority>
     </url>
   <url>
-      <loc>https://jose-almir.github.io/404</loc>
-      <lastmod>2026-03-10T02:24:29.405Z</lastmod>
+      <loc>https://almirdev.com/pt/blog/codigo-artesanal-2026</loc>
+      <lastmod>2026-03-19T00:09:43.497Z</lastmod>
       <changefreq>monthly</changefreq>
       <priority>1.0</priority>
     </url>
   <url>
-      <loc>https://jose-almir.github.io/portfolio</loc>
-      <lastmod>2026-03-10T02:24:29.405Z</lastmod>
+      <loc>https://almirdev.com/pt/blog/como-aprender-css</loc>
+      <lastmod>2026-03-19T00:09:43.497Z</lastmod>
       <changefreq>monthly</changefreq>
       <priority>1.0</priority>
     </url>
   <url>
-      <loc>https://jose-almir.github.io/blog</loc>
-      <lastmod>2026-03-10T02:24:29.405Z</lastmod>
+      <loc>https://almirdev.com/en/blog/como-aprender-css</loc>
+      <lastmod>2026-03-19T00:09:43.497Z</lastmod>
+      <changefreq>monthly</changefreq>
+      <priority>1.0</priority>
+    </url>
+  <url>
+      <loc>https://almirdev.com/pt/blog/file-picker-react</loc>
+      <lastmod>2026-03-19T00:09:43.497Z</lastmod>
+      <changefreq>monthly</changefreq>
+      <priority>1.0</priority>
+    </url>
+  <url>
+      <loc>https://almirdev.com/en/blog/file-picker-react</loc>
+      <lastmod>2026-03-19T00:09:43.497Z</lastmod>
+      <changefreq>monthly</changefreq>
+      <priority>1.0</priority>
+    </url>
+  <url>
+      <loc>https://almirdev.com/pt/blog/novo-ciclo-blog</loc>
+      <lastmod>2026-03-19T00:09:43.497Z</lastmod>
+      <changefreq>monthly</changefreq>
+      <priority>1.0</priority>
+    </url>
+  <url>
+      <loc>https://almirdev.com/en/blog/novo-ciclo-blog</loc>
+      <lastmod>2026-03-19T00:09:43.497Z</lastmod>
+      <changefreq>monthly</changefreq>
+      <priority>1.0</priority>
+    </url>
+  <url>
+      <loc>https://almirdev.com/pt/blog/purismo-pragmatismo</loc>
+      <lastmod>2026-03-19T00:09:43.497Z</lastmod>
+      <changefreq>monthly</changefreq>
+      <priority>1.0</priority>
+    </url>
+  <url>
+      <loc>https://almirdev.com/en/blog/purismo-pragmatismo</loc>
+      <lastmod>2026-03-19T00:09:43.497Z</lastmod>
+      <changefreq>monthly</changefreq>
+      <priority>1.0</priority>
+    </url>
+  <url>
+      <loc>https://almirdev.com/pt/blog/sobre-mim</loc>
+      <lastmod>2026-03-19T00:09:43.497Z</lastmod>
+      <changefreq>monthly</changefreq>
+      <priority>1.0</priority>
+    </url>
+  <url>
+      <loc>https://almirdev.com/en/blog/sobre-mim</loc>
+      <lastmod>2026-03-19T00:09:43.497Z</lastmod>
+      <changefreq>monthly</changefreq>
+      <priority>1.0</priority>
+    </url>
+  <url>
+      <loc>https://almirdev.com/404</loc>
+      <lastmod>2026-03-19T00:09:43.497Z</lastmod>
+      <changefreq>monthly</changefreq>
+      <priority>1.0</priority>
+    </url>
+  <url>
+      <loc>https://almirdev.com/[locale]</loc>
+      <lastmod>2026-03-19T00:09:43.497Z</lastmod>
+      <changefreq>monthly</changefreq>
+      <priority>1.0</priority>
+    </url>
+  <url>
+      <loc>https://almirdev.com/[locale]/blog</loc>
+      <lastmod>2026-03-19T00:09:43.497Z</lastmod>
+      <changefreq>monthly</changefreq>
+      <priority>1.0</priority>
+    </url>
+  <url>
+      <loc>https://almirdev.com/[locale]/blog/page/[page]</loc>
+      <lastmod>2026-03-19T00:09:43.497Z</lastmod>
+      <changefreq>monthly</changefreq>
+      <priority>1.0</priority>
+    </url>
+  <url>
+      <loc>https://almirdev.com/[locale]/blog/category/[category]</loc>
+      <lastmod>2026-03-19T00:09:43.497Z</lastmod>
       <changefreq>monthly</changefreq>
       <priority>1.0</priority>
     </url>

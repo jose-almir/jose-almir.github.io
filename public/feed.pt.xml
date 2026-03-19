@@ -1,72 +1,72 @@
 <?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
-        <title><![CDATA[blog | jose-almir]]></title>
+        <title><![CDATA[Blog | Almir Dev]]></title>
         <description><![CDATA[Reflexões sobre tecnologia, software e design.]]></description>
-        <link>https://jose-almir.github.io/pt</link>
+        <link>https://almirdev.com/pt</link>
         <image>
-            <url>https://jose-almir.github.io/brand.png</url>
-            <title>blog | jose-almir</title>
-            <link>https://jose-almir.github.io/pt</link>
+            <url>https://almirdev.com/brand.png</url>
+            <title>Blog | Almir Dev</title>
+            <link>https://almirdev.com/pt</link>
         </image>
         <generator>RSS for Node</generator>
-        <lastBuildDate>Sat, 14 Mar 2026 02:50:00 GMT</lastBuildDate>
-        <atom:link href="https://jose-almir.github.io/feed.pt.xml" rel="self" type="application/rss+xml"/>
-        <pubDate>Sat, 14 Mar 2026 02:50:00 GMT</pubDate>
-        <copyright><![CDATA[Todos os direitos reservados 2026, jose-almir]]></copyright>
+        <lastBuildDate>Thu, 19 Mar 2026 00:11:26 GMT</lastBuildDate>
+        <atom:link href="https://almirdev.com/feed.pt.xml" rel="self" type="application/rss+xml"/>
+        <pubDate>Thu, 19 Mar 2026 00:11:26 GMT</pubDate>
+        <copyright><![CDATA[Todos os direitos reservados 2026, Almir Dev]]></copyright>
         <language><![CDATA[pt]]></language>
         <item>
             <title><![CDATA[Código Artesanal em 2026?]]></title>
             <description><![CDATA[Reflexões sobre a prática de escrever código de forma artesanal em 2026, em meio a tantas ferramentas que automatizam.]]></description>
-            <link>https://jose-almir.github.io/pt/blog/codigo-artesanal-2026</link>
-            <guid isPermaLink="true">https://jose-almir.github.io/pt/blog/codigo-artesanal-2026</guid>
+            <link>https://almirdev.com/pt/blog/codigo-artesanal-2026</link>
+            <guid isPermaLink="true">https://almirdev.com/pt/blog/codigo-artesanal-2026</guid>
             <category><![CDATA[ideias]]></category>
             <pubDate>Sat, 14 Mar 2026 03:00:00 GMT</pubDate>
         </item>
         <item>
             <title><![CDATA[Um CMS que usa o GitHub como banco de dados]]></title>
             <description><![CDATA[A ideia de conteúdo gerenciado por arquivos não era nova pra mim, mas este portfólio foi a oportunidade de levar o conceito a outro nível: construir um CMS simples, usando o próprio repositório GitHub como banco de dados]]></description>
-            <link>https://jose-almir.github.io/pt/blog/cms-portfolio</link>
-            <guid isPermaLink="true">https://jose-almir.github.io/pt/blog/cms-portfolio</guid>
+            <link>https://almirdev.com/pt/blog/cms-portfolio</link>
+            <guid isPermaLink="true">https://almirdev.com/pt/blog/cms-portfolio</guid>
             <category><![CDATA[projetos]]></category>
             <pubDate>Tue, 10 Mar 2026 03:00:00 GMT</pubDate>
         </item>
         <item>
             <title><![CDATA[Purismo e Pragmatismo]]></title>
             <description><![CDATA[Encantado por conceitos como SOLID, DDD, Design Patterns caímos facilmente na tentação de encaixar o problema dentro da solução, quando na verdade deve ser o contrário: a solução precisa se dobrar ao problema.]]></description>
-            <link>https://jose-almir.github.io/pt/blog/purismo-pragmatismo</link>
-            <guid isPermaLink="true">https://jose-almir.github.io/pt/blog/purismo-pragmatismo</guid>
+            <link>https://almirdev.com/pt/blog/purismo-pragmatismo</link>
+            <guid isPermaLink="true">https://almirdev.com/pt/blog/purismo-pragmatismo</guid>
             <category><![CDATA[ideias]]></category>
             <pubDate>Sun, 05 Oct 2025 03:00:00 GMT</pubDate>
         </item>
         <item>
             <title><![CDATA[Um novo ciclo no blog]]></title>
             <description><![CDATA[Depois de alguns anos observando, aprendendo e refinando minhas ideias, decidi começar de novo. As postagens antigas ficam para trás, eram parte de um caminho, mas não definem o próximo passo.]]></description>
-            <link>https://jose-almir.github.io/pt/blog/novo-ciclo-blog</link>
-            <guid isPermaLink="true">https://jose-almir.github.io/pt/blog/novo-ciclo-blog</guid>
+            <link>https://almirdev.com/pt/blog/novo-ciclo-blog</link>
+            <guid isPermaLink="true">https://almirdev.com/pt/blog/novo-ciclo-blog</guid>
             <category><![CDATA[ideias]]></category>
             <pubDate>Sat, 04 Oct 2025 03:00:00 GMT</pubDate>
         </item>
         <item>
             <title><![CDATA[Como criar um File Picker com React?]]></title>
             <description><![CDATA[Todos nós conhecemos o clássico input file, sua customização pode ser complicada caso queiramos uma estilização mais moderna. O componente que irei mostrar aqui pode ser facilmente aplicado ao seu projeto React, uma vez que só utiliza recursos da biblioteca padrão.]]></description>
-            <link>https://jose-almir.github.io/pt/blog/file-picker-react</link>
-            <guid isPermaLink="true">https://jose-almir.github.io/pt/blog/file-picker-react</guid>
+            <link>https://almirdev.com/pt/blog/file-picker-react</link>
+            <guid isPermaLink="true">https://almirdev.com/pt/blog/file-picker-react</guid>
             <category><![CDATA[react]]></category>
             <pubDate>Fri, 12 May 2023 03:00:00 GMT</pubDate>
         </item>
         <item>
             <title><![CDATA[Como aprender CSS]]></title>
             <description><![CDATA[O CSS é uma linguagem de estilização crucial para um desenvolvedor front-end, sem ela o site não possui vida e nem personalidade.]]></description>
-            <link>https://jose-almir.github.io/pt/blog/como-aprender-css</link>
-            <guid isPermaLink="true">https://jose-almir.github.io/pt/blog/como-aprender-css</guid>
+            <link>https://almirdev.com/pt/blog/como-aprender-css</link>
+            <guid isPermaLink="true">https://almirdev.com/pt/blog/como-aprender-css</guid>
             <category><![CDATA[css]]></category>
             <pubDate>Sun, 07 May 2023 03:00:00 GMT</pubDate>
         </item>
         <item>
             <title><![CDATA[Sobre mim]]></title>
             <description><![CDATA[Quando a paixão por escrever e a vontade de compartilhar ideias se encontram em um desenvolvedor, nasce um blog.]]></description>
-            <link>https://jose-almir.github.io/pt/blog/sobre-mim</link>
-            <guid isPermaLink="true">https://jose-almir.github.io/pt/blog/sobre-mim</guid>
+            <link>https://almirdev.com/pt/blog/sobre-mim</link>
+            <guid isPermaLink="true">https://almirdev.com/pt/blog/sobre-mim</guid>
             <category><![CDATA[ideias]]></category>
             <pubDate>Sat, 06 May 2023 03:00:00 GMT</pubDate>
         </item>
