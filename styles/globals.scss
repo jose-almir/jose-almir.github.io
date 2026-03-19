@@ -230,6 +230,8 @@ a.back-btn {
     background-color: rgba($color: #ffffff, $alpha: 0.15);
     padding: 2px 4px;
     border-radius: 4px;
+    word-break: break-word;
+    overflow-wrap: anywhere;
   }
 
   .image {
