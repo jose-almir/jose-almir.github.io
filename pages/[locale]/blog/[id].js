@@ -158,12 +158,30 @@ export default function Post({ post, prevPost, nextPost, locale, translations })
             style={{
               display: "flex",
               alignItems: "center",
+              flexWrap: "wrap",
               gap: "16px",
               marginBottom: "16px",
             }}
           >
+            {post.category && (
+              <Link href={`/${locale}/blog/category/${post.category}`} style={{ textDecoration: 'none', color: 'inherit' }}>
+                <span className="category-badge" style={{ 
+                  fontSize: "0.85rem", 
+                  padding: "2px 8px", 
+                  border: "1px solid var(--border)", 
+                  borderRadius: "4px",
+                  display: "flex",
+                  alignItems: "center",
+                  gap: "6px",
+                  opacity: 0.8
+                }}>
+                  <i className="bi bi-tag"></i>
+                  {post.category}
+                </span>
+              </Link>
+            )}
             {post.readingTime && (
-              <span style={{ fontSize: "0.85rem", opacity: 0.55 }}>
+              <span style={{ fontSize: "0.85rem", opacity: 0.55, display: "flex", alignItems: "center" }}>
                 <i className="bi bi-clock" style={{ marginRight: "5px" }}></i>
                 {post.readingTime} {t("blog.reading_time")}
               </span>
