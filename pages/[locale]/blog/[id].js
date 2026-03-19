@@ -206,7 +206,7 @@ export default function Post({ post, prevPost, nextPost, locale, translations })
             {prevPost ? (
               <Link href={`/${locale}/blog/${prevPost.id}`} className="nav-link prev">
                 <div className="nav-image-container">
-                  <img src={prevPost.thumbnail} alt={prevPost.title} className="nav-image" />
+                  <img src={prevPost.thumbnail} alt={prevPost.title} className="nav-image" width="80" height="80" />
                 </div>
                 <div className="nav-content">
                   <span className="nav-label">
@@ -228,7 +228,7 @@ export default function Post({ post, prevPost, nextPost, locale, translations })
                   <p className="nav-title">{nextPost.title}</p>
                 </div>
                 <div className="nav-image-container">
-                  <img src={nextPost.thumbnail} alt={nextPost.title} className="nav-image" />
+                  <img src={nextPost.thumbnail} alt={nextPost.title} className="nav-image" width="80" height="80" />
                 </div>
               </Link>
             ) : (

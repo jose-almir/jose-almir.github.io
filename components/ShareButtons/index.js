@@ -52,7 +52,7 @@ export function ShareButtons({ title, url }) {
             key={link.name}
             href={link.url}
             target="_blank"
-            rel="noreferrer"
+            rel="noopener noreferrer"
             className={styles.shareButton}
             title={`${t("blog.share_on")} ${link.name}`}
             style={{ "--hover-color": link.color }}

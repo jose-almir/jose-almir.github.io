@@ -8,13 +8,13 @@ export function Footer() {
     <footer className={styles.footer}>
       <div className="container">
         <div className={styles["social-icons"]}>
-          <a href="https://github.com/jose-almir/jose-almir.github.io" target="_blank" title="GitHub">
+          <a href="https://github.com/jose-almir/jose-almir.github.io" target="_blank" rel="noopener noreferrer" title="GitHub">
             <i className="bi bi-github"></i>
           </a>
-          <a href={`/feed.${language}.xml`} target="_blank" title={t("nav.rss_feed")}>
+          <a href={`/feed.${language}.xml`} target="_blank" rel="noopener noreferrer" title={t("nav.rss_feed")}>
             <i className="bi bi-rss-fill"></i>
           </a>
-          <a href="/sitemap.xml" target="_blank" title="Mapa do site">
+          <a href="/sitemap.xml" target="_blank" rel="noopener noreferrer" title="Mapa do site">
             <i className="bi bi-diagram-3-fill"></i>
           </a>
         </div>

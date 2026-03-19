@@ -60,7 +60,7 @@ export function FloatingAvatar({ title, url }) {
               <a 
                 href={`https://www.linkedin.com/sharing/share-offsite/?url=${encodedUrl}`}
                 target="_blank"
-                rel="noreferrer"
+                rel="noopener noreferrer"
                 title="LinkedIn"
               >
                 <i className="bi bi-linkedin"></i>
@@ -68,7 +68,7 @@ export function FloatingAvatar({ title, url }) {
               <a 
                 href={`https://twitter.com/intent/tweet?text=${encodedTitle}&url=${encodedUrl}`}
                 target="_blank"
-                rel="noreferrer"
+                rel="noopener noreferrer"
                 title="X"
               >
                 <i className="bi bi-twitter-x"></i>
@@ -78,7 +78,7 @@ export function FloatingAvatar({ title, url }) {
               </button>
             </div>
             <div className={styles.divider}></div>
-            <a href={`/feed.${language}.xml`} className={styles.rssLink} target="_blank">
+            <a href={`/feed.${language}.xml`} className={styles.rssLink} target="_blank" rel="noopener noreferrer">
               {t("blog.subscribe_rss")} <i className="bi bi-rss-fill"></i>
             </a>
           </div>
@@ -88,7 +88,7 @@ export function FloatingAvatar({ title, url }) {
       <div className={styles.avatarWrapper} onClick={() => setShowBubble(!showBubble)}>
         <img 
           src="/profile/avatar-color.png" 
-          alt="Avatar" 
+          alt={language === 'pt' ? 'Foto de perfil de José Almir' : "José Almir's profile picture"} 
           className={styles.avatar}
         />
         <div className={styles.ping}></div>

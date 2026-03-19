@@ -79,6 +79,8 @@ export default function Home({ posts, locale }) {
                       src={`https://skillicons.dev/icons?i=${tech.id}&theme=dark`} 
                       alt={tech.name} 
                       title={tech.name}
+                      width="48"
+                      height="48"
                     />
                     <span>{tech.name}</span>
                   </div>

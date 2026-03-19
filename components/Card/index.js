@@ -13,7 +13,7 @@ export function Card({ post }) {
       href={`/${language}/blog/${post.id}`} 
       className={`${styles.card} ${cardSizeClass}`}
     >
-        <img className={styles.cardImage} src={post.thumbnail} alt="" />
+        <img className={styles.cardImage} src={post.thumbnail} alt={post.title} />
         <div className={styles.cardContent}>
           <h4 className={styles.cardTitle}>{post.title}</h4>
           <span className={styles.postedAt}>

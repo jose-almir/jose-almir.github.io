@@ -4,11 +4,13 @@ import { useTranslation } from "@/lib/LanguageContext";
 export function Seo(props) {
   const { language, t } = useTranslation();
   
-  const defaultPageTitle = "Almir Dev";
-  const defaultDescription = t("home.description_1") + t("home.description_link") + t("home.description_2");
-  const defaultKeywords = language === 'pt' ? "blog, desenvolvimento, programação, tecnologia" : "blog, development, programming, tech";
+  const defaultPageTitle = language === 'pt' ? "Almir Dev - Blog de Programação e Tecnologia" : "Almir Dev - Programming & Tech Blog";
+  const defaultDescription = language === 'pt' 
+    ? "Blog de José Almir sobre desenvolvimento web, Java, Spring Boot, React e Next.js. Artigos técnicos e tutoriais de programação."
+    : "José Almir's blog about web development, Java, Spring Boot, React, and Next.js. Technical articles and programming tutorials.";
+  const defaultKeywords = language === 'pt' ? "blog, desenvolvimento, programação, tecnologia, javascript, java, react, nextjs" : "blog, development, programming, tech, javascript, java, react, nextjs";
 
-  const title = props.title ? `${props.title} | ${defaultPageTitle}` : defaultPageTitle;
+  const title = props.title ? `${props.title} | Almir Dev` : defaultPageTitle;
   const description = props.description || defaultDescription;
   const keywords = props.keywords || defaultKeywords;
   const image = props.image || "https://almirdev.com/profile/og.png";
