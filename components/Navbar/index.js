@@ -45,9 +45,6 @@ export function Navbar() {
         <Link href={`/${language}/blog`} title={t("nav.blog")}>
           {t("nav.blog")}
         </Link>
-        <a href="/curriculo.pdf" target="_blank" rel="noreferrer" title={t("nav.cv")}>
-          {t("nav.cv")}
-        </a>
       </nav>
       <div className={styles.actions}>
         <span className={styles.socialIcons}>
