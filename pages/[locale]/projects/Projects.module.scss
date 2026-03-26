@@ -1,0 +1,31 @@
+@import "../../../styles/variables.scss";
+
+.header {
+  margin-bottom: 3rem;
+  text-align: center;
+}
+
+.description {
+  font-size: 1.2rem;
+  color: var(--text-muted);
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 2.5rem;
+  padding-bottom: 4rem;
+}
+
+.emptyState {
+  text-align: center;
+  padding: 4rem 0;
+  color: var(--text-muted);
+  font-size: 1.1rem;
+  background: var(--surface-glass);
+  border-radius: 20px;
+  border: 1px dashed var(--border-glass);
+}

@@ -3,7 +3,18 @@
     "home": "Início",
     "blog": "Blog",
     "cv": "Currículo",
-    "rss_feed": "Inscrever no feed RSS"
+    "rss_feed": "Inscrever no feed RSS",
+    "projects": "Projetos"
+  },
+  "projects": {
+    "title": "Meus Projetos",
+    "description": "Aqui estão alguns dos meus trabalhos recentes e projetos pessoais.",
+    "view_project": "Ver Projeto",
+    "view_source": "Código Fonte",
+    "tech_stack": "Tecnologias",
+    "no_projects": "Nenhum projeto disponível no momento.",
+    "private_project": "Projeto Privado",
+    "read_more": "Ler Mais"
   },
   "home": {
     "title": "Olá, meu nome é ",

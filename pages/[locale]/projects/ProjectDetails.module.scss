@@ -1,0 +1,186 @@
+@import "../../../styles/variables.scss";
+
+.backLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--text-muted);
+  text-decoration: none;
+  font-weight: 600;
+  margin-bottom: 2rem;
+  transition: $transition-smooth;
+
+  &:hover {
+    color: $primary;
+    transform: translateX(-4px);
+  }
+}
+
+.header {
+  margin-bottom: 3rem;
+  text-align: center;
+}
+
+.description {
+  font-size: 1.25rem;
+  color: var(--text-muted);
+  max-width: 800px;
+  margin: 0 auto 2rem;
+  line-height: 1.6;
+}
+
+.techStack {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  justify-content: center;
+  margin-bottom: 2rem;
+}
+
+.techPill {
+  font-size: 0.85rem;
+  padding: 0.4rem 1rem;
+  border-radius: 50px;
+  background: rgba($primary, 0.1);
+  color: $primary;
+  border: 1px solid rgba($primary, 0.2);
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+.actions {
+  display: flex;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-bottom: 3rem;
+}
+
+.buttonMain, .buttonSecondary, .privateBadge {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.8rem 1.5rem;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: $transition-smooth;
+  text-decoration: none;
+}
+
+.buttonMain {
+  background: $primary;
+  color: #fff;
+  border: none;
+
+  &:hover {
+    background: darken($primary, 10%);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba($primary, 0.3);
+  }
+}
+
+.buttonSecondary {
+  background: transparent;
+  color: var(--text-main);
+  border: 1px solid var(--border-glass, rgba(255, 255, 255, 0.2));
+
+  &:hover {
+    background: rgba(255, 255, 255, 0.05);
+    border-color: rgba(255, 255, 255, 0.4);
+    transform: translateY(-2px);
+  }
+}
+
+.privateBadge {
+  color: var(--text-muted);
+  background: rgba(128, 128, 128, 0.1);
+  border: 1px dashed var(--border-glass, rgba(255, 255, 255, 0.2));
+  cursor: default;
+}
+
+:global(body[data-theme='light']) {
+  .buttonSecondary {
+    color: #111;
+    border-color: rgba(0, 0, 0, 0.2);
+    &:hover {
+      background: rgba(0, 0, 0, 0.05);
+      border-color: rgba(0, 0, 0, 0.4);
+    }
+  }
+  .privateBadge {
+    color: #555;
+    border-color: rgba(0, 0, 0, 0.2);
+  }
+}
+
+.imageContainer {
+  width: 100%;
+  border-radius: 24px;
+  overflow: hidden;
+  margin-bottom: 4rem;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+  border: 1px solid var(--border-glass);
+}
+
+.heroImage {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+  max-height: 60vh;
+}
+
+.markdownContent {
+  color: var(--text-main);
+  font-size: 1.1rem;
+  line-height: 1.8;
+  max-width: 800px;
+  margin: 0 auto;
+  
+  :global(body[data-theme='light']) & {
+    color: #222;
+  }
+
+  h2, h3, h4 {
+    margin-top: 3rem;
+    margin-bottom: 1.5rem;
+    color: var(--text-main);
+    
+    :global(body[data-theme='light']) & {
+      color: #111;
+    }
+  }
+
+  p {
+    margin-bottom: 1.5rem;
+  }
+
+  strong {
+    font-weight: 700;
+    color: var(--text-main);
+  }
+
+  ul, ol {
+    margin-bottom: 2rem;
+    padding-left: 2rem;
+    list-style: initial;
+    
+    li {
+      margin-bottom: 0.5rem;
+      &::marker {
+        color: $primary;
+      }
+    }
+  }
+
+  img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 12px;
+    margin: 2rem 0;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    display: block;
+  }
+}

@@ -45,6 +45,9 @@ export function Navbar() {
         <Link href={`/${language}/blog`} title={t("nav.blog")}>
           {t("nav.blog")}
         </Link>
+        <Link href={`/${language}/projects`} title={t("nav.projects")}>
+          {t("nav.projects")}
+        </Link>
       </nav>
       <div className={styles.actions}>
         <span className={styles.socialIcons}>

@@ -3,7 +3,18 @@
     "blog": "Blog",
     "cv": "Resume",
     "home": "Home",
-    "rss_feed": "RSS Feed"
+    "rss_feed": "RSS Feed",
+    "projects": "Projects"
+  },
+  "projects": {
+    "title": "My Projects",
+    "description": "Here is a selection of my recent works and personal projects.",
+    "view_project": "View Project",
+    "view_source": "Source Code",
+    "tech_stack": "Tech Stack",
+    "no_projects": "No projects available at the moment.",
+    "private_project": "Private Project",
+    "read_more": "Read More"
   },
   "home": {
     "title": "Hi, my name is ",
