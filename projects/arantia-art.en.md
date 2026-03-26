@@ -26,6 +26,9 @@ The architecture is based on a decoupled dual-repo setup:
 
 This setup completely removes server and database costs while maintaining the speed of a static site and the flexibility of a dynamic portal.
 
+## Impact & Results
+This project empowered the artist to manage their portfolio independently with zero ongoing infrastructure costs. By removing the technical complexity of traditional CMS platforms, the project ensured the gallery remains consistently updated, allowing the creator to focus on art rather than technical maintenance.
+
 ## Process & Technical Deep-Dive
 You can read a complete case study about the architecture and development of this project on my blog:
 

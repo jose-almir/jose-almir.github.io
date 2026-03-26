@@ -24,4 +24,7 @@ Fui responsável pelo desenvolvimento de todo o ecossistema de interface do usu�
 - **Segurança de Dados:** Implementação de autenticação via **JWT (JSON Web Token)**, garantindo sessões seguras tanto para os empreendedores quanto para os administradores do sistema.
 - **Vitrine Virtual:** Lógica de exibição e busca regionalizada para aproximar o comprador de sua própria comunidade.
 
+## Impacto e Resultados
+A plataforma digitalizou o comércio regional, criando uma vitrine tecnológica que fortalece a economia local. Ao facilitar a conexão direta entre produtores e consumidores, o projeto fomentou um ecossistema de consumo consciente e garantindo visibilidade digital para quem antes estava fora do mapa online.
+
 Este projeto foca na digitalização inclusiva, utilizando React para criar uma experiência de compra moderna e acessível para comunidades regionais.

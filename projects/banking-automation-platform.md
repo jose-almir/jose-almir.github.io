@@ -24,6 +24,9 @@ A solução é dividida em duas camadas principais coordenadas por uma infraestr
 - **Gestão de Ciclo de Vida:** Desenvolvimento do sistema de gerenciamento de credenciais, incluindo lógica de bloqueio e liberação segura para evitar conflitos de simultaneidade durante execuções em massa.
 - **Tratamento de Erros e Resiliência:** Implementação de interceptores e resolutores para lidar com a natureza imprevisível de sistemas web externos, garantindo que o estado da automação permaneça consistente.
 
+## Impacto e Resultados
+Transformei fluxos de checagem manuais em pipelines de automação 100% autônomos. A arquitetura garantiu a integridade absoluta dos dados financeiros processados, eliminando gargalos operacionais e permitindo que a equipe de crédito focasse em decisões estratégicas em vez de tarefas morosas e repetitivas.
+
 ## Interface e Operação
 Abaixo, algumas capturas de tela da plataforma (devidamente anonimizadas) que demonstram o cockpit de controle e a gestão de robôs:
 

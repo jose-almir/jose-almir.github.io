@@ -25,4 +25,7 @@ Desenvolvi este assistente inteligente para automatizar o atendimento e fechamen
 - **Melhoria de Fluxos:** Refinei os prompts e variáveis que aumentaram a taxa de conversão nas conversas.
 - **Sistemas Modulares:** Estrutura orientada a domínio para manter os agentes escaláveis.
 
+## Impacto e Resultados
+O sistema permitiu que a operação de vendas operasse 24/7 sem interrupções, automatizando negociações complexas com uma fluidez natural. A implementação aumentou a velocidade de resposta aos leads, transformando o WhatsApp em um motor de conversão eficiente e escalável.
+
 *Nota: Projeto proprietário desenvolvido sob contrato. Detalhes de infraestrutura e dados de clientes são confidenciais.*

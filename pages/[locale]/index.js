@@ -4,6 +4,8 @@ import { TypingAnimation } from "@/components/TypingAnimation";
 import { useEffect } from "react";
 import { getPosts } from "@/lib/posts";
 import { Card } from "@/components/Card";
+import { ProjectCard } from "@/components/ProjectCard";
+import { getProjects } from "@/lib/projects";
 import { useTranslation } from "@/lib/LanguageContext";
 
 export async function getStaticPaths() {
@@ -17,17 +19,19 @@ export async function getStaticPaths() {
 }
 
 export async function getStaticProps({ params: { locale } }) {
-  const posts = getPosts(locale).slice(0, 1); // Get most recent post in this language
+  const posts = getPosts(locale).slice(0, 1);
+  const projects = getProjects(locale).slice(0, 3); // Get top 3 projects
 
   return {
     props: {
       posts,
+      projects,
       locale,
     },
   };
 }
 
-export default function Home({ posts, locale }) {
+export default function Home({ posts, projects, locale }) {
   const { t, isLoaded } = useTranslation();
 
   useEffect(() => {
@@ -69,8 +73,10 @@ export default function Home({ posts, locale }) {
               </h1>
               <p className="desc mt-xs mb-xs">
                 {t("home.description_1")}
-                <Link href={`/${locale}/blog`}>{t("home.description_link")}</Link>
+                <Link href={`/${locale}/blog`}>{t("home.description_link_blog")}</Link>
                 {t("home.description_2")}
+                <Link href={`/${locale}/projects`}>{t("home.description_link_projects")}</Link>
+                {t("home.description_3")}
               </p>
               <div className="tech-stack-container">
                 {techStack.map((tech) => (
@@ -89,6 +95,21 @@ export default function Home({ posts, locale }) {
             </div>
           </div>
           
+          <div className="home-projects-highlights">
+            <h2 className="section-title">{t("home.featured_projects")}</h2>
+            <div className="projects-grid-featured">
+              {projects.map((project) => (
+                <ProjectCard key={project.id} project={project} locale={locale} />
+              ))}
+            </div>
+            <div className="view-all-container">
+              <Link href={`/${locale}/projects`} className="view-all-btn">
+                {t("home.view_all_projects")}
+                <i className="bi bi-arrow-right"></i>
+              </Link>
+            </div>
+          </div>
+
           <div className="home-blog-highlights">
             <h2 className="section-title">{t("home.blog_highlights")}</h2>
             <div className="highlights-grid">
@@ -103,6 +124,17 @@ export default function Home({ posts, locale }) {
               </Link>
             </div>
           </div>
+
+          <section className="home-contact-cta">
+            <div className="contact-cta-content">
+              <h3>{t("home.contact_title")}</h3>
+              <p>{t("home.contact_description")}</p>
+              <Link href="mailto:jr.cod.dev@gmail.com" className="cta-button-main">
+                {t("home.contact_button")}
+                <i className="bi bi-envelope"></i>
+              </Link>
+            </div>
+          </section>
         </div>
       </div>
     </>

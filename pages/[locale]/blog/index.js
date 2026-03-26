@@ -41,7 +41,7 @@ export default function Blog({ posts, currentPage, totalPages, locale }) {
       <Seo />
       <div className="container ">
         <div className="pt-xs">
-          <h2>{t("home.description_link").charAt(0).toUpperCase() + t("home.description_link").slice(1)} - {t("nav.home")}</h2>
+          <h2>{t("home.description_link_blog").charAt(0).toUpperCase() + t("home.description_link_blog").slice(1)} - {t("nav.home")}</h2>
           <div className="bento-grid">
             {posts.map((post) => (
               <Card key={post.id} post={post} />

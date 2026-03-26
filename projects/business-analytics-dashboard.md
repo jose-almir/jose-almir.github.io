@@ -23,6 +23,9 @@ Pequenos negócios costumam perder clientes por falta de acompanhamento. Este da
 - **Autenticação:** Utiliza magic links seguros solicitados diretamente no chat.
 - **Performance:** Construído com Angular 20 e TailwindCSS 4 para carregamento rápido em dispositivos móveis.
 
+## Impacto e Resultados
+Proporcionei a microempreendedores uma clareza financeira de nível corporativo. Ao transformar conversas informais de WhatsApp em indicadores de retenção precisos, o dashboard permitiu identificar clientes em risco e otimizar as estratégias de fidelização de forma proativa e baseada em dados.
+
 ## Arquitetura do Sistema
 O diagrama abaixo detalha a lógica de autenticação e roteamento que desenvolvi, utilizando guards e interceptores:
 

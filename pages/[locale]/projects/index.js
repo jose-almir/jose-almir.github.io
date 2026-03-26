@@ -35,7 +35,7 @@ export default function Projects({ projects, locale }) {
       <Seo 
         title={`${t("projects.title")} - José Almir`} 
         description={t("projects.description")}
-        path={`/${locale}/projects`} 
+        path={`/projects`} 
       />
       <div className="container">
         <div className="pt-xs">
@@ -55,6 +55,17 @@ export default function Projects({ projects, locale }) {
               <p>{t("projects.no_projects")}</p>
             </div>
           )}
+
+          <section className={styles.contactCta}>
+            <div className={styles.contactCtaContent}>
+              <h3>{t("home.contact_title")}</h3>
+              <p>{t("home.contact_description")}</p>
+              <a href="mailto:jr.cod.dev@gmail.com" className={styles.ctaButton}>
+                {t("home.contact_button")}
+                <i className="bi bi-envelope"></i>
+              </a>
+            </div>
+          </section>
         </div>
       </div>
     </>

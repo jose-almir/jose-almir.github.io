@@ -26,6 +26,9 @@ A base do projeto é uma estrutura desacoplada:
 
 A arquitetura elimina gastos com servidores e bancos de dados, mantendo a performance de um site estático e a conveniência de um portal dinâmico.
 
+## Impacto e Resultados
+A solução empoderou a artista a gerenciar seu próprio catálogo de forma totalmente independente e sem custos de infraestrutura. Ao remover a barreira técnica dos CMSs tradicionais, o projeto garantiu que o portfólio permanecesse sempre atualizado, preservando o foco na criação em vez da manutenção técnica.
+
 ## Processo e Detalhes Técnicos
 Você pode ler um artigo detalhado sobre a arquitetura e o desenvolvimento deste projeto no meu blog:
 

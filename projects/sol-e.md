@@ -24,4 +24,7 @@ A arquitetura do sistema foi desenhada para ser robusta e escalável:
 - **Web Scraping Avançado:** Implementação de lógica de navegação e extração que lida com a estrutura dinâmica da biblioteca digital da SBC.
 - **Formatador de Referências:** Algoritmo que normaliza os dados extraídos diretamente para o padrão BibTeX, pronto para uso em editores LaTeX.
 
+## Impacto e Resultados
+A ferramenta acelerou drasticamente a fase de referenciamento em pesquisas acadêmicas, eliminando o erro humano e o cansaço do processo manual. Pesquisadores puderam extrair centenas de citações em segundos, redirecionando seu tempo precioso para a análise crítica e escrita científica.
+
 O projeto demonstra o uso de automação para acelerar workflows acadêmicos, transformando tarefas repetitivas em processos digitais eficientes.

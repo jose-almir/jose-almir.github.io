@@ -24,4 +24,7 @@ I spearheaded the entire user interface development, focusing on high-performanc
 - **Secure Authentication:** Implemented **JWT (JSON Web Token)** based security, providing reliable session management for both business owners and system administrators.
 - **Virtual Storefront:** Built regionalized search and discovery logic to connect buyers directly with their immediate communities.
 
+## Impact & Results
+The platform digitalized regional commerce, creating a modern storefront that strengthens the local economic fabric. By facilitating direct connections between producers and consumers, the project fostered a community of conscious consumption and brought digital visibility to small businesses previously excluded from the online market.
+
 This project focuses on inclusive digitalization, using React to build a modern and accessible shopping experience for regional communities.

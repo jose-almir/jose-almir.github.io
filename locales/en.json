@@ -14,15 +14,23 @@
     "tech_stack": "Tech Stack",
     "no_projects": "No projects available at the moment.",
     "private_project": "Private Project",
-    "read_more": "Read More"
+    "read_more": "Read More",
+    "next_project": "Next Project"
   },
   "home": {
     "title": "Hi, my name is ",
-    "description_1": "Check out my ",
-    "description_link": "blog",
-    "description_2": " and discover my development projects.",
+    "description_1": "Enjoy the ",
+    "description_link_blog": "blog",
+    "description_2": " and explore my ",
+    "description_link_projects": "projects",
+    "description_3": " built with modern tech.",
     "blog_highlights": "Blog Highlights",
-    "view_all": "View all posts"
+    "view_all": "View all posts",
+    "featured_projects": "Featured Projects",
+    "view_all_projects": "View all projects",
+    "contact_title": "Let's connect?",
+    "contact_description": "I'm always open to new challenges and technical collaborations.",
+    "contact_button": "Get in touch"
   },
   "blog": {
     "reading_time": "min read",

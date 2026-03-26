@@ -24,4 +24,7 @@ The system architecture was designed for robustness and high efficiency:
 - **Advanced Web Scraping:** Reliable navigation and extraction logic tailored to the dynamic structure of the SBC digital library.
 - **Reference Formatter:** An algorithm that normalizes extracted data directly into the BibTeX standard, ready for LaTeX editors.
 
+## Impact & Results
+The tool drastically accelerated the referencing phase of academic research, eliminating human error and manual fatigue. Scholars can now extract hundreds of citations in seconds, allowing them to focus their valuable time on critical analysis and scientific writing.
+
 SOL-e highlights the use of automation to accelerate academic workflows, turning repetitive manual tasks into efficient digital processes.

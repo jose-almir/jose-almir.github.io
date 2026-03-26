@@ -27,5 +27,61 @@
   font-size: 1.1rem;
   background: var(--surface-glass);
   border-radius: 20px;
+  border-radius: 20px;
   border: 1px dashed var(--border-glass);
+}
+
+.contactCta {
+  margin: 4rem 0 2rem;
+  padding: 5rem 2rem;
+  background: rgba($primary, 0.05);
+  backdrop-filter: blur(12px);
+  border-radius: 40px;
+  border: 1px solid rgba($primary, 0.1);
+  text-align: center;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+}
+
+.contactCtaContent {
+  h3 {
+    margin-top: 0;
+    font-size: 2.25rem;
+    margin-bottom: 1.5rem;
+    color: var(--text-main);
+  }
+  p {
+    margin-bottom: 3rem;
+    font-size: 1.2rem;
+    color: var(--text-muted);
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+.ctaButton {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.8rem;
+  padding: 1.25rem 3rem;
+  background: $primary;
+  color: #fff;
+  border-radius: 99px;
+  text-decoration: none;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 10px 25px rgba($primary, 0.3);
+
+  &:hover {
+    transform: translateY(-4px) scale(1.02);
+    box-shadow: 0 15px 35px rgba($primary, 0.4);
+    background: lighten($primary, 5%);
+    color: #fff;
+  }
+
+  i {
+    font-size: 1.2rem;
+  }
 }

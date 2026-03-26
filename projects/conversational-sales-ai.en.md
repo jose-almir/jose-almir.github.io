@@ -25,4 +25,7 @@ I built this intelligent assistant to automate lead engagement and sales closing
 - **Flow Improvement:** Refined the prompts and variables that drive conversation conversion.
 - **Modular Systems:** Used a domain-oriented structure to keep the agents scalable.
 
+## Impact & Results
+The system enabled sales operations to run 24/7 without interruption, automating complex negotiations with natural conversational flow. This implementation drastically improved lead response times, turning WhatsApp into a high-performance, scalable conversion engine.
+
 *Note: Proprietary project developed under contract. Infrastructure details and client data are confidential.*

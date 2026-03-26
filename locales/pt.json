@@ -14,15 +14,23 @@
     "tech_stack": "Tecnologias",
     "no_projects": "Nenhum projeto disponível no momento.",
     "private_project": "Projeto Privado",
-    "read_more": "Ler Mais"
+    "read_more": "Ler Mais",
+    "next_project": "Próximo Projeto"
   },
   "home": {
     "title": "Olá, meu nome é ",
     "description_1": "Aproveite o ",
-    "description_link": "blog",
-    "description_2": " e conheça meus projetos de desenvolvimento.",
+    "description_link_blog": "blog",
+    "description_2": " e conheça meus ",
+    "description_link_projects": "projetos",
+    "description_3": " de desenvolvimento.",
     "blog_highlights": "Destaques do Blog",
-    "view_all": "Ver todas as postagens"
+    "view_all": "Ver todas as postagens",
+    "featured_projects": "Projetos em Destaque",
+    "view_all_projects": "Ver todos os projetos",
+    "contact_title": "Vamos conversar?",
+    "contact_description": "Estou sempre aberto a novos desafios e colaborações técnicas.",
+    "contact_button": "Entre em contato"
   },
   "blog": {
     "reading_time": "min de leitura",

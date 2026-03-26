@@ -42,9 +42,20 @@ export function getStaticProps({ params: { id, locale } }) {
   }
 
   if (project) {
+    const allProjects = getProjects(locale);
+    const currentIndex = allProjects.findIndex((p) => p.id === id);
+    const nextProjectData = allProjects[(currentIndex + 1) % allProjects.length];
+    
+    const nextProject = {
+      id: nextProjectData.id,
+      title: nextProjectData.title,
+      image: nextProjectData.image
+    };
+
     return { 
       props: { 
         project,
+        nextProject,
         locale,
         translations
       } 
@@ -54,7 +65,7 @@ export function getStaticProps({ params: { id, locale } }) {
   }
 }
 
-export default function Project({ project, locale, translations }) {
+export default function Project({ project, nextProject, locale, translations }) {
   const { theme } = useTheme();
   const router = useRouter();
   const { t, isLoaded, setAvailableTranslations } = useTranslation();
@@ -102,7 +113,7 @@ export default function Project({ project, locale, translations }) {
         title={`${project.title} - José Almir`}
         description={project.description}
         image={`${baseUrl}${project.image}`}
-        path={`/${locale}/projects/${project.id}`}
+        path={`/projects/${project.id}`}
       />
       <div
         className="scroll-progress-bar"
@@ -183,6 +194,32 @@ export default function Project({ project, locale, translations }) {
             }}
             rehypePlugins={[rehypeRaw]}
           />
+
+          <hr className={styles.divider} />
+
+          <section className={styles.nextProjectSection}>
+            <span className={styles.nextLabel}>{t("projects.next_project") || "Next Project"}</span>
+            <Link href={`/${locale}/projects/${nextProject.id}`} className={styles.nextProjectCard}>
+              <div className={styles.nextProjectImage}>
+                <img src={nextProject.image} alt={nextProject.title} />
+              </div>
+              <div className={styles.nextProjectInfo}>
+                <h4>{nextProject.title}</h4>
+                <i className="bi bi-arrow-right"></i>
+              </div>
+            </Link>
+          </section>
+
+          <section className={styles.contactCta}>
+            <div className={styles.contactCtaContent}>
+              <h3>{t("home.contact_title")}</h3>
+              <p>{t("home.contact_description")}</p>
+              <Link href="mailto:jr.cod.dev@gmail.com" className={styles.ctaButton}>
+                {t("home.contact_button")}
+                <i className="bi bi-envelope"></i>
+              </Link>
+            </div>
+          </section>
         </div>
       </div>
     </>

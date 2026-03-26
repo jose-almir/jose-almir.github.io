@@ -23,6 +23,9 @@ Small businesses often struggle with customer retention. This dashboard tracks t
 - **Authentication:** Uses secure magic links requested via chat.
 - **Performance:** Built with Angular 20 and TailwindCSS 4 for fast mobile loading.
 
+## Impact & Results
+I provided micro-entrepreneurs with enterprise-grade sales visibility. By transforming informal WhatsApp chats into precise retention metrics, the dashboard enabled them to identify at-risk customers and optimize loyalty strategies proactively through data.
+
 ## System Architecture
 The diagram below shows the authentication and routing logic I built, using guards and interceptors:
 

@@ -24,6 +24,9 @@ The solution consists of two primary layers coordinated through a secure orchest
 - **Credential Lifecycle Management:** Developed a secure resource management system with granular locking logic to prevent concurrency issues during massive parallel job executions.
 - **Resilience & Error Handling:** Engineered robust interceptors and resolvers to manage the non-deterministic nature of external web interfaces, maintaining system integrity across all execution states.
 
+## Impact & Results
+I transformed manual, slow checking workflows into 100% autonomous automation pipelines. The architecture ensured absolute integrity for processed financial data, eliminating operational bottlenecks and allowing the credit team to focus on strategic decisions rather than tedious, repetitive tasks.
+
 ## Interface & Operation
 Below are sanitized screenshots of the platform, showcasing the control cockpit and robot management:
 
