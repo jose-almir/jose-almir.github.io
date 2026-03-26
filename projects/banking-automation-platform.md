@@ -9,7 +9,7 @@ tech:
   - Cloudflare Workers
   - Durable Objects
   - Credential Security
-order: 3
+order: 1
 ---
 
 Construí esta plataforma para orquestrar robôs de automação bancária em larga escala, focando em operações críticas de crédito e processamento de dados financeiros. O sistema resolve o desafio de manter centenas de execuções simultâneas com segurança e integridade de dados.

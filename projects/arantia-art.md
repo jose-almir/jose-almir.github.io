@@ -9,7 +9,7 @@ tech:
   - GitHub REST API
   - GitHub Actions
   - Internationalization (i18n)
-order: 6
+order: 3
 ---
 
 Desenvolvi este sistema para resolver um problema recorrente em portfólios artísticos: a dificuldade de manter conteúdo atualizado sem depender de um desenvolvedor ou de mensalidades caras em plataformas de CMS tradicionais.

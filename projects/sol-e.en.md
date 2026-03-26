@@ -9,7 +9,7 @@ tech:
   - Express.js
   - Web Scraping
   - BibTeX Automation
-order: 5
+order: 4
 ---
 
 I developed **SOL-e** to automate the collection of bibliographic references from the SBC Open Lib (SOL). Before this tool, researchers had to manually copy data to generate BibTeX files; now, the system handles batches of over 200 articles in seconds.

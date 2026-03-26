@@ -9,7 +9,7 @@ tech:
   - Cloudflare Workers
   - Durable Objects
   - Credential Security
-order: 3
+order: 1
 ---
 
 I designed this platform to orchestrate large-scale banking automation bots, specifically for high-stakes credit and financial data workflows. The system manages hundreds of concurrent executions while ensuring strict security and data integrity.
