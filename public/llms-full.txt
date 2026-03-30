@@ -1,0 +1,24 @@
+# Almir Dev - Full Content Index for LLMs
+
+This document provides a detailed index of the content available on Almir Dev.
+
+## Recent Articles (Portuguese)
+- [Deploy do Shortr: hospedei Spring Boot, Redis e Postgres de graça no Railway](https://almirdev.com/pt/blog/deploy-spring-boot-railway)
+- [Código Artesanal em 2026: Por que a IA não substitui o capricho](https://almirdev.com/pt/blog/codigo-artesanal-2026)
+- [Como aprender CSS de verdade: O guia além dos frameworks](https://almirdev.com/pt/blog/como-aprender-css)
+- [A dualidade do desenvolvedor: Purismo vs Pragmatismo](https://almirdev.com/pt/blog/purismo-pragmatismo)
+- [Novo ciclo: Por que decidi recomeçar meu blog](https://almirdev.com/pt/blog/novo-ciclo-blog)
+- [File Picker customizado com React e Radix UI](https://almirdev.com/pt/blog/file-picker-react)
+
+## Articles (English)
+- [Deploying Shortr: How I host Spring Boot, Redis, and Postgres for free on Railway](https://almirdev.com/en/blog/deploy-spring-boot-railway)
+- [Craft Code in 2026: Why AI doesn't replace craftsmanship](https://almirdev.com/en/blog/codigo-artesanal-2026)
+
+## Projects Highlights
+- [Banking Automation & Robot Control Platform](https://almirdev.com/pt/projects/banking-automation-platform) (Private)
+- [Conversational Sales Intelligence AI Agent](https://almirdev.com/pt/projects/conversational-sales-ai) (Private)
+- [Arântia Art - Serverless Portfolio & CMS](https://arantia.art/)
+
+## Social & Contact
+- GitHub: https://github.com/jose-almir
+- Email: jr.cod.dev@gmail.com

@@ -1,0 +1,18 @@
+# Almir Dev - Programming & Tech Blog
+
+> Personal portfolio and technical blog of José Almir, a Fullstack Developer.
+
+## Summary
+The site features technical articles and tutorials focused on Java, Spring Boot, React, Next.js, and modern web development practices. It serves as a dual-language (Portuguese and English) resource for software engineering.
+
+## Key Sections
+- [Blog (PT)](https://almirdev.com/pt/blog)
+- [Blog (EN)](https://almirdev.com/en/blog)
+- [Projects](https://almirdev.com/pt/projects)
+- [About](https://almirdev.com/pt/blog/sobre-mim)
+
+## Feeds & Indices
+- [RSS Feed PT](https://almirdev.com/feed.pt.xml)
+- [RSS Feed EN](https://almirdev.com/feed.en.xml)
+- [Sitemap](https://almirdev.com/sitemap.xml)
+- [Full LLM Index](https://almirdev.com/llms-full.txt)
