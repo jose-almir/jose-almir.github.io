@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "node ./lib/scripts/sitemap.js && node ./lib/scripts/rss.js && npx next build",
+    "build": "node ./lib/scripts/sitemap.js && node ./lib/scripts/rss.js && node ./lib/scripts/llms.js && npx next build",
     "start": "next start",
     "lint": "next lint"
   },
