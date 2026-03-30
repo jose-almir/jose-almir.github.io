@@ -8,7 +8,7 @@ import Script from "next/script";
 
 export default function App({ Component, pageProps }) {
   return (
-    <LanguageProvider initialLanguage={pageProps.locale}>
+    <LanguageProvider initialLanguage={pageProps.locale || "pt"}>
       <Script
         strategy="afterInteractive"
         src="https://www.googletagmanager.com/gtag/js?id=G-KV71RHKNM9"
