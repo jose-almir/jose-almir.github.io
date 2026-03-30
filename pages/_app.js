@@ -8,7 +8,7 @@ import Script from "next/script";
 
 export default function App({ Component, pageProps }) {
   return (
-    <LanguageProvider>
+    <LanguageProvider initialLanguage={pageProps.locale}>
       <Script
         strategy="afterInteractive"
         src="https://www.googletagmanager.com/gtag/js?id=G-KV71RHKNM9"
@@ -30,7 +30,6 @@ export default function App({ Component, pageProps }) {
       <ThemeProvider defaultTheme="dark" enableSystem={false}>
         <Layout>
           <Head>
-            <title>jose-almir</title>
             <meta
               name="viewport"
               content="width=device-width, initial-scale=1.0"

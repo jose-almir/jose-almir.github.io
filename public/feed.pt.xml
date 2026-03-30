@@ -9,11 +9,19 @@
             <link>https://almirdev.com/pt</link>
         </image>
         <generator>RSS for Node</generator>
-        <lastBuildDate>Thu, 19 Mar 2026 00:11:26 GMT</lastBuildDate>
+        <lastBuildDate>Mon, 30 Mar 2026 12:03:10 GMT</lastBuildDate>
         <atom:link href="https://almirdev.com/feed.pt.xml" rel="self" type="application/rss+xml"/>
-        <pubDate>Thu, 19 Mar 2026 00:11:26 GMT</pubDate>
+        <pubDate>Mon, 30 Mar 2026 12:03:10 GMT</pubDate>
         <copyright><![CDATA[Todos os direitos reservados 2026, Almir Dev]]></copyright>
         <language><![CDATA[pt]]></language>
+        <item>
+            <title><![CDATA[Deploy do Shortr: como hospedei Spring Boot, Redis e Postgres de graça no Railway]]></title>
+            <description><![CDATA[Como tirar um projeto de portfólio do localhost sem gastar nada. Um guia prático usando a plataforma Railway.]]></description>
+            <link>https://almirdev.com/pt/blog/deploy-spring-boot-railway</link>
+            <guid isPermaLink="true">https://almirdev.com/pt/blog/deploy-spring-boot-railway</guid>
+            <category><![CDATA[tutorial]]></category>
+            <pubDate>Wed, 18 Mar 2026 03:00:00 GMT</pubDate>
+        </item>
         <item>
             <title><![CDATA[Código Artesanal em 2026?]]></title>
             <description><![CDATA[Reflexões sobre a prática de escrever código de forma artesanal em 2026, em meio a tantas ferramentas que automatizam.]]></description>
