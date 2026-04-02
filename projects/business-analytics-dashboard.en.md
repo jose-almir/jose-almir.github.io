@@ -1,8 +1,17 @@
 ---
-title: Business Retention & Analytics Dashboard
-description: A specialized B2B SaaS dashboard for micro-entrepreneurs, focusing on sales intelligence and customer retention.
+title: "Retention and Sales Intelligence Dashboard"
+description: B2B SaaS dashboard that turns WhatsApp sales records into retention, repeat purchase, and commercial follow-up indicators.
 image: /projects/business-analytics-dashboard/screenshot-1.png
 isPrivate: true
+role: "Product frontend, experience architecture, and authentication flows."
+challenge: "Turning informal sales data into a simple operational view for small businesses without relying on spreadsheets."
+outcome: "The product gave users operational visibility into retention and repeat purchase behavior, helping them act on inactive customers."
+confidentialityNote: "Private startup project. The narrative stays focused on the problem, the solution, and the observed use of the system."
+proofPoints:
+  - "Structured the dashboard for quick reading on mobile devices."
+  - "Implemented magic-link authentication aligned with a chat-based usage context."
+  - "Created guards and flow controls to keep navigation and permissions consistent."
+  - "Covered critical UI paths with Cypress to reduce regressions."
 tech:
   - Angular 20
   - TailwindCSS 4
@@ -12,23 +21,22 @@ tech:
 order: 6
 ---
 
-I built this dashboard to centralize sales data from WhatsApp, providing actionable insights into customer repurchase behavior and retention rates without the need for manual spreadsheets.
+I built this dashboard to turn sales records captured through WhatsApp into a clear view of retention and repeat purchase behavior. The goal was to move small businesses away from spreadsheet dependency and give them practical signals for follow-up and customer recovery.
 
-## Focus
-Small businesses often struggle with customer retention. This dashboard tracks these cycles to show which customers are likely to return and which have stopped buying.
+## Context
+Many small businesses can sell, but struggle to track repeat customers, inactive accounts, or re-engagement opportunities. The product needed to translate messy operational data into a simple interface that still worked well on mobile.
 
-## Logic & Features:
-- **Sales Tracking:** Converts quick WhatsApp entries into financial reports.
-- **Retention Data:** Identifies inactive customers for re-engagement.
-- **Authentication:** Uses secure magic links requested via chat.
-- **Performance:** Built with Angular 20 and TailwindCSS 4 for fast mobile loading.
+## My role
+I worked mainly on the product frontend, navigation structure, and authentication flows. I also contributed to decisions affecting readability, access security, and experience stability.
 
-## Impact & Results
-I provided micro-entrepreneurs with enterprise-grade sales visibility. By transforming informal WhatsApp chats into precise retention metrics, the dashboard enabled them to identify at-risk customers and optimize loyalty strategies proactively through data.
+## Technical decisions
+- **Action-oriented information design:** organized the interface to highlight retention, repeat purchase, and at-risk customers.
+- **Channel-friendly authentication:** used magic links because the usage context already started in WhatsApp.
+- **Protected route architecture:** introduced guards and interceptors to preserve session and navigation consistency.
+- **Critical path coverage:** used Cypress to protect sensitive navigation and interaction flows.
 
-## System Architecture
-The diagram below shows the authentication and routing logic I built, using guards and interceptors:
+## Observed outcome
+The dashboard made retention signals more accessible to end users. Instead of manually interpreting scattered messages and records, the business could see inactive customers and follow-up opportunities in a single place.
 
+## System architecture
 ![Application Flow](/projects/business-analytics-dashboard/architecture-flow.svg)
-
-*Note: Developed for a private startup. Content is sanitized for confidentiality.*

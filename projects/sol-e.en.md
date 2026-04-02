@@ -1,9 +1,17 @@
 ---
-title: "SOL-e - Automated Reference Extractor (Patented)"
-description: A patented tool that leverages web scraping to automate the extraction of BibTeX references from SBC Open Lib (SOL), enabling bulk processing of hundreds of articles simultaneously.
+title: "SOL-e - Automated Reference Extractor"
+description: Patented tool for extracting BibTeX references in bulk from SBC Open Lib, reducing manual work in academic research.
 image: /projects/sol-e/app-screenshot.jpg
 isPrivate: false
 url: https://github.com/jose-almir/sol-e
+role: "End-to-end product ownership, from scraping to interface and final output."
+challenge: "Automating metadata collection from a source not designed for batch processing while preserving consistency and speed."
+outcome: "Researchers could generate references in bulk within seconds, with less manual error and less operational effort."
+proofPoints:
+  - "The solution processes batches of more than 200 papers in a few seconds."
+  - "Designed the interface for upload and extraction progress tracking."
+  - "Implemented scraping tailored to the dynamic structure of SBC Open Lib."
+  - "Normalized extracted data directly into BibTeX, ready for LaTeX workflows."
 tech:
   - Angular
   - Express.js
@@ -12,19 +20,19 @@ tech:
 order: 4
 ---
 
-I developed **SOL-e** to automate the collection of bibliographic references from the SBC Open Lib (SOL). Before this tool, researchers had to manually copy data to generate BibTeX files; now, the system handles batches of over 200 articles in seconds.
+I created SOL-e to solve a very specific academic research pain point: turning manual reference collection into a fast, repeatable workflow with fewer errors. The system was later recognized with a patent for addressing a real productivity bottleneck in the university context.
 
-## Innovation & Patent
-Due to its impact on academic productivity, the tool was officially **patented**. It serves as a dedicated extraction engine focused on the integrity of scientific metadata.
+## Context
+Before the tool, researchers had to manually copy information from SBC Open Lib to assemble BibTeX files. That process was slow, exhausting, and error-prone, especially for larger reading lists.
 
-## Technical Implementation
-The system architecture was designed for robustness and high efficiency:
-- **Angular Frontend:** An intuitive interface for uploading article lists and monitoring extraction progress in real-time.
-- **Express.js API:** A backend processing engine that orchestrates scraping tasks and data transformation.
-- **Advanced Web Scraping:** Reliable navigation and extraction logic tailored to the dynamic structure of the SBC digital library.
-- **Reference Formatter:** An algorithm that normalizes extracted data directly into the BibTeX standard, ready for LaTeX editors.
+## My role
+I built the product end to end, including the interface, API, scraping logic, and final reference formatting. The work involved UX decisions as well as automation and data-processing engineering.
 
-## Impact & Results
-The tool drastically accelerated the referencing phase of academic research, eliminating human error and manual fatigue. Scholars can now extract hundreds of citations in seconds, allowing them to focus their valuable time on critical analysis and scientific writing.
+## Technical decisions
+- **Simple academic UX:** prioritized a direct flow for list upload and processing feedback.
+- **Resilient scraping:** adapted extraction to the dynamic library structure to keep the output reliable.
+- **Transformation pipeline:** converted extracted data straight into BibTeX to reduce user rework.
+- **Batch processing:** designed the solution to handle large article sets efficiently.
 
-SOL-e highlights the use of automation to accelerate academic workflows, turning repetitive manual tasks into efficient digital processes.
+## Observed outcome
+The time spent on bibliographic referencing dropped sharply in heavy-use scenarios. Instead of copying items one by one, users could generate ready-to-use files in seconds and spend more time on reading and scientific writing.

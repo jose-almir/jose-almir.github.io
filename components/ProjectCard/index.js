@@ -4,6 +4,8 @@ import { useTranslation } from "@/lib/LanguageContext";
 
 export function ProjectCard({ project }) {
   const { t, language } = useTranslation();
+  const primaryTech = project.tech?.slice(0, 2) || [];
+  const remainingTechCount = Math.max((project.tech?.length || 0) - primaryTech.length, 0);
 
   return (
     <article className={styles.card}>
@@ -19,26 +21,52 @@ export function ProjectCard({ project }) {
         <div className={styles.content}>
           <h3 className={styles.title}>{project.title}</h3>
           <p className={styles.description}>{project.description}</p>
+
+          <dl className={styles.highlights}>
+            {project.role && (
+              <div className={styles.highlightItem}>
+                <dt>{t("projects.role_label")}</dt>
+                <dd>{project.role}</dd>
+              </div>
+            )}
+            {project.challenge && (
+              <div className={styles.highlightItem}>
+                <dt>{t("projects.challenge_label")}</dt>
+                <dd>{project.challenge}</dd>
+              </div>
+            )}
+            {project.outcome && (
+              <div className={styles.highlightItem}>
+                <dt>{t("projects.outcome_short_label")}</dt>
+                <dd>{project.outcome}</dd>
+              </div>
+            )}
+          </dl>
           
           <div className={styles.techStack}>
-            {project.tech?.map((techItem) => (
+            {primaryTech.map((techItem) => (
               <span key={techItem} className={styles.techPill}>
                 {techItem}
               </span>
             ))}
+            {remainingTechCount > 0 && (
+              <span className={styles.techMore}>+{remainingTechCount}</span>
+            )}
           </div>
         </div>
       </Link>
 
       <div className={styles.actionsBox}>
-        <div className={styles.actions}>
+        <div
+          className={styles.projectStatus}
+          title={project.isPrivate ? (project.confidentialityNote || t("projects.private_project_hint")) : t("projects.public_project_hint")}
+        >
+          <i className={`bi ${project.isPrivate ? "bi-lock" : "bi-globe-americas"}`}></i>
+          <span>{project.isPrivate ? t("projects.private_case_label") : t("projects.public_case_label")}</span>
+        </div>
 
-          {project.isPrivate ? (
-            <span className={styles.privateBadge}>
-              <i className="bi bi-lock-fill"></i>
-              {t("projects.private_project")}
-            </span>
-          ) : (
+        <div className={styles.actions}>
+          {!project.isPrivate && (
             <>
               {project.url && (
                 <a 

@@ -51,6 +51,7 @@ export default function Home({ posts, projects, locale }) {
     { name: "Spring Boot", id: "spring" },
     { name: "Next.js", id: "nextjs" },
     { name: "React", id: "react" },
+    { name: "Angular", id: "angular" },
   ];
 
   if (!isLoaded) return null;

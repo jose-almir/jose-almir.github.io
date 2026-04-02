@@ -8,14 +8,26 @@
   },
   "projects": {
     "title": "My Projects",
-    "description": "Here is a selection of my recent works and personal projects.",
+    "description": "Selected case studies showing how I approach product thinking, architecture, and delivery.",
+    "recruiter_note": "Each project highlights the context, my role, a key technical decision, and the observed outcome, including confidential work.",
     "view_project": "View Project",
     "view_source": "Source Code",
     "tech_stack": "Tech Stack",
     "no_projects": "No projects available at the moment.",
     "private_project": "Private Project",
+    "private_project_hint": "Sensitive details were sanitized, but I can explain architecture, trade-offs, and responsibilities in an interview.",
+    "private_case_label": "Confidential case",
+    "public_case_label": "Public case",
+    "public_project_hint": "This case includes public material available for direct browsing.",
     "read_more": "Read More",
-    "next_project": "Next Project"
+    "next_project": "Next Project",
+    "role_label": "My role",
+    "challenge_label": "Challenge",
+    "outcome_label": "Observed outcome",
+    "outcome_short_label": "Outcome",
+    "proof_points_title": "Concrete signals from this case",
+    "case_summary_label": "Case summary",
+    "confidentiality_title": "About confidentiality"
   },
   "home": {
     "title": "Hi, my name is ",

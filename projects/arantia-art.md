@@ -1,9 +1,17 @@
 ---
-title: "Arântia Art - Portfólio & CMS Serverless"
-description: Um sistema duplo composto por um portfólio multilíngue e um CMS customizado que utiliza a API do GitHub como banco de dados, garantindo custo zero e automação total via GitHub Actions.
+title: "Arântia Art - Portfólio e CMS Serverless"
+description: Portfólio multilíngue com CMS customizado sobre GitHub API, pensado para atualização simples e custo operacional praticamente zero.
 image: /blog/cms-portfolio/cms-print.png
 isPrivate: false
 url: https://arantia.art/
+role: "Arquitetura do produto, CMS customizado e automação de publicação."
+challenge: "Dar autonomia de atualização ao cliente sem exigir painel complexo, servidor dedicado ou conhecimento técnico de Git."
+outcome: "A artista passou a manter o portfólio sem dependência de desenvolvedor e sem custo recorrente de infraestrutura."
+proofPoints:
+  - "Estruturei um CMS privado que grava conteúdo diretamente via GitHub REST API."
+  - "Automatizei rebuild e deploy com GitHub Actions a cada alteração publicada."
+  - "Mantive o site público estático, rápido e com suporte a três idiomas."
+  - "A interface do CMS abstrai operações técnicas para uso cotidiano não técnico."
 tech:
   - Next.js
   - GitHub REST API
@@ -12,25 +20,25 @@ tech:
 order: 5
 ---
 
-Desenvolvi este sistema para resolver um problema recorrente em portfólios artísticos: a dificuldade de manter conteúdo atualizado sem depender de um desenvolvedor ou de mensalidades caras em plataformas de CMS tradicionais.
+Desenvolvi este sistema para resolver um problema comum em portfólios autorais: manter o conteúdo atualizado sem depender de um desenvolvedor ou de mensalidades de plataformas prontas. O projeto combina um site público estático com um CMS privado feito sob medida para a rotina da cliente.
 
-## Arquitetura "GitHub as a Database"
-A base do projeto é uma estrutura desacoplada:
-- **Portfólio Público (Next.js):** Um site estático hospedado no GitHub Pages com suporte a três idiomas (PT, EN, ES) e detecção automática de preferência do usuário.
-- **Painel Administrativo (CMS):** Um aplicativo privado que se comunica diretamente com a API do GitHub para realizar operações de leitura e escrita.
+## Contexto
+O objetivo era permitir atualização frequente de HQs e ilustrações com o menor atrito possível. A solução precisava ser barata de manter, rápida para navegar e simples o suficiente para uso cotidiano.
 
-## Minhas Contribuições Técnicas
-- **Engenharia de Automação:** Configurei fluxos no **GitHub Actions** para que cada alteração no CMS disparasse um commit automático, resultando no rebuild e deploy instantâneo do site público.
-- **Integração de Backend Decoupled:** Implementei a lógica de persistência de dados diretamente em arquivos JSON via API REST, eliminando a necessidade de uma camada de banco de dados convencional (Postgres/NoSQL).
-- **Experiência do Usuário (UX):** Desenvolvi uma interface de administração intuitiva que abstrai toda a complexidade técnica de comandos Git, permitindo que o usuário final gerencie HQs e ilustrações com um clique.
+## Meu papel
+Fui responsável pela arquitetura do produto e pela implementação do CMS e do portfólio público. Também desenhei o fluxo de publicação automática que conecta edição de conteúdo e deploy.
 
-A arquitetura elimina gastos com servidores e bancos de dados, mantendo a performance de um site estático e a conveniência de um portal dinâmico.
+## Decisões técnicas
+- **GitHub como camada de persistência:** usei a API do GitHub para leitura e escrita de conteúdo sem depender de banco tradicional.
+- **Deploy automatizado:** configurei GitHub Actions para reconstruir e publicar o site sempre que o CMS gerasse uma alteração.
+- **Separação entre edição e exibição:** mantive um painel privado para gestão e um site estático para consumo público.
+- **UX sem jargão técnico:** tratei o CMS como ferramenta de uso real, escondendo operações de Git do usuário final.
 
-## Impacto e Resultados
-A solução empoderou a artista a gerenciar seu próprio catálogo de forma totalmente independente e sem custos de infraestrutura. Ao remover a barreira técnica dos CMSs tradicionais, o projeto garantiu que o portfólio permanecesse sempre atualizado, preservando o foco na criação em vez da manutenção técnica.
+## Resultado observado
+A cliente passou a atualizar o próprio portfólio com autonomia e sem custo contínuo de infraestrutura. O sistema preserva a performance de um site estático, mas entrega uma experiência de manutenção próxima à de um CMS tradicional.
 
-## Processo e Detalhes Técnicos
-Você pode ler um artigo detalhado sobre a arquitetura e o desenvolvimento deste projeto no meu blog:
+## Processo e detalhes técnicos
+Você pode ler um artigo mais completo sobre a arquitetura no blog:
 
 ### [Explorando o CMS com GitHub API](/pt/blog/cms-portfolio)
 

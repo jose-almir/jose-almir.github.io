@@ -2,14 +2,12 @@ import { Seo } from "@/components/Seo";
 import { getProject, getProjects, getAllProjects } from "@/lib/projects";
 import { useTheme } from "next-themes";
 import Link from "next/link";
-import { useRouter } from "next/router";
 import { ReactMarkdown } from "react-markdown/lib/react-markdown";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { coldarkDark as codeDark, coldarkCold as codeLight } from "react-syntax-highlighter/dist/cjs/styles/prism";
 import rehypeRaw from "rehype-raw";
 import mediumZoom from "medium-zoom";
 import { useState, useEffect } from "react";
-import { ShareButtons } from "@/components/ShareButtons";
 import { CopyButton } from "@/components/CopyButton";
 import { useTranslation } from "@/lib/LanguageContext";
 import styles from "./ProjectDetails.module.scss";
@@ -67,7 +65,6 @@ export function getStaticProps({ params: { id, locale } }) {
 
 export default function Project({ project, nextProject, locale, translations }) {
   const { theme } = useTheme();
-  const router = useRouter();
   const { t, isLoaded, setAvailableTranslations } = useTranslation();
   const [scrollProgress, setScrollProgress] = useState(0);
   const [isClient, setIsClient] = useState(false);
@@ -130,6 +127,14 @@ export default function Project({ project, nextProject, locale, translations }) 
           <header className={styles.header}>
             <h1 className={styles.title}>{project.title}</h1>
             <p className={styles.description}>{project.description}</p>
+
+            <div
+              className={styles.projectStatus}
+              title={project.isPrivate ? (project.confidentialityNote || t("projects.private_project_hint")) : t("projects.public_project_hint")}
+            >
+              <i className={`bi ${project.isPrivate ? "bi-lock" : "bi-globe-americas"}`}></i>
+              <span>{project.isPrivate ? t("projects.private_case_label") : t("projects.public_case_label")}</span>
+            </div>
             
             <div className={styles.techStack}>
               {project.tech?.map((techItem) => (
@@ -140,12 +145,7 @@ export default function Project({ project, nextProject, locale, translations }) 
             </div>
 
             <div className={styles.actions}>
-              {project.isPrivate ? (
-                <span className={styles.privateBadge}>
-                  <i className="bi bi-lock-fill"></i>
-                  {t("projects.private_project")}
-                </span>
-              ) : (
+              {!project.isPrivate && (
                 <>
                   {project.url && (
                     <a href={project.url} target="_blank" rel="noopener noreferrer" className={styles.buttonMain}>
@@ -162,9 +162,37 @@ export default function Project({ project, nextProject, locale, translations }) 
             </div>
           </header>
 
-          <div className={styles.imageContainer}>
-            <img src={project.image} alt={project.title} className={styles.heroImage} />
-          </div>
+          <section className={styles.summaryGrid} aria-label={t("projects.case_summary_label")}>
+            {project.role && (
+              <article className={styles.summaryCard}>
+                <span className={styles.summaryLabel}>{t("projects.role_label")}</span>
+                <p>{project.role}</p>
+              </article>
+            )}
+            {project.challenge && (
+              <article className={styles.summaryCard}>
+                <span className={styles.summaryLabel}>{t("projects.challenge_label")}</span>
+                <p>{project.challenge}</p>
+              </article>
+            )}
+            {project.outcome && (
+              <article className={styles.summaryCard}>
+                <span className={styles.summaryLabel}>{t("projects.outcome_label")}</span>
+                <p>{project.outcome}</p>
+              </article>
+            )}
+          </section>
+
+          {project.proofPoints?.length > 0 && (
+            <section className={styles.proofSection}>
+              <h2>{t("projects.proof_points_title")}</h2>
+              <ul className={styles.proofList}>
+                {project.proofPoints.map((point) => (
+                  <li key={point}>{point}</li>
+                ))}
+              </ul>
+            </section>
+          )}
 
           <ReactMarkdown
             className={`project-content ${styles.markdownContent}`}
@@ -196,6 +224,13 @@ export default function Project({ project, nextProject, locale, translations }) 
           />
 
           <hr className={styles.divider} />
+
+          {project.confidentialityNote && (
+            <section className={styles.confidentialityNote}>
+              <strong>{t("projects.confidentiality_title")}</strong>
+              <p>{project.confidentialityNote}</p>
+            </section>
+          )}
 
           <section className={styles.nextProjectSection}>
             <span className={styles.nextLabel}>{t("projects.next_project") || "Next Project"}</span>

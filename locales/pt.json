@@ -8,14 +8,26 @@
   },
   "projects": {
     "title": "Meus Projetos",
-    "description": "Aqui estão alguns dos meus trabalhos recentes e projetos pessoais.",
+    "description": "Cases selecionados para mostrar como eu penso produto, arquitetura e entrega.",
+    "recruiter_note": "Cada projeto destaca contexto, meu papel, a decisão técnica principal e o resultado observado, inclusive quando o trabalho é confidencial.",
     "view_project": "Ver Projeto",
     "view_source": "Código Fonte",
     "tech_stack": "Tecnologias",
     "no_projects": "Nenhum projeto disponível no momento.",
     "private_project": "Projeto Privado",
+    "private_project_hint": "Os detalhes sensíveis foram anonimizados, mas posso explicar arquitetura, trade-offs e responsabilidades em entrevista.",
+    "private_case_label": "Case confidencial",
+    "public_case_label": "Case público",
+    "public_project_hint": "Este case tem material público disponível para navegação direta.",
     "read_more": "Ler Mais",
-    "next_project": "Próximo Projeto"
+    "next_project": "Próximo Projeto",
+    "role_label": "Meu papel",
+    "challenge_label": "Desafio",
+    "outcome_label": "Resultado observado",
+    "outcome_short_label": "Resultado",
+    "proof_points_title": "Sinais concretos deste case",
+    "case_summary_label": "Resumo do case",
+    "confidentiality_title": "Sobre a confidencialidade"
   },
   "home": {
     "title": "Olá, meu nome é ",

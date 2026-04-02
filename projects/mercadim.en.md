@@ -1,9 +1,17 @@
 ---
 title: "Mercadim - Regional Marketplace"
-description: A digital platform designed to bridge the gap between local consumers and entrepreneurs, stimulating the regional economy through a free virtual storefront.
+description: Marketplace for local entrepreneurs with digital catalog management, secure authentication, and low-friction access for small businesses.
 image: /projects/mercadim/home.png
 isPrivate: false
 url: https://mercadim.ifce.edu.br/
+role: "Platform frontend and integration with the institutional API."
+challenge: "Providing digital presence for small producers in a context that demands low entry barriers and strong mobile usability."
+outcome: "The project gave local entrepreneurs online visibility and organized catalog and access flows into a single portal."
+proofPoints:
+  - "Built the entire user interface in React with responsive behavior."
+  - "Integrated the frontend with the PHP API for catalog, account, and data management flows."
+  - "Implemented JWT-based authentication for entrepreneurs and administrators."
+  - "Modeled navigation and search around regional discovery."
 tech:
   - React
   - PHP (API)
@@ -12,19 +20,19 @@ tech:
 order: 7
 ---
 
-I developed the user interface for **Mercadim** to create a regional marketplace where small-scale producers can showcase their catalogs digitally with zero entry costs. The platform was built within the IFCE ecosystem to stimulate local commerce.
+I developed the Mercadim interface to create a low-friction digital storefront for local producers and entrepreneurs. The project sits in a regional economic context, so the experience needed to work well for people who often had little or no prior digital structure.
 
-## Project Scope
-The virtual storefront allows entrepreneurs to create profiles and manage products simply, connecting local supply with community demand while fostering loyalty programs.
+## Context
+Small local businesses are often excluded from online channels due to cost, lack of technical support, or the absence of a basic digital presence. Mercadim aimed to lower that barrier and bring catalog, profile, and discovery into one place.
 
-## Technical Implementation
-I spearheaded the entire user interface development, focusing on high-performance execution:
-- **React Frontend:** Developed modular and responsive UI components to ensure seamless navigation across mobile and desktop devices.
-- **API Integration:** Integrated the frontend with robust PHP backends, managing complex data flows for the institutional database.
-- **Secure Authentication:** Implemented **JWT (JSON Web Token)** based security, providing reliable session management for both business owners and system administrators.
-- **Virtual Storefront:** Built regionalized search and discovery logic to connect buyers directly with their immediate communities.
+## My role
+I was responsible for the platform frontend and its integration with the institutional API. I worked on browsing flows, management screens, and authentication for different user profiles.
 
-## Impact & Results
-The platform digitalized regional commerce, creating a modern storefront that strengthens the local economic fabric. By facilitating direct connections between producers and consumers, the project fostered a community of conscious consumption and brought digital visibility to small businesses previously excluded from the online market.
+## Technical decisions
+- **Responsive interface:** prioritized a consistent experience on mobile and desktop.
+- **Direct integration with the institutional API:** connected the UI to the PHP backend to keep data flows centralized.
+- **JWT session handling:** treated authentication as a core part of the day-to-day product usage.
+- **Regional discovery logic:** structured catalog and search around local supply and community demand.
 
-This project focuses on inclusive digitalization, using React to build a modern and accessible shopping experience for regional communities.
+## Observed outcome
+The project expanded the online presence of local businesses and gave them a more organized product showcase. Instead of depending only on informal publicity, entrepreneurs gained a structured digital storefront.

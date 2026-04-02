@@ -1,9 +1,17 @@
 ---
-title: "SOL-e - Extrator Automatizado de Referências (Patenteado)"
-description: Ferramenta patentada que utiliza web scraping para automatizar a extração de referências BibTeX da SBC Open Lib (SOL), permitindo o processamento em massa de centenas de artigos simultaneamente.
+title: "SOL-e - Extrator Automatizado de Referências"
+description: Ferramenta patentada para extrair referências BibTeX em lote a partir da SBC Open Lib, reduzindo trabalho manual em pesquisa acadêmica.
 image: /projects/sol-e/app-screenshot.jpg
 isPrivate: false
 url: https://github.com/jose-almir/sol-e
+role: "Produto completo, do scraping à interface e ao formato final entregue ao usuário."
+challenge: "Automatizar a coleta de metadados em uma fonte não pensada para processamento em lote, preservando consistência e velocidade."
+outcome: "Pesquisadores passaram a gerar referências em massa em segundos, com menos erro manual e menos desgaste operacional."
+proofPoints:
+  - "A solução processa lotes com mais de 200 artigos em poucos segundos."
+  - "Desenhei a interface para upload e acompanhamento do progresso de extração."
+  - "Implementei scraping adaptado à estrutura dinâmica da SBC Open Lib."
+  - "Normalizei os dados diretamente para o padrão BibTeX, prontos para uso em LaTeX."
 tech:
   - Angular
   - Express.js
@@ -12,19 +20,19 @@ tech:
 order: 4
 ---
 
-Criei o **SOL-e** para automatizar a coleta de referências bibliográficas na SBC Open Lib (SOL). Antes desta ferramenta, pesquisadores precisavam copiar dados manualmente para gerar arquivos BibTeX; agora, o sistema processa lotes de mais de 200 artigos em poucos segundos.
+Criei o SOL-e para resolver uma dor muito específica de pesquisa acadêmica: transformar a coleta manual de referências em um fluxo rápido, reproduzível e com menos chance de erro. O sistema foi reconhecido com patente por atacar um problema real de produtividade em contexto universitário.
 
-## Inovação e Patente
-Pela originalidade e impacto na produtividade acadêmica, a ferramenta foi **patenteada**. Ela funciona como um motor de extração focado na integridade dos metadados científicos.
+## Contexto
+Antes da ferramenta, pesquisadores precisavam copiar informações manualmente da SBC Open Lib para montar arquivos BibTeX. Esse processo era lento, cansativo e sujeito a inconsistências, especialmente em listas maiores.
 
-## Implementação Técnica
-A arquitetura do sistema foi desenhada para ser robusta e escalável:
-- **Frontend em Angular:** Interface intuitiva para upload de listas de artigos e acompanhamento do progresso de extração em tempo real.
-- **API em Express.js:** Motor de processamento que orquestra as tarefas de scraping e conversão de dados.
-- **Web Scraping Avançado:** Implementação de lógica de navegação e extração que lida com a estrutura dinâmica da biblioteca digital da SBC.
-- **Formatador de Referências:** Algoritmo que normaliza os dados extraídos diretamente para o padrão BibTeX, pronto para uso em editores LaTeX.
+## Meu papel
+Desenvolvi o produto de ponta a ponta, incluindo interface, API, lógica de scraping e formatação final das referências. O trabalho envolveu tanto decisões de UX quanto engenharia de automação e tratamento de dados.
 
-## Impacto e Resultados
-A ferramenta acelerou drasticamente a fase de referenciamento em pesquisas acadêmicas, eliminando o erro humano e o cansaço do processo manual. Pesquisadores puderam extrair centenas de citações em segundos, redirecionando seu tempo precioso para a análise crítica e escrita científica.
+## Decisões técnicas
+- **Interface simples para uso acadêmico:** priorizei um fluxo direto para upload de listas e acompanhamento do processamento.
+- **Scraping resiliente:** adaptei a extração à estrutura dinâmica da biblioteca para manter confiabilidade.
+- **Pipeline de transformação:** converti os dados extraídos diretamente para BibTeX, reduzindo retrabalho do usuário.
+- **Processamento em lote:** desenhei a solução para lidar bem com conjuntos grandes de artigos.
 
-O projeto demonstra o uso de automação para acelerar workflows acadêmicos, transformando tarefas repetitivas em processos digitais eficientes.
+## Resultado observado
+O tempo gasto com referência bibliográfica caiu drasticamente em cenários de uso intensivo. Em vez de copiar item por item, o usuário passou a gerar arquivos prontos em segundos e direcionar energia para leitura e escrita científica.

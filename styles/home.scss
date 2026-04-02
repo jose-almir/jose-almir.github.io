@@ -306,7 +306,7 @@
 .home-projects-highlights {
   margin: 60px 0;
   width: 100%;
-  max-width: 1200px;
+  max-width: 1100px;
 
   .section-title {
     font-size: 1.5rem;
@@ -335,17 +335,9 @@
 
 .projects-grid-featured {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 32px;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 24px;
   width: 100%;
-  
-  @media (max-width: 1024px) {
-    grid-template-columns: repeat(2, 1fr);
-  }
-  
-  @media (max-width: 640px) {
-    grid-template-columns: 1fr;
-  }
 }
 
 .home-contact-cta {
