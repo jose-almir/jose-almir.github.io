@@ -9,7 +9,7 @@ tech:
   - PHP (API)
   - JWT Authentication
   - Regional E-commerce Logic
-order: 6
+order: 7
 ---
 
 Desenvolvi a interface do **Mercadim** para servir como um marketplace regional, permitindo que pequenos produtores divulguem seus catálogos digitalmente sem custos de entrada. O projeto foi concebido dentro do ecossistema do IFCE para fomentar a economia local.

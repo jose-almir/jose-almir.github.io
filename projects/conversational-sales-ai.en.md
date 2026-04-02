@@ -9,7 +9,7 @@ tech:
   - LLM Prompt Orchestration
   - CRM Integration
   - Durable Objects
-order: 2
+order: 3
 ---
 
 I built this intelligent assistant to automate lead engagement and sales closing via WhatsApp. The system employs LLM orchestration and dynamic decision flows to drive conversions in real-time without constant human intervention.

@@ -9,7 +9,7 @@ tech:
   - Chart.js
   - Cypress
   - Magic Link Auth
-order: 5
+order: 6
 ---
 
 Desenvolvi este dashboard para consolidar dados de vendas capturados via WhatsApp, oferecendo uma visão clara do comportamento de recompra e retenção de clientes sem a necessidade de planilhas manuais.

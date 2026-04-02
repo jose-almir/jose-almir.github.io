@@ -9,7 +9,7 @@ tech:
   - Chart.js
   - Cypress
   - Magic Link Auth
-order: 5
+order: 6
 ---
 
 I built this dashboard to centralize sales data from WhatsApp, providing actionable insights into customer repurchase behavior and retention rates without the need for manual spreadsheets.

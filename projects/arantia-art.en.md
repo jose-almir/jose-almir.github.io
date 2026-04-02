@@ -9,7 +9,7 @@ tech:
   - GitHub REST API
   - GitHub Actions
   - Internationalization (i18n)
-order: 3
+order: 5
 ---
 
 I built this custom CMS to solve a common problem for digital portfolios: maintaining frequent updates without technical overhead or expensive monthly fees from third-party platforms.

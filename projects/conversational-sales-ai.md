@@ -9,7 +9,7 @@ tech:
   - LLM Prompt Orchestration
   - CRM Integration
   - Durable Objects
-order: 2
+order: 3
 ---
 
 Desenvolvi este assistente inteligente para automatizar o atendimento e fechamento de vendas via WhatsApp. O sistema utiliza orquestração de LLMs e fluxos de decisão dinâmicos para converter leads em tempo real sem intervenção humana constante.
