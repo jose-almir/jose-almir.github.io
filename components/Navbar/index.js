@@ -54,7 +54,7 @@ export function Navbar() {
           <a href="https://www.linkedin.com/in/jose-almir/" target="_blank" rel="noreferrer" title="LinkedIn">
             <i className="bi bi-linkedin"></i>
           </a>
-          <a href="https://github.com/jose-almir/jose-almir.github.io" target="_blank" rel="noreferrer" title="GitHub">
+          <a href="https://github.com/jose-almir" target="_blank" rel="noreferrer" title="GitHub">
             <i className="bi bi-github"></i>
           </a>
         </span>

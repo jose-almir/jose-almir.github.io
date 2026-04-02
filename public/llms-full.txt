@@ -17,20 +17,22 @@ This document provides a detailed index of the content available on Almir Dev.
 - [Handcrafted Code in 2026?](https://almirdev.com/en/blog/codigo-artesanal-2026)
 
 ## Projects (Portuguese)
-- [SOL-e - Extrator Automatizado de Referências (Patenteado)](https://almirdev.com/pt/projects/sol-e)
+- [SOL-e - Extrator Automatizado de Referências](https://almirdev.com/pt/projects/sol-e)
+- [Social Intelligence Hub](https://almirdev.com/pt/projects/social-intelligence-hub)
 - [Mercadim - Marketplace Regional](https://almirdev.com/pt/projects/mercadim)
-- [Inteligência de Vendas Conversacional (Agente de IA)](https://almirdev.com/pt/projects/conversational-sales-ai)
+- [Inteligência de Vendas Conversacional](https://almirdev.com/pt/projects/conversational-sales-ai)
 - [Dashboard de Retenção e Inteligência de Vendas](https://almirdev.com/pt/projects/business-analytics-dashboard)
 - [Plataforma de Automação Bancária e Controle de Robôs](https://almirdev.com/pt/projects/banking-automation-platform)
-- [Arântia Art - Portfólio & CMS Serverless](https://almirdev.com/pt/projects/arantia-art)
+- [Arântia Art - Portfólio e CMS Serverless](https://almirdev.com/pt/projects/arantia-art)
 
 ## Projects (English)
-- [SOL-e - Automated Reference Extractor (Patented)](https://almirdev.com/en/projects/sol-e)
+- [SOL-e - Automated Reference Extractor](https://almirdev.com/en/projects/sol-e)
+- [Social Intelligence Hub](https://almirdev.com/en/projects/social-intelligence-hub)
 - [Mercadim - Regional Marketplace](https://almirdev.com/en/projects/mercadim)
-- [Conversational Sales Intelligence (AI Agent)](https://almirdev.com/en/projects/conversational-sales-ai)
-- [Business Retention & Analytics Dashboard](https://almirdev.com/en/projects/business-analytics-dashboard)
-- [Banking Automation & Robot Control Platform](https://almirdev.com/en/projects/banking-automation-platform)
-- [Arântia Art - Serverless Portfolio & CMS](https://almirdev.com/en/projects/arantia-art)
+- [Conversational Sales Intelligence](https://almirdev.com/en/projects/conversational-sales-ai)
+- [Retention and Sales Intelligence Dashboard](https://almirdev.com/en/projects/business-analytics-dashboard)
+- [Banking Automation and Robot Control Platform](https://almirdev.com/en/projects/banking-automation-platform)
+- [Arantia Art - Serverless Portfolio and CMS](https://almirdev.com/en/projects/arantia-art)
 
 ## Social & Contact
 - GitHub: https://github.com/jose-almir

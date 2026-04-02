@@ -9,9 +9,9 @@
             <link>https://almirdev.com/pt</link>
         </image>
         <generator>RSS for Node</generator>
-        <lastBuildDate>Mon, 30 Mar 2026 12:26:50 GMT</lastBuildDate>
+        <lastBuildDate>Thu, 02 Apr 2026 14:17:12 GMT</lastBuildDate>
         <atom:link href="https://almirdev.com/feed.pt.xml" rel="self" type="application/rss+xml"/>
-        <pubDate>Mon, 30 Mar 2026 12:26:50 GMT</pubDate>
+        <pubDate>Thu, 02 Apr 2026 14:17:12 GMT</pubDate>
         <copyright><![CDATA[Todos os direitos reservados 2026, Almir Dev]]></copyright>
         <language><![CDATA[pt]]></language>
         <item>
@@ -79,28 +79,28 @@
             <pubDate>Sat, 06 May 2023 03:00:00 GMT</pubDate>
         </item>
         <item>
-            <title><![CDATA[Project: SOL-e - Extrator Automatizado de Referências (Patenteado)]]></title>
-            <description><![CDATA[Ferramenta patentada que utiliza web scraping para automatizar a extração de referências BibTeX da SBC Open Lib (SOL), permitindo o processamento em massa de centenas de artigos simultaneamente.]]></description>
+            <title><![CDATA[Project: SOL-e - Extrator Automatizado de Referências]]></title>
+            <description><![CDATA[Ferramenta patentada para extrair referências BibTeX em lote a partir da SBC Open Lib, reduzindo trabalho manual em pesquisa acadêmica.]]></description>
             <link>https://almirdev.com/pt/projects/sol-e</link>
             <guid isPermaLink="true">https://almirdev.com/pt/projects/sol-e</guid>
             <category><![CDATA[project]]></category>
-            <pubDate>Mon, 30 Mar 2026 12:26:50 GMT</pubDate>
+            <pubDate>Thu, 02 Apr 2026 14:17:12 GMT</pubDate>
         </item>
         <item>
             <title><![CDATA[Project: Mercadim - Marketplace Regional]]></title>
-            <description><![CDATA[Plataforma desenvolvida para conectar consumidores e empreendedores locais, impulsionando a economia regional através de uma vitrine virtual gratuita.]]></description>
+            <description><![CDATA[Marketplace voltado a empreendedores locais, com catálogo digital, autenticação segura e foco em acesso simples para pequenos negócios.]]></description>
             <link>https://almirdev.com/pt/projects/mercadim</link>
             <guid isPermaLink="true">https://almirdev.com/pt/projects/mercadim</guid>
             <category><![CDATA[project]]></category>
-            <pubDate>Mon, 30 Mar 2026 12:26:50 GMT</pubDate>
+            <pubDate>Thu, 02 Apr 2026 14:17:12 GMT</pubDate>
         </item>
         <item>
-            <title><![CDATA[Project: Arântia Art - Portfólio & CMS Serverless]]></title>
-            <description><![CDATA[Um sistema duplo composto por um portfólio multilíngue e um CMS customizado que utiliza a API do GitHub como banco de dados, garantindo custo zero e automação total via GitHub Actions.]]></description>
+            <title><![CDATA[Project: Arântia Art - Portfólio e CMS Serverless]]></title>
+            <description><![CDATA[Portfólio multilíngue com CMS customizado sobre GitHub API, pensado para atualização simples e custo operacional praticamente zero.]]></description>
             <link>https://almirdev.com/pt/projects/arantia-art</link>
             <guid isPermaLink="true">https://almirdev.com/pt/projects/arantia-art</guid>
             <category><![CDATA[project]]></category>
-            <pubDate>Mon, 30 Mar 2026 12:26:50 GMT</pubDate>
+            <pubDate>Thu, 02 Apr 2026 14:17:12 GMT</pubDate>
         </item>
     </channel>
 </rss>
