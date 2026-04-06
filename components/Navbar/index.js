@@ -37,16 +37,16 @@ export function Navbar() {
   return (
     <header className={styles.navbar + hiddenStyle}>
       <div className={styles.brand}>
-        <Link href="/" title={t("nav.home")}>
+        <Link href={`/${language}`} title={t("nav.home")}>
           <div className={styles.avatar}></div>
         </Link>
       </div>
       <nav className={styles.navlinks}>
-        <Link href={`/${language}/blog`} title={t("nav.blog")}>
-          {t("nav.blog")}
-        </Link>
         <Link href={`/${language}/projects`} title={t("nav.projects")}>
           {t("nav.projects")}
+        </Link>
+        <Link href={`/${language}/blog`} title={t("nav.blog")}>
+          {t("nav.blog")}
         </Link>
       </nav>
       <div className={styles.actions}>
