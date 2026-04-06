@@ -49,7 +49,7 @@ export default function Home({ posts, projects, locale }) {
     { name: "Java", id: "java" },
     { name: "TypeScript", id: "ts" },
     { name: "Spring Boot", id: "spring" },
-    { name: "Next.js", id: "nextjs" },
+    { name: "Node.js", id: "nodejs" },
     { name: "React", id: "react" },
     { name: "Angular", id: "angular" },
   ];
