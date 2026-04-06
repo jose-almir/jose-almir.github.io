@@ -1,7 +1,7 @@
 ---
 title: "Automação de Crédito Consignado e Orquestração de Robôs"
 description: Plataforma multi-tenant para automatizar o back-office de Correspondentes Bancários, processando em horas o que levaria dias de trabalho manual.
-image: /projects/banking-automation-platform/control-tab.png
+image: /projects/loan-automation-robot-orchestration/control-tab.png
 isPrivate: true
 role: "Arquitetura da plataforma, infraestrutura distribuída e desenho dos fluxos de simulação."
 challenge: "Garantir o isolamento rígido entre diferentes clientes (CORBANs) e seus robôs, mantendo a estabilidade em um ecossistema de interfaces bancárias imprevisíveis."
@@ -39,6 +39,6 @@ A plataforma gerou um ganho direto de produtividade: o que antes levava dias de 
 ## Interface e Operação
 Abaixo, algumas capturas anonimizadas do cockpit de controle e da gestão dos robôs:
 
-![Painel de Controle (Cockpit)](/projects/banking-automation-platform/cockpit-tab.png)
-![Catálogo de Robôs](/projects/banking-automation-platform/catalog-tab.png)
-![Controle e Auditoria](/projects/banking-automation-platform/control-tab.png)
+![Painel de Controle (Cockpit)](/projects/loan-automation-robot-orchestration/cockpit-tab.png)
+![Catálogo de Robôs](/projects/loan-automation-robot-orchestration/catalog-tab.png)
+![Controle e Auditoria](/projects/loan-automation-robot-orchestration/control-tab.png)

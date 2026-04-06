@@ -1,7 +1,7 @@
 ---
 title: "Payroll Loan Automation & Robot Orchestration"
 description: Multi-tenant platform to automate back-office operations for banking correspondents, processing in hours what previously took days of manual work.
-image: /projects/banking-automation-platform/control-tab.png
+image: /projects/loan-automation-robot-orchestration/control-tab.png
 isPrivate: true
 role: "Platform architecture, distributed infrastructure, and simulation workflow design."
 challenge: "Ensuring strict isolation between different clients (Correspondent Banks) and their robots, while maintaining stability across an ecosystem of unpredictable banking portals."
@@ -39,6 +39,6 @@ The platform created a direct boost in productivity: what previously took days o
 ## Interface and Operation
 Below are sanitized screenshots of the control cockpit and robot management:
 
-![Control Cockpit](/projects/banking-automation-platform/cockpit-tab.png)
-![Robot Catalog](/projects/banking-automation-platform/catalog-tab.png)
-![Control and Audit](/projects/banking-automation-platform/control-tab.png)
+![Control Cockpit](/projects/loan-automation-robot-orchestration/cockpit-tab.png)
+![Robot Catalog](/projects/loan-automation-robot-orchestration/catalog-tab.png)
+![Control and Audit](/projects/loan-automation-robot-orchestration/control-tab.png)
