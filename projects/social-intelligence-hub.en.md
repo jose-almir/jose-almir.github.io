@@ -1,44 +1,40 @@
 ---
-title: "Social Intelligence Hub"
-description: Platform for influencer campaign management with multi-channel OAuth integration and serverless automations on Firebase.
+title: "Social Intelligence & Influencer Management Hub"
+description: An in-house platform to centralize influencer metrics and campaigns, replacing high-cost SaaS solutions with a serverless architecture on Firebase.
 image: /projects/social-hub/admin-panel.png
 isPrivate: true
-role: "Product frontend, operational flows, and serverless automation."
-challenge: "Bringing social authentication, briefing rules, and campaign operations into a usable experience for different user profiles."
-outcome: "Campaign setup became more predictable, with less manual work around data collection and daily operations."
-confidentialityNote: "Private project involving campaign data and third-party integrations. Only the elements needed to explain product and engineering decisions are shown."
+role: "Technical Lead, NoSQL data architecture, and developer team coordination."
+challenge: "Migrating operations from multiple paid platforms (e.g., Squid) to a proprietary system that required normalizing heterogeneous data from Instagram, TikTok, X, and YouTube in real-time."
+outcome: "The v1 delivery centralized campaign lifecycles with automatic metric harvesting via OAuth, eliminating third-party software costs and ensuring data accuracy for influencer filtering."
+confidentialityNote: "Campaign data and business secrets have been anonymized. The description focuses on technical leadership and infrastructure/product decisions."
 proofPoints:
-  - "Implemented an OAuth 2.0 flow across multiple providers with centralized permission handling."
-  - "Built dynamic briefing flows and flexible date validation to support real business rules."
-  - "Created separate interfaces for admins and influencers to reduce operational friction."
-  - "Automated critical processes with Firebase Cloud Functions, including recovery and verification flows."
+  - "Led development from inception to a stable v1, coordinating a team of developers and a dedicated UX designer."
+  - "Architected a flexible data layer using Firebase Firestore (NoSQL) to handle schema variations across different social networks."
+  - "Implemented a multi-channel OAuth orchestrator, allowing influencers to connect and manage permissions for multiple social accounts simultaneously."
+  - "Built manual matching filters based on engagement and real reach, powered by periodic metric update routines."
 tech:
   - Angular
-  - Firebase
-  - Cloud Functions
-  - OAuth 2.0
-  - Algolia
+  - Firebase Firestore
+  - Cloud Functions (Node.js)
+  - OAuth 2.0 (Multi-provider)
+  - Algolia (Search)
 order: 2
 ---
 
-I developed the technical foundation of this platform to centralize the influencer campaign lifecycle in a single system. The challenge was combining social integrations, operational rules, and different user experiences for admins and creators without turning the product into a confusing dashboard.
+I developed this project to solve a growing operational cost for the client: reliance on external social intelligence platforms. The goal was to build a proprietary tool that centralized the entire campaign lifecycle—from influencer onboarding to final metric analysis.
 
-## Context
-Before that, much of the workflow depended on manual coordination: connecting profiles, organizing briefings, reviewing timelines, and tracking scattered campaign data. The platform needed to reduce that friction and standardize the process.
+## Architecture and Data Flexibility
+One of the biggest technical challenges was data normalization. Every social network (Instagram, TikTok, YouTube, X) delivers metrics and formats differently. We chose **Firebase Firestore** for its NoSQL nature, allowing the system to be dynamic enough to store channel-specific attributes without rigid database constraints.
 
-## My role
-I worked mainly on the product frontend and on important parts of the serverless layer. I owned operational flows, business validations, and automation logic that supported the day-to-day campaign routine.
+## OAuth Orchestration and Onboarding
+The influencer onboarding flow was the most complex part of the interface. We built a centralized hub where users could authenticate their socials via OAuth in a continuous flow. These permissions ensured the platform could perform periodic data harvests (via Cloud Functions), keeping the influencer database updated with followers, engagement rates, and content categories.
 
-## Technical decisions
-- **Centralized social integration:** concentrated OAuth authentication and permission handling into a consistent layer.
-- **Role-oriented UX:** separated the admin and influencer experiences so each profile could focus on what mattered for their workflow.
-- **Dynamic frontend rules:** treated briefings and scheduling rules as product logic, not just form fields.
-- **Lean backend automation:** used Cloud Functions to support recurring processes without manual operational effort.
+## Leadership and Collaboration
+In this project, I acted as the technical lead, mentoring a team of developers (mostly former students) and working alongside a dedicated UX designer. My role covered everything from tech stack decisions to implementing complex business logic in Firebase Functions, ensuring campaigns followed strict briefings and automated schedules.
 
-## Observed outcome
-Campaign setup and follow-up became clearer for the team. Social data collection required less manual intervention, and the system better supported the operational rhythm of launching new campaigns.
+## Visual References
+Below are diagrams and screenshots showing the system in operation:
 
-## Visual references
 ![Integration Architecture](/projects/social-hub/architecture.png)
 ![Admin Panel](/projects/social-hub/admin-panel.png)
 ![Influencer Panel](/projects/social-hub/influencer-panel.png)
