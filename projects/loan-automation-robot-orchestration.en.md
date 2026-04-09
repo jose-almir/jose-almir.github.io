@@ -36,7 +36,7 @@ To meet these requirements, I chose a hybrid architecture that uses Edge low-lat
 ## Business Impact
 The platform created a direct boost in productivity: what previously took days of manual work is now finished in a few hours through autonomous pipelines. By automating the sensitive and repetitive part of the process, the team shifted their focus to credit analysis and business strategy, while the robots ensure simulation speed and precision.
 
-## Interface and Operation
+## Visual references
 Below are sanitized screenshots of the control cockpit and robot management:
 
 ![Control Cockpit](/projects/loan-automation-robot-orchestration/cockpit-tab.png)

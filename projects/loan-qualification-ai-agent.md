@@ -40,7 +40,7 @@ O diagrama abaixo ilustra como a IA orquestra a conversa, as validações e as c
 
 ![Fluxo de Qualificação e Integração](/projects/loan-qualification-ai-agent/diagram.png)
 
-## Interface e Operação
+## Referências visuais
 Abaixo, capturas anonimizadas que demonstram a interação real com o agente:
 
 ![Monitoramento de Conversas](/projects/loan-qualification-ai-agent/real-chat.png)

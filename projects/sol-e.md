@@ -36,3 +36,6 @@ Desenvolvi o produto de ponta a ponta, incluindo interface, API, lógica de scra
 
 ## Resultado observado
 O tempo gasto com referência bibliográfica caiu drasticamente em cenários de uso intensivo. Em vez de copiar item por item, o usuário passou a gerar arquivos prontos em segundos e direcionar energia para leitura e escrita científica.
+
+## Referências visuais
+![Interface de Extração](/projects/sol-e/app-screenshot.jpg)

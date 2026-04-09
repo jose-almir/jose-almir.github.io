@@ -21,7 +21,7 @@ This document provides a detailed index of the content available on Almir Dev.
 - [Social Intelligence Hub](https://almirdev.com/pt/projects/social-intelligence-hub)
 - [Mercadim - Marketplace Regional](https://almirdev.com/pt/projects/mercadim)
 - [Inteligência de Vendas Conversacional](https://almirdev.com/pt/projects/conversational-sales-ai)
-- [Dashboard de Retenção e Inteligência de Vendas](https://almirdev.com/pt/projects/business-analytics-dashboard)
+- [Dashboard de Gestão para Microempreendedores](https://almirdev.com/pt/projects/mei-financial-dashboard)
 - [Plataforma de Automação Bancária e Controle de Robôs](https://almirdev.com/pt/projects/banking-automation-platform)
 - [Arântia Art - Portfólio e CMS Serverless](https://almirdev.com/pt/projects/arantia-art)
 
@@ -30,7 +30,7 @@ This document provides a detailed index of the content available on Almir Dev.
 - [Social Intelligence Hub](https://almirdev.com/en/projects/social-intelligence-hub)
 - [Mercadim - Regional Marketplace](https://almirdev.com/en/projects/mercadim)
 - [Conversational Sales Intelligence](https://almirdev.com/en/projects/conversational-sales-ai)
-- [Retention and Sales Intelligence Dashboard](https://almirdev.com/en/projects/business-analytics-dashboard)
+- [Management Dashboard for Micro Entrepreneurs](https://almirdev.com/en/projects/mei-financial-dashboard)
 - [Banking Automation and Robot Control Platform](https://almirdev.com/en/projects/banking-automation-platform)
 - [Arantia Art - Serverless Portfolio and CMS](https://almirdev.com/en/projects/arantia-art)
 

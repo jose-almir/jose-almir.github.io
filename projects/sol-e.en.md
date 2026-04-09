@@ -36,3 +36,6 @@ I built the product end to end, including the interface, API, scraping logic, an
 
 ## Observed outcome
 The time spent on bibliographic referencing dropped sharply in heavy-use scenarios. Instead of copying items one by one, users could generate ready-to-use files in seconds and spend more time on reading and scientific writing.
+
+## Visual references
+![Extraction Interface](/projects/sol-e/app-screenshot.jpg)

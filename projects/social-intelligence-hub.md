@@ -32,7 +32,7 @@ O fluxo de onboarding do influenciador foi o ponto mais complexo da interface. C
 ## Liderança e Colaboração
 Neste projeto, atuei como líder técnico, orientando uma equipe de desenvolvedores (majoritariamente ex-alunos meus) e trabalhando em conjunto com um UX designer dedicado. Minha atuação envolveu desde a decisão da stack tecnológica até a implementação de regras de negócio complexas nas Firebase Functions, garantindo que as campanhas seguissem briefings rigorosos e cronogramas automatizados.
 
-## Referências Visuais
+## Referências visuais
 Abaixo, diagramas e capturas do sistema em operação:
 
 ![Arquitetura de Integração](/projects/social-hub/architecture.png)

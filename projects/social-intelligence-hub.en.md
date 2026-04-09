@@ -32,7 +32,7 @@ The influencer onboarding flow was the most complex part of the interface. We bu
 ## Leadership and Collaboration
 In this project, I acted as the technical lead, mentoring a team of developers (mostly former students) and working alongside a dedicated UX designer. My role covered everything from tech stack decisions to implementing complex business logic in Firebase Functions, ensuring campaigns followed strict briefings and automated schedules.
 
-## Visual References
+## Visual references
 Below are diagrams and screenshots showing the system in operation:
 
 ![Integration Architecture](/projects/social-hub/architecture.png)

@@ -36,7 +36,7 @@ Para atender a esses requisitos, escolhi uma arquitetura híbrida que utiliza a 
 ## Impacto nos Negócios
 A plataforma gerou um ganho direto de produtividade: o que antes levava dias de trabalho manual agora é concluído em poucas horas por pipelines autônomos. Ao automatizar a parte sensível e repetitiva do processo, a equipe pôde focar na análise de crédito e na estratégia de negócio, enquanto os robôs garantem a velocidade das simulações bancárias.
 
-## Interface e Operação
+## Referências visuais
 Abaixo, algumas capturas anonimizadas do cockpit de controle e da gestão dos robôs:
 
 ![Painel de Controle (Cockpit)](/projects/loan-automation-robot-orchestration/cockpit-tab.png)

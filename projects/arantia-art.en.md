@@ -37,7 +37,7 @@ I owned the product architecture and implementation of both the CMS and the publ
 ## Observed outcome
 The client gained autonomy to maintain the portfolio without recurring infrastructure costs. The system keeps the performance of a static site while offering a maintenance experience close to a traditional CMS.
 
-## Process and technical deep dive
+## Visual references
 You can read a more complete write-up about the architecture on my blog:
 
 ### [Building a CMS with GitHub API](/en/blog/cms-portfolio)

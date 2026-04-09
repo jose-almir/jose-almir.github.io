@@ -36,3 +36,6 @@ Fui responsável pelo frontend da plataforma e pela integração com a API insti
 
 ## Resultado observado
 O projeto ampliou a presença digital de negócios locais e entregou uma experiência mais organizada para exposição de produtos. Em vez de depender apenas de divulgação informal, os empreendedores passaram a contar com uma vitrine online estruturada.
+
+## Referências visuais
+![Interface Principal](/projects/mercadim/home.png)

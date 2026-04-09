@@ -36,3 +36,6 @@ I was responsible for the platform frontend and its integration with the institu
 
 ## Observed outcome
 The project expanded the online presence of local businesses and gave them a more organized product showcase. Instead of depending only on informal publicity, entrepreneurs gained a structured digital storefront.
+
+## Visual references
+![Main Interface](/projects/mercadim/home.png)

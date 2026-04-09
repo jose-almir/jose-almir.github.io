@@ -37,7 +37,7 @@ Fui responsável pela arquitetura do produto e pela implementação do CMS e do 
 ## Resultado observado
 A cliente passou a atualizar o próprio portfólio com autonomia e sem custo contínuo de infraestrutura. O sistema preserva a performance de um site estático, mas entrega uma experiência de manutenção próxima à de um CMS tradicional.
 
-## Processo e detalhes técnicos
+## Referências visuais
 Você pode ler um artigo mais completo sobre a arquitetura no blog:
 
 ### [Explorando o CMS com GitHub API](/pt/blog/cms-portfolio)

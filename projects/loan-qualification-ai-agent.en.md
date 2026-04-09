@@ -41,7 +41,7 @@ The diagram below illustrates how the AI orchestrates the conversation, validati
 ![Flow Qualification & Integration](/projects/loan-qualification-ai-agent/diagram.png)
 
 
-## Interface and Operation
+## Visual references
 Below are sanitized screenshots showing the real interaction with the agent:
 
 ![Conversation Monitoring](/projects/loan-qualification-ai-agent/real-chat.png)
