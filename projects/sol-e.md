@@ -1,6 +1,6 @@
 ---
 title: "SOL-e - Extrator Automatizado de Referências"
-description: Ferramenta patentada para extrair referências BibTeX em lote a partir da SBC Open Lib, reduzindo trabalho manual em pesquisa acadêmica.
+description: Ferramenta patenteada para extrair referências BibTeX em lote a partir da SBC Open Lib, reduzindo trabalho manual em pesquisa acadêmica.
 image: /projects/sol-e/app-screenshot.jpg
 isPrivate: false
 url: https://github.com/jose-almir/sol-e
