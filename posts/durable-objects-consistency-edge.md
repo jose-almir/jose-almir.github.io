@@ -1,18 +1,17 @@
 ---
-title: "Durable Objects: O ingrediente secreto para System Design no Edge"
+title: "Durable Objects: Estado e Consistência Forte no Edge"
 date: "2026-04-10T16:00:00"
-thumbnail: "/blog/durable-objects-system-design/thumb.jpg"
+thumbnail: "/blog/durable-objects-consistency-edge/thumb.jpg"
 desc: "Como Durable Objects resolvem problemas complexos de concorrência e estado distribuído com uma simplicidade surpreendente."
 tags: "system-design, edge, cloudflare"
 category: "tecnologia"
 ref: "durable-objects-edge"
 size: "large"
-hidden: "yes"
 ---
 <section className="intro">
-<h1>Durable Objects: O ingrediente secreto para System Design no Edge</h1>
+<h1>Durable Objects: Estado e Consistência Forte no Edge</h1>
 <i className="bi bi-calendar mr-xs"></i><span> 10 Abr, 2026</span>
-<img src="/blog/durable-objects-system-design/thumb.jpg" className="headline" alt="blog headline" title="Powered by Antigravity Design">
+<img src="/blog/durable-objects-consistency-edge/thumb.jpg" className="headline" alt="blog headline" title="Powered by Antigravity Design">
 </section>
 
 Escalar estado em sistemas distribuídos é, historicamente, um exercício de paciência e trade-offs dolorosos. Se você já tentou construir um chat em tempo real ou um sistema multi-player, sabe do que estou falando: race conditions, latência de bancos de dados centralizados e a complexidade de gerenciar locks distribuídos com Redis.
@@ -51,7 +50,7 @@ Com Durable Objects, o design simplifica para:
 - Quando um usuário se conecta, o Worker roteia a requisição para a instância daquela sala. Essa instância roda em uma única localização geográfica, normalmente próxima do ponto de acesso inicial ou conforme estratégia de localização, facilitando a coordenação local por entidade.
 - O DO pode manter a lista de usuários e estados transientes em memória RAM para máxima performance, mas deve persistir explicitamente no storage o que for vital para reconstruir a sala após um eventual reinício ou hibernação.
 
-![Diagram](/blog/durable-objects-system-design/diagram-1.png)
+![Diagram](/blog/durable-objects-consistency-edge/diagram-1.png)
 
 
 ## Minha experiência: Multi-tenancy e Agentes de IA
@@ -87,6 +86,6 @@ Se você vai seguir por esse caminho, aqui estão alguns aprendizados práticos:
 
 ## Conclusão
 
-Cloudflare Durable Objects oferecem um modelo elegante para coordenação, tempo real e multi-tenancy no Edge. Ao fornecer consistência forte onde as arquiteturas serverless tradicionais falham, eles se tornam uma ferramenta indispensável no arsenal de System Design moderno — desde que você esteja ciente dos modelos de concorrência assíncrona e das estratégias de persistência.
+Cloudflare Durable Objects oferecem um modelo elegante para coordenação, tempo real e multi-tenancy no Edge. Ao fornecer consistência forte onde as arquiteturas serverless tradicionais falham, eles se tornam uma ferramenta indispensável no arsenal de System Design moderno, desde que você esteja ciente dos modelos de concorrência assíncrona e das estratégias de persistência.
 
 Se você tem um problema onde o estado precisa de consistência forte e uma localização otimizada para o ponto de coordenação, talvez seja hora de parar de brigar com locks distribuídos e experimentar o que o Edge pode oferecer de fato.

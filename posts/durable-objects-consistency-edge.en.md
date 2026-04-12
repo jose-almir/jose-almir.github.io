@@ -1,18 +1,17 @@
 ---
-title: "Durable Objects: The secret ingredient for System Design at the Edge"
+title: "Durable Objects: Strongly Consistent State at the Edge"
 date: "2026-04-10T16:00:00"
-thumbnail: "/blog/durable-objects-system-design/thumb.jpg"
+thumbnail: "/blog/durable-objects-consistency-edge/thumb.jpg"
 desc: "How Cloudflare Durable Objects solve complex concurrency and distributed state problems with surprising simplicity."
 tags: "system-design, edge, cloudflare"
 category: "technology"
 ref: "durable-objects-edge"
 size: "large"
-hidden: "yes"
 ---
 <section className="intro">
-<h1>Durable Objects: The secret ingredient for System Design at the Edge</h1>
+<h1>Durable Objects: Strongly Consistent State at the Edge</h1>
 <i className="bi bi-calendar mr-xs"></i><span> 10 Apr, 2026</span>
-<img src="/blog/durable-objects-system-design/thumb.jpg" className="headline" alt="blog headline" title="Powered by Antigravity Design">
+<img src="/blog/durable-objects-consistency-edge/thumb.jpg" className="headline" alt="blog headline" title="Powered by Antigravity Design">
 </section>
 
 Scaling state in distributed systems is, historically, an exercise in patience and painful tradeoffs. If you've ever tried building a real-time chat or a multiplayer system, you know the drill: race conditions, centralized database latency, and the nightmare of managing distributed locks with Redis.
@@ -51,7 +50,7 @@ With Durable Objects, the design simplifies to:
 - When a user connects, the Worker routes the request to that room's instance. This instance runs in a single geographic location—typically near the initial access point or according to a localization strategy—enabling local coordination for that entity.
 - The DO can keep the user list and volatile state in RAM for performance, while explicitly persisting vital data to local storage to ensure the room can be reconstructed after an eviction or restart.
 
-![Diagram](/blog/durable-objects-system-design/diagram-1.png)
+![Diagram](/blog/durable-objects-consistency-edge/diagram-1.png)
 
 
 ## My Experience: Multi-tenancy and AI Agents
