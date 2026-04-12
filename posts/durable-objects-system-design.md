@@ -6,7 +6,7 @@ desc: "Como Durable Objects resolvem problemas complexos de concorrência e esta
 tags: "system-design, edge, cloudflare"
 category: "tecnologia"
 ref: "durable-objects-edge"
-size: "tall"
+size: "large"
 hidden: "yes"
 ---
 <section className="intro">

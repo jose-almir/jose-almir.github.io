@@ -6,7 +6,7 @@ desc: "Reflexões sobre a prática de escrever código de forma artesanal em 202
 tags: "ideias"
 category: "ideias"
 ref: "handcrafted-2026"
-size: "tall"
+size: "wide"
 ---
 <section className="intro">
 <h1>Código Artesanal em 2026?</h1>

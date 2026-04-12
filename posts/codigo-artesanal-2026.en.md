@@ -6,7 +6,7 @@ desc: "Reflections on the practice of writing code by hand in 2026, amidst so ma
 tags: "ideas"
 category: "ideas"
 ref: "handcrafted-2026"
-size: "large"
+size: "wide"
 ---
 
 <section className="intro">

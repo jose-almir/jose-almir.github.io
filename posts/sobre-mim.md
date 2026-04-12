@@ -5,6 +5,7 @@ thumbnail: "/blog/sobre-mim/sobre-mim-thumb.jpg"
 desc: "Quando a paixão por escrever e a vontade de compartilhar ideias se encontram em um desenvolvedor, nasce um blog."
 tags: "ideias, introdução"
 category: "ideias"
+size: "small"
 ---
 
 <section className="intro">

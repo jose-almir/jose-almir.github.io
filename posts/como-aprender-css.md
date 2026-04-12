@@ -5,6 +5,7 @@ thumbnail: "/blog/como-aprender-css/como-aprender-css-thumb.jpg"
 desc: "O CSS é uma linguagem de estilização crucial para um desenvolvedor front-end, sem ela o site não possui vida e nem personalidade."
 tags: "css, design"
 category: "css"
+size: "small"
 ---
 
 <section className="intro">

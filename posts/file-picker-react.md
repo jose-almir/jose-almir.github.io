@@ -5,6 +5,7 @@ thumbnail: "/blog/file-picker-react/file-picker-react-thumb.png"
 desc: "Todos nós conhecemos o clássico input file, sua customização pode ser complicada caso queiramos uma estilização mais moderna. O componente que irei mostrar aqui pode ser facilmente aplicado ao seu projeto React, uma vez que só utiliza recursos da biblioteca padrão."
 tags: "react, frontend"
 category: "react"
+size: "small"
 ---
 
 <section className="intro">

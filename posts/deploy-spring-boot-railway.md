@@ -6,7 +6,7 @@ desc: "Como tirar um projeto de portfólio do localhost sem gastar nada. Um guia
 tags: "tutorial"
 category: "tutorial"
 ref: "deploy-spring-boot-railway"
-size: "large"
+size: "tall"
 ---
 <section className="intro">
 <h1>Deploy do Shortr: como hospedei Spring Boot, Redis e Postgres de graça no Railway</h1>

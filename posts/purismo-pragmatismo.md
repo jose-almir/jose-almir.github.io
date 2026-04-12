@@ -5,7 +5,7 @@ thumbnail: "/blog/purismo-pragmatismo/purismo-pragmatismo-thumb.png"
 desc: "Encantado por conceitos como SOLID, DDD, Design Patterns caímos facilmente na tentação de encaixar o problema dentro da solução, quando na verdade deve ser o contrário: a solução precisa se dobrar ao problema."
 tags: "ideias, reflexão"
 category: "ideias"
-size: "medium"
+size: "small"
 # hidden: "yes"
 ---
 

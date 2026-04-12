@@ -6,7 +6,7 @@ desc: "How Cloudflare Durable Objects solve complex concurrency and distributed 
 tags: "system-design, edge, cloudflare"
 category: "technology"
 ref: "durable-objects-edge"
-size: "tall"
+size: "large"
 hidden: "yes"
 ---
 <section className="intro">
