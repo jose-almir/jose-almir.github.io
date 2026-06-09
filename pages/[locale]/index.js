@@ -46,10 +46,9 @@ export default function Home({ posts, projects, locale }) {
   }, []);
 
   const techStack = [
-    { name: "Java", id: "java" },
     { name: "TypeScript", id: "ts" },
-    { name: "Spring Boot", id: "spring" },
     { name: "Node.js", id: "nodejs" },
+    { name: "Express.js", id: "express"},
     { name: "React", id: "react" },
     { name: "Angular", id: "angular" },
   ];
@@ -88,10 +87,6 @@ export default function Home({ posts, projects, locale }) {
                   {t("home.primary_cta")}
                   <i className="bi bi-arrow-right"></i>
                 </Link>
-                <a href="/curriculo.pdf" target="_blank" rel="noopener noreferrer" className="cta-button-secondary">
-                  {t("home.resume_cta")}
-                  <i className="bi bi-file-earmark-text"></i>
-                </a>
                 <a
                   href="https://www.linkedin.com/in/jose-almir/"
                   target="_blank"
@@ -105,21 +100,6 @@ export default function Home({ posts, projects, locale }) {
                   {t("home.contact_button")}
                   <i className="bi bi-envelope"></i>
                 </a>
-              </div>
-
-              <div className="trust-points" aria-label={t("home.trust_points_label")}>
-                <div className="trust-item">
-                  <strong>{t("home.trust_point_1_title")}</strong>
-                  <span>{t("home.trust_point_1_desc")}</span>
-                </div>
-                <div className="trust-item">
-                  <strong>{t("home.trust_point_2_title")}</strong>
-                  <span>{t("home.trust_point_2_desc")}</span>
-                </div>
-                <div className="trust-item">
-                  <strong>{t("home.trust_point_3_title")}</strong>
-                  <span>{t("home.trust_point_3_desc")}</span>
-                </div>
               </div>
 
               <div className="tech-stack-container" aria-label={t("home.stack_label")}>

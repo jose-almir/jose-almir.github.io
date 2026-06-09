@@ -30,10 +30,10 @@
     "confidentiality_title": "About confidentiality"
   },
   "home": {
-    "title": "Software engineer focused on web products and backend systems with real business impact.",
-    "description": "I build interfaces, APIs, and critical workflows with Java, Spring Boot, TypeScript, React, and Next.js. My work combines architecture, hands-on delivery, and product thinking to turn complex problems into reliable, scalable software.",
+    "title": "Software engineer focused on web products.",
+    "description": "I build interfaces, APIs, and critical workflows with TypeScript, React, Node.js and Next.js. My work combines architecture, hands-on delivery, and product thinking to turn complex problems into reliable, scalable software.",
     "description_link_blog": "Blog",
-    "primary_cta": "View selected projects",
+    "primary_cta": "View projects",
     "resume_cta": "Download resume",
     "trust_points_label": "Professional highlights",
     "trust_point_1_title": "Product + delivery",

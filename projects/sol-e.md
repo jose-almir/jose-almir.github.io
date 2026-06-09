@@ -18,6 +18,7 @@ tech:
   - Web Scraping
   - BibTeX Automation
 order: 4
+hidden: true
 ---
 
 Criei o SOL-e para resolver uma dor muito específica de pesquisa acadêmica: transformar a coleta manual de referências em um fluxo rápido, reproduzível e com menos chance de erro. O sistema foi reconhecido com patente por atacar um problema real de produtividade em contexto universitário.

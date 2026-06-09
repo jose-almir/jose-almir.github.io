@@ -18,6 +18,7 @@ tech:
   - JWT Authentication
   - Regional E-commerce Logic
 order: 7
+hidden: true
 ---
 
 Desenvolvi a interface do Mercadim para criar uma vitrine digital de baixo atrito para produtores e empreendedores locais. O projeto nasce em um contexto de fortalecimento da economia regional, então a experiência precisava funcionar bem para quem não tinha estrutura digital prévia.

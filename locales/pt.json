@@ -30,10 +30,10 @@
     "confidentiality_title": "Sobre a confidencialidade"
   },
   "home": {
-    "title": "Engenheiro de software focado em produtos web e backend com impacto real no negócio.",
-    "description": "Construo interfaces, APIs e fluxos críticos com Java, Spring Boot, TypeScript, React e Node.js. Minha atuação combina arquitetura, execução e visão de produto para transformar problemas complexos em software confiável, escalável e útil para o time e para o cliente.",
+    "title": "Engenheiro de software focado em produtos web.",
+    "description": "Construo interfaces, APIs e fluxos críticos com TypeScript, React e Node.js. Minha atuação combina arquitetura, execução e visão de produto para transformar problemas complexos em software confiável, escalável e útil para o time e para o cliente.",
     "description_link_blog": "Blog",
-    "primary_cta": "Ver projetos selecionados",
+    "primary_cta": "Ver projetos",
     "resume_cta": "Baixar currículo",
     "trust_points_label": "Destaques profissionais",
     "trust_point_1_title": "Produto + entrega",

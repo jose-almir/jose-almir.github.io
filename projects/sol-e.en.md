@@ -18,6 +18,7 @@ tech:
   - Web Scraping
   - BibTeX Automation
 order: 4
+hidden: true
 ---
 
 I created SOL-e to solve a very specific academic research pain point: turning manual reference collection into a fast, repeatable workflow with fewer errors. The system was later recognized with a patent for addressing a real productivity bottleneck in the university context.
