@@ -49,35 +49,52 @@ const enLink = `/en${basePath}`;
     <div class="flex items-center gap-2">
       <button
         id="theme-toggle"
-        aria-label="Toggle theme"
+        aria-label={t("nav.toggle_theme")}
         class="bg-transparent border-none cursor-pointer text-xl px-2 hover:text-primary dark:hover:text-accent flex items-center justify-center"
       >
         <Icon name="bi:moon" class="block dark:hidden" />
         <Icon name="bi:moon-fill" class="hidden dark:block" />
       </button>
-      <a href={ptLink} class={lang === "pt" ? "font-bold" : ""}>PT</a>
+      <a
+        href={ptLink}
+        class={lang === "pt" ? "font-bold" : ""}
+        aria-current={lang === "pt" ? "page" : undefined}>PT</a
+      >
       <span class="text-zinc-400">|</span>
-      <a href={enLink} class={lang === "en" ? "font-bold" : ""}>EN</a>
+      <a
+        href={enLink}
+        class={lang === "en" ? "font-bold" : ""}
+        aria-current={lang === "en" ? "page" : undefined}>EN</a
+      >
     </div>
   </nav>
 </header>
 
 <script>
-  const toggle = document.getElementById("theme-toggle");
-  toggle?.addEventListener("click", () => {
-    document.documentElement.classList.toggle("dark");
-    const newTheme = document.documentElement.classList.contains("dark")
-      ? "dark"
-      : "light";
+  document.addEventListener("astro:page-load", () => {
+    const toggle = document.getElementById("theme-toggle");
 
-    localStorage.setItem("theme", newTheme);
+    // Remove old event listener if it exists to prevent duplicates
+    const newToggle = toggle?.cloneNode(true) as HTMLElement;
+    if (toggle && newToggle && toggle.parentNode) {
+      toggle.parentNode.replaceChild(newToggle, toggle);
 
-    const iframe = document.querySelector("iframe.giscus-frame");
-    if (iframe instanceof HTMLIFrameElement && iframe.contentWindow) {
-      iframe.contentWindow.postMessage(
-        { giscus: { setConfig: { theme: newTheme } } },
-        "https://giscus.app",
-      );
+      newToggle.addEventListener("click", () => {
+        document.documentElement.classList.toggle("dark");
+        const newTheme = document.documentElement.classList.contains("dark")
+          ? "dark"
+          : "light";
+
+        localStorage.setItem("theme", newTheme);
+
+        const iframe = document.querySelector("iframe.giscus-frame");
+        if (iframe instanceof HTMLIFrameElement && iframe.contentWindow) {
+          iframe.contentWindow.postMessage(
+            { giscus: { setConfig: { theme: newTheme } } },
+            "https://giscus.app",
+          );
+        }
+      });
     }
   });
 </script>

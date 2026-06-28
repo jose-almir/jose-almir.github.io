@@ -6,7 +6,8 @@
   },
   "nav": {
     "blog": "Blog",
-    "projects": "Projects"
+    "projects": "Projects",
+    "toggle_theme": "Toggle theme"
   },
   "home": {
     "title": "Software Engineer focused on scalable web applications.",
