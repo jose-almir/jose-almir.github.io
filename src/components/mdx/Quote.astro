@@ -1,0 +1,33 @@
+---
+interface Props {
+  author?: string;
+  role?: string;
+}
+
+const { author, role } = Astro.props;
+---
+
+<figure
+  class="my-8 mx-auto max-w-2xl border-l-4 border-primary py-4 pl-6 pr-4 sm:pr-6 bg-zinc-50 dark:bg-zinc-900/50 rounded-r-lg shadow-sm"
+>
+  <div
+    class="text-xl italic font-medium leading-relaxed text-zinc-700 dark:text-zinc-300"
+  >
+    <slot />
+  </div>
+  {
+    author && (
+      <figcaption class="mt-4 flex items-center gap-3">
+        <div class="h-px w-8 bg-primary" />
+        <div class="text-sm">
+          <strong class="font-bold text-zinc-900 dark:text-white">
+            {author}
+          </strong>
+          {role && (
+            <span class="text-zinc-500 dark:text-zinc-400">, {role}</span>
+          )}
+        </div>
+      </figcaption>
+    )
+  }
+</figure>

@@ -5,6 +5,8 @@ thumbnail: /blog/cms-portfolio/cms-print.png
 order: 1
 ---
 
+import ArticleImage from "../../../components/mdx/ArticleImage.astro";
+
 I built this system to solve a common issue in creator portfolios: keeping content up to date without depending on a developer or paying monthly fees for off-the-shelf platforms. The project combines a public static site with a private CMS tailored to the client's actual workflow.
 
 ## Context
@@ -32,17 +34,23 @@ You can read a more complete write-up about the architecture on my blog:
 
 ### [Building a CMS with GitHub API](/en/blog/cms-portfolio)
 
-<figure class="full">
-  <img src="/blog/cms-portfolio/cms-print.png" alt="CMS Interface" />
-  <figcaption>CMS Interface</figcaption>
-</figure>
+<ArticleImage
+  src="/blog/cms-portfolio/cms-print.png"
+  alt="CMS Interface"
+  caption="CMS Interface"
+  size="full"
+/>
 
-<figure class="medium">
-  <img src="/blog/cms-portfolio/cms-commits.png" alt="Automated Commit Flow" />
-  <figcaption>Automated Commit Flow</figcaption>
-</figure>
+<ArticleImage
+  src="/blog/cms-portfolio/cms-commits.png"
+  alt="Automated Commit Flow"
+  caption="Automated Commit Flow"
+  size="medium"
+/>
 
-<figure class="full">
-  <img src="/blog/cms-portfolio/portfolio-print.png" alt="Live Portfolio Showcase" />
-  <figcaption>Live Portfolio Showcase</figcaption>
-</figure>
+<CustomImage
+  src="/blog/cms-portfolio/portfolio-print.png"
+  alt="Live Portfolio Showcase"
+  caption="Live Portfolio Showcase"
+  size="full"
+/>

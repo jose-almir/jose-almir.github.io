@@ -1,0 +1,49 @@
+---
+import { Icon } from "astro-icon/components";
+
+interface Props {
+  type: "info" | "warning" | "success" | "error";
+  title?: string;
+}
+
+const { type = "info", title } = Astro.props;
+
+const config = {
+  info: {
+    icon: "bi:info-circle-fill",
+    classes: "bg-blue-500/10 border-blue-500 text-blue-900 dark:text-blue-200",
+    iconClass: "text-blue-500",
+  },
+  warning: {
+    icon: "bi:exclamation-triangle-fill",
+    classes:
+      "bg-amber-500/10 border-amber-500 text-amber-900 dark:text-amber-200",
+    iconClass: "text-amber-500",
+  },
+  success: {
+    icon: "bi:check-circle-fill",
+    classes:
+      "bg-green-500/10 border-green-500 text-green-900 dark:text-green-200",
+    iconClass: "text-green-500",
+  },
+  error: {
+    icon: "bi:x-circle-fill",
+    classes: "bg-red-500/10 border-red-500 text-red-900 dark:text-red-200",
+    iconClass: "text-red-500",
+  },
+};
+
+const current = config[type];
+---
+
+<div class={`my-6 flex gap-3 border-l-4 p-4 rounded-r-md ${current.classes}`}>
+  <div class="mt-1 shrink-0">
+    <Icon name={current.icon} class={`w-5 h-5 ${current.iconClass}`} />
+  </div>
+  <div class="w-full">
+    {title && <h5 class="m-0 font-bold mb-1 leading-tight">{title}</h5>}
+    <div class="m-0 prose-p:m-0">
+      <slot />
+    </div>
+  </div>
+</div>

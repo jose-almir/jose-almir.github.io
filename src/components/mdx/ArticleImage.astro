@@ -1,0 +1,32 @@
+---
+interface Props {
+  src: string;
+  alt: string;
+  caption?: string;
+  size?: "normal" | "medium" | "full";
+}
+
+const { src, alt, caption, size = "normal" } = Astro.props;
+
+// Dynamically import the image to work with Astro's image optimization
+// Since src will be a string path (e.g. "/images/my-image.png"), we need to use it directly
+// If it's a local asset, it needs to be imported or placed in the public folder.
+// For MDX, users usually pass a relative path or public path.
+---
+
+<figure class={size !== "normal" ? size : ""}>
+  <img
+    src={src}
+    alt={alt}
+    loading="lazy"
+    decoding="async"
+    class="w-full h-auto rounded-lg shadow-md"
+  />
+  {
+    caption && (
+      <figcaption class="text-center text-sm text-zinc-500 mt-2">
+        {caption}
+      </figcaption>
+    )
+  }
+</figure>

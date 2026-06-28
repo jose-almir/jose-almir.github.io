@@ -5,6 +5,8 @@ thumbnail: /blog/cms-portfolio/cms-print.png
 order: 1
 ---
 
+import ArticleImage from "../../../components/mdx/ArticleImage.astro";
+
 Desenvolvi este sistema para resolver um problema comum em portfólios autorais: manter o conteúdo atualizado sem depender de um desenvolvedor ou de mensalidades de plataformas prontas. O projeto combina um site público estático com um CMS privado feito sob medida para a rotina da cliente.
 
 ## Contexto
@@ -32,17 +34,23 @@ Você pode ler um artigo mais completo sobre a arquitetura no blog:
 
 ### [Explorando o CMS com GitHub API](/pt/blog/cms-portfolio)
 
-<figure class="full">
-  <img src="/blog/cms-portfolio/cms-print.png" alt="Interface do CMS" />
-  <figcaption>Interface do CMS</figcaption>
-</figure>
+<ArticleImage
+  src="/blog/cms-portfolio/cms-print.png"
+  alt="Interface do CMS"
+  caption="Interface do CMS"
+  size="full"
+/>
 
-<figure class="medium">
-  <img src="/blog/cms-portfolio/cms-commits.png" alt="Fluxo de Commits Automatizados" />
-  <figcaption>Fluxo de Commits Automatizados</figcaption>
-</figure>
+<ArticleImage
+  src="/blog/cms-portfolio/cms-commits.png"
+  alt="Fluxo de Commits Automatizados"
+  caption="Fluxo de Commits Automatizados"
+  size="medium"
+/>
 
-<figure class="full">
-  <img src="/blog/cms-portfolio/portfolio-print.png" alt="Portfólio em Operação" />
-  <figcaption>Portfólio em Operação</figcaption>
-</figure>
+<ArticleImage
+  src="/blog/cms-portfolio/portfolio-print.png"
+  alt="Portfólio em Operação"
+  caption="Portfólio em Operação"
+  size="full"
+/>

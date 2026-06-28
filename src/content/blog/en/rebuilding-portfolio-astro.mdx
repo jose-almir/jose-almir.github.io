@@ -5,6 +5,10 @@ thumbnail: "/blog/rebuilding-portfolio-astro/thumbnail.png"
 description: "Discover how I rebuilt my portfolio from Next.js to Astro. A simpler, faster SSG architecture built to focus on what matters."
 ---
 
+import Callout from "../../../components/mdx/Callout.astro";
+import Terminal from "../../../components/mdx/Terminal.astro";
+import ArticleImage from "../../../components/mdx/ArticleImage.astro";
+
 ## The quest for simplicity
 
 The legacy version of my blog was built with Next.js. At the time, having dynamic content required using a considerable amount of external libraries like `globby`, `gray-matter`, `rehype`, `react-markdown`, and others.
@@ -25,20 +29,23 @@ It was also the opportunity to bring **TailwindCSS** to the blog, which is a too
 
 The content is still managed and maintained via Markdown, so there were no significant changes to how the content itself is handled. The difference is that **Astro** brings the ability to define the metadata schema for each post in a much more native and organized way.
 
+<Terminal title="src/content.config.ts">
 ```typescript
 import { z, defineCollection } from "astro:content";
 import { glob } from "astro/loaders";
 
 const blogCollection = defineCollection({
-  loader: glob({ pattern: "**/*.md", base: "./src/content/blog" }),
-  schema: z.object({
-    title: z.string(),
-    date: z.string().transform((str) => new Date(str)),
-    thumbnail: z.string(),
-    description: z.string(),
+loader: glob({ pattern: "\*_/_.{md,mdx}", base: "./src/content/blog" }),
+schema: z.object({
+  title: z.string(),
+  date: z.string().transform((str) => new Date(str)),
+  thumbnail: z.string(),
+  description: z.string(),
   }),
 });
+
 ```
+</Terminal>
 
 In the legacy version, this code would be scattered across several files, making it less organized and harder to maintain. Now, with **Astro**, everything is simpler and more organized.
 
@@ -47,6 +54,10 @@ For multi-language support, a small adaptation was made: all posts are grouped i
 For CI/CD, the implementation became simpler. Now, with **Astro**, the blog is generated in a single step with a single command, and GitHub Actions only needs to build and deploy the project directly to GitHub Pages.
 
 ## An opportunity to improve UX
+
+<Callout type="info" title="Performance First">
+  While Astro allows bringing UI frameworks like React or Vue, the entire portfolio was built with vanilla JavaScript and CSS to maximize Core Web Vitals and embrace the **Less is More** philosophy.
+</Callout>
 
 With a simpler architecture, I took the opportunity to enhance the user experience on the blog without adding complexity to the project. Some of the additions I enjoyed bringing the most:
 
@@ -62,3 +73,4 @@ During the development of this new version, I had the chance to learn even more 
 The site is now faster and lighter, and it's easier to generate content and even add new features. What I like the most is that Astro doesn't try to be a "do-it-all" framework; it focuses on static sites and does it extremely well.
 
 You can check out the source code on [GitHub](https://github.com/jose-almir/jose-almir.github.io) and the live site [here](https://almirdev.com/en/).
+```

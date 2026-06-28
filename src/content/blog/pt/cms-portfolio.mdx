@@ -5,7 +5,14 @@ thumbnail: "/blog/cms-portfolio/cms-portfolio-thumb.png"
 description: "A ideia de conteúdo gerenciado por arquivos não era nova pra mim, mas este portfólio foi a oportunidade de levar o conceito a outro nível: construir um CMS simples, usando o próprio repositório GitHub como banco de dados"
 ---
 
-> A ideia de conteúdo gerenciado por arquivos não era nova pra mim, mas este portfólio foi a oportunidade de levar o conceito a outro nível: construir um CMS simples, usando o próprio repositório GitHub como banco de dados.
+import Quote from "../../../components/mdx/Quote.astro";
+import ArticleImage from "../../../components/mdx/ArticleImage.astro";
+
+<Quote>
+  A ideia de conteúdo gerenciado por arquivos não era nova pra mim, mas este
+  portfólio foi a oportunidade de levar o conceito a outro nível: construir um
+  CMS simples, usando o próprio repositório GitHub como banco de dados.
+</Quote>
 
 ## A necessidade
 
@@ -25,12 +32,12 @@ Para um portfólio pessoal, isso é over-engineering. A solução foi usar o que
 
 ## Dois repositórios , um sistema
 
-<figure class="full">
-  <a href="https://arantia.art/pt" target="_blank">
-    <img src="/blog/cms-portfolio/portfolio-print.png" alt="Print do portfólio"/>
-  </a>
-  <figcaption>Print do portfólio público, que exibe as artes e projetos da Arântia</figcaption>
-</figure>
+<ArticleImage
+  src="/blog/cms-portfolio/portfolio-print.png"
+  alt="Print do portfólio"
+  caption="Print do portfólio público, que exibe as artes e projetos da Arântia"
+  size="full"
+/>
 
 O projeto é dividido em dois repositórios Next.js independentes:
 
@@ -43,21 +50,28 @@ A parte mais interessante da arquitetura: o CMS não tem banco de dados próprio
 
 Cada operação como adicionar, editar ou remover um item, gera um commit automático com uma mensagem descritiva. Esse commit aciona o GitHub Actions, que reconstrói e publica o site automaticamente, sem nenhuma ação manual. O histórico de commits funciona também como um log de auditoria de todo o conteúdo publicado.
 
-<figure class="medium">
-  <img src="/diagrams/cms-portfolio.md-0.svg" alt="Diagrama da arquitetura do projeto" />
-  <figcaption>Diagrama simplificado da arquitetura: o CMS se comunica diretamente com a API REST do GitHub.</figcaption>
-</figure>
+<ArticleImage
+  src="/diagrams/cms-portfolio.md-0.svg"
+  alt="Diagrama da arquitetura do projeto"
+  caption="Diagrama simplificado da arquitetura: o CMS se comunica diretamente com a API REST do GitHub."
+  size="medium"
+/>
 Também podemos ver um pouco de como é o CMS privado:
-<figure class="full">
-  <img src="/blog/cms-portfolio/cms-print.png" alt="Print do CMS privado"/>
-  <figcaption>Painel de administração onde o conteúdo é gerido de forma simples</figcaption>
-</figure>
+<ArticleImage
+  src="/blog/cms-portfolio/cms-print.png"
+  alt="Print do CMS privado"
+  caption="Painel de administração onde o conteúdo é gerido de forma simples"
+  size="full"
+/>
 
 Assim fica o histórico de alterações:
-<figure class="medium">
-  <img src="/blog/cms-portfolio/cms-commits.png" alt="Print do commits do CMS"/>
-  <figcaption>Cada alteração no painel gera um commit automático no repositório, mantendo histórico</figcaption>
-</figure>
+
+<ArticleImage
+  src="/blog/cms-portfolio/cms-commits.png"
+  alt="Print do commits do CMS"
+  caption="Cada alteração no painel gera um commit automático no repositório, mantendo histórico"
+  size="medium"
+/>
 
 ## Por que isso funciona bem aqui
 
