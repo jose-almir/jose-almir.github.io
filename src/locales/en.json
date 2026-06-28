@@ -23,8 +23,8 @@
   },
   "seo": {
     "title": "José Almir | Software Engineer",
-    "description": "Portfolio of José Almir featuring projects in Java, Spring Boot, TypeScript, React, and Next.js. Case studies focused on architecture, product thinking, and business impact.",
-    "keywords": "jose almir, portfolio, software engineer, java, spring boot, typescript, react, next.js, backend, full stack, software architecture"
+    "description": "Portfolio of José Almir featuring projects in the TypeScript ecosystem, including React, Node.js, and Next.js. Case studies focused on architecture, product thinking, and business impact.",
+    "keywords": "jose almir, portfolio, software engineer, typescript, react, node.js, next.js, frontend, full stack, software architecture"
   },
   "404": {
     "title": "404",
