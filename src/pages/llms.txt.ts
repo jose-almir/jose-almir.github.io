@@ -9,7 +9,7 @@ export async function GET(context: APIContext) {
     ({ id, data }) => id.startsWith("pt/") && !data.hidden,
   );
 
-  let content = `# José Almir - Portfolio & Blog\n\n`;
+  let content = `# Almir Dev - Portfolio & Blog\n\n`;
 
   content += `## Projects\n`;
   projects.forEach((p) => {

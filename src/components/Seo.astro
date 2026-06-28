@@ -25,9 +25,7 @@ const defaultTitle = t("seo.title");
 const defaultDescription = t("seo.description");
 const defaultKeywords = t("seo.keywords");
 
-const title = customTitle
-  ? `${customTitle} | José Almir - Software Engineer`
-  : defaultTitle;
+const title = customTitle ? `${customTitle} | Almir Dev` : defaultTitle;
 
 const truncate = (text: string, maxLength: number) =>
   text.length > maxLength ? text.substring(0, maxLength - 3) + "..." : text;
@@ -54,14 +52,14 @@ const enUrl = `${baseUrl}/en${pathWithoutLang}`;
 <title>{title}</title>
 <meta name="description" content={description} />
 <meta name="keywords" content={keywords} />
-<meta name="author" content="José Almir" />
+<meta name="author" content="Almir Dev" />
 
 <meta property="og:title" content={title} />
 <meta property="og:description" content={ogDescription} />
 <meta property="og:image" content={image} />
 <meta property="og:type" content="website" />
 <meta property="og:locale" content={lang === "pt" ? "pt_BR" : "en_US"} />
-<meta property="og:site_name" content="José Almir" />
+<meta property="og:site_name" content="Almir Dev" />
 
 <meta name="twitter:title" content={title} />
 <meta name="twitter:image" content={image} />
