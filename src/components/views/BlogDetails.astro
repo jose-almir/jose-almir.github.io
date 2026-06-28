@@ -13,6 +13,10 @@ import AuthorBio from "../blog/AuthorBio.astro";
 import PostNavigation from "../blog/PostNavigation.astro";
 import CodeBlockEnhancements from "../blog/CodeBlockEnhancements.astro";
 import ImageZoom from "../ImageZoom.astro";
+import Callout from "../mdx/Callout.astro";
+import Terminal from "../mdx/Terminal.astro";
+import ArticleImage from "../mdx/ArticleImage.astro";
+import Quote from "../mdx/Quote.astro";
 
 interface Props {
   lang: string;
@@ -72,7 +76,7 @@ const { Content, headings } = await render(post);
       <TableOfContents headings={headings} lang={lang} />
 
       <div class="blog-content">
-        <Content />
+        <Content components={{ Callout, Terminal, ArticleImage, Quote }} />
       </div>
 
       <AuthorBio lang={lang} />

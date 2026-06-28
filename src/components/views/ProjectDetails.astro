@@ -3,6 +3,10 @@ import Base from "../../layouts/Base.astro";
 import { render } from "astro:content";
 import type { CollectionEntry } from "astro:content";
 import ImageZoom from "../ImageZoom.astro";
+import Callout from "../mdx/Callout.astro";
+import Terminal from "../mdx/Terminal.astro";
+import ArticleImage from "../mdx/ArticleImage.astro";
+import Quote from "../mdx/Quote.astro";
 
 interface Props {
   lang: string;
@@ -39,7 +43,7 @@ const { Content } = await render(project);
       )
     }
     <div class="project-content">
-      <Content />
+      <Content components={{ Callout, Terminal, ArticleImage, Quote }} />
     </div>
   </article>
 </Base>
