@@ -11,7 +11,9 @@ interface Props {
 
 const { lang } = Astro.props;
 const t = useTranslations(lang as "pt" | "en");
-const blog = await getCollection("blog", ({ id }) => id.startsWith(`${lang}/`));
+const blog = (
+  await getCollection("blog", ({ id }) => id.startsWith(`${lang}/`))
+).sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
 const prefix = `/${lang}`;
 ---
 
