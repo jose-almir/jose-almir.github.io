@@ -1,0 +1,48 @@
+---
+import Base from "../../layouts/Base.astro";
+import { getCollection } from "astro:content";
+import { useTranslations } from "../../i18n";
+import Card from "../Card.astro";
+import { getReadingTime } from "../../utils/getReadingTime";
+
+interface Props {
+  lang: string;
+}
+
+const { lang } = Astro.props;
+const t = useTranslations(lang as "pt" | "en");
+const blog = await getCollection("blog", ({ id }) => id.startsWith(`${lang}/`));
+const prefix = `/${lang}`;
+---
+
+<Base title={t("nav.blog")} lang={lang}>
+  <h1 class="text-4xl font-bold mb-8">{t("nav.blog")}</h1>
+  <div class="mt-8 space-y-6">
+    {
+      blog.length === 0 ? (
+        <p class="text-zinc-600 dark:text-zinc-400 italic">
+          {t("common.no_posts")}
+        </p>
+      ) : (
+        blog.map((post) => (
+          <Card
+            href={`${prefix}/blog/${post.id.replace(`${lang}/`, "")}`}
+            title={post.data.title}
+          >
+            <p class="text-sm text-text-muted-light dark:text-text-muted mb-4">
+              {post.data.date.toLocaleDateString(lang, {
+                year: "numeric",
+                month: "long",
+                day: "numeric",
+              })}{" "}
+              • {getReadingTime(post.body || "")} {t("common.reading_time")}
+            </p>
+            <p class="text-text-muted-light dark:text-text-muted">
+              {post.data.description}
+            </p>
+          </Card>
+        ))
+      )
+    }
+  </div>
+</Base>

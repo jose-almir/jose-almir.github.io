@@ -1,0 +1,65 @@
+---
+import { useTranslations } from "../i18n";
+
+interface Props {
+  title?: string;
+  description?: string;
+  keywords?: string;
+  image?: string;
+  lang?: string;
+}
+
+const baseUrl = Astro.url.origin;
+
+const {
+  title: customTitle,
+  description: customDescription,
+  keywords: customKeywords,
+  image = `${baseUrl}/profile/og.png`,
+  lang = "pt",
+} = Astro.props;
+
+const t = useTranslations(lang as "pt" | "en");
+
+const defaultTitle = t("seo.title");
+const defaultDescription = t("seo.description");
+const defaultKeywords = t("seo.keywords");
+
+const title = customTitle ? `${customTitle} | Almir Dev` : defaultTitle;
+const description = customDescription || defaultDescription;
+const keywords = customKeywords || defaultKeywords;
+
+const path = Astro.url.pathname;
+const cleanPath =
+  path === "/" ? "" : path.endsWith("/") ? path.slice(0, -1) : path;
+const pathWithoutLang = cleanPath.replace(/^\/(en|pt)/, "");
+
+const canonicalUrl = `${baseUrl}${cleanPath}`;
+const ptUrl = `${baseUrl}/pt${pathWithoutLang}`;
+const enUrl = `${baseUrl}/en${pathWithoutLang}`;
+---
+
+<title>{title}</title>
+<meta name="description" content={description} />
+<meta name="keywords" content={keywords} />
+<meta name="author" content="José Almir" />
+
+<meta property="og:title" content={title} />
+<meta property="og:description" content={description} />
+<meta property="og:image" content={image} />
+<meta property="og:type" content="website" />
+<meta property="og:locale" content={lang === "pt" ? "pt_BR" : "en_US"} />
+<meta property="og:site_name" content="Almir Dev" />
+
+<meta name="twitter:title" content={title} />
+<meta name="twitter:image" content={image} />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:description" content={description} />
+
+<link rel="canonical" href={canonicalUrl} />
+<link rel="alternate" hreflang="x-default" href={ptUrl} />
+<link rel="alternate" hreflang="pt" href={ptUrl} />
+<link rel="alternate" hreflang="en" href={enUrl} />
+
+<link rel="icon" type="image/png" href="/favicon.ico" />
+<link rel="apple-touch-icon" href="/favicon.ico" />

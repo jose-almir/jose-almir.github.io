@@ -1,0 +1,11 @@
+---
+import Projects from "../../../components/views/Projects.astro";
+
+export function getStaticPaths() {
+  return [{ params: { lang: "en" } }, { params: { lang: "pt" } }];
+}
+
+const { lang } = Astro.params;
+---
+
+<Projects lang={lang} />

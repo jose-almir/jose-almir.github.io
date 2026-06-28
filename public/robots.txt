@@ -1,5 +1,4 @@
 User-agent: *
-Disallow:
+Allow: /
 
-Host: https://almirdev.com
-Sitemap: https://almirdev.com/sitemap.xml
+Sitemap: https://almirdev.com/sitemap-index.xml

@@ -1,0 +1,44 @@
+---
+import Base from "../../layouts/Base.astro";
+import { getCollection } from "astro:content";
+import { useTranslations } from "../../i18n";
+import Card from "../Card.astro";
+
+interface Props {
+  lang: string;
+}
+
+const { lang } = Astro.props;
+const t = useTranslations(lang as "pt" | "en");
+const projects = (
+  await getCollection(
+    "projects",
+    ({ id, data }) => id.startsWith(`${lang}/`) && !data.hidden,
+  )
+).sort((a, b) => a.data.order - b.data.order);
+const prefix = `/${lang}`;
+---
+
+<Base title={t("nav.projects")} lang={lang}>
+  <h1 class="text-4xl font-bold mb-8">{t("nav.projects")}</h1>
+  <div class="mt-8 space-y-6">
+    {
+      projects.length === 0 ? (
+        <p class="text-zinc-600 dark:text-zinc-400 italic">
+          {t("common.no_projects")}
+        </p>
+      ) : (
+        projects.map((project) => (
+          <Card
+            href={`${prefix}/projects/${project.id.replace(`${lang}/`, "")}`}
+            title={project.data.title}
+          >
+            <p class="text-zinc-600 dark:text-zinc-400">
+              {project.data.description}
+            </p>
+          </Card>
+        ))
+      )
+    }
+  </div>
+</Base>

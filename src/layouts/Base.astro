@@ -1,0 +1,50 @@
+---
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import Seo from "../components/Seo.astro";
+import "../styles/global.css";
+
+interface Props {
+  title?: string;
+  description?: string;
+  lang?: string;
+}
+
+const { title, description, lang = "pt" } = Astro.props;
+---
+
+<!doctype html>
+<html lang={lang} class="dark">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <Seo title={title} description={description} lang={lang} />
+    <script is:inline>
+      const theme = localStorage.getItem("theme");
+      if (theme === "light") document.documentElement.classList.remove("dark");
+      else if (
+        !theme &&
+        window.matchMedia("(prefers-color-scheme: light)").matches
+      )
+        document.documentElement.classList.remove("dark");
+    </script>
+    <link rel="sitemap" href="/sitemap-index.xml" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;700;900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body
+    class="bg-bg-light dark:bg-bg-dark text-zinc-900 dark:text-zinc-100 font-sans leading-relaxed transition-colors duration-200"
+  >
+    <div class="max-w-200 mx-auto px-6">
+      <Header lang={lang} />
+      <main>
+        <slot />
+      </main>
+      <Footer lang={lang} />
+    </div>
+  </body>
+</html>

@@ -1,0 +1,74 @@
+---
+import { getCollection } from "astro:content";
+import { Icon } from "astro-icon/components";
+import { useTranslations } from "../../i18n";
+
+interface Props {
+  currentPostId: string;
+  lang: string;
+}
+
+const { currentPostId, lang } = Astro.props;
+const t = useTranslations(lang as "en" | "pt");
+
+// Get all posts for current language and sort by date
+const allPosts = await getCollection("blog", ({ id }) =>
+  id.startsWith(`${lang}/`),
+);
+const sortedPosts = allPosts.sort(
+  (a, b) => b.data.date.valueOf() - a.data.date.valueOf(),
+);
+
+// Find current index
+const currentIndex = sortedPosts.findIndex((post) => post.id === currentPostId);
+
+// Previous post is newer (index - 1)
+const prevPost = currentIndex > 0 ? sortedPosts[currentIndex - 1] : null;
+
+// Next post is older (index + 1)
+const nextPost =
+  currentIndex < sortedPosts.length - 1 ? sortedPosts[currentIndex + 1] : null;
+
+const prefix = `/${lang}`;
+---
+
+{
+  (prevPost || nextPost) && (
+    <div class="mt-16 pt-8 border-t border-border-glass-light dark:border-border-glass grid grid-cols-1 sm:grid-cols-2 gap-4">
+      {prevPost ? (
+        <a
+          href={`${prefix}/blog/${prevPost.id.replace(`${lang}/`, "")}`}
+          class="group p-5 rounded-xl bg-surface-glass-light dark:bg-surface-glass border border-border-glass-light dark:border-border-glass hover:border-primary/50 dark:hover:border-accent/50 hover:shadow-sm transition-all flex flex-col items-start text-left"
+        >
+          <span class="text-sm text-zinc-500 dark:text-zinc-400 mb-2 flex items-center gap-1">
+            <Icon name="bi:arrow-left" />
+            {t("blog.next_post")}{" "}
+            {/* Note: Time flows backwards in typical blogs. Newer is "Next" contextually, or "Previous" depending on perspective. Using next_post for newer */}
+          </span>
+          <span class="font-bold text-zinc-900 dark:text-zinc-100 group-hover:text-primary dark:group-hover:text-accent transition-colors line-clamp-2">
+            {prevPost.data.title}
+          </span>
+        </a>
+      ) : (
+        <div />
+      )}
+
+      {nextPost ? (
+        <a
+          href={`${prefix}/blog/${nextPost.id.replace(`${lang}/`, "")}`}
+          class="group p-5 rounded-xl bg-surface-glass-light dark:bg-surface-glass border border-border-glass-light dark:border-border-glass hover:border-primary/50 dark:hover:border-accent/50 hover:shadow-sm transition-all flex flex-col items-end text-right sm:col-start-2"
+        >
+          <span class="text-sm text-zinc-500 dark:text-zinc-400 mb-2 flex items-center gap-1">
+            {t("blog.prev_post")}
+            <Icon name="bi:arrow-right" />
+          </span>
+          <span class="font-bold text-zinc-900 dark:text-zinc-100 group-hover:text-primary dark:group-hover:text-accent transition-colors line-clamp-2">
+            {nextPost.data.title}
+          </span>
+        </a>
+      ) : (
+        <div />
+      )}
+    </div>
+  )
+}

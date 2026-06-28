@@ -1,0 +1,56 @@
+---
+import { useTranslations } from "../../i18n";
+import { Icon } from "astro-icon/components";
+import { Image } from "astro:assets";
+import avatarColor from "../../assets/me.jpg";
+
+interface Props {
+  lang: string;
+}
+
+const { lang } = Astro.props;
+const t = useTranslations(lang as "en" | "pt");
+---
+
+<div
+  class="mt-16 p-6 rounded-2xl bg-zinc-100 dark:bg-zinc-800/50 flex flex-col sm:flex-row items-center sm:items-start gap-6"
+>
+  <Image
+    src={avatarColor}
+    alt="José Almir"
+    class="w-24 h-24 rounded-full border-4 border-white dark:border-zinc-800 object-cover shadow-sm"
+  />
+  <div class="text-center sm:text-left flex-1">
+    <div
+      class="uppercase tracking-widest text-xs font-bold text-primary dark:text-accent mb-1"
+    >
+      {t("blog.author")}
+    </div>
+    <h3 class="text-xl font-bold text-zinc-900 dark:text-zinc-100 mb-2">
+      José Almir
+    </h3>
+    <p class="text-zinc-600 dark:text-zinc-400 mb-4 text-sm leading-relaxed">
+      {t("blog.author_bio")}
+    </p>
+    <div class="flex items-center justify-center sm:justify-start gap-3">
+      <a
+        href="https://www.linkedin.com/in/jose-almir/"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="LinkedIn"
+        class="text-zinc-500 hover:text-primary dark:hover:text-accent transition-colors p-2 bg-white dark:bg-zinc-800 rounded-full shadow-sm"
+      >
+        <Icon name="bi:linkedin" class="text-lg" />
+      </a>
+      <a
+        href="https://github.com/jose-almir"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="GitHub"
+        class="text-zinc-500 hover:text-zinc-900 dark:hover:text-zinc-100 transition-colors p-2 bg-white dark:bg-zinc-800 rounded-full shadow-sm"
+      >
+        <Icon name="bi:github" class="text-lg" />
+      </a>
+    </div>
+  </div>
+</div>

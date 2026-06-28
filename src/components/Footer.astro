@@ -1,0 +1,45 @@
+---
+import { useTranslations } from "../i18n";
+import { Icon } from "astro-icon/components";
+
+interface Props {
+  lang: string;
+}
+
+const { lang } = Astro.props;
+const t = useTranslations(lang as "pt" | "en");
+const year = new Date().getFullYear();
+---
+
+<footer
+  class="mt-16 py-8 border-t border-border-glass-light dark:border-border-glass text-center text-text-muted-light dark:text-text-muted"
+>
+  <div class="flex justify-center gap-6 mb-6">
+    <a
+      href="https://github.com/jose-almir"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="hover:text-primary dark:hover:text-accent transition-colors hover:-translate-y-1 inline-block"
+      aria-label="GitHub"
+    >
+      <Icon name="bi:github" class="w-6 h-6" />
+    </a>
+    <a
+      href="https://www.linkedin.com/in/jose-almir/"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="hover:text-primary dark:hover:text-accent transition-colors hover:-translate-y-1 inline-block"
+      aria-label="LinkedIn"
+    >
+      <Icon name="bi:linkedin" class="w-6 h-6" />
+    </a>
+    <a
+      href="mailto:almirdevcontato@gmail.com"
+      class="hover:text-primary dark:hover:text-accent transition-colors hover:-translate-y-1 inline-block"
+      aria-label="Email"
+    >
+      <Icon name="bi:envelope-fill" class="w-6 h-6" />
+    </a>
+  </div>
+  <p>&copy; {year} José Almir. {t("footer.developed_by")} Astro.</p>
+</footer>

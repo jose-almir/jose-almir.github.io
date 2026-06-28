@@ -1,0 +1,81 @@
+---
+import Base from "../../layouts/Base.astro";
+import Giscus from "../Giscus.astro";
+import { render } from "astro:content";
+import type { CollectionEntry } from "astro:content";
+import { getReadingTime } from "../../utils/getReadingTime";
+import { useTranslations } from "../../i18n";
+
+import ReadingProgress from "../blog/ReadingProgress.astro";
+import ScrollToTop from "../blog/ScrollToTop.astro";
+import TableOfContents from "../blog/TableOfContents.astro";
+import AuthorBio from "../blog/AuthorBio.astro";
+import PostNavigation from "../blog/PostNavigation.astro";
+import CodeBlockEnhancements from "../blog/CodeBlockEnhancements.astro";
+import ImageZoom from "../ImageZoom.astro";
+
+interface Props {
+  lang: string;
+  post: CollectionEntry<"blog">;
+}
+
+const { lang, post } = Astro.props;
+const t = useTranslations(lang as "pt" | "en");
+const { Content, headings } = await render(post);
+---
+
+<Base title={post.data.title} description={post.data.description} lang={lang}>
+  <ReadingProgress />
+  <ScrollToTop />
+  <CodeBlockEnhancements lang={lang} />
+  <ImageZoom />
+
+  <div class="relative max-w-7xl mx-auto">
+    <article
+      class="prose dark:prose-invert prose-zinc max-w-prose mx-auto lg:prose-lg xl:prose-xl"
+    >
+      <header class="mb-10 text-center">
+        <h1
+          class="text-4xl md:text-5xl font-black text-zinc-900 dark:text-zinc-100 mb-4 leading-tight"
+        >
+          {post.data.title}
+        </h1>
+        <p
+          class="text-zinc-500 dark:text-zinc-400 m-0 text-sm font-medium tracking-wide"
+        >
+          {
+            post.data.date.toLocaleDateString(lang, {
+              year: "numeric",
+              month: "long",
+              day: "numeric",
+            })
+          } • {getReadingTime(post.body || "")}{" "}
+          {t("common.reading_time")}
+        </p>
+      </header>
+
+      {
+        post.data.thumbnail && (
+          <img
+            src={post.data.thumbnail}
+            alt={post.data.title}
+            class="w-full rounded-2xl mb-12 shadow-sm object-cover aspect-video"
+          />
+        )
+      }
+
+      <TableOfContents headings={headings} lang={lang} />
+
+      <div class="blog-content">
+        <Content />
+      </div>
+
+      <AuthorBio lang={lang} />
+      <PostNavigation lang={lang} currentPostId={post.id} />
+    </article>
+  </div>
+
+  <div class="max-w-prose mx-auto mt-12">
+    <Giscus lang={lang} />
+  </div>
+</Base>

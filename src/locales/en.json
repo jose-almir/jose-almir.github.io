@@ -1,0 +1,45 @@
+{
+  "common": {
+    "no_posts": "No posts found at the moment.",
+    "no_projects": "No projects found at the moment.",
+    "reading_time": "min read"
+  },
+  "nav": {
+    "blog": "Blog",
+    "projects": "Projects"
+  },
+  "home": {
+    "title": "Software Engineer focused on scalable web applications.",
+    "description": "I specialize in the TypeScript ecosystem (including React, Node.js, and Next.js) to design and develop robust software. My goal is to build solid architectures that deliver excellent user experiences and solve real business problems.",
+    "primary_cta": "View Projects",
+    "contact_button": "Contact Me",
+    "featured_projects": "Featured Projects",
+    "view_all_projects": "View all projects",
+    "blog_highlights": "Latest Posts",
+    "view_all_blog": "View all posts"
+  },
+  "footer": {
+    "developed_by": "Developed by"
+  },
+  "seo": {
+    "title": "José Almir | Software Engineer",
+    "description": "Portfolio of José Almir featuring projects in Java, Spring Boot, TypeScript, React, and Next.js. Case studies focused on architecture, product thinking, and business impact.",
+    "keywords": "jose almir, portfolio, software engineer, java, spring boot, typescript, react, next.js, backend, full stack, software architecture"
+  },
+  "404": {
+    "title": "404",
+    "subtitle": "Page not found",
+    "description": "Sorry, we couldn't find the page you were looking for.",
+    "back_home": "Back to Home"
+  },
+  "blog": {
+    "author": "Author",
+    "written_by": "Written by",
+    "next_post": "Next Post",
+    "prev_post": "Previous Post",
+    "toc": "Table of Contents",
+    "copy_code": "Copy",
+    "copied": "Copied!",
+    "author_bio": "Software Engineer focused on the TypeScript ecosystem, building scalable and user-centric web applications."
+  }
+}

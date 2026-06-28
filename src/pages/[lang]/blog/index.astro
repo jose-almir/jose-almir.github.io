@@ -1,0 +1,10 @@
+---
+import Blog from "../../../components/views/Blog.astro";
+
+export function getStaticPaths() {
+  return [{ params: { lang: "en" } }, { params: { lang: "pt" } }];
+}
+const { lang } = Astro.params;
+---
+
+<Blog lang={lang} />

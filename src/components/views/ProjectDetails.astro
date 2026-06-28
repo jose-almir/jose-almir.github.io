@@ -1,0 +1,44 @@
+---
+import Base from "../../layouts/Base.astro";
+import { render } from "astro:content";
+import type { CollectionEntry } from "astro:content";
+import ImageZoom from "../ImageZoom.astro";
+
+interface Props {
+  lang: string;
+  project: CollectionEntry<"projects">;
+}
+
+const { lang, project } = Astro.props;
+const { Content } = await render(project);
+---
+
+<Base
+  title={project.data.title}
+  description={project.data.description}
+  lang={lang}
+>
+  <ImageZoom />
+  <article class="prose dark:prose-invert prose-zinc max-w-none lg:prose-xl">
+    <header class="mb-8">
+      <h1 class="text-4xl font-bold text-zinc-900 dark:text-zinc-100 mb-2">
+        {project.data.title}
+      </h1>
+      <p class="text-zinc-500 dark:text-zinc-400 m-0">
+        {project.data.description}
+      </p>
+    </header>
+    {
+      project.data.thumbnail && (
+        <img
+          src={project.data.thumbnail}
+          alt={project.data.title}
+          class="w-full rounded-xl mb-8 object-cover aspect-video"
+        />
+      )
+    }
+    <div class="project-content">
+      <Content />
+    </div>
+  </article>
+</Base>

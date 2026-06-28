@@ -1,0 +1,45 @@
+---
+interface Props {
+  lang: string;
+}
+
+const { lang } = Astro.props;
+---
+
+<div
+  class="giscus-container mt-12 pt-8 border-t border-border-glass-light dark:border-border-glass"
+>
+  <div id="giscus-wrapper"></div>
+</div>
+
+<script define:vars={{ lang }}>
+  const getTheme = () => {
+    const storedTheme = localStorage.getItem("theme");
+    if (storedTheme) return storedTheme;
+    return window.matchMedia("(prefers-color-scheme: light)").matches
+      ? "light"
+      : "dark";
+  };
+
+  const script = document.createElement("script");
+  script.src = "https://giscus.app/client.js";
+  script.setAttribute("data-repo", "jose-almir/jose-almir.github.io");
+  script.setAttribute("data-repo-id", "R_kgDOJcTwDQ");
+  script.setAttribute("data-category", "Announcements");
+  script.setAttribute("data-category-id", "DIC_kwDOJcTwDc4CWYcC");
+  script.setAttribute("data-mapping", "pathname");
+  script.setAttribute("data-strict", "0");
+  script.setAttribute("data-reactions-enabled", "0");
+  script.setAttribute("data-emit-metadata", "0");
+  script.setAttribute("data-input-position", "top");
+  script.setAttribute("data-theme", getTheme());
+  script.setAttribute("data-lang", lang);
+  script.setAttribute("data-loading", "lazy");
+  script.crossOrigin = "anonymous";
+  script.async = true;
+
+  const wrapper = document.getElementById("giscus-wrapper");
+  if (wrapper) {
+    wrapper.appendChild(script);
+  }
+</script>

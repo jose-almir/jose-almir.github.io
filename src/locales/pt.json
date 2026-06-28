@@ -1,0 +1,45 @@
+{
+  "common": {
+    "no_posts": "Nenhuma publicação encontrada no momento.",
+    "no_projects": "Nenhum projeto encontrado no momento.",
+    "reading_time": "min de leitura"
+  },
+  "nav": {
+    "blog": "Blog",
+    "projects": "Projetos"
+  },
+  "home": {
+    "title": "Engenheiro de Software focado em aplicações web escaláveis.",
+    "description": "Sou especializado no ecossistema TypeScript (incluindo React, Node.js e Next.js) para projetar e desenvolver software robusto. Meu objetivo é criar arquiteturas sólidas que entreguem excelentes experiências de uso e resolvam problemas reais de negócio.",
+    "primary_cta": "Ver Projetos",
+    "contact_button": "Entrar em contato",
+    "featured_projects": "Projetos em Destaque",
+    "view_all_projects": "Ver todos os projetos",
+    "blog_highlights": "Últimas Publicações",
+    "view_all_blog": "Ver todas as publicações"
+  },
+  "footer": {
+    "developed_by": "Desenvolvido por"
+  },
+  "seo": {
+    "title": "José Almir | Engenheiro de Software",
+    "description": "Portfolio de José Almir com projetos em Java, Spring Boot, TypeScript, React e Next.js. Cases com foco em arquitetura, produto e impacto em negócio.",
+    "keywords": "jose almir, portfolio, engenheiro de software, java, spring boot, typescript, react, next.js, backend, full stack, arquitetura de software"
+  },
+  "404": {
+    "title": "404",
+    "subtitle": "Página não encontrada",
+    "description": "Desculpe, não conseguimos encontrar a página que você estava procurando.",
+    "back_home": "Voltar para o Início"
+  },
+  "blog": {
+    "author": "Autor",
+    "written_by": "Escrito por",
+    "next_post": "Próxima Publicação",
+    "prev_post": "Publicação Anterior",
+    "toc": "Índice",
+    "copy_code": "Copiar",
+    "copied": "Copiado!",
+    "author_bio": "Engenheiro de Software focado no ecossistema TypeScript, desenvolvendo aplicações web escaláveis e centradas no usuário."
+  }
+}

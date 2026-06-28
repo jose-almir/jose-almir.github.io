@@ -1,0 +1,33 @@
+---
+import Base from "../layouts/Base.astro";
+import { useTranslations } from "../i18n";
+import { Icon } from "astro-icon/components";
+
+const pathname = Astro.url.pathname;
+const lang = pathname.startsWith("/en") ? "en" : "pt";
+const t = useTranslations(lang);
+---
+
+<Base title={t("404.title")} lang={lang}>
+  <script is:inline>
+    const path = window.location.pathname;
+    if (path.startsWith("/en/") && path !== "/en/404") {
+      window.location.replace("/en/404");
+    } else if (path.startsWith("/pt/") && path !== "/pt/404") {
+      window.location.replace("/pt/404");
+    }
+  </script>
+  <section class="my-16">
+    <h1 class="text-5xl font-bold mb-4">{t("404.subtitle")}</h1>
+    <p class="text-xl text-zinc-600 dark:text-zinc-400 max-w-2xl mb-8">
+      {t("404.description")}
+    </p>
+    <a
+      href={`/${lang}`}
+      class="inline-flex items-center gap-2 bg-surface-glass-light dark:bg-surface-glass border border-border-glass-light dark:border-border-glass rounded-lg px-6 py-3 hover:-translate-y-1 hover:shadow-lg transition-all font-medium"
+    >
+      <Icon name="bi:arrow-left" />
+      {t("404.back_home")}
+    </a>
+  </section>
+</Base>

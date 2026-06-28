@@ -1,0 +1,83 @@
+---
+import { useTranslations } from "../i18n";
+import { Icon } from "astro-icon/components";
+import { Image } from "astro:assets";
+import avatarImg from "../assets/me.jpg";
+
+interface Props {
+  lang: string;
+}
+
+const { lang } = Astro.props;
+const t = useTranslations(lang as "pt" | "en");
+const prefix = `/${lang}`;
+
+const basePath = Astro.url.pathname.replace(/^\/(en|pt)/, "");
+const ptLink = `/pt${basePath}`;
+const enLink = `/en${basePath}`;
+---
+
+<header
+  class="py-8 mb-8 border-b border-border-glass-light dark:border-border-glass flex justify-between items-center"
+>
+  <div>
+    <a
+      href={prefix}
+      class="flex items-center gap-3 text-2xl font-bold hover:text-primary dark:hover:text-accent"
+    >
+      <Image
+        src={avatarImg}
+        alt="José Almir"
+        loading="eager"
+        fetchpriority="high"
+        class="w-10 h-10 rounded-full border-2 border-transparent hover:border-primary dark:hover:border-accent transition-colors"
+      />
+      <span class="hidden sm:inline-block">José Almir</span>
+    </a>
+  </div>
+  <nav class="flex gap-6 items-center">
+    <a
+      href={`${prefix}/blog`}
+      class="font-medium hover:underline hover:text-primary dark:hover:text-accent"
+      >{t("nav.blog")}</a
+    >
+    <a
+      href={`${prefix}/projects`}
+      class="font-medium hover:underline hover:text-primary dark:hover:text-accent"
+      >{t("nav.projects")}</a
+    >
+    <div class="flex items-center gap-2">
+      <button
+        id="theme-toggle"
+        aria-label="Toggle theme"
+        class="bg-transparent border-none cursor-pointer text-xl px-2 hover:text-primary dark:hover:text-accent flex items-center justify-center"
+      >
+        <Icon name="bi:moon" class="block dark:hidden" />
+        <Icon name="bi:moon-fill" class="hidden dark:block" />
+      </button>
+      <a href={ptLink} class={lang === "pt" ? "font-bold" : ""}>PT</a>
+      <span class="text-zinc-400">|</span>
+      <a href={enLink} class={lang === "en" ? "font-bold" : ""}>EN</a>
+    </div>
+  </nav>
+</header>
+
+<script>
+  const toggle = document.getElementById("theme-toggle");
+  toggle?.addEventListener("click", () => {
+    document.documentElement.classList.toggle("dark");
+    const newTheme = document.documentElement.classList.contains("dark")
+      ? "dark"
+      : "light";
+
+    localStorage.setItem("theme", newTheme);
+
+    const iframe = document.querySelector("iframe.giscus-frame");
+    if (iframe instanceof HTMLIFrameElement && iframe.contentWindow) {
+      iframe.contentWindow.postMessage(
+        { giscus: { setConfig: { theme: newTheme } } },
+        "https://giscus.app",
+      );
+    }
+  });
+</script>

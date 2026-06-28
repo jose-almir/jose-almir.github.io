@@ -1,0 +1,202 @@
+---
+import Base from "../../layouts/Base.astro";
+import { useTranslations } from "../../i18n";
+import { getCollection } from "astro:content";
+import { Icon } from "astro-icon/components";
+import Card from "../Card.astro";
+
+interface Props {
+  lang: string;
+}
+
+const { lang } = Astro.props;
+const t = useTranslations(lang as "pt" | "en");
+
+// Fetch 3 most recent projects
+const allProjects = await getCollection(
+  "projects",
+  ({ id, data }) => id.startsWith(`${lang}/`) && !data.hidden,
+);
+const projects = allProjects
+  .sort((a, b) => a.data.order - b.data.order)
+  .slice(0, 3);
+
+// Fetch 3 most recent blog posts
+const allPosts = await getCollection("blog", ({ id }) =>
+  id.startsWith(`${lang}/`),
+);
+const posts = allPosts
+  .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf())
+  .slice(0, 3);
+
+const prefix = `/${lang}`;
+
+const techStack = [
+  { name: "TypeScript", icon: "simple-icons:typescript" },
+  { name: "Node.js", icon: "simple-icons:nodedotjs" },
+  { name: "React", icon: "simple-icons:react" },
+  { name: "Next.js", icon: "simple-icons:nextdotjs" },
+];
+---
+
+<Base title="Home" lang={lang}>
+  {/* Hero Section */}
+  <section class="mt-8 mb-16 space-y-6">
+    <div class="space-y-4 max-w-3xl">
+      <h1
+        class="text-5xl md:text-6xl font-black tracking-tight text-zinc-900 dark:text-zinc-100"
+      >
+        José Almir
+      </h1>
+      <h2 class="text-2xl text-primary dark:text-accent font-medium">
+        {t("home.title")}
+      </h2>
+      <p class="text-lg text-zinc-600 dark:text-zinc-400 leading-relaxed">
+        {t("home.description")}
+      </p>
+    </div>
+
+    {/* CTA Buttons */}
+    <div class="flex flex-wrap gap-4 pt-4">
+      <a
+        href={`${prefix}/projects`}
+        class="inline-flex items-center gap-2 bg-zinc-900 text-zinc-50 dark:bg-zinc-100 dark:text-zinc-900 px-6 py-3 rounded-lg font-medium hover:scale-105 transition-transform"
+      >
+        {t("home.primary_cta")}
+        <Icon name="bi:arrow-right" class="text-lg" />
+      </a>
+      <a
+        href="https://www.linkedin.com/in/jose-almir/"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="inline-flex items-center gap-2 bg-surface-glass-light dark:bg-surface-glass border border-border-glass-light dark:border-border-glass px-6 py-3 rounded-lg font-medium hover:shadow-md transition-all"
+      >
+        LinkedIn
+        <Icon name="bi:linkedin" class="text-lg" />
+      </a>
+      <a
+        href="mailto:almirdevcontato@gmail.com"
+        class="inline-flex items-center gap-2 bg-surface-glass-light dark:bg-surface-glass border border-border-glass-light dark:border-border-glass px-6 py-3 rounded-lg font-medium hover:shadow-md transition-all"
+      >
+        {t("home.contact_button")}
+        <Icon name="bi:envelope" class="text-lg" />
+      </a>
+    </div>
+
+    {/* Tech Stack */}
+    <div class="pt-8">
+      <div class="flex flex-wrap gap-3">
+        {
+          techStack.map((tech) => (
+            <span class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-zinc-100 dark:bg-zinc-800 text-sm font-medium text-zinc-700 dark:text-zinc-300">
+              <Icon name={tech.icon} class="text-base" />
+              {tech.name}
+            </span>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  {/* Featured Projects Section */}
+  <section class="mb-16">
+    <div class="flex items-center justify-between mb-8">
+      <h2 class="text-3xl font-bold">{t("home.featured_projects")}</h2>
+      <a
+        href={`${prefix}/projects`}
+        class="text-primary dark:text-accent font-medium hover:underline hidden sm:inline-flex items-center gap-1"
+      >
+        {t("home.view_all_projects")}
+        <Icon name="bi:arrow-right" />
+      </a>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      {
+        projects.length === 0 ? (
+          <p class="text-zinc-600 dark:text-zinc-400 italic">
+            {t("common.no_projects")}
+          </p>
+        ) : (
+          projects.map((project) => (
+            <Card
+              href={`${prefix}/projects/${project.id.replace(`${lang}/`, "")}`}
+              title={project.data.title}
+            >
+              <p class="text-zinc-600 dark:text-zinc-400 text-sm line-clamp-3">
+                {project.data.description}
+              </p>
+            </Card>
+          ))
+        )
+      }
+    </div>
+
+    <div class="mt-6 sm:hidden">
+      <a
+        href={`${prefix}/projects`}
+        class="w-full inline-flex justify-center items-center gap-2 bg-surface-glass-light dark:bg-surface-glass border border-border-glass-light dark:border-border-glass px-4 py-3 rounded-lg font-medium"
+      >
+        {t("home.view_all_projects")}
+        <Icon name="bi:arrow-right" />
+      </a>
+    </div>
+  </section>
+
+  {/* Latest Posts Section */}
+  <section class="mb-16">
+    <div class="flex items-center justify-between mb-8">
+      <h2 class="text-3xl font-bold">{t("home.blog_highlights")}</h2>
+      <a
+        href={`${prefix}/blog`}
+        class="text-primary dark:text-accent font-medium hover:underline hidden sm:inline-flex items-center gap-1"
+      >
+        {t("home.view_all_blog")}
+        <Icon name="bi:arrow-right" />
+      </a>
+    </div>
+
+    <div class="space-y-4">
+      {
+        posts.length === 0 ? (
+          <p class="text-zinc-600 dark:text-zinc-400 italic">
+            {t("common.no_posts")}
+          </p>
+        ) : (
+          posts.map((post) => (
+            <a
+              href={`${prefix}/blog/${post.id.replace(`${lang}/`, "")}`}
+              class="group block p-5 rounded-xl bg-surface-glass-light dark:bg-surface-glass border border-border-glass-light dark:border-border-glass hover:border-primary/50 dark:hover:border-accent/50 hover:shadow-sm transition-all"
+            >
+              <div class="flex flex-col sm:flex-row sm:items-baseline gap-2 sm:gap-4 justify-between">
+                <h3 class="text-xl font-bold group-hover:text-primary dark:group-hover:text-accent transition-colors">
+                  {post.data.title}
+                </h3>
+                <time class="text-sm text-zinc-500 dark:text-zinc-400 whitespace-nowrap">
+                  {post.data.date.toLocaleDateString(lang, {
+                    year: "numeric",
+                    month: "long",
+                    day: "numeric",
+                  })}
+                </time>
+              </div>
+              <p class="mt-2 text-zinc-600 dark:text-zinc-400 line-clamp-2">
+                {post.data.description}
+              </p>
+            </a>
+          ))
+        )
+      }
+    </div>
+
+    <div class="mt-6 sm:hidden">
+      <a
+        href={`${prefix}/blog`}
+        class="w-full inline-flex justify-center items-center gap-2 bg-surface-glass-light dark:bg-surface-glass border border-border-glass-light dark:border-border-glass px-4 py-3 rounded-lg font-medium"
+      >
+        {t("home.view_all_blog")}
+        <Icon name="bi:arrow-right" />
+      </a>
+    </div>
+  </section>
+</Base>
