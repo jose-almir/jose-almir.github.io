@@ -2,6 +2,7 @@
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 import Seo from "../components/Seo.astro";
+import { ClientRouter } from "astro:transitions";
 import "../styles/global.css";
 
 interface Props {
@@ -20,6 +21,7 @@ const { title, description, image, lang = "pt" } = Astro.props;
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width" />
     <Seo title={title} description={description} image={image} lang={lang} />
+    <ClientRouter />
     <script is:inline>
       const theme = localStorage.getItem("theme");
       if (theme === "light") document.documentElement.classList.remove("dark");

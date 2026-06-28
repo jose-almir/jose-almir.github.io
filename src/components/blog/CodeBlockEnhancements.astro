@@ -13,7 +13,7 @@ const copiedText = t("blog.copied");
 ---
 
 <script define:vars={{ copyCodeText, copiedText }}>
-  document.addEventListener("DOMContentLoaded", () => {
+  document.addEventListener("astro:page-load", () => {
     const codeBlocks = document.querySelectorAll("pre");
 
     codeBlocks.forEach((block) => {

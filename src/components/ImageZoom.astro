@@ -5,7 +5,7 @@
 <script>
   import mediumZoom from "medium-zoom";
 
-  document.addEventListener("DOMContentLoaded", () => {
+  document.addEventListener("astro:page-load", () => {
     mediumZoom(".blog-content img, .project-content img", {
       margin: 24,
       background: "rgba(0, 0, 0, 0.9)",
