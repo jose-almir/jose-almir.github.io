@@ -32,6 +32,17 @@ Você pode ler um artigo mais completo sobre a arquitetura no blog:
 
 ### [Explorando o CMS com GitHub API](/pt/blog/cms-portfolio)
 
-![Interface do CMS](/blog/cms-portfolio/cms-print.png)
-![Fluxo de Commits Automatizados](/blog/cms-portfolio/cms-commits.png)
-![Portfólio em Operação](/blog/cms-portfolio/portfolio-print.png)
+<figure class="full">
+  <img src="/blog/cms-portfolio/cms-print.png" alt="Interface do CMS" />
+  <figcaption>Interface do CMS</figcaption>
+</figure>
+
+<figure class="medium">
+  <img src="/blog/cms-portfolio/cms-commits.png" alt="Fluxo de Commits Automatizados" />
+  <figcaption>Fluxo de Commits Automatizados</figcaption>
+</figure>
+
+<figure class="full">
+  <img src="/blog/cms-portfolio/portfolio-print.png" alt="Portfólio em Operação" />
+  <figcaption>Portfólio em Operação</figcaption>
+</figure>

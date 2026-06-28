@@ -32,6 +32,17 @@ You can read a more complete write-up about the architecture on my blog:
 
 ### [Building a CMS with GitHub API](/en/blog/cms-portfolio)
 
-![CMS Interface](/blog/cms-portfolio/cms-print.png)
-![Automated Commit Flow](/blog/cms-portfolio/cms-commits.png)
-![Live Portfolio Showcase](/blog/cms-portfolio/portfolio-print.png)
+<figure class="full">
+  <img src="/blog/cms-portfolio/cms-print.png" alt="CMS Interface" />
+  <figcaption>CMS Interface</figcaption>
+</figure>
+
+<figure class="medium">
+  <img src="/blog/cms-portfolio/cms-commits.png" alt="Automated Commit Flow" />
+  <figcaption>Automated Commit Flow</figcaption>
+</figure>
+
+<figure class="full">
+  <img src="/blog/cms-portfolio/portfolio-print.png" alt="Live Portfolio Showcase" />
+  <figcaption>Live Portfolio Showcase</figcaption>
+</figure>
