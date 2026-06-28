@@ -15,7 +15,7 @@ const {
   title: customTitle,
   description: customDescription,
   keywords: customKeywords,
-  image = `${baseUrl}/profile/og.png`,
+  image: customImage,
   lang = "pt",
 } = Astro.props;
 
@@ -25,9 +25,17 @@ const defaultTitle = t("seo.title");
 const defaultDescription = t("seo.description");
 const defaultKeywords = t("seo.keywords");
 
-const title = customTitle ? `${customTitle} | Almir Dev` : defaultTitle;
-const description = customDescription || defaultDescription;
+const title = customTitle ? `${customTitle} | José Almir - Software Engineer` : defaultTitle;
+
+const truncate = (text: string, maxLength: number) => 
+  text.length > maxLength ? text.substring(0, maxLength - 3) + "..." : text;
+
+const description = truncate(customDescription || defaultDescription, 155);
+const ogDescription = truncate(customDescription || defaultDescription, 120);
 const keywords = customKeywords || defaultKeywords;
+
+const imagePath = customImage || "/profile/og.png";
+const image = imagePath.startsWith("http") ? imagePath : `${baseUrl}${imagePath.startsWith("/") ? "" : "/"}${imagePath}`;
 
 const path = Astro.url.pathname;
 const cleanPath =
@@ -45,16 +53,16 @@ const enUrl = `${baseUrl}/en${pathWithoutLang}`;
 <meta name="author" content="José Almir" />
 
 <meta property="og:title" content={title} />
-<meta property="og:description" content={description} />
+<meta property="og:description" content={ogDescription} />
 <meta property="og:image" content={image} />
 <meta property="og:type" content="website" />
 <meta property="og:locale" content={lang === "pt" ? "pt_BR" : "en_US"} />
-<meta property="og:site_name" content="Almir Dev" />
+<meta property="og:site_name" content="José Almir" />
 
 <meta name="twitter:title" content={title} />
 <meta name="twitter:image" content={image} />
-<meta name="twitter:card" content="summary" />
-<meta name="twitter:description" content={description} />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:description" content={ogDescription} />
 
 <link rel="canonical" href={canonicalUrl} />
 <link rel="alternate" hreflang="x-default" href={ptUrl} />

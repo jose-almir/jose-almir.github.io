@@ -24,7 +24,12 @@ const t = useTranslations(lang as "pt" | "en");
 const { Content, headings } = await render(post);
 ---
 
-<Base title={post.data.title} description={post.data.description} lang={lang}>
+<Base
+  title={post.data.title}
+  description={post.data.description}
+  image={post.data.thumbnail}
+  lang={lang}
+>
   <ReadingProgress />
   <ScrollToTop />
   <CodeBlockEnhancements lang={lang} />
