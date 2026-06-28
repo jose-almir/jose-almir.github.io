@@ -13,7 +13,7 @@
     "lint": "eslint .",
     "format": "prettier --write .",
     "format:check": "prettier --check .",
-    "prepare": "husky"
+    "prepare": "husky || true"
   },
   "dependencies": {
     "@astrojs/rss": "^4.0.18",
