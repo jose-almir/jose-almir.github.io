@@ -78,6 +78,13 @@ Due to the simplified nature of this portfolio project, testing relies purely on
 - **Hooks:** A `husky` pre-commit hook ensures formatting and linting rules pass before any code is checked into version control.
 - **CI/CD Guardrails:** `deploy.yml` will halt the deployment if the build or formatting checks fail. `npm ci` handles dependencies in CI, with `prepare` scripts safely bypassed if Husky is unavailable.
 
+## Design Philosophy: Less is More
+
+The core guiding principle for this project is "Less is More". When creating components, writing markdown content, or suggesting architectural changes, future agents MUST strictly adhere to the following rules:
+- **Only use what aggregates value:** Do not over-engineer or add complex components just because you can. Stick to simple native HTML/Markdown if it suffices.
+- **Use custom MDX components sparingly:** Elements like `<Callout>`, `<Terminal>`, `<ArticleImage>`, and `<Quote>` should only be used when they provide a clear, undeniable UX benefit or semantic necessity. Do NOT use them as default replacements for standard text just to make the page look busy.
+- **Performance First:** Prefer Tailwind utility classes and minimal Vanilla JS over bringing in heavy UI frameworks or state-driven interactivity. The site is a fast, static blog; do not introduce backend-level maintenance burdens or dependencies.
+
 ## Agent Guardrails
 
 - **No Direct `main` Commits Without Formatting:** Ensure `npm run format` is executed before committing.
