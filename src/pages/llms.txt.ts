@@ -13,12 +13,12 @@ export async function GET(context: APIContext) {
 
   content += `## Projects\n`;
   projects.forEach((p) => {
-    content += `- ${p.data.title}: ${p.data.description} (URL: ${context.site}/pt/projects/${p.id.replace("pt/", "")})\n`;
+    content += `- ${p.data.title}: ${p.data.description} (URL: ${new URL(`pt/projects/${p.id.replace("pt/", "")}`, context.site).href})\n`;
   });
 
   content += `\n## Blog\n`;
   blog.forEach((p) => {
-    content += `- ${p.data.title}: ${p.data.description} (URL: ${context.site}/pt/blog/${p.id.replace("pt/", "")})\n`;
+    content += `- ${p.data.title}: ${p.data.description} (URL: ${new URL(`pt/blog/${p.id.replace("pt/", "")}`, context.site).href})\n`;
   });
 
   return new Response(content, {
