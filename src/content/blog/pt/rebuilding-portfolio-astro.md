@@ -1,0 +1,64 @@
+---
+title: "Reconstruindo meu Portfólio: Do Legado ao Astro"
+date: "2026-06-28T00:00:00"
+thumbnail: "/blog/rebuilding-portfolio-astro/thumbnail.png"
+description: "Descubra como reescrevi meu portfólio saindo do Next.js para o Astro. Uma arquitetura SSG mais simples, rápida e construída para focar no que importa."
+---
+
+## A busca pela simplicidade
+
+A versão legada do meu blog foi feita em Next.js, na época para se ter conteúdo dinâmico era necessário o uso de uma quantidade considerável de bibliotecas externas como `globby`, `gray-matter`, `rehype`, `react-markdown` e outras.
+
+Conforme fui adicionando novas funcionalidades como suporte a múltiplos idiomas (`pt`, `en`), ficou um pouco pesado de se manter pois muitos recursos precisaram ser feitos manualmente, desde a geração de sitemaps, RSS e o mais novo `llms.txt` para bots de IA.
+
+Alguns meses atrás, estava pesquisando uma nova ferramenta para desenvolver o portfólio e acabei conhecendo o **Astro**. Percebi que o **Astro** tinha muitas funcionalidades que eu precisava e que poderiam me ajudar a ter um blog mais simples e rápido.
+
+## Por que o Astro?
+
+A primeira razão é que no blog legado existia toda uma implementação para gerenciar o conteúdo dos arquivos markdown que não necessariamente foi feita pensada no futuro. Por ser muito engessada, trazer recursos mais tecnológicos para o blog se tornou uma tarefa que exigiria uma reescrita considerável de código.
+
+Com o **Astro**, a experiência de gerenciar o conteúdo dos arquivos markdown ficou muito mais simples e intuitiva. Com a possibilidade de expandir funcionalidades com plugins e integrações e também ter a possibilidade de usar MDX para criar posts mais ricos em conteúdo interativo foi um grande diferencial.
+
+Também foi a oportunidade de trazer **TailwindCSS** para o blog, que é uma ferramenta que eu gosto muito de usar e que me permite ter mais controle sobre o design e a experiência do usuário. Assim como trazer o **Typescript** para o projeto, que me ajuda a ter mais segurança e produtividade no desenvolvimento.
+
+## Menos é mais
+
+O conteúdo ainda é gerenciado e mantido via Markdown, então não houve mudanças significativas na forma de gerenciar o conteúdo. A diferença é que o **Astro** traz a possibilidade de definir o esquema de metadados de cada post de forma mais nativa e organizada.
+
+```typescript
+import { z, defineCollection } from "astro:content";
+import { glob } from "astro/loaders";
+
+const blogCollection = defineCollection({
+  loader: glob({ pattern: "**/*.md", base: "./src/content/blog" }),
+  schema: z.object({
+    title: z.string(),
+    date: z.string().transform((str) => new Date(str)),
+    thumbnail: z.string(),
+    description: z.string(),
+  }),
+});
+```
+
+Na versão legada, este código ficaria distribuido em diversos arquivos, tornando-o menos organizado e mais difícil de manter. Agora, com o **Astro**, tudo fica mais simples e organizado.
+
+Para o suporte a multi-idiomas, foi feita uma pequena adaptação: todos os posts estão contidos em pastas com o nome do idioma, por exemplo, `pt` e `en`, gerantindo que cada pasta de idioma tem sua própria coleção de posts.
+
+Para o CI/CD, a implementação ficou mais simples. Agora, com o **Astro**, o blog é gerado em uma única etapa, com um único comando, e o GitHub Actions só precisa fazer o build e o deploy do projeto.
+
+## Uma oportunidade de melhorar o UX
+
+Com uma arquitetura mais simples, eu aproveitei para aprimorar a experiência de usuário no blog sem adicionar complexidade ao projeto. Algumas adições que mais gostei de trazer:
+
+- **Índices (Table of Contents):** Fixados no conteúdo para facilitar a navegação em artigos longos.
+- **Barra de progresso de leitura:** Um pequeno detalhe no topo da tela que melhora muito a percepção de tempo do leitor.
+- **Zoom de imagem estilo Medium:** Clicar nas imagens (como diagramas de arquitetura) agora dá um foco elegante sem sair da página.
+- **Blocos de código aprimorados:** Agora com botões de cópia nativos, essenciais para um blog de engenharia de software.
+
+## Lições aprendidas e resultados
+
+Durante o desenvolvimento nesta nova versão tive a chance de aprender ainda mais sobre o Astro, que por mais que pareça ser uma alternativa ao Next.js, é uma ferramenta que tem suas próprias características e vantagens. Next.js é uma ferramenta incrível para aplicações full-stack, mas para sites estáticos como o blog, o Astro é uma opção mais leve e performática.
+
+O site agora ficou mais rápido e leve, fácil de gerar conteúdo e até mesmo de adicionar novas funcionalidades. O que eu mais gosto é que o Astro não tenta ser um framework "faz tudo", ele é focado em sites estáticos e faz isso muito bem.
+
+Você pode conferir o código fonte no [GitHub](https://github.com/jose-almir/jose-almir.github.io) e o site [no ar](https://almirdev.com/pt/).
