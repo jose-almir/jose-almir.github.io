@@ -25,9 +25,11 @@ const defaultTitle = t("seo.title");
 const defaultDescription = t("seo.description");
 const defaultKeywords = t("seo.keywords");
 
-const title = customTitle ? `${customTitle} | José Almir - Software Engineer` : defaultTitle;
+const title = customTitle
+  ? `${customTitle} | José Almir - Software Engineer`
+  : defaultTitle;
 
-const truncate = (text: string, maxLength: number) => 
+const truncate = (text: string, maxLength: number) =>
   text.length > maxLength ? text.substring(0, maxLength - 3) + "..." : text;
 
 const description = truncate(customDescription || defaultDescription, 155);
@@ -35,7 +37,9 @@ const ogDescription = truncate(customDescription || defaultDescription, 120);
 const keywords = customKeywords || defaultKeywords;
 
 const imagePath = customImage || "/profile/og.png";
-const image = imagePath.startsWith("http") ? imagePath : `${baseUrl}${imagePath.startsWith("/") ? "" : "/"}${imagePath}`;
+const image = imagePath.startsWith("http")
+  ? imagePath
+  : `${baseUrl}${imagePath.startsWith("/") ? "" : "/"}${imagePath}`;
 
 const path = Astro.url.pathname;
 const cleanPath =
