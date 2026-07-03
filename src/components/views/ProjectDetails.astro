@@ -2,7 +2,6 @@
 import Base from "../../layouts/Base.astro";
 import { render } from "astro:content";
 import type { CollectionEntry } from "astro:content";
-import ImageZoom from "../ImageZoom.astro";
 import Callout from "../mdx/Callout.astro";
 import Terminal from "../mdx/Terminal.astro";
 import ArticleImage from "../mdx/ArticleImage.astro";
@@ -23,7 +22,6 @@ const { Content } = await render(project);
   image={project.data.thumbnail}
   lang={lang}
 >
-  <ImageZoom />
   <article class="prose dark:prose-invert prose-zinc max-w-none lg:prose-xl">
     <header class="mb-8">
       <h1 class="text-4xl font-bold text-zinc-900 dark:text-zinc-100 mb-2">

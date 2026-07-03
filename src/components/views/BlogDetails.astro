@@ -12,7 +12,6 @@ import TableOfContents from "../blog/TableOfContents.astro";
 import AuthorBio from "../blog/AuthorBio.astro";
 import PostNavigation from "../blog/PostNavigation.astro";
 import CodeBlockEnhancements from "../blog/CodeBlockEnhancements.astro";
-import ImageZoom from "../ImageZoom.astro";
 import Callout from "../mdx/Callout.astro";
 import Terminal from "../mdx/Terminal.astro";
 import ArticleImage from "../mdx/ArticleImage.astro";
@@ -37,7 +36,6 @@ const { Content, headings } = await render(post);
   <ReadingProgress />
   <ScrollToTop />
   <CodeBlockEnhancements lang={lang} />
-  <ImageZoom />
 
   <div class="relative max-w-7xl mx-auto">
     <article

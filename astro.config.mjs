@@ -20,7 +20,7 @@ export default defineConfig({
       prefixDefaultLocale: true,
     },
   },
-  prefetch: true,
+
   markdown: {
     shikiConfig: {
       themes: {
