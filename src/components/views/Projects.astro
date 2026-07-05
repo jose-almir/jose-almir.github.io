@@ -1,21 +1,19 @@
 ---
 import Base from "../../layouts/Base.astro";
-import { getCollection } from "astro:content";
+import { type CollectionEntry } from "astro:content";
 import { useTranslations } from "../../i18n";
 import Card from "../Card.astro";
+import type { Page } from "astro";
+import Pagination from "../Pagination.astro";
 
 interface Props {
   lang: string;
+  page: Page<CollectionEntry<"projects">>;
 }
 
-const { lang } = Astro.props;
+const { lang, page } = Astro.props;
 const t = useTranslations(lang as "pt" | "en");
-const projects = (
-  await getCollection(
-    "projects",
-    ({ id, data }) => id.startsWith(`${lang}/`) && !data.hidden,
-  )
-).sort((a, b) => a.data.order - b.data.order);
+const projects = page.data;
 const prefix = `/${lang}`;
 ---
 
@@ -41,4 +39,5 @@ const prefix = `/${lang}`;
       )
     }
   </div>
+  <Pagination lang={lang} prevUrl={page.url.prev} nextUrl={page.url.next} />
 </Base>

@@ -1,0 +1,31 @@
+---
+import Blog from "../../../components/views/Blog.astro";
+import { getCollection } from "astro:content";
+import type { GetStaticPaths } from "astro";
+
+export const getStaticPaths = (async ({ paginate }) => {
+  const allBlog = await getCollection("blog");
+  const langs = ["en", "pt"];
+  const paths = [];
+
+  for (const lang of langs) {
+    const langPosts = allBlog
+      .filter((post) => post.id.startsWith(`${lang}/`))
+      .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
+
+    paths.push(
+      ...paginate(langPosts, {
+        params: { lang },
+        pageSize: 10,
+      }),
+    );
+  }
+
+  return paths;
+}) satisfies GetStaticPaths;
+
+const { lang } = Astro.params;
+const { page } = Astro.props;
+---
+
+<Blog lang={lang!} page={page} />

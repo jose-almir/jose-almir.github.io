@@ -1,0 +1,33 @@
+---
+import Projects from "../../../components/views/Projects.astro";
+import { getCollection } from "astro:content";
+import type { GetStaticPaths } from "astro";
+
+export const getStaticPaths = (async ({ paginate }) => {
+  const allProjects = await getCollection("projects");
+  const langs = ["en", "pt"];
+  const paths = [];
+
+  for (const lang of langs) {
+    const langProjects = allProjects
+      .filter(
+        (project) => project.id.startsWith(`${lang}/`) && !project.data.hidden,
+      )
+      .sort((a, b) => a.data.order - b.data.order);
+
+    paths.push(
+      ...paginate(langProjects, {
+        params: { lang },
+        pageSize: 6,
+      }),
+    );
+  }
+
+  return paths;
+}) satisfies GetStaticPaths;
+
+const { lang } = Astro.params;
+const { page } = Astro.props;
+---
+
+<Projects lang={lang!} page={page} />

@@ -7,7 +7,9 @@
   "nav": {
     "blog": "Blog",
     "projects": "Projetos",
-    "toggle_theme": "Alternar tema"
+    "toggle_theme": "Alternar tema",
+    "prev_page": "Anterior",
+    "next_page": "Próxima"
   },
   "home": {
     "title": "Engenheiro de Software focado em aplicações web escaláveis.",
