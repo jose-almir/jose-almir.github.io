@@ -39,6 +39,24 @@ html.dark .astro-code span {
   text-decoration: var(--shiki-dark-text-decoration) !important;
 }
 
+/* Line Numbers for Code Blocks */
+.astro-code code {
+  counter-reset: step;
+  counter-increment: step 0;
+}
+
+.astro-code code .line::before {
+  content: counter(step);
+  counter-increment: step;
+  width: 1rem;
+  margin-right: 1.2rem;
+  display: inline-block;
+  text-align: right;
+  color: rgba(113, 113, 122, 0.4);
+  font-size: 0.85em;
+  user-select: none;
+}
+
 .prose blockquote {
   border-left: 4px solid var(--color-accent) !important;
   padding: 16px 24px !important;

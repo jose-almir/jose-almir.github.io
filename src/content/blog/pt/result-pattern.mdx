@@ -1,0 +1,120 @@
+---
+title: "Result Pattern: Abandone o try/catch no TypeScript"
+date: "2026-07-04T00:00:00"
+thumbnail: "/blog/result-pattern/result-pattern-thumb.png"
+description: "Aprenda a usar o padrão Result no TypeScript para criar tratamentos de erro previsíveis e tipados, evitando exceções inesperadas em tempo de execução."
+---
+
+## Introdução: O custo oculto do `throw Error`
+
+O TypeScript é uma linguagem que revolucionou a forma como construímos software baseado em JavaScript, com ela podemos criar implementações
+robustas e com tipagem forte. No entanto, um problema surge quando precisamos lidar com erros que precisam ser modelados na aplicação. Veja a seguinte situação:
+
+```typescript
+async function getUserProfile(id: string) {
+  try {
+    const user = await repository.findById(id); 
+    return user;
+  } catch (error) {
+    if (error instanceof UserNotFoundError) {
+      return null;
+    }
+    throw error;
+  }
+}
+```
+Neste código temos um exemplo de serviço chamando um repositório. O primeiro problema com essa construção é que 
+o `error` tem tipo `unknown`. Não temos ideia de qual erro aconteceu a menos que façamos uma verificação explícita com 
+`instanceof`. Em seguida, para quaisquer outros erros, precisamos relançar a exceção forçando toda a cadeia a usar `try/catch` também.
+A razão para que `error` seja `unknown` é justamente por não sabermos quais erros `findById` pode lançar. Isso torna a aplicação
+mais imprevisível, pois somos obrigados a tratar erros espalhados por todo o código base.
+
+## O que é o Result Pattern?
+
+O Result Pattern é uma forma de modelar erros e tratá-los como **valor**. Ao invés de usarmos o sistema de lançamento de exceções de forma padrão,
+nós retornamos um objeto capaz de representar um resultado de **sucesso** ou de **erro**. Assim, sempre que possível, poderemos verificar (sem `throw`) o que uma determinada chamada
+produziu, além de poder fazer uso dos poderosos generics do TypeScript para definir exatamente erros próprios e explícitos da aplicação.
+
+## Implementando `Result<T, E>` do zero
+
+Implementar o Result Pattern com Typescript é extremamente simples e não exige um boilerplate muito grande. Basta utilizar a definição `type`:
+
+```typescript
+export type Result<T, E> = 
+  | { ok: true; value: T } 
+  | { ok: false; error: E };
+```
+Com isso, temos uma estrutura que suporta ambas as situações (sucesso/erro) graças à estrutura de Union Types. Podemos também definir factory functions para 
+lidar mais facilmente com essas situações:
+```typescript
+export function ok(): Result<void, never>;
+
+export function ok<T>(value: T): Result<T, never>;
+
+export function ok<T>(value?: T): Result<T | void, never> {
+  return { ok: true, value };
+}
+
+export function err<E>(error: E): Result<never, E> {
+  return { ok: false, error };
+}
+```
+Basta então utilizar `ok(...)` ou `err(...)` ao longo do código base para explicitamente definir o resultado. Utilizamos sobrecarga de parâmetros
+do TypeScript para abranger situações em que normalmente não teríamos um retorno.
+
+## Exemplo do mundo real
+
+O repository agora retorna um `Result` explícito ao invés de lançar exceção:
+
+```typescript
+...
+async findById(id: string): Promise<Result<User, UserNotFoundError>> {
+  // Se o banco cair, isso lança um erro (exceção crítica). 
+  // Erros de infraestrutura deixamos estourar (explicado nos trade-offs).
+  const user = await db.users.find(id);
+
+  if(!user) {
+    return err(new UserNotFoundError(id))
+  }
+
+  return ok(user);
+}
+...
+```
+E o serviço agora lida com o erro como valor e o repassa adiante:
+```typescript
+async function getUserProfile(id: string): Promise<Result<User, UserNotFoundError>> {
+  const result = await repository.findById(id);
+  
+  if (!result.ok) {
+    // Podemos logar, transformar o erro, ou apenas repassar para cima!
+    console.error(result.error.message);
+    return err(result.error);
+  }
+  
+  return ok(result.value);
+}
+```
+
+O TypeScript obriga a verificar a propriedade `ok`, e assim facilmente referenciar o valor para `error` ou para `value`.
+A partir do momento que passamos pelo `if`, o compilador garante que `result.value` é do tipo `User`.
+
+Com esse padrão não precisamos em momento algum lidar com `unknown` que seria um mistério como no exemplo de `try/catch`.
+Graças ao **Type Narrowing** do TypeScript, a linguagem é inteligente o suficiente para saber que quando `!result.ok` for verdadeiro, a propriedade `result.error` estará disponível. 
+Caso contrário, `result.value` estará disponível de forma segura. 
+Sem contar que só de olhar a assinatura do método qualquer desenvolvedor sabe exatamente o que a função retorna
+e quais erros ela pode disparar sem precisar ler a implementação inteira.
+
+## Trade-offs e quando não usar
+
+<Callout type="warning" title="E os erros de infraestrutura?">
+  Você deve se perguntar: "Mas e se o banco falhar? Ainda teríamos que utilizar try/catch?". Sim! Nós não abolimos o try/catch da nossa arquitetura.
+
+  O Result Pattern serve para erros de **domínio** da aplicação. Erros críticos de infraestrutura (como falha de conexão com o banco) geralmente deixamos ser lançados como exceções (Panics), pois aí sim temos algo verdadeiramente "excepcional" acontecendo.
+</Callout>
+
+
+Tudo o que descrevi aqui faz parecer que é mil maravilhas utilizar este padrão, e talvez você queira usá-lo
+em qualquer situação. Mas eu recomendo utilizar o Result Pattern principalmente quando você tiver um
+projeto de média ou larga escala. Transformar tudo em valor tem um preço: aumenta o nível de abstração e exige um pouco mais de *boilerplate*, 
+então, para scripts curtos ou projetos muito simples, o padrão pode trazer mais complexidade do que benefícios.

@@ -71,7 +71,7 @@ const enLink = `/en${basePath}`;
 </header>
 
 <script>
-  document.addEventListener("astro:page-load", () => {
+  document.addEventListener("DOMContentLoaded", () => {
     const toggle = document.getElementById("theme-toggle");
 
     // Remove old event listener if it exists to prevent duplicates

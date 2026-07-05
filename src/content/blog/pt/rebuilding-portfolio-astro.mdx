@@ -27,7 +27,6 @@ Também foi a oportunidade de trazer **TailwindCSS** para o blog, que é uma fer
 
 O conteúdo ainda é gerenciado e mantido via Markdown, então não houve mudanças significativas na forma de gerenciar o conteúdo. A diferença é que o **Astro** traz a possibilidade de definir o esquema de metadados de cada post de forma mais nativa e organizada.
 
-<Terminal title="src/content.config.ts">
 ```typescript
 import { z, defineCollection } from "astro:content";
 import { glob } from "astro/loaders";
@@ -43,7 +42,6 @@ schema: z.object({
 });
 
 ```
-</Terminal>
 
 Na versão legada, este código ficaria distribuido em diversos arquivos, tornando-o menos organizado e mais difícil de manter. Agora, com o **Astro**, tudo fica mais simples e organizado.
 

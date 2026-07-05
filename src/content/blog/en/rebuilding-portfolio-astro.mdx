@@ -27,7 +27,6 @@ It was also the opportunity to bring **TailwindCSS** to the blog, which is a too
 
 The content is still managed and maintained via Markdown, so there were no significant changes to how the content itself is handled. The difference is that **Astro** brings the ability to define the metadata schema for each post in a much more native and organized way.
 
-<Terminal title="src/content.config.ts">
 ```typescript
 import { z, defineCollection } from "astro:content";
 import { glob } from "astro/loaders";
@@ -43,7 +42,6 @@ schema: z.object({
 });
 
 ```
-</Terminal>
 
 In the legacy version, this code would be scattered across several files, making it less organized and harder to maintain. Now, with **Astro**, everything is simpler and more organized.
 
