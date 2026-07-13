@@ -16,6 +16,7 @@ import Callout from "../mdx/Callout.astro";
 import Terminal from "../mdx/Terminal.astro";
 import ArticleImage from "../mdx/ArticleImage.astro";
 import Quote from "../mdx/Quote.astro";
+import Preview from "../mdx/Preview.astro";
 
 interface Props {
   lang: string;
@@ -74,7 +75,9 @@ const { Content, headings } = await render(post);
       <TableOfContents headings={headings} lang={lang} />
 
       <div class="blog-content">
-        <Content components={{ Callout, Terminal, ArticleImage, Quote }} />
+        <Content
+          components={{ Callout, Terminal, ArticleImage, Quote, Preview }}
+        />
       </div>
 
       <AuthorBio lang={lang} />

@@ -1,0 +1,151 @@
+---
+import { Icon } from "astro-icon/components";
+import { useTranslations } from "../../i18n";
+
+interface Props {
+  title: string;
+  src: string;
+  github?: string;
+  height?: number;
+  loading?: "lazy" | "eager";
+}
+
+const { title, src, github, height = 500, loading = "lazy" } = Astro.props;
+const lang = Astro.url.pathname.split("/")[1] as "pt" | "en";
+const t = useTranslations(lang);
+const componentId = `preview-${Math.random().toString(36).slice(2, 9)}`;
+---
+
+<div
+  id={componentId}
+  class="my-6 rounded-lg overflow-hidden shadow-xl border border-zinc-200 dark:border-zinc-800"
+>
+  {/* Header bar */}
+  <div
+    class="flex items-center justify-between px-4 py-3 bg-zinc-100 dark:bg-[#232831] border-b border-zinc-200 dark:border-zinc-800"
+  >
+    <div class="flex items-center gap-2">
+      <Icon name="bi:globe" class="w-4 h-4 text-zinc-500 dark:text-zinc-400" />
+      <span
+        class="text-sm font-medium text-zinc-700 dark:text-zinc-300 truncate"
+        >{title}</span
+      >
+    </div>
+    <div class="flex items-center gap-3">
+      {
+        github && (
+          <a
+            href={github}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label={`View ${title} on GitHub`}
+            class="text-zinc-500 dark:text-zinc-400 hover:text-zinc-800 dark:hover:text-white transition-colors"
+          >
+            <Icon name="bi:github" class="w-4 h-4" />
+          </a>
+        )
+      }
+      <a
+        href={src}
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label={`Open ${title} in a new tab`}
+        class="flex items-center gap-1 text-sm font-medium text-zinc-500 dark:text-zinc-400 hover:text-zinc-800 dark:hover:text-white transition-colors"
+      >
+        {t("preview.open")}
+        <Icon name="bi:box-arrow-up-right" class="w-3.5 h-3.5" />
+      </a>
+    </div>
+  </div>
+
+  {/* Iframe container */}
+  <div class="relative bg-white dark:bg-zinc-900" data-preview-frame>
+    <iframe
+      src={src}
+      title={title}
+      loading={loading}
+      sandbox="allow-scripts allow-same-origin allow-popups"
+      style={`height: ${height}px;`}
+      class="w-full border-none"
+      data-preview-iframe></iframe>
+  </div>
+
+  {/* Fallback (hidden by default, shown via JS when iframe is blocked) */}
+  <div
+    class="hidden flex-col items-center justify-center gap-4 py-16 px-6 text-center bg-zinc-50 dark:bg-zinc-900"
+    data-preview-fallback
+    role="status"
+  >
+    <Icon name="bi:exclamation-triangle-fill" class="w-8 h-8 text-amber-500" />
+    <div>
+      <h5 class="text-base font-semibold text-zinc-800 dark:text-zinc-200 m-0">
+        {t("preview.preview_unavailable")}
+      </h5>
+      <p class="mt-1 text-sm text-zinc-500 dark:text-zinc-400 m-0">
+        {t("preview.preview_blocked")}
+      </p>
+    </div>
+    <a
+      href={src}
+      target="_blank"
+      rel="noopener noreferrer"
+      class="inline-flex items-center gap-2 mt-2 px-5 py-2.5 bg-primary text-white text-sm font-medium rounded-full hover:brightness-110 transition-all"
+    >
+      {t("preview.open_website")}
+      <Icon name="bi:box-arrow-up-right" class="w-3.5 h-3.5" />
+    </a>
+  </div>
+</div>
+
+<script define:vars={{ componentId }}>
+  (function () {
+    const root = document.getElementById(componentId);
+    if (!root) return;
+
+    const iframe = root.querySelector("[data-preview-iframe]");
+    const frame = root.querySelector("[data-preview-frame]");
+    const fallback = root.querySelector("[data-preview-fallback]");
+
+    if (!iframe || !frame || !fallback) return;
+
+    let loaded = false;
+
+    function showFallback() {
+      if (loaded) return;
+      frame.classList.add("hidden");
+      fallback.classList.remove("hidden");
+      fallback.classList.add("flex");
+    }
+
+    iframe.addEventListener("load", () => {
+      loaded = true;
+    });
+
+    iframe.addEventListener("error", () => {
+      showFallback();
+    });
+
+    // Timeout heuristic: if the iframe hasn't signaled a load after 5s,
+    // try accessing contentWindow — cross-origin blocks will throw.
+    setTimeout(() => {
+      if (loaded) return;
+      try {
+        // Accessing contentDocument on a blocked cross-origin iframe throws
+        const doc = iframe.contentDocument;
+        // If we can access it and it's essentially empty, it was likely blocked
+        if (doc && doc.body && doc.body.children.length === 0) {
+          showFallback();
+        }
+      } catch {
+        // Cross-origin access denied is expected for valid iframes — not a block signal
+        // Only show fallback if load event never fired
+        if (!loaded) {
+          // Give it a bit more time since cross-origin iframes won't fire errors
+          setTimeout(() => {
+            if (!loaded) showFallback();
+          }, 3000);
+        }
+      }
+    }, 5000);
+  })();
+</script>

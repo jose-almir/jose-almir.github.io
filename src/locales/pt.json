@@ -44,5 +44,11 @@
     "copy_code": "Copiar",
     "copied": "Copiado!",
     "author_bio": "Engenheiro de Software focado no ecossistema TypeScript, desenvolvendo aplicações web escaláveis e centradas no usuário."
+  },
+  "preview": {
+    "open": "Abrir",
+    "preview_unavailable": "Pré-visualização indisponível",
+    "preview_blocked": "Este site não permite incorporação.",
+    "open_website": "Abrir site"
   }
 }

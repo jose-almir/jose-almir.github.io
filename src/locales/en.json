@@ -44,5 +44,11 @@
     "copy_code": "Copy",
     "copied": "Copied!",
     "author_bio": "Software Engineer focused on the TypeScript ecosystem, building scalable and user-centric web applications."
+  },
+  "preview": {
+    "open": "Open",
+    "preview_unavailable": "Preview unavailable",
+    "preview_blocked": "This website doesn't allow embedding.",
+    "open_website": "Open website"
   }
 }
