@@ -35,10 +35,15 @@
     "eslint-config-prettier": "^10.1.8",
     "eslint-plugin-astro": "^2.1.1",
     "husky": "^9.1.7",
+    "lint-staged": "^17.0.8",
     "prettier": "^3.9.0",
     "prettier-plugin-astro": "^0.14.1",
     "tailwindcss": "^4.3.1",
     "typescript": "^6.0.3",
     "typescript-eslint": "^8.62.0"
+  },
+  "lint-staged": {
+    "*.{js,mjs,cjs,ts,tsx,astro}": "eslint --fix",
+    "*": "prettier --ignore-unknown --write"
   }
 }
