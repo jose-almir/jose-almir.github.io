@@ -16,14 +16,15 @@
     "prepare": "husky || true"
   },
   "dependencies": {
-    "@astrojs/mdx": "^7.0.0",
-    "@astrojs/rss": "^4.0.18",
+    "@astrojs/mdx": "^7.0.3",
+    "@astrojs/rss": "^4.0.19",
     "@astrojs/sitemap": "^3.7.3",
-    "astro": "^7.0.3",
+    "astro": "^7.0.9",
     "astro-icon": "^1.1.5",
     "medium-zoom": "^1.1.0"
   },
   "devDependencies": {
+    "@astrojs/check": "^0.9.9",
     "@iconify-json/bi": "^1.2.7",
     "@iconify-json/simple-icons": "^1.2.87",
     "@tailwindcss/typography": "^0.5.20",
@@ -37,6 +38,7 @@
     "prettier": "^3.9.0",
     "prettier-plugin-astro": "^0.14.1",
     "tailwindcss": "^4.3.1",
+    "typescript": "^6.0.3",
     "typescript-eslint": "^8.62.0"
   }
 }
