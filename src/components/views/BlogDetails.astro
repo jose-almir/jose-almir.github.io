@@ -17,6 +17,7 @@ import Terminal from "../mdx/Terminal.astro";
 import ArticleImage from "../mdx/ArticleImage.astro";
 import Quote from "../mdx/Quote.astro";
 import Preview from "../mdx/Preview.astro";
+import Mermaid from "../mdx/Mermaid.astro";
 
 interface Props {
   lang: string;
@@ -37,6 +38,7 @@ const { Content, headings } = await render(post);
   <ReadingProgress />
   <ScrollToTop />
   <CodeBlockEnhancements lang={lang} />
+  <Mermaid />
 
   <div class="relative max-w-7xl mx-auto">
     <article
@@ -76,7 +78,13 @@ const { Content, headings } = await render(post);
 
       <div class="blog-content">
         <Content
-          components={{ Callout, Terminal, ArticleImage, Quote, Preview }}
+          components={{
+            Callout,
+            Terminal,
+            ArticleImage,
+            Quote,
+            Preview,
+          }}
         />
       </div>
 

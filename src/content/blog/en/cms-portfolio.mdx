@@ -46,12 +46,24 @@ The most interesting part of the architecture: the CMS has no database of its ow
 
 Each operation, like adding, editing, or removing an item, generates an automatic commit with a descriptive message. This commit triggers GitHub Actions, which rebuilds and publishes the site automatically, with no manual action required. The commit history also acts as an audit log for all published content.
 
-<ArticleImage
-  src="/diagrams/cms-portfolio.md-0.svg"
-  alt="Project architecture diagram"
-  caption="Simplified architecture diagram: the CMS communicates directly with the GitHub REST API."
-  size="medium"
-/>
+```mermaid
+---
+title: CMS and GitHub Integration Architecture
+---
+flowchart LR
+    CMS["CMS Admin"]
+    GH["GitHub (Repository)"]
+    PORT["Portfolio<br/>(Next.js • SCSS • i18n)"]
+    GHP["GitHub Pages"]
+
+    CMS -- "Publishes content" --> GH
+    CMS -- "Webhooks / API" --> GH
+    GH -- "Build" --> PORT
+    PORT -- "Push/Deploy" --> GH
+    PORT --> GHP
+
+    linkStyle default stroke-width:3px;
+```
 
 We can also see a glimpse of the private CMS:
 

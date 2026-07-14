@@ -7,6 +7,7 @@ import Terminal from "../mdx/Terminal.astro";
 import ArticleImage from "../mdx/ArticleImage.astro";
 import Quote from "../mdx/Quote.astro";
 import Preview from "../mdx/Preview.astro";
+import Mermaid from "../mdx/Mermaid.astro";
 
 interface Props {
   lang: string;
@@ -23,6 +24,7 @@ const { Content } = await render(project);
   image={project.data.thumbnail}
   lang={lang}
 >
+  <Mermaid />
   <article class="prose dark:prose-invert prose-zinc max-w-none lg:prose-xl">
     <header class="mb-8">
       <h1 class="text-4xl font-bold text-zinc-900 dark:text-zinc-100 mb-2">
@@ -43,7 +45,14 @@ const { Content } = await render(project);
     }
     <div class="project-content">
       <Content
-        components={{ Callout, Terminal, ArticleImage, Quote, Preview }}
+        components={{
+          Callout,
+          Terminal,
+          ArticleImage,
+          Quote,
+          Preview,
+          Mermaid,
+        }}
       />
     </div>
   </article>

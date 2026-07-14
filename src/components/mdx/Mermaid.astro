@@ -1,0 +1,117 @@
+---
+let content = "";
+if (Astro.slots.has("default")) {
+  content = await Astro.slots.render("default");
+
+  content = content.replace(/<\/?p[^>]*>/g, "").trim();
+
+  content = content
+    .replace(/&gt;/g, ">")
+    .replace(/&lt;/g, "<")
+    .replace(/&amp;/g, "&");
+}
+---
+
+{
+  content && (
+    <div class="mermaid flex justify-center py-6 overflow-x-auto w-full">
+      {content}
+    </div>
+  )
+}
+
+<script>
+  async function initMermaid() {
+    const codeBlocks = document.querySelectorAll(
+      'pre[data-language="mermaid"]',
+    );
+    codeBlocks.forEach((block) => {
+      const container = document.createElement("div");
+      container.className =
+        "mermaid flex justify-center py-6 overflow-x-auto w-full";
+      container.textContent = block.textContent;
+
+      if (block.parentElement?.classList.contains("group")) {
+        block.parentElement.parentNode?.replaceChild(
+          container,
+          block.parentElement,
+        );
+      } else {
+        block.parentNode?.replaceChild(container, block);
+      }
+    });
+
+    const mermaidElements = document.querySelectorAll(
+      '.mermaid:not([data-processed="true"])',
+    );
+
+    if (mermaidElements.length > 0) {
+      const { default: mermaid } = await import("mermaid");
+
+      mermaid.initialize({
+        startOnLoad: false,
+        theme: "neutral",
+        fontFamily: "inherit",
+      });
+
+      try {
+        await mermaid.run({ querySelector: ".mermaid" });
+
+        const mermaids = document.querySelectorAll<HTMLElement>(".mermaid");
+        mermaids.forEach((container) => {
+          container.style.cursor = "zoom-in";
+
+          container.addEventListener("click", () => {
+            const svg = container.querySelector("svg");
+            if (!svg) return;
+
+            const overlay = document.createElement("div");
+            overlay.className =
+              "mermaid-zoom-overlay fixed inset-0 z-[100] flex items-center justify-center bg-black/90 cursor-zoom-out p-8 opacity-0 transition-opacity duration-300";
+
+            const svgClone = svg.cloneNode(true) as SVGSVGElement;
+            svgClone.style.width = "100%";
+            svgClone.style.maxWidth = "1200px";
+            svgClone.style.height = "auto";
+            svgClone.style.maxHeight = "90vh";
+            svgClone.style.transform = "scale(0.95)";
+            svgClone.style.transition =
+              "transform 0.3s cubic-bezier(0.2, 0, 0.2, 1)";
+
+            overlay.appendChild(svgClone);
+            document.body.appendChild(overlay);
+
+            requestAnimationFrame(() => {
+              overlay.classList.remove("opacity-0");
+              svgClone.style.transform = "scale(1)";
+            });
+
+            overlay.addEventListener("click", () => {
+              overlay.classList.add("opacity-0");
+              svgClone.style.transform = "scale(0.95)";
+              setTimeout(() => overlay.remove(), 300);
+            });
+          });
+        });
+      } catch (err) {
+        console.error("Mermaid initialization failed:", err);
+      }
+    }
+  }
+
+  initMermaid();
+  document.addEventListener("astro:page-load", initMermaid);
+</script>
+
+<style is:global>
+  .mermaid svg {
+    width: 100% !important;
+    max-width: 100% !important;
+    height: auto !important;
+  }
+
+  html.dark .mermaid svg,
+  html.dark .mermaid-zoom-overlay svg {
+    filter: invert(0.88) hue-rotate(180deg);
+  }
+</style>
