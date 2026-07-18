@@ -31,6 +31,7 @@ const prefix = `/${lang}`;
           <Card
             href={`${prefix}/blog/${post.id.replace(`${lang}/`, "")}`}
             title={post.data.title}
+            thumbnail={post.data.thumbnail}
           >
             <p class="text-sm text-text-muted-light dark:text-text-muted mb-4">
               {post.data.date.toLocaleDateString(lang, {
