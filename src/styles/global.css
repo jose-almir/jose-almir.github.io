@@ -17,7 +17,8 @@
   --color-text-muted: rgba(255, 255, 255, 0.6);
   --color-text-muted-light: rgba(17, 24, 39, 0.6);
 
-  --font-sans: "Hanken Grotesk", sans-serif;
+  --font-sans: "Lexend", sans-serif;
+  --font-mono: "JetBrains Mono", monospace;
 }
 
 @variant dark (&:where(.dark, .dark *));
