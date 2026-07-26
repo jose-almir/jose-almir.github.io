@@ -88,6 +88,8 @@ The core guiding principle for this project is "Less is More". When creating com
 
 ## Agent Guardrails
 
+- **MDX Components:** Custom components (`<Callout>`, `<Terminal>`, `<ArticleImage>`, `<Quote>`, etc.) are globally registered via Astro config. Do NOT add `import` statements in `.mdx` files.
+- **MDX Comments:** MDX files use `{/* comment */}` syntax, NOT HTML comments (`<!-- -->`). HTML comments will break the build.
 - **No Direct `main` Commits Without Formatting:** Ensure `npm run format` is executed before committing.
 - **Assets Directory:** Do not delete or rename images in `public/` without explicit permission, as they may be tightly coupled to markdown content or Open Graph meta tags.
 - **Configuration Modesty:** Avoid installing new massive dependencies (like heavy UI libraries) unless explicitly requested. Prefer Tailwind CSS classes and lightweight Astro components.
