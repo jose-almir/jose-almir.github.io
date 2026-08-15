@@ -11,9 +11,16 @@ const t = useTranslations(lang);
 <Base title={t("404.title")} lang={lang}>
   <script is:inline>
     const path = window.location.pathname;
-    if (path.startsWith("/en/") && path !== "/en/404") {
+    const normalized = path.length > 1 ? path.replace(/\/+$/, "") : path;
+    if (
+      (normalized === "/en" || normalized.startsWith("/en/")) &&
+      normalized !== "/en/404"
+    ) {
       window.location.replace("/en/404");
-    } else if (path.startsWith("/pt/") && path !== "/pt/404") {
+    } else if (
+      (normalized === "/pt" || normalized.startsWith("/pt/")) &&
+      normalized !== "/pt/404"
+    ) {
       window.location.replace("/pt/404");
     }
   </script>

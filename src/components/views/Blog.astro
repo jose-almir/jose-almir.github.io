@@ -35,6 +35,7 @@ const prefix = `/${lang}`;
           >
             <p class="text-sm text-text-muted-light dark:text-text-muted mb-4">
               {post.data.date.toLocaleDateString(lang, {
+                timeZone: "UTC",
                 year: "numeric",
                 month: "long",
                 day: "numeric",

@@ -55,6 +55,7 @@ const { Content, headings } = await render(post);
         >
           {
             post.data.date.toLocaleDateString(lang, {
+              timeZone: "UTC",
               year: "numeric",
               month: "long",
               day: "numeric",
