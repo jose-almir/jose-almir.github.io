@@ -1,5 +1,6 @@
 dist
 .astro
 node_modules
+.agents/skills/
 
 *.mdx
