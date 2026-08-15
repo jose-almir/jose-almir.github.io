@@ -1,105 +1,148 @@
-# Project Overview
+# AGENTS.md — Almir Dev Portfolio & Blog
 
-This repository hosts the personal portfolio and blog of Almir Dev, a software engineer specializing in the TypeScript ecosystem. Built with Astro, it serves as a high-performance, statically generated web application that features multi-language support (i18n), dynamic content collections (Markdown) for projects and blog posts, and a meticulously crafted UI using Tailwind CSS.
+> Operational guide for agents working in this repository. Read before making changes.
+> This is an **Astro static site** (SSG) deployed to GitHub Pages. There is no backend, no server runtime, and no React.
 
-## Repository Structure
+## Tech Stack (facts)
 
-- `.github/` - Contains GitHub Actions workflows for CI/CD, including automated deployment to GitHub Pages.
-- `.husky/` - Git hooks for pre-commit linting and formatting.
-- `public/` - Static assets served directly at the root (e.g., images, diagrams, `favicon.ico`, `robots.txt`).
-- `src/` - The main source code directory containing all Astro components and logic.
-  - `src/assets/` - Processed images and assets used within components.
-  - `src/components/` - Reusable UI components (Header, Footer, SEO, custom Markdown wrappers).
-  - `src/content/` - Markdown files defining the data schema for blog posts and projects.
-  - `src/layouts/` - Base HTML shell templates shared across pages.
-  - `src/locales/` - JSON dictionaries for internationalization (PT and EN).
-  - `src/pages/` - File-based routing, including dynamic `[lang]` directories for localized content.
-  - `src/styles/` - Global CSS stylesheets, including Tailwind directives.
-  - `src/utils/` - Helper functions, such as reading time calculators.
+- **Astro 7** — static site generation, file-based routing, content collections.
+- **Tailwind CSS 4** — utility classes only; theme tokens live in `src/styles/global.css` (`@theme`).
+- **TypeScript (strict)** — `tsconfig.json` extends `astro/tsconfigs/strict`.
+- **Vanilla JS** for any client-side interactivity. **Do NOT add React, Vue, Svelte, or any UI framework.**
+- **i18n** — two locales (`pt` default, `en`), with `prefixDefaultLocale: true`, so every route is `/pt/*` or `/en/*`. The root `/` redirects to `/pt/`.
+- **Node** — `>=22.22.3` (see `package.json` `engines`).
 
 ## Build & Development Commands
 
 ```bash
-# Install dependencies
-npm install
+npm install          # install dependencies
+npm run dev          # start dev server (http://localhost:4321)
+npm run build        # production build into dist/
+npm run preview      # serve the production build locally
 
-# Start the local development server
-npm run dev
-
-# Build the site for production
-npm run build
-
-# Preview the production build locally
-npm run preview
-
-# Run ESLint to check for code issues
-npm run lint
-
-# Format the codebase using Prettier
-npm run format
-
-# Verify formatting without applying changes
-npm run format:check
+npm run lint         # ESLint (required gate)
+npm run format       # Prettier write (run before committing)
+npm run format:check # Prettier check (CI gate)
+npx astro check      # Astro/TS type & template checking
 ```
 
-## Code Style & Conventions
+**Definition of Done** — before finishing any change, run and make all pass:
 
-- **Framework:** Astro for structure, React/Vanilla JS logic where necessary.
-- **Styling:** Tailwind CSS utility classes within the `class` attribute.
-- **Typing:** Strict TypeScript (`tsconfig.json`).
-- **Linting & Formatting:** ESLint and Prettier are configured; the `.prettierrc` enforces consistency.
-- **Commits:** Conventional Commits format is required (e.g., `feat:`, `fix:`, `chore:`, `docs:`), enforced locally via Husky hooks.
-- **i18n:** Hardcoded strings should be avoided in components; use the `t()` function from `src/i18n.ts` pointing to `src/locales/`.
-
-## Architecture Notes
-
-```mermaid
-graph TD
-    A[User Request] --> B[GitHub Pages Edge]
-    B --> C[Static HTML Assets]
-
-    subgraph Build Phase
-    D[Astro CLI] -->|Compiles| C
-    E[src/pages] --> D
-    F[src/content Collections] --> D
-    G[src/locales] --> D
-    end
+```bash
+npm run lint && npm run format:check && npx astro check && npm run build
 ```
 
-The architecture leverages Astro's Static Site Generation (SSG). During the build process, Astro reads Markdown files from `src/content/` and translates JSON files from `src/locales/` to generate static `.html` files for each supported language route (`/en/*` and `/pt/*`). Once compiled, the static bundle is pushed to GitHub Pages, meaning there is no backend server at runtime.
+## Repository Structure
 
-## Testing Strategy
+```
+.github/workflows/   CI/CD (deploy.yml: npm ci -> lint + format:check -> build -> GitHub Pages)
+.husky/              pre-commit hook (lint-staged)
+public/              static assets served at root (images, favicon.ico, robots.txt)
+src/
+  assets/            processed images (imported via astro:assets)
+  components/
+    views/           page-level views (Home, Blog, BlogDetails, Projects, ProjectDetails)
+    blog/            blog-specific widgets (TOC, nav, reading progress, etc.)
+    mdx/             custom MDX components (Callout, Terminal, ArticleImage, Quote, Preview, Mermaid)
+  content/
+    blog/{pt,en}/    blog posts (MDX)
+    projects/{pt,en}/ projects (MDX)
+  layouts/Base.astro shared HTML shell (head, Header, Footer, theme script)
+  locales/           pt.json / en.json translation dictionaries
+  pages/             routes, including dynamic [lang]/ directories
+  styles/global.css  Tailwind entry + @theme tokens + prose/code styling
+  content.config.ts  content collection schemas
+  i18n.ts            useTranslations() helper
+  utils/             helpers (e.g. getReadingTime)
+```
 
-Due to the simplified nature of this portfolio project, testing relies purely on strict TypeScript compilation and ESLint static analysis rather than heavy unit or E2E testing frameworks.
+## Architecture & Routing
 
-## Security & Compliance
+- **SSG only.** Content collections (`src/content/`) are read at build time into static HTML. No runtime data fetching.
+- **Language is part of the URL.** `src/content/blog/{lang}/slug.mdx` maps to `/{lang}/blog/slug/`. All pages under `src/pages/[lang]/` declare `getStaticPaths()` returning `{ params: { lang: "pt" } }` and `{ params: { lang: "en" } }`.
+- **Root `/`** (`src/pages/index.astro`) is a meta-refresh redirect to `/pt/` with `noindex`.
+- **404** — root `src/pages/404.astro` client-redirects `/en/*` and `/pt/*` misses to the localized `/en/404` / `/pt/404` pages.
+- **RSS & llms.txt are per-language**: `src/pages/[lang]/rss.xml.ts` and `src/pages/[lang]/llms.txt.ts`; the root `llms.txt` is an index linking to both.
 
-- **Dependencies:** Regularly scan using `npm audit` or GitHub Dependabot.
-- **Hooks:** A `husky` pre-commit hook ensures formatting and linting rules pass before any code is checked into version control.
-- **CI/CD Guardrails:** `deploy.yml` will halt the deployment if the build or formatting checks fail. `npm ci` handles dependencies in CI, with `prepare` scripts safely bypassed if Husky is unavailable.
+## Content Authoring Rules
+
+Every `.mdx` file in a collection MUST start with valid frontmatter matching the schema in `src/content.config.ts`. The schema is the source of truth.
+
+**Blog** (`src/content/blog/{lang}/*.mdx`):
+
+```yaml
+---
+title: "Post title"
+date: "2026-07-18" # MUST be YYYY-MM-DD (no time, no timezone)
+thumbnail: "/blog/foo/thumb.png" # public/ path
+description: "Summary" # used for cards, RSS and SEO (see SEO limits)
+---
+```
+
+**Projects** (`src/content/projects/{lang}/*.mdx`):
+
+```yaml
+---
+title: "Project title"
+description: "Summary"
+thumbnail: "/blog/foo/img.png" # public/ path
+hidden: false # optional, default false
+order: 1 # required, sorts ascending
+---
+```
+
+Rules:
+
+- **Dates are rendered in UTC** via `toLocaleDateString(..., { timeZone: "UTC" })`. Always use `YYYY-MM-DD`; do not introduce time or timezone components.
+- **`thumbnail` paths point into `public/`** (e.g. `/blog/<post>/thumb.png`). Never import them via `astro:assets`; they are referenced by string path.
+- **Keep both languages in sync**: a post added in `pt/` should have a `en/` counterpart unless explicitly told otherwise.
+
+## Code Conventions
+
+- **Components are Astro (`.astro`)**. Frontmatter in `---` fences, then template.
+- **Styling** — Tailwind utility classes only. Add custom tokens to the `@theme` block in `src/styles/global.css`, never hardcode new CSS in components unless there is no Tailwind equivalent.
+- **i18n** — NEVER hardcode user-facing strings. Use `const t = useTranslations(lang as "pt" | "en")` and `t("nav.blog")`, with keys added to BOTH `src/locales/pt.json` and `src/locales/en.json` (identical key paths).
+- **TypeScript strict** — no `any`; type props via local `interface Props`.
+- **Client scripts** — minimal vanilla JS in `<script>` blocks. No npm packages inside client scripts.
 
 ## Design Philosophy: Less is More
 
-The core guiding principle for this project is "Less is More". When creating components, writing markdown content, or suggesting architectural changes, future agents MUST strictly adhere to the following rules:
+The governing principle. Agents MUST:
 
-- **Only use what aggregates value:** Do not over-engineer or add complex components just because you can. Stick to simple native HTML/Markdown if it suffices.
-- **Use custom MDX components sparingly:** Elements like `<Callout>`, `<Terminal>`, `<ArticleImage>`, and `<Quote>` should only be used when they provide a clear, undeniable UX benefit or semantic necessity. Do NOT use them as default replacements for standard text just to make the page look busy.
-- **Performance First:** Prefer Tailwind utility classes and minimal Vanilla JS over bringing in heavy UI frameworks or state-driven interactivity. The site is a fast, static blog; do not introduce backend-level maintenance burdens or dependencies.
+- **Add only what delivers value.** Do not over-engineer. Prefer native HTML/Markdown and Tailwind over custom components.
+- **Use MDX components sparingly.** `<Callout>`, `<Terminal>`, `<ArticleImage>`, `<Quote>`, `<Preview>` exist for a clear UX/semantic benefit — not as decoration. Default to standard markdown.
+- **Performance first.** Static, minimal JS. Do not introduce heavy libraries, state frameworks, or backend dependencies without explicit request.
 
-## Agent Guardrails
+## Agent Guardrails (MUST / DO NOT)
 
-- **MDX Components:** Custom components (`<Callout>`, `<Terminal>`, `<ArticleImage>`, `<Quote>`, etc.) are globally registered via Astro config. Do NOT add `import` statements in `.mdx` files.
-- **MDX Comments:** MDX files use `{/* comment */}` syntax, NOT HTML comments (`<!-- -->`). HTML comments will break the build.
-- **No Direct `main` Commits Without Formatting:** Ensure `npm run format` is executed before committing.
-- **Assets Directory:** Do not delete or rename images in `public/` without explicit permission, as they may be tightly coupled to markdown content or Open Graph meta tags.
-- **Configuration Modesty:** Avoid installing new massive dependencies (like heavy UI libraries) unless explicitly requested. Prefer Tailwind CSS classes and lightweight Astro components.
-- **SEO Constraints:** When generating SEO descriptions, do not exceed 155 characters for standard meta tags and 120 characters for Open Graph tags.
+- **MDX imports are forbidden.** Custom MDX components are injected via the `components` prop on `<Content components={...}>` in `src/components/views/BlogDetails.astro` and `ProjectDetails.astro`. If you create a new MDX component, register it in BOTH files. Never write `import` in `.mdx` files.
+- **Mermaid** is rendered from ` ```mermaid ` fenced code blocks (client-side). It is mounted via `<Mermaid />`, not invoked as a component in MDX.
+- **MDX comments** use `{/* comment */}`. HTML comments (`<!-- -->`) break the build.
+- **Run `npm run format` before committing.** The Husky pre-commit hook also enforces lint + format.
+- **Do not delete or rename files in `public/`** without explicit permission — they are tightly coupled to markdown content, thumbnails and OG meta tags.
+- **SEO limits** — meta description ≤ 155 chars; Open Graph description ≤ 120 chars (already truncated in `Seo.astro`, keep in mind when writing descriptions).
+- **No new heavy dependencies** unless explicitly requested.
 
-## Extensibility Hooks
+## Extensibility
 
-- **Content Collections:** New content types (e.g., talks, snippets) can be added by defining a new schema in `src/content.config.ts`.
-- **Languages:** Adding a new language requires updating `src/locales/`, mapping it in `src/i18n.ts`, and ensuring dynamic routes in `src/pages/[lang]/` support the new key.
-- **Styling:** Extend the Tailwind theme inside the `@theme` directive in `src/styles/global.css`.
+**Add a content type** (e.g. talks): define a schema in `src/content.config.ts` and add a corresponding loader + page(s).
+
+**Add a language**: touches many hardcoded spots — update all of them:
+
+1. `src/locales/<lang>.json`
+2. `src/i18n.ts` (`translations` map + `useTranslations` param type)
+3. `astro.config.mjs` (`i18n.locales`)
+4. `getStaticPaths()` in `src/pages/[lang]/index.astro`, `[lang]/404.astro`, `[lang]/rss.xml.ts`, `[lang]/llms.txt.ts`
+5. the `langs` arrays in `src/pages/[lang]/blog/[...page].astro` and `[lang]/projects/[...page].astro`
+6. content dirs `src/content/blog/<lang>/` and `src/content/projects/<lang>/`
+
+**Add a Tailwind token**: edit the `@theme` block in `src/styles/global.css`.
+
+## Security & CI
+
+- `deploy.yml` runs `npm ci`, then `lint` + `format:check`, then `build`; any failure blocks deployment.
+- No secrets or environment variables are required; do not introduce any.
+- Run `npm audit` / Dependabot for dependency hygiene.
 
 ## Further Reading
 
