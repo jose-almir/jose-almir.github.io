@@ -1,0 +1,124 @@
+---
+title: "Strategy Pattern no TypeScript: Acabe com os if/else gigantes"
+date: "2026-08-16"
+thumbnail: "/blog/strategy-pattern/strategy-pattern-thumb.png"
+description: "Aprenda a usar o Strategy Pattern no TypeScript para substituir if/else gigantes por estratégias intercambiáveis e código que respeita o Open/Closed."
+---
+
+## Quando grandes if's se tornam um problema
+
+É comum em grandes projetos tomarmos decisões que a princípio vão agilizar a entrega, mas que com o passar do tempo se tornam um pesadelo para manter. O tal débito técnico começa a bater na porta e é inevitável ter que lidar com ele.
+
+Uma situação muito comum é criarmos grandes blocos de if/else que resolvem muito bem o problema no momento. Exemplo: processar pagamentos por método.
+
+```typescript
+function processPayment(method: string, amount: number) {
+  if (method === "pix") {
+    // logic for pix
+  } else if (method === "card") {
+    // logic for card
+  } else if (method === "boleto") {
+    // logic for boleto
+  } else {
+    throw new Error("Invalid payment method");
+  }
+}
+```
+
+## O problema: código que muda a cada novo caso
+
+Esse código funciona bem, para cada tipo de método de pagamento temos um caminho a seguir. Mas à medida que a aplicação cresce, mais métodos de pagamento podem surgir, e novas condições começam a entrar em jogo, como juros no cartão de crédito, parcelamento, etc.
+
+Está claro que a longo prazo esse código não escalará bem, a menos que você não tenha a intenção de crescer a aplicação. 
+Em termos de padrões de projeto, essa implementação viola o OCP (Open/Closed Principle), que diz que uma entidade de software deve estar aberta para extensão, mas fechada para modificação.
+
+## O que é o Strategy Pattern
+
+O Strategy Pattern é um padrão que permite criar uma família de algoritmos com base em uma interface comum, esses algoritmos podem ser trocados em tempo de execução. 
+
+O contexto delegará a estratégia mais apropriada, é um padrão que segue bem o princípio OCP e também o DIP (Dependency Inversion Principle).
+
+## Implementando do zero em TypeScript
+
+```typescript
+interface PaymentStrategy {
+  process(amount: number): void;
+}
+
+class PixPayment implements PaymentStrategy {
+  process(amount: number): void {
+    console.log(`Processando pagamento Pix de R$${amount}`);
+  }
+}
+
+class CreditCardPayment implements PaymentStrategy {
+  process(amount: number): void {
+    console.log(`Processando pagamento com cartão de R$${amount}`);
+  }
+}
+
+class BoletoPayment implements PaymentStrategy {
+  process(amount: number): void {
+    console.log(`Processando pagamento com boleto de R$${amount}`);
+  }
+}
+```
+
+Para simplificar este artigo, deixei de fora o código real das estratégias. Em um cenário real, você teria uma chamada a uma API de pagamento, por exemplo. O importante é a parte que falta: o **Context**. Ele é a classe que recebe uma estratégia (por injeção via construtor) e apenas delega a execução, sem conhecer a implementação concreta:
+
+```typescript
+// O Context recebe a estratégia e apenas delega a execução
+class PaymentProcessor {
+  constructor(private readonly strategy: PaymentStrategy) {}
+
+  process(amount: number): void {
+    this.strategy.process(amount);
+  }
+}
+```
+
+## Exemplo do mundo real: pagamentos
+
+No exemplo anterior ainda precisamos decidir qual estratégia usar. No mundo real, essa escolha normalmente acontece em um único ponto da aplicação (o **Composition Root**) ou em uma pequena fábrica que traduz o método de pagamento (que vem de um request, do banco, etc.) para a estratégia correta:
+
+```typescript
+// Registro de estratégias: o único lugar que conhece método -> estratégia
+const paymentStrategies: Record<string, PaymentStrategy> = {
+  pix: new PixPayment(),
+  card: new CreditCardPayment(),
+  boleto: new BoletoPayment(),
+};
+
+function createPaymentProcessor(method: string): PaymentProcessor {
+  const strategy = paymentStrategies[method];
+  if (!strategy) {
+    throw new Error("Método de pagamento inválido");
+  }
+  return new PaymentProcessor(strategy);
+}
+```
+
+A seleção vira uma operação simples, e a troca de comportamento acontece em tempo de execução:
+
+```typescript
+createPaymentProcessor("pix").process(100);
+createPaymentProcessor("card").process(100);
+```
+
+A grande diferença para o `if/else` do início é que, quando um novo método de pagamento surgir, você adiciona uma classe e uma linha no registro, sem tocar no código existente do processador. O `PaymentProcessor` continua fechado para modificação e aberto para extensão (OCP), e a decisão de qual algoritmo usar fica isolada em um único ponto.
+
+Se quiser se aprofundar em onde montar esse grafo de dependências, vale a pena ler o post sobre [Injeção de Dependências com TypeScript e Express](/pt/blog/di-typescript-express).
+
+## Trade-offs e quando não usar
+
+<Callout type="info" title="Quando o Strategy não vale a pena">
+  Para conjuntos pequenos e fixos de variações, um `switch` ou um `Map` simples costuma ser mais direto, e mais fácil de ler, do que criar uma classe por estratégia. O padrão também pode gerar uma "explosão de classes": se cada variação virar uma classe, a quantidade de arquivos cresce rápido.
+
+  O Strategy brilha quando os algoritmos são intercambiáveis, tendem a crescer de forma independente ou precisam ser escolhidos em tempo de execução. Não o use apenas para substituir qualquer condicional. O objetivo é reduzir complexidade, não adicioná-la.
+</Callout>
+
+## Conclusão
+
+O Strategy Pattern é uma ferramenta simples e poderosa para domar os "if/else gigantes". Ele respeita o OCP (o contexto não muda quando uma nova estratégia aparece), segue o DIP (o contexto depende de uma abstração, não de implementações concretas) e ainda melhora a testabilidade, já que cada estratégia pode ser testada isoladamente.
+
+Aplique-o quando tiver uma família de algoritmos que varia de forma independente, precise trocar o comportamento em tempo de execução ou quando as condicionais começarem a crescer sem controle. E lembre-se da regra de ouro: se um `switch` simples resolve, talvez você nem precise do padrão.

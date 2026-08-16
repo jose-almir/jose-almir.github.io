@@ -1,0 +1,124 @@
+---
+title: "Strategy Pattern in TypeScript: End the Giant if/else"
+date: "2026-08-16"
+thumbnail: "/blog/strategy-pattern/strategy-pattern-thumb.png"
+description: "Learn how to use the Strategy Pattern in TypeScript to replace giant if/else blocks with interchangeable strategies and code that respects the Open/Closed principle."
+---
+
+## When giant if's become a problem
+
+It's common in large projects to make decisions that speed up delivery at first, but over time become a nightmare to maintain. That famous technical debt starts knocking on the door, and dealing with it becomes inevitable.
+
+A very common situation is creating large if/else blocks that solve the problem really well in the moment. Example: processing payments by method.
+
+```typescript
+function processPayment(method: string, amount: number) {
+  if (method === "pix") {
+    // logic for pix
+  } else if (method === "card") {
+    // logic for card
+  } else if (method === "boleto") {
+    // logic for boleto
+  } else {
+    throw new Error("Invalid payment method");
+  }
+}
+```
+
+## The problem: code that changes with every new case
+
+This code works fine; for each payment method we have a path to follow. But as the application grows, more payment methods can appear, and new conditions start to come into play, such as credit card interest, installments, and so on.
+
+It's clear that in the long run this code won't scale well, unless you don't intend to grow the application.
+In terms of design patterns, this implementation violates the OCP (Open/Closed Principle), which states that a software entity should be open for extension, but closed for modification.
+
+## What is the Strategy Pattern
+
+The Strategy Pattern is a pattern that lets you create a family of algorithms based on a common interface; these algorithms can be swapped at runtime.
+
+The context will delegate to the most appropriate strategy. It's a pattern that follows the OCP principle well, as well as the DIP (Dependency Inversion Principle).
+
+## Implementing it from scratch in TypeScript
+
+```typescript
+interface PaymentStrategy {
+  process(amount: number): void;
+}
+
+class PixPayment implements PaymentStrategy {
+  process(amount: number): void {
+    console.log(`Processing Pix payment of $${amount}`);
+  }
+}
+
+class CreditCardPayment implements PaymentStrategy {
+  process(amount: number): void {
+    console.log(`Processing credit card payment of $${amount}`);
+  }
+}
+
+class BoletoPayment implements PaymentStrategy {
+  process(amount: number): void {
+    console.log(`Processing boleto payment of $${amount}`);
+  }
+}
+```
+
+To keep this article simple, I left out the real strategy implementations. In a real scenario, you would have a call to a payment API, for example. The important part is the piece that was missing: the **Context**. It's the class that receives a strategy (via constructor injection) and simply delegates the execution, without knowing the concrete implementation:
+
+```typescript
+// The Context receives the strategy and simply delegates the execution
+class PaymentProcessor {
+  constructor(private readonly strategy: PaymentStrategy) {}
+
+  process(amount: number): void {
+    this.strategy.process(amount);
+  }
+}
+```
+
+## Real-world example: payments
+
+In the previous example, we still need to decide which strategy to use. In the real world, this choice usually happens in a single point of the application (the **Composition Root**) or in a small factory that translates the payment method (which comes from a request, the database, etc.) into the correct strategy:
+
+```typescript
+// Strategy registry: the only place that knows method -> strategy
+const paymentStrategies: Record<string, PaymentStrategy> = {
+  pix: new PixPayment(),
+  card: new CreditCardPayment(),
+  boleto: new BoletoPayment(),
+};
+
+function createPaymentProcessor(method: string): PaymentProcessor {
+  const strategy = paymentStrategies[method];
+  if (!strategy) {
+    throw new Error("Invalid payment method");
+  }
+  return new PaymentProcessor(strategy);
+}
+```
+
+Selection becomes a simple operation, and the behavior swap happens at runtime:
+
+```typescript
+createPaymentProcessor("pix").process(100);
+createPaymentProcessor("card").process(100);
+```
+
+The big difference from the `if/else` at the beginning is that, when a new payment method shows up, you add a class and a line to the registry, without touching the existing processor code. The `PaymentProcessor` stays closed for modification and open for extension (OCP), and the decision of which algorithm to use is isolated in a single point.
+
+If you want to go deeper into where to build that dependency graph, it's worth reading the post about [Dependency Injection with TypeScript and Express](/en/blog/di-typescript-express).
+
+## Trade-offs and when not to use it
+
+<Callout type="info" title="When Strategy isn't worth it">
+  For small, fixed sets of variations, a simple `switch` or `Map` is usually more straightforward, and easier to read, than creating one class per strategy. The pattern can also lead to "class explosion": if every variation becomes a class, the number of files grows fast.
+
+  Strategy shines when algorithms are interchangeable, tend to grow independently, or need to be chosen at runtime. Don't use it just to replace any conditional. The goal is to reduce complexity, not add it.
+</Callout>
+
+## Conclusion
+
+The Strategy Pattern is a simple yet powerful tool for taming the "giant if/else" blocks. It respects the OCP (the context doesn't change when a new strategy appears), follows the DIP (the context depends on an abstraction, not on concrete implementations), and also improves testability, since each strategy can be tested in isolation.
+
+Apply it when you have a family of algorithms that varies independently, need to swap behavior at runtime, or when conditionals start to grow out of control. And remember the golden rule: if a simple `switch` solves it, maybe you don't even need the pattern.
